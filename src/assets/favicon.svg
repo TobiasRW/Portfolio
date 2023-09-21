@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_1" data-name="Lag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.91 219.75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffb875;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m36.1,31.39H0V0h106.74v31.39h-36.1v188.36h-34.53V31.39Z"/>
+  <path class="cls-1" d="m116.47,0h33.28l15.38,168.9h.63L182.08,0h37.67l16.32,168.9h.63L252.09,0h29.82l-22.29,219.75h-43.01l-15.7-148.18h-.62l-15.7,148.18h-45.83L116.47,0Z"/>
+</svg>
