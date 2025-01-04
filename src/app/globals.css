@@ -41,6 +41,15 @@ body {
   font-style: normal;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pilcrow", sans-serif;
+}
+
 @layer base {
   :root {
     --background: 0 3% 93%;
