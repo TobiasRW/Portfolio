@@ -17,7 +17,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="h-screen w-screen bg-[#1A1A1A]">
+    <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
       <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] xl:h-[600px]">
         <div className="absolute z-0 h-full w-full bg-[radial-gradient(rgba(0,0,0,0.1)_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_70%,transparent_100%)] dark:bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
         <div className="z-10 mx-auto flex w-10/12 flex-col gap-6 pt-10 lg:gap-10 lg:pt-16">
@@ -32,7 +32,7 @@ export default function Hero() {
               />
             </div>
             <motion.div
-              className="absolute right-3 top-8 -rotate-12 cursor-pointer rounded-full bg-whitebg px-3 py-2 font-heading text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"
+              className="absolute right-3 top-8 z-20 -rotate-12 cursor-pointer rounded-full bg-whitebg px-3 py-2 font-heading text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"
               drag
               dragControls={controls}
               style={{ x, y, rotate }}
@@ -47,13 +47,21 @@ export default function Hero() {
             Passioneret webudvikler med speciale i frontend-udvikling
           </h1>
           <div className="flex justify-center gap-4 lg:gap-6 xl:gap-8">
-            <Button variant="default">
+            <Button variant="default" className="group">
               Projekter
-              <ArrowDown size={32} weight="bold" />
+              <ArrowDown
+                size={32}
+                weight="bold"
+                className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
+              />
             </Button>
-            <Button variant="default">
+            <Button variant="default" className="group">
               Om mig
-              <ArrowDown size={32} weight="bold" />
+              <ArrowDown
+                size={32}
+                weight="bold"
+                className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
+              />
             </Button>
           </div>
         </div>

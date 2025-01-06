@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @font-face {
   font-family: "Pilcrow";
   src: url("fonts/PilcrowRounded-Regular.otf") format("opentype");
@@ -48,6 +44,13 @@ h4,
 h5,
 h6 {
   font-family: "Pilcrow", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 @layer base {

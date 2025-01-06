@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useState } from "react";
 import { ArrowUpRight, ArrowDown } from "@phosphor-icons/react";
 
@@ -33,6 +33,19 @@ const links = {
 // Navigation component
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [hidden, setHidden] = useState<boolean>(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0; // Provide a fallback of 0
+
+    if (latest > previous && latest > 100) {
+      setHidden(true); // Hide when scrolling down
+    } else {
+      setHidden(false); // Show when scrolling up
+    }
+  });
 
   const toggleMenu: React.MouseEventHandler<HTMLDivElement> = () => {
     setIsOpen(!isOpen);
@@ -40,7 +53,16 @@ export default function Nav() {
 
   return (
     <>
-      <header className="fixed z-50 flex h-20 w-screen items-center justify-between px-4 lg:px-10 xl:px-16">
+      <motion.header
+        className="fixed z-50 flex h-20 w-screen items-center justify-between px-4 lg:px-10 xl:px-16"
+        initial="visible"
+        animate={hidden ? "hidden" : "visible"}
+        variants={{
+          visible: { y: 0, opacity: 1 },
+          hidden: { y: "-100%", opacity: 0 },
+        }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+      >
         <p className="md:text-s text-xs lg:text-base">tobiasrw98@gmail.com</p>
         <nav className="">
           {/* Hamburger Menu */}
@@ -128,7 +150,7 @@ export default function Nav() {
             </ul>
           </motion.div>
         </nav>
-      </header>
+      </motion.header>
     </>
   );
 }
