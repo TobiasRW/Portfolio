@@ -66,13 +66,17 @@ const Carousel = React.forwardRef<
         axis: orientation === "horizontal" ? "x" : "y",
       },
       [
-        AutoScroll({ delay: autoScrollInterval, speed: 0.8 } as any),
+        AutoScroll({
+          delay: autoScrollInterval,
+          speed: 1,
+          stopOnMouseEnter: true,
+          stopOnInteraction: false,
+        } as any),
         ...(plugins || []),
       ], // Add AutoScroll plugin
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
-    const [isPaused, setIsPaused] = React.useState(false); // State for hover pause
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -126,19 +130,6 @@ const Carousel = React.forwardRef<
       };
     }, [api, onSelect]);
 
-    // Pause auto-scroll on hover
-    const handleMouseEnter = () => {
-      setIsPaused(true);
-      const autoScroll = api?.plugins()?.autoScroll;
-      autoScroll?.stop();
-    };
-
-    const handleMouseLeave = () => {
-      setIsPaused(false);
-      const autoScroll = api?.plugins()?.autoScroll;
-      autoScroll?.play();
-    };
-
     return (
       <CarouselContext.Provider
         value={{
@@ -155,9 +146,7 @@ const Carousel = React.forwardRef<
       >
         <div
           ref={ref}
-          // onMouseEnter={handleMouseEnter} // Pause auto-scroll on hover
-          // onMouseLeave={handleMouseLeave} // Resume auto-scroll on leave
-          // onKeyDownCapture={handleKeyDown}
+          onKeyDownCapture={handleKeyDown}
           className={cn("relative overflow-hidden", className)}
           role="region"
           aria-roledescription="carousel"
