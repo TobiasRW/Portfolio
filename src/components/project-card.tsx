@@ -28,7 +28,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`3xl:h-[550px] group relative mx-auto h-80 w-72 overflow-hidden rounded-lg shadow-lg sm:h-96 sm:w-[350px] md:h-80 md:w-72 lg:h-96 lg:w-[350px] 2xl:h-[440px] 2xl:w-[90%] ${
+      className={`xs:h-96 xs:w-[350px] group relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg sm:h-96 sm:w-[350px] md:h-80 md:w-72 lg:h-96 lg:w-[350px] 2xl:h-[440px] 2xl:w-[90%] 3xl:h-[550px] ${
         isPhone || isComputer ? "" : "bg-white"
       }`}
       style={isPhone || isComputer ? { backgroundColor: bgColor } : {}}
@@ -53,14 +53,14 @@ export default function ProjectCard({
         </div>
         <div className="absolute top-4 mx-auto flex w-full flex-col gap-1 px-4">
           <div className="flex items-center justify-center">
-            <h3 className="3xl:text-5xl font-heading text-3xl font-medium text-white lg:text-4xl">
+            <h3 className="font-heading text-3xl font-medium text-white lg:text-4xl 3xl:text-5xl">
               {title}
             </h3>
-            <div className="3xl:p-4 ml-auto rounded-full bg-white p-2 lg:p-3">
+            <div className="ml-auto rounded-full bg-white p-2 lg:p-3 3xl:p-4">
               <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 xl:h-5 xl:w-5 dark:text-black" />
             </div>
           </div>
-          <p className="font-body 3xl:text-lg w-10/12 text-xs font-light text-white lg:text-sm 2xl:text-base">
+          <p className="w-10/12 font-body text-xs font-light text-white lg:text-sm 2xl:text-base 3xl:text-lg">
             {text}
           </p>
         </div>
