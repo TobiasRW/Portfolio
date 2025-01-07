@@ -34,17 +34,18 @@ const links = {
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false); // New state for background color
 
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0; // Provide a fallback of 0
+    const previous = scrollY.getPrevious() ?? 0;
 
-    if (latest > previous && latest > 100) {
-      setHidden(true); // Hide when scrolling down
-    } else {
-      setHidden(false); // Show when scrolling up
-    }
+    const isHidden = latest > previous && latest > 100;
+    const isScrolled = latest > 400;
+
+    setHidden(isHidden);
+    setScrolled(isScrolled);
   });
 
   const toggleMenu: React.MouseEventHandler<HTMLDivElement> = () => {
@@ -54,7 +55,11 @@ export default function Nav() {
   return (
     <>
       <motion.header
-        className="fixed z-50 flex h-20 w-screen items-center justify-between px-4 lg:px-10 xl:px-16"
+        className={`fixed z-50 flex h-20 w-screen items-center justify-between px-4 transition-colors duration-300 lg:px-10 xl:px-16 ${
+          scrolled
+            ? "bg-background dark:text-white"
+            : "bg-transparent dark:text-white"
+        }`}
         initial="visible"
         animate={hidden ? "hidden" : "visible"}
         variants={{

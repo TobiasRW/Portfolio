@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
-      <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] xl:h-[600px]">
+      <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:rounded-b-[70px]">
         <div className="absolute z-0 h-full w-full bg-[radial-gradient(rgba(0,0,0,0.1)_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_70%,transparent_100%)] dark:bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
         <div className="z-10 mx-auto flex w-10/12 flex-col gap-6 pt-10 lg:gap-10 lg:pt-16">
           <div className="relative mx-auto flex w-72 items-center justify-center sm:w-80">

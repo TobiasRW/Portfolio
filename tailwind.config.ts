@@ -1,3 +1,4 @@
+import { small } from "motion/react-client";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -9,6 +10,14 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        "3xl": "1792px",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -54,6 +63,7 @@ export default {
       },
       fontFamily: {
         heading: ["Pilcrow", "sans-serif"],
+        body: ["Switzer", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -5,7 +5,7 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
+import AutoScroll from "embla-carousel-auto-scroll";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -65,7 +65,10 @@ const Carousel = React.forwardRef<
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
-      plugins,
+      [
+        AutoScroll({ delay: autoScrollInterval, speed: 0.8 } as any),
+        ...(plugins || []),
+      ], // Add AutoScroll plugin
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
@@ -123,18 +126,18 @@ const Carousel = React.forwardRef<
       };
     }, [api, onSelect]);
 
-    // Auto-scroll effect
-    React.useEffect(() => {
-      if (!api || isPaused) {
-        return;
-      }
+    // Pause auto-scroll on hover
+    const handleMouseEnter = () => {
+      setIsPaused(true);
+      const autoScroll = api?.plugins()?.autoScroll;
+      autoScroll?.stop();
+    };
 
-      const interval = setInterval(() => {
-        api.scrollNext();
-      }, autoScrollInterval);
-
-      return () => clearInterval(interval);
-    }, [api, isPaused, autoScrollInterval]);
+    const handleMouseLeave = () => {
+      setIsPaused(false);
+      const autoScroll = api?.plugins()?.autoScroll;
+      autoScroll?.play();
+    };
 
     return (
       <CarouselContext.Provider
@@ -152,9 +155,9 @@ const Carousel = React.forwardRef<
       >
         <div
           ref={ref}
-          onMouseEnter={() => setIsPaused(true)} // Pause auto-scroll on hover
-          onMouseLeave={() => setIsPaused(false)} // Resume auto-scroll on leave
-          onKeyDownCapture={handleKeyDown}
+          // onMouseEnter={handleMouseEnter} // Pause auto-scroll on hover
+          // onMouseLeave={handleMouseLeave} // Resume auto-scroll on leave
+          // onKeyDownCapture={handleKeyDown}
           className={cn("relative overflow-hidden", className)}
           role="region"
           aria-roledescription="carousel"
