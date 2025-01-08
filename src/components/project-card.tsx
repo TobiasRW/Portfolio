@@ -28,7 +28,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`xs:h-96 xs:w-[350px] group relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg sm:h-96 sm:w-[350px] md:h-80 md:w-72 lg:h-96 lg:w-[350px] 2xl:h-[440px] 2xl:w-[90%] 3xl:h-[550px] ${
+      className={`group relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg xs:h-96 xs:w-[350px] sm:h-96 sm:w-[350px] md:h-80 md:w-72 lg:h-96 lg:w-[350px] 2xl:h-[440px] 2xl:w-[90%] 3xl:h-[550px] ${
         isPhone || isComputer ? "" : "bg-white"
       }`}
       style={isPhone || isComputer ? { backgroundColor: bgColor } : {}}

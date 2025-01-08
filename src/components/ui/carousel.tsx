@@ -19,6 +19,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
+  autoScroll?: boolean;
   autoScrollInterval?: number; // New prop to set auto-scroll interval
 };
 
@@ -55,6 +56,7 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      autoScroll = false, // Default auto-scroll is disabled
       autoScrollInterval = 1000, // Default interval is 1000ms
       ...props
     },
@@ -66,14 +68,18 @@ const Carousel = React.forwardRef<
         axis: orientation === "horizontal" ? "x" : "y",
       },
       [
-        AutoScroll({
-          delay: autoScrollInterval,
-          speed: 1,
-          stopOnMouseEnter: true,
-          stopOnInteraction: false,
-        } as any),
+        ...(autoScroll
+          ? [
+              AutoScroll({
+                delay: autoScrollInterval,
+                speed: 1,
+                stopOnMouseEnter: true,
+                stopOnInteraction: false,
+              } as any),
+            ]
+          : []), // Conditionally include AutoScroll plugin
         ...(plugins || []),
-      ], // Add AutoScroll plugin
+      ],
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
@@ -147,7 +153,7 @@ const Carousel = React.forwardRef<
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
-          className={cn("relative overflow-hidden", className)}
+          className={cn("relative", className)}
           role="region"
           aria-roledescription="carousel"
           {...props}
