@@ -1,7 +1,9 @@
 "use client";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowUpRight, ArrowDown } from "@phosphor-icons/react";
+import Link from "next/link";
+import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
 
 // Animation Variants
 const sideBarVariants = {
@@ -36,6 +38,8 @@ export default function Nav() {
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false); // New state for background color
 
+  const pathname = usePathname(); // Get the current route
+
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -68,12 +72,25 @@ export default function Nav() {
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
-        <a
-          href="mailto:tobiasrw98@gmail.com"
-          className="md:text-s text-xs lg:text-base"
-        >
-          tobiasrw98@gmail.com
-        </a>
+        {pathname === "/" ? (
+          <a
+            href="mailto:tobiasrw98@gmail.com"
+            className="md:text-s text-xs lg:text-base"
+          >
+            tobiasrw98@gmail.com
+          </a>
+        ) : (
+          <Link
+            href="/"
+            className="group flex items-center justify-center gap-2 font-heading lg:text-lg"
+          >
+            <ArrowLeft
+              size={18}
+              className="group-hover:scale-11 cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
+            />{" "}
+            Tilbage
+          </Link>
+        )}
         <nav className="">
           {/* Hamburger Menu */}
           <motion.div
