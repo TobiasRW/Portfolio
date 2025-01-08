@@ -68,7 +68,12 @@ export default function Nav() {
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
-        <p className="md:text-s text-xs lg:text-base">tobiasrw98@gmail.com</p>
+        <a
+          href="mailto:tobiasrw98@gmail.com"
+          className="md:text-s text-xs lg:text-base"
+        >
+          tobiasrw98@gmail.com
+        </a>
         <nav className="">
           {/* Hamburger Menu */}
           <motion.div

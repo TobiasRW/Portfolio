@@ -22,7 +22,6 @@ export default function Projects() {
             title="Book App"
             text="En bog app til læsere til at organisere deres bøger."
             link="/book-buddy"
-            bgColor="#1E1E1E"
           />
           <ProjectCard
             variant="phone"
