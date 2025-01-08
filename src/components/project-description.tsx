@@ -10,7 +10,7 @@ export default function ProjectDescription({
   return (
     <div className="w-full rounded-b-[40px] bg-whitebg pb-10 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       {/* Project Description Section */}
-      <div className="mx-auto flex w-11/12 flex-col gap-6 md:w-10/12">
+      <div className="mx-auto flex w-10/12 flex-col gap-6">
         <h3 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Om projektet
         </h3>

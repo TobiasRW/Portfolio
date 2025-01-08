@@ -5,47 +5,62 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
-export const Feature8 = () => (
-  <div className="relative w-full py-20 lg:py-40">
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 items-end justify-end gap-10 lg:grid-cols-2">
-        <div className="flex flex-col items-start gap-4">
-          <div>
-            <div>Platform</div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h2 className="font-regular text-left text-xl tracking-tighter md:text-3xl lg:max-w-xl lg:text-5xl">
-              This is the start of something new
-            </h2>
-            <p className="max-w-xl text-left text-lg leading-relaxed tracking-tight text-muted-foreground lg:max-w-sm">
-              Managing a small business today is already tough. Avoid further
-              complications by ditching outdated, tedious trade methods. Our
-              goal is to streamline SMB trade, making it easier and faster than
-              ever.
-            </p>
-          </div>
-        </div>
-        <div className="w-full max-w-full px-6">
-          <Carousel opts={{ loop: true }}>
-            <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index}>
-                  <div className="flex aspect-video items-center justify-center rounded-md bg-muted p-6">
-                    <span className="text-sm">
-                      Platform Screenshot {index + 1}
-                    </span>
+type SliderImageProps = {
+  variant?: "default" | "background";
+  bgColor?: string;
+  images: string[];
+};
+
+export default function Slider({
+  variant = "default",
+  images,
+  bgColor = "#2C2C2C",
+}: SliderImageProps) {
+  const isBackground = variant === "background";
+
+  return (
+    <div className="relative mx-auto w-10/12 py-20 lg:py-40">
+      <div className="flex w-full max-w-full flex-col gap-6 px-6">
+        <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
+          Snapshots
+        </h2>
+        <Carousel opts={{ loop: true }}>
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                {isBackground ? (
+                  <div
+                    className="flex aspect-video items-center justify-center overflow-hidden rounded-md"
+                    style={{ backgroundColor: bgColor }}
+                  >
+                    <Image
+                      src={image}
+                      alt="snapshot"
+                      height={200}
+                      width={200}
+                      className="w-[70%]"
+                    />
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
+                ) : (
+                  <div className="flex aspect-video items-center justify-center overflow-hidden rounded-md">
+                    <Image
+                      src={image}
+                      alt="snapshot"
+                      height={200}
+                      width={200}
+                      className="h-full w-full"
+                    />
+                  </div>
+                )}
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </div>
-  </div>
-);
-
-export default Feature8;
+  );
+}
