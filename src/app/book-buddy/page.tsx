@@ -3,8 +3,55 @@ import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
+import Accordion from "@/components/accordion-tech";
+import Footer from "@/components/footer";
 
 export default function Page() {
+  const accordionItems = [
+    {
+      title: "React",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, nibh sit amet dapibus consequat, nibh est cursus sapien, tincidunt bibendum lectus neque eu leo. ",
+      icon: "/icons/react.svg",
+      website: "https://react.dev/",
+    },
+    {
+      title: "Next.js",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, nibh sit amet dapibus consequat, nibh est cursus sapien, tincidunt bibendum lectus neque eu leo. ",
+      icon: "/icons/next-js.svg",
+      website: "https://nextjs.org/docs",
+    },
+    {
+      title: "MySQL",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, nibh sit amet dapibus consequat, nibh est cursus sapien, tincidunt bibendum lectus neque eu leo. ",
+      icon: "/icons/mysql.svg",
+      website: "",
+    },
+    {
+      title: "Motion",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, nibh sit amet dapibus consequat, nibh est cursus sapien, tincidunt bibendum lectus neque eu leo. ",
+      icon: "/icons/framer-motion.svg",
+      website: "https://motion.dev/",
+    },
+    {
+      title: "Tailwind CSS",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, nibh sit amet dapibus consequat, nibh est cursus sapien, tincidunt bibendum lectus neque eu leo. ",
+      icon: "/icons/tailwind.svg",
+      website: "https://tailwindcss.com/",
+    },
+    {
+      title: "JavaScript",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, nibh sit amet dapibus consequat, nibh est cursus sapien, tincidunt bibendum lectus neque eu leo. ",
+      icon: "/icons/javascript.svg",
+      website: "",
+    },
+  ];
+
   return (
     <>
       <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
@@ -32,15 +79,19 @@ export default function Page() {
           "/icons/mysql.svg",
         ]}
       />
-      <Slider
-        variant="background"
-        bgColor="#2c2c2c"
-        images={[
-          "/images/book-pic1.png",
-          "/images/book-pic2.png",
-          "/images/book-pic3.png",
-        ]}
-      />
+      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
+        <Slider
+          variant="background"
+          bgColor="#2c2c2c"
+          images={[
+            "/images/book-pic1.png",
+            "/images/book-pic2.png",
+            "/images/book-pic3.png",
+          ]}
+        />
+        <Accordion items={accordionItems} />
+      </div>
+      <Footer />
     </>
   );
 }

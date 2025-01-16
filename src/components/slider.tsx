@@ -21,8 +21,8 @@ export default function Slider({
   const isBackground = variant === "background";
 
   return (
-    <div className="relative mx-auto w-10/12 py-20 lg:py-40">
-      <div className="flex w-full max-w-full flex-col gap-6 px-6">
+    <div className="relative mx-auto w-10/12 py-20 lg:py-40 xl:py-0">
+      <div className="flex w-full max-w-full flex-col gap-6 px-6 sm:px-0">
         <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Snapshots
         </h2>
@@ -32,7 +32,7 @@ export default function Slider({
               <CarouselItem key={index}>
                 {isBackground ? (
                   <div
-                    className="flex aspect-video items-center justify-center overflow-hidden rounded-md"
+                    className="flex aspect-video items-center justify-center overflow-hidden rounded-md xl:aspect-[4/3]"
                     style={{ backgroundColor: bgColor }}
                   >
                     <Image
@@ -40,7 +40,7 @@ export default function Slider({
                       alt="snapshot"
                       height={200}
                       width={200}
-                      className="w-[70%]"
+                      className="w-[70%] xl:w-[90%]"
                     />
                   </div>
                 ) : (

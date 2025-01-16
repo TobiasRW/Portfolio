@@ -72,7 +72,7 @@ export const Skills = () => {
                     className="basis-1/4 md:basis-1/5 lg:basis-1/6 lg:px-4 2xl:basis-[14%]"
                     key={index}
                   >
-                    <div className="group relative flex aspect-square items-center justify-center rounded-lg bg-[#EBEBEB] p-4 sm:p-6 dark:bg-[#2C2C2C]">
+                    <div className="group relative flex aspect-square items-center justify-center rounded-lg bg-[#EBEBEB] p-4 transition-all duration-300 hover:scale-95 sm:p-6 dark:bg-[#2C2C2C]">
                       <img
                         src={logo.icon}
                         alt={logo.label}
