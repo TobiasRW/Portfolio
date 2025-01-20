@@ -2,7 +2,7 @@ import ProjectCard from "./project-card";
 
 export default function Projects() {
   return (
-    <>
+    <section id="projects">
       <div className="flex flex-col gap-8 pb-20 pt-10 md:pb-24 md:pt-14 lg:gap-14 lg:pb-28 xl:pb-32 xl:pt-20">
         <h2 className="text-center font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Projekter
@@ -42,6 +42,6 @@ export default function Projects() {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 }

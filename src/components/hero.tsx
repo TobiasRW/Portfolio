@@ -16,6 +16,14 @@ export default function Hero() {
     animate(rotate, -12, { type: "spring", stiffness: 300, damping: 20 });
   };
 
+  // Utility function to scroll to a given element ID
+  const scrollToSection = (id: string) => {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
       <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:rounded-b-[70px]">
@@ -47,7 +55,11 @@ export default function Hero() {
             Passioneret webudvikler med speciale i frontend-udvikling
           </h1>
           <div className="flex justify-center gap-4 lg:gap-6 xl:gap-8">
-            <Button variant="default" className="group">
+            <Button
+              variant="default"
+              className="group"
+              onClick={() => scrollToSection("projects")}
+            >
               Projekter
               <ArrowDown
                 size={32}
@@ -55,7 +67,11 @@ export default function Hero() {
                 className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
               />
             </Button>
-            <Button variant="default" className="group">
+            <Button
+              variant="default"
+              className="group"
+              onClick={() => scrollToSection("about")}
+            >
               Om mig
               <ArrowDown
                 size={32}

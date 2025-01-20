@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <>
+    <section id="about">
       <div className="mx-auto flex w-10/12 flex-col gap-8">
         <h2 className="text-center font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Hvem er jeg?
@@ -51,6 +51,6 @@ export default function About() {
           </a>
         </div>
       </div>
-    </>
+    </section>
   );
 }
