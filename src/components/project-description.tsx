@@ -1,12 +1,33 @@
 type ProjectDescriptionProps = {
   text: string;
   icons: string[];
+  highlightWords?: string[]; // Optional
 };
 
 export default function ProjectDescription({
   text,
   icons,
+  highlightWords = [],
 }: ProjectDescriptionProps) {
+  const highlightText = (text: string) => {
+    //  Split the text into words
+    const words = text.split(" ");
+
+    return words.map((word, index) => {
+      // Remove special characters from the word
+      const cleanWord = word.replace(/[^a-zA-Z0-9æøåÆØÅ]/g, "");
+      const isHighlighted = highlightWords.includes(cleanWord);
+
+      return (
+        <span key={index} className={isHighlighted ? "font-normal italic" : ""}>
+          {word}
+          {index < words.length - 1 && " "}{" "}
+          {/* Add space if not the last word */}
+        </span>
+      );
+    });
+  };
+
   return (
     <div className="w-full rounded-b-[40px] bg-whitebg pb-10 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       {/* Project Description Section */}
@@ -18,7 +39,7 @@ export default function ProjectDescription({
           <p className="font-body text-sm font-light md:text-base">
             {text.split("\n").map((line, index) => (
               <span key={index}>
-                {line}
+                {highlightText(line)}
                 <br />
               </span>
             ))}
@@ -27,7 +48,7 @@ export default function ProjectDescription({
           <hr className="h-[1px] border-none bg-foreground lg:hidden" />
 
           {/* Icons Section */}
-          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:p-6 2xl:w-2/6 lg:dark:bg-background">
+          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:p-6 3xl:w-2/6 lg:dark:bg-background">
             {icons.map((icon, index) => (
               <div
                 key={index}
