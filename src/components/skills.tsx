@@ -63,7 +63,7 @@ export const Skills = () => {
               setApi={setApi}
               opts={{ loop: true }}
               autoScroll={true}
-              autoScrollInterval={1000} // Adjust this value for faster/slower scrolling
+              speed={1} // Adjust this value for faster/slower scrolling
               className="w-full"
             >
               <CarouselContent>

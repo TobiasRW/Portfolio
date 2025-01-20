@@ -19,6 +19,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
+  speed?: number;
   autoScroll?: boolean;
   autoScrollInterval?: number; // New prop to set auto-scroll interval
 };
@@ -56,6 +57,7 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      speed = 1, // Default speed is 1
       autoScroll = false, // Default auto-scroll is disabled
       autoScrollInterval = 1000, // Default interval is 1000ms
       ...props
@@ -72,8 +74,8 @@ const Carousel = React.forwardRef<
           ? [
               AutoScroll({
                 delay: autoScrollInterval,
-                speed: 1,
-                stopOnMouseEnter: true,
+                speed: speed,
+                stopOnMouseEnter: false,
                 stopOnInteraction: false,
               } as any),
             ]
