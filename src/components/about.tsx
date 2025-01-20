@@ -31,7 +31,7 @@ export default function About() {
           det lyder som noget for jer, så tøv ikke med at kontakte mig – jeg
           glæder mig til at høre fra jer!
         </p>
-        <div className="flex flex-col gap-4 font-body text-sm font-light text-[#2A4B9A] lg:text-base 2xl:text-lg dark:text-white">
+        <div className="flex flex-col items-start gap-4 font-body text-sm font-light text-[#2A4B9A] lg:text-base 2xl:text-lg dark:text-white">
           <a
             href="mailto:tobiasrw98@gmail.com"
             target="_blank"
