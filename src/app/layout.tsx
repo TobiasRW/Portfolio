@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/navigation";
+import ToTop from "@/components/to-top";
 
 export const metadata: Metadata = {
   title: "Tobias Wolmar",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Navigation />
+        <ToTop />
         {children}
       </body>
     </html>
