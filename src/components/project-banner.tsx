@@ -75,20 +75,20 @@ export default function ProjectBanner({
               <a
                 href={github}
                 target="_blank"
-                className="flex items-center justify-center rounded-full bg-white p-3 3xl:p-4"
+                className="flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
               >
                 <img
                   src="/icons/github.svg"
                   alt="Github logo"
-                  className="h-4 w-4 xl:h-5 xl:w-5"
+                  className="h-4 w-4 3xl:h-5 3xl:w-5"
                 />
               </a>
               <a
                 href={website}
                 target="_blank"
-                className="flex items-center justify-center rounded-full bg-white p-3 3xl:p-4"
+                className="group flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
               >
-                <ArrowUpRight className="h-4 w-4 xl:h-5 xl:w-5 dark:text-black" />
+                <ArrowUpRight className="h-4 w-4 3xl:h-5 3xl:w-5 dark:text-black" />
               </a>
             </div>
           </div>

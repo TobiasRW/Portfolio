@@ -33,7 +33,7 @@ export default function toTop() {
         }}
         transition={{ duration: 0.3 }}
       >
-        <ArrowUp className="h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1 xl:h-5 xl:w-5" />
+        <ArrowUp className="h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1 3xl:h-5 3xl:w-5" />
       </motion.button>
     </>
   );

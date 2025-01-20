@@ -56,8 +56,8 @@ export default function ProjectCard({
             <h3 className="font-heading text-3xl font-medium text-white lg:text-4xl 3xl:text-5xl">
               {title}
             </h3>
-            <div className="ml-auto rounded-full bg-white p-2 lg:p-3 3xl:p-4">
-              <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 xl:h-5 xl:w-5 dark:text-black" />
+            <div className="ml-auto rounded-full bg-white p-2 transition-all duration-300 group-hover:scale-90 lg:p-3 3xl:p-4">
+              <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 3xl:h-5 3xl:w-5 dark:text-black" />
             </div>
           </div>
           <p className="w-10/12 font-body text-xs font-light text-white lg:text-sm 2xl:text-base 3xl:text-lg">

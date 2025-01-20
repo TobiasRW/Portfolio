@@ -1,7 +1,6 @@
 import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
-import Footer from "@/components/footer";
 import Slider from "@/components/slider";
 
 export default function Page() {
@@ -89,7 +88,6 @@ export default function Page() {
         />
         <Accordion items={accordionItems} />
       </div>
-      <Footer />
     </>
   );
 }
