@@ -32,24 +32,23 @@ export default function Slider({
               <CarouselItem key={index}>
                 {isBackground ? (
                   <div
-                    className="flex aspect-video items-center justify-center overflow-hidden rounded-md xl:aspect-[4/3]"
+                    className="relative flex aspect-video items-center justify-center overflow-hidden rounded-md xl:aspect-[4/3]"
                     style={{ backgroundColor: bgColor }}
                   >
                     <Image
                       src={image}
                       alt="snapshot"
-                      height={200}
-                      width={200}
-                      className="w-[70%] xl:w-[90%]"
+                      fill
+                      style={{ objectFit: "contain" }}
+                      className=""
                     />
                   </div>
                 ) : (
-                  <div className="flex aspect-video items-center justify-center overflow-hidden rounded-md">
+                  <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-md">
                     <Image
                       src={image}
                       alt="snapshot"
-                      height={200}
-                      width={200}
+                      fill
                       className="h-full w-full"
                     />
                   </div>

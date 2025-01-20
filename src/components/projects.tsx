@@ -28,7 +28,7 @@ export default function Projects() {
             imageSrc="/images/lendr-banner.webp"
             title="Lendr"
             text="En app til udlejning af kufferter og rejsetasker."
-            link="/lender"
+            link="/lendr"
             bgColor="#5BAD86"
           />
 

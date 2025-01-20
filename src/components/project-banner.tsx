@@ -3,7 +3,7 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 // Define the type for the component's props
 type ProjectBannerProps = {
-  variant?: "default" | "phone"; // Variants for different styles
+  variant?: "default" | "phone" | "pc"; // Variants for different styles
   imageSrc: string; // Image source
   title: string; // Project title
   website: string; // Project link
@@ -21,6 +21,7 @@ export default function ProjectBanner({
   bgColor = "#2C2C2C", // Default background color
 }: ProjectBannerProps) {
   const isPhone = variant === "phone";
+  const isPc = variant === "pc";
 
   return (
     <div className="z-10 mx-auto flex w-10/12 flex-col gap-4 md:w-4/6 xl:w-[60%] 2xl:w-[55%]">
@@ -29,12 +30,22 @@ export default function ProjectBanner({
       >
         <div
           className={`relative h-full w-full overflow-hidden rounded-3xl shadow-xl ${
-            isPhone ? "bg-[#2C2C2C]" : ""
+            isPhone || isPc ? "bg-[#2C2C2C]" : ""
           }`}
-          style={{ backgroundColor: isPhone ? bgColor : "" }}
+          style={{ backgroundColor: isPhone || isPc ? bgColor : "" }}
         >
           {isPhone ? (
             <div className="absolute bottom-[-35%] left-[5%] h-full w-full rotate-[-10deg] scale-[1.1] xs:scale-75 sm:bottom-[-30%] sm:scale-75 md:bottom-[-35%] md:scale-[.8] lg:bottom-[-30%] lg:left-0 lg:scale-100 xl:-left-10 xl:bottom-[-25%] xl:scale-90">
+              <Image
+                src={imageSrc}
+                alt={`${title} Banner`}
+                fill
+                style={{ objectFit: "cover" }}
+                className="overflow-visible"
+              />
+            </div>
+          ) : isPc ? (
+            <div className="absolute bottom-[-30%] left-[-15%] h-full w-full scale-[1.3] xs:left-[-10%] xs:rotate-[-5deg] xs:scale-[1.2] sm:left-[-20%] sm:scale-[1.1] md:bottom-[-35%] md:scale-[1.2] lg:bottom-[-35%] lg:left-[-25%] lg:scale-[1.1] xl:bottom-[-25%]">
               <Image
                 src={imageSrc}
                 alt={`${title} Banner`}

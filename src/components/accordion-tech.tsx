@@ -10,7 +10,7 @@ import Image from "next/image";
 type AccordionItemProps = {
   title: string;
   content: string;
-  website: string;
+  website?: string;
   icon: string;
 };
 
@@ -47,14 +47,16 @@ export default function AccordionTech({ items }: AccordionTechProps) {
                     className="h-6 w-6 sm:h-7 sm:w-7 xl:h-8 xl:w-8"
                     loading="lazy"
                   />
-                  <a
-                    href={item.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center rounded-full bg-[#EDECEC] p-2 transition-all duration-200 hover:bg-gray-200"
-                  >
-                    <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 xl:h-3 xl:w-3 dark:text-black" />
-                  </a>
+                  {item.website && (
+                    <a
+                      href={item.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center rounded-full bg-[#EDECEC] p-2 transition-all duration-200 hover:bg-gray-200"
+                    >
+                      <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 xl:h-3 xl:w-3 dark:text-black" />
+                    </a>
+                  )}
                 </div>
               </div>
             </AccordionContent>

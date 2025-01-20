@@ -27,7 +27,7 @@ export default function ProjectDescription({
           <hr className="h-[1px] border-none bg-foreground lg:hidden" />
 
           {/* Icons Section */}
-          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:p-6 lg:dark:bg-background">
+          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:p-6 2xl:w-2/6 lg:dark:bg-background">
             {icons.map((icon, index) => (
               <div
                 key={index}
