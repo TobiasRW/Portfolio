@@ -8,23 +8,23 @@
   <style>
     /* Background path only has a fill, no stroke */
     .bg {
-      fill: white;
+      fill: #000;
       stroke: none;
     }
 
     /* The lines only have a stroke, no fill */
     .lines {
       fill: none;
-      stroke: #000;
+      stroke: #f5f5f5;
     }
 
     /* Dark mode overrides */
     @media (prefers-color-scheme: dark) {
       .bg {
-        fill: #000;
+        fill: #f5f5f5;
       }
       .lines {
-        stroke: #f5f5f5;
+        stroke: #000;
       }
     }
   </style>

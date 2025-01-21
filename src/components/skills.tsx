@@ -30,10 +30,14 @@ const logos = [
     label: "React",
     url: "https://react.dev/",
   },
-  { icon: "/icons/mysql.svg", label: "MySQL" },
+  {
+    icon: "/icons/mysql.svg",
+    label: "MySQL",
+    url: "https://dev.mysql.com/doc/",
+  },
   { icon: "/icons/javascript.svg", label: "JavaScript" },
   {
-    icon: "/icons/framer-motion.svg",
+    icon: "/icons/motion.svg",
     label: "Motion",
     url: "https://motion.dev/",
   },

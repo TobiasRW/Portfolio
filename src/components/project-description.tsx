@@ -10,19 +10,15 @@ export default function ProjectDescription({
   highlightWords = [],
 }: ProjectDescriptionProps) {
   const highlightText = (text: string) => {
-    //  Split the text into words
-    const words = text.split(" ");
-
-    return words.map((word, index) => {
-      // Remove special characters from the word
-      const cleanWord = word.replace(/[^a-zA-Z0-9æøåÆØÅ]/g, "");
-      const isHighlighted = highlightWords.includes(cleanWord);
+    const lowerHighlightWords = highlightWords.map((hw) => hw.toLowerCase()); // Normaliser
+    return text.split(" ").map((word, index) => {
+      const cleanWord = word.replace(/[,!?]/g, "").toLowerCase(); // Fjern tegnsætning og normaliser
+      const isHighlighted = lowerHighlightWords.includes(cleanWord);
 
       return (
         <span key={index} className={isHighlighted ? "font-normal italic" : ""}>
           {word}
-          {index < words.length - 1 && " "}{" "}
-          {/* Add space if not the last word */}
+          {index < text.split(" ").length - 1 && " "} {/* Tilføj mellemrum */}
         </span>
       );
     });
@@ -36,7 +32,7 @@ export default function ProjectDescription({
           Om projektet
         </h3>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between xl:gap-20">
-          <p className="font-body text-sm font-light md:text-base">
+          <p className="font-body text-sm font-light leading-normal md:text-base">
             {text.split("\n").map((line, index) => (
               <span key={index}>
                 {highlightText(line)}
