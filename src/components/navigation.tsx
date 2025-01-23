@@ -174,21 +174,26 @@ export default function Nav() {
                 <p>LinkedIn</p>
                 <ArrowUpRight size={28} />
               </a>
-              <hr className="h-1 w-10/12 rounded-full border-none bg-gradient-to-r from-[#1a1a1a] from-30% to-[#DADEE9] lg:hidden dark:from-[#DADEE9] dark:to-[#1a1a1a]" />
-              <li
-                className="flex items-center gap-2"
-                onClick={() => scrollToSection("projects")}
-              >
-                <p>Projekter</p>
-                <ArrowDown size={28} />
-              </li>
-              <li
-                className="flex items-center gap-2"
-                onClick={() => scrollToSection("about")}
-              >
-                <p>Om mig</p>
-                <ArrowDown size={28} />
-              </li>
+              {/* Conditionally render only on homepage */}
+              {pathname === "/" && (
+                <>
+                  <hr className="h-1 w-10/12 rounded-full border-none bg-gradient-to-r from-[#1a1a1a] from-30% to-[#DADEE9] lg:hidden dark:from-[#DADEE9] dark:to-[#1a1a1a]" />
+                  <li
+                    className="flex items-center gap-2"
+                    onClick={() => scrollToSection("projects")}
+                  >
+                    <p>Projekter</p>
+                    <ArrowDown size={28} />
+                  </li>
+                  <li
+                    className="flex items-center gap-2"
+                    onClick={() => scrollToSection("about")}
+                  >
+                    <p>Om mig</p>
+                    <ArrowDown size={28} />
+                  </li>
+                </>
+              )}
             </ul>
           </motion.div>
         </nav>
