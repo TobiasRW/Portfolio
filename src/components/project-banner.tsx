@@ -26,10 +26,10 @@ export default function ProjectBanner({
   return (
     <div className="z-10 mx-auto flex w-10/12 flex-col gap-4 md:w-4/6 xl:w-[60%] 2xl:w-[55%]">
       <div
-        className={`relative flex h-52 flex-col xs:h-56 sm:h-64 lg:h-96 xl:h-[420px] 2xl:h-[470px]`}
+        className={`relative flex h-52 flex-col overflow-hidden xs:h-56 sm:h-64 lg:h-96 xl:h-[420px] 2xl:h-[470px]`}
       >
         <div
-          className={`relative h-full w-full overflow-hidden rounded-3xl shadow-xl ${
+          className={`relative h-full w-full rounded-3xl shadow-xl ${
             isPhone || isPc ? "bg-[#2C2C2C]" : ""
           }`}
           style={{ backgroundColor: isPhone || isPc ? bgColor : "" }}
