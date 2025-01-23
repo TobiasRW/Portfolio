@@ -2,7 +2,6 @@ import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
 import Slider from "@/components/slider";
-import { title } from "process";
 
 export default function Page() {
   const accordionItems = [

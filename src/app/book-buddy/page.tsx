@@ -1,6 +1,4 @@
 import Slider from "@/components/slider";
-import Image from "next/image";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
