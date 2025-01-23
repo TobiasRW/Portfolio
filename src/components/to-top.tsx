@@ -3,7 +3,7 @@ import { ArrowUp } from "@phosphor-icons/react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useState } from "react";
 
-export default function toTop() {
+export default function ToTop() {
   const [hidden, setHidden] = useState<boolean>(false);
 
   const { scrollY } = useScroll();

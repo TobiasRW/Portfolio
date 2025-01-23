@@ -5,7 +5,9 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import AutoScroll from "embla-carousel-auto-scroll";
+import AutoScroll, {
+  type AutoScrollOptionsType,
+} from "embla-carousel-auto-scroll";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -77,7 +79,7 @@ const Carousel = React.forwardRef<
                 speed: speed,
                 stopOnMouseEnter: false,
                 stopOnInteraction: false,
-              } as any),
+              } as AutoScrollOptionsType),
             ]
           : []), // Conditionally include AutoScroll plugin
         ...(plugins || []),
