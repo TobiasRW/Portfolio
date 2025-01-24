@@ -8,80 +8,31 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { ArrowUpRight } from "@phosphor-icons/react";
-
-type Logo = {
-  icon: string;
-  dark?: string;
-  label: string;
-  url?: string;
-};
-
-const logos: Logo[] = [
-  {
-    icon: "/icons/tailwind.svg",
-    label: "Tailwind CSS",
-    url: "https://tailwindcss.com/",
-  },
-  {
-    icon: "/icons/typescript.svg",
-    label: "TypeScript",
-    url: "https://www.typescriptlang.org/",
-  },
-  {
-    icon: "/icons/next-js.svg",
-    dark: "/icons/next-js-dark.svg",
-    label: "Next.js",
-    url: "https://nextjs.org/docs",
-  },
-  {
-    icon: "/icons/react.svg",
-    label: "React",
-    url: "https://react.dev/",
-  },
-  {
-    icon: "/icons/mysql.svg",
-    dark: "/icons/mysql-dark.svg",
-    label: "MySQL",
-    url: "https://dev.mysql.com/doc/",
-  },
-  { icon: "/icons/javascript.svg", label: "JavaScript" },
-  {
-    icon: "/icons/motion.svg",
-    label: "Motion",
-    url: "https://motion.dev/",
-  },
-  { icon: "/icons/php.svg", label: "PHP", url: "https://www.php.net/docs.php" },
-  {
-    icon: "/icons/shadcn.svg",
-    dark: "/icons/shadcn-dark.svg",
-    label: "Shadcn",
-    url: "https://ui.shadcn.com/",
-  },
-];
-
-const getLogo = (logo: Logo, isDarkMode: boolean): string => {
-  return isDarkMode && logo.dark ? logo.dark : logo.icon;
-};
+import useDarkMode from "@/hooks/useDarkMode";
+import { logos, getLogo } from "@/data/logos";
 
 export const Skills = () => {
   const [api, setApi] = useState<CarouselApi>();
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-    const updateLogo = () => setIsDarkMode(matchMedia.matches);
-
-    updateLogo();
-    matchMedia.addEventListener("change", updateLogo);
-
-    return () => {
-      matchMedia.removeEventListener("change", updateLogo);
-    };
-  }, []);
+  const isDarkMode = useDarkMode();
 
   useEffect(() => {
     if (!api) return;
   }, [api]);
+
+  const skills = logos.filter((logo) =>
+    [
+      "Tailwind CSS",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "MySQL",
+      "JavaScript",
+      "Motion",
+      "PHP",
+      "Shadcn",
+      "GSAP",
+    ].includes(logo.label),
+  );
 
   return (
     <div className="w-full rounded-b-[40px] bg-whitebg pb-20 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
@@ -102,7 +53,7 @@ export const Skills = () => {
               className="w-full"
             >
               <CarouselContent>
-                {logos.map((logo, index) => (
+                {skills.map((logo, index) => (
                   <CarouselItem
                     className="basis-1/4 md:basis-1/5 lg:basis-1/6 lg:px-4 2xl:basis-[14%]"
                     key={index}

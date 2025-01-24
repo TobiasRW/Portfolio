@@ -6,22 +6,19 @@ import Slider from "@/components/slider";
 export default function Page() {
   const accordionItems = [
     {
-      title: "HTML",
       content:
         "HTML er det primære sprog, der bruges til at opbygge websider og applikationer. Jeg har brugt det til at strukturere indholdet og opbygge layoutet af websitet.",
-      icon: "/icons/html.svg",
+      iconLabel: "HTML",
     },
     {
-      title: "CSS",
       content:
         "CSS er et sprog, der bruges til at style og designe websider. Jeg har brugt det til at tilføje farver, skrifttyper, layout og animationer til websitet.",
-      icon: "/icons/css.svg",
+      iconLabel: "CSS",
     },
     {
-      title: "JavaScript",
       content:
         "JavaScript er et programmeringssprog, der bruges til at tilføje interaktivitet og dynamik til websider. Jeg har brugt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende.",
-      icon: "/icons/javascript.svg",
+      iconLabel: "JavaScript",
     },
   ];
   return (
@@ -44,7 +41,7 @@ export default function Page() {
         Jeg har brugt HTML til at opbygge strukturen af siden, CSS til at style elementerne og JavaScript til at tilføje interaktivitet og animationer. \n 
         Siden viser også den oprindelige After Effects animation som siden er baseret på.
         `}
-        icons={["/icons/html.svg", "/icons/css.svg", "/icons/javascript.svg"]}
+        iconLabels={["HTML", "CSS", "JavaScript"]}
         highlightWords={["HTML", "CSS", "JavaScript", "After", "Effects"]}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">

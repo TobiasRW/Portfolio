@@ -6,45 +6,39 @@ import Accordion from "@/components/accordion-tech";
 export default function Page() {
   const accordionItems = [
     {
-      title: "React",
       content:
         "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
-      icon: "/icons/react.svg",
+      iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      title: "Next.js",
       content:
         "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. Det understøtter server-side rendering (SSR), hvilket optimerer ydelsen og brugeroplevelsen. I dette projekt har jeg brugt Next.js til at skabe en applikation, hvor brugerne kan søge efter bøger og gemme dem til senere brug.",
-      icon: "/icons/next-js.svg",
+      iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      title: "MySQL",
       content:
         "Jeg har brugt mySQL til at oprette en database, der indeholder information omkring brugerne og de bøger, de har gemt. Databasen er designet til effektivt at håndtere dataen på en sikker og skalerbar måde, så der ikke opstår fejl eller tab af data.",
-      icon: "/icons/mysql.svg",
+      iconLabel: "MySQL",
       website: "https://dev.mysql.com/doc/",
     },
     {
-      title: "Motion",
       content:
         "Motion er et animationsbibliotek til JavaScript og React, som gør det super nemt at skabe flotte og fængende animationer. I dette projekt har jeg brugt Motion til at tilføje animationer til kanpper og modal vinduer, hvilket har gjort websitet mere levende og interaktivt.",
-      icon: "/icons/motion.svg",
+      iconLabel: "Motion",
       website: "https://motion.dev/",
     },
     {
-      title: "Tailwind CSS",
       content:
         "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå en ensartet og moderne design.",
-      icon: "/icons/tailwind.svg",
+      iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      title: "JavaScript",
       content:
         "JavaScript er brugt gennem React til at tilføje interaktivitet og dynamik til websitet. Jeg har anvendt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende og intuitiv.",
-      icon: "/icons/javascript.svg",
+      iconLabel: "JavaScript",
       website: "",
     },
   ];
@@ -69,13 +63,13 @@ export default function Page() {
           For at kunne søge efter bøger og hente information om dem, bruger appen Google Books API, som har et kæmpe bibliotek af bøger, til at finde bøger og information om dem. \n 
           Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til knapper og modal vinduer, hvilket har gjort appen mere levende og interaktiv. 
           `}
-        icons={[
-          "/icons/react.svg",
-          "/icons/next-js.svg",
-          "/icons/tailwind.svg",
-          "/icons/motion.svg",
-          "/icons/javascript.svg",
-          "/icons/mysql.svg",
+        iconLabels={[
+          "React",
+          "Next.js",
+          "MySQL",
+          "Motion",
+          "Tailwind CSS",
+          "JavaScript",
         ]}
         highlightWords={[
           "React",

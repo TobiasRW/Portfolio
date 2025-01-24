@@ -1,14 +1,21 @@
+"use client";
+
+import { getLogoByLabel } from "@/data/logos";
+import useDarkMode from "@/hooks/useDarkMode";
+
 type ProjectDescriptionProps = {
   text: string;
-  icons: string[];
+  iconLabels: string[];
   highlightWords?: string[]; // Optional
 };
 
 export default function ProjectDescription({
   text,
-  icons,
+  iconLabels,
   highlightWords = [],
 }: ProjectDescriptionProps) {
+  const isDarkMode = useDarkMode();
+
   const highlightText = (text: string) => {
     const lowerHighlightWords = highlightWords.map((hw) => hw.toLowerCase()); // Normaliser
     return text.split(" ").map((word, index) => {
@@ -45,13 +52,13 @@ export default function ProjectDescription({
 
           {/* Icons Section */}
           <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:p-6 3xl:w-2/6 lg:dark:bg-background">
-            {icons.map((icon, index) => (
+            {iconLabels.map((icon, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center gap-2 rounded-full bg-[#EDECEC] p-4 lg:bg-whitebg dark:bg-[#2C2C2C] lg:dark:bg-[#1A1A1A]"
               >
                 <img
-                  src={icon}
+                  src={getLogoByLabel(icon, isDarkMode)}
                   alt={`icon-${index}`}
                   className="h-6 w-6 xl:h-8 xl:w-8"
                 />

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -6,12 +8,13 @@ import {
 } from "@/components/ui/accordion";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { getLogoByLabel } from "@/data/logos";
+import useDarkMode from "@/hooks/useDarkMode";
 
 type AccordionItemProps = {
-  title: string;
   content: string;
   website?: string;
-  icon: string;
+  iconLabel: string; // Reference to the label in the logos.ts file
 };
 
 type AccordionTechProps = {
@@ -19,6 +22,8 @@ type AccordionTechProps = {
 };
 
 export default function AccordionTech({ items }: AccordionTechProps) {
+  const isDarkMode = useDarkMode();
+
   return (
     <div className="mx-auto flex w-10/12 flex-col gap-6 px-6 sm:px-0 xl:w-full">
       <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
@@ -34,13 +39,13 @@ export default function AccordionTech({ items }: AccordionTechProps) {
             key={`accordion-item-${index}`}
             value={`item-${index + 1}`}
           >
-            <AccordionTrigger>{item.title}</AccordionTrigger>
+            <AccordionTrigger>{item.iconLabel}</AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-col gap-4 md:gap-6">
                 {item.content}
                 <div className="flex items-center gap-4">
                   <Image
-                    src={item.icon}
+                    src={getLogoByLabel(item.iconLabel, isDarkMode)}
                     alt={`icon-${index}`}
                     width={24}
                     height={24}
