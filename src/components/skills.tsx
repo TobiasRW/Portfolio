@@ -9,7 +9,14 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
-const logos = [
+type Logo = {
+  icon: string;
+  dark?: string;
+  label: string;
+  url?: string;
+};
+
+const logos: Logo[] = [
   {
     icon: "/icons/tailwind.svg",
     label: "Tailwind CSS",
@@ -22,6 +29,7 @@ const logos = [
   },
   {
     icon: "/icons/next-js.svg",
+    dark: "/icons/next-js-dark.svg",
     label: "Next.js",
     url: "https://nextjs.org/docs",
   },
@@ -32,6 +40,7 @@ const logos = [
   },
   {
     icon: "/icons/mysql.svg",
+    dark: "/icons/mysql-dark.svg",
     label: "MySQL",
     url: "https://dev.mysql.com/doc/",
   },
@@ -42,11 +51,33 @@ const logos = [
     url: "https://motion.dev/",
   },
   { icon: "/icons/php.svg", label: "PHP", url: "https://www.php.net/docs.php" },
-  { icon: "/icons/shadcn.svg", label: "Shadcn", url: "https://ui.shadcn.com/" },
+  {
+    icon: "/icons/shadcn.svg",
+    dark: "/icons/shadcn-dark.svg",
+    label: "Shadcn",
+    url: "https://ui.shadcn.com/",
+  },
 ];
+
+const getLogo = (logo: Logo, isDarkMode: boolean): string => {
+  return isDarkMode && logo.dark ? logo.dark : logo.icon;
+};
 
 export const Skills = () => {
   const [api, setApi] = useState<CarouselApi>();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    const updateLogo = () => setIsDarkMode(matchMedia.matches);
+
+    updateLogo();
+    matchMedia.addEventListener("change", updateLogo);
+
+    return () => {
+      matchMedia.removeEventListener("change", updateLogo);
+    };
+  }, []);
 
   useEffect(() => {
     if (!api) return;
@@ -78,7 +109,7 @@ export const Skills = () => {
                   >
                     <div className="group relative flex aspect-square items-center justify-center rounded-lg bg-[#EBEBEB] p-4 transition-all duration-300 hover:scale-95 sm:p-6 dark:bg-[#2C2C2C]">
                       <img
-                        src={logo.icon}
+                        src={getLogo(logo, isDarkMode)}
                         alt={logo.label}
                         className="h-4/6 w-4/6 group-hover:hidden sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
                       />

@@ -30,7 +30,7 @@ export default function Page() {
       title: "Motion",
       content:
         "Motion gør det supernemt at lave fede animationer i React. Jeg har brugt det til at skabe dynamiske elementer og animationer, der gør websitet mere levende og engagerende. Herunder bl.a. knapper og andre interaktive elementer.",
-      icon: "/icons/framer-motion.svg",
+      icon: "/icons/motion.svg",
       website: "https://motion.dev/",
     },
     {
