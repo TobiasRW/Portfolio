@@ -38,7 +38,7 @@ export default function ProjectDescription({
         <h3 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Om projektet
         </h3>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between xl:gap-20">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between 2xl:gap-20">
           <p className="font-body text-sm font-light leading-normal md:text-base">
             {text.split("\n").map((line, index) => (
               <span key={index}>
@@ -51,7 +51,7 @@ export default function ProjectDescription({
           <hr className="h-[1px] border-none bg-foreground lg:hidden" />
 
           {/* Icons Section */}
-          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:p-6 3xl:w-2/6 lg:dark:bg-background">
+          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:w-5/6 xl:p-6 2xl:w-4/6 3xl:w-2/6 lg:dark:bg-background">
             {iconLabels.map((icon, index) => (
               <div
                 key={index}
@@ -60,7 +60,7 @@ export default function ProjectDescription({
                 <img
                   src={getLogoByLabel(icon, isDarkMode)}
                   alt={`icon-${index}`}
-                  className="h-6 w-6 xl:h-8 xl:w-8"
+                  className="h-6 w-6 2xl:h-8 2xl:w-8"
                 />
               </div>
             ))}

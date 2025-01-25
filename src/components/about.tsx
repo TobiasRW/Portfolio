@@ -14,9 +14,9 @@ export default function About() {
           videre på webudvikling som en top-up-uddannelse.
           <br />
           <br />
-          Jeg elsker at fordybe mig i ting - uanset om det er ny fantasy verden,
-          træning i fitnesscenteret, eller et spændende kodeprojekt! Jeg har
-          altid været en problemløser af natur, lige fra matematikopgaver i
+          Jeg elsker at fordybe mig i ting - uanset om det er en ny fantasy
+          verden, træning i fitnesscenteret, eller et spændende kodeprojekt! Jeg
+          har altid været en problemløser af natur, lige fra matematikopgaver i
           folkeskolen til nu at finde løsninger som webudvikler.
           <br />
           <br />
