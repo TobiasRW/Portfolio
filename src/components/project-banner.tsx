@@ -29,19 +29,23 @@ export default function ProjectBanner({
         className={`relative flex h-52 flex-col xs:h-56 sm:h-64 lg:h-96 xl:h-[420px] 2xl:h-[470px]`}
       >
         <div
-          className={`relative h-full w-full overflow-hidden rounded-3xl shadow-xl ${
+          className={`relative h-full w-full shadow-xl ${
             isPhone || isPc ? "bg-[#2C2C2C]" : ""
           }`}
-          style={{ backgroundColor: isPhone || isPc ? bgColor : "" }}
+          style={{
+            backgroundColor: isPhone || isPc ? bgColor : "",
+            borderRadius: "1rem", // fallback radius
+            clipPath: "inset(0 round 1rem)", // actual clipping
+          }}
         >
           {isPhone ? (
-            <div className="mt-16 h-full w-full scale-[1.1] xs:scale-[0.8] sm:mt-20 sm:scale-75 lg:-ml-10 xl:mt-28 xl:scale-[.9] 2xl:scale-[.8]">
+            <div className="">
               <Image
                 src={imageSrc}
                 alt={`${title} Banner`}
                 fill
-                style={{ objectFit: "cover" }}
-                className="overflow-visible"
+                style={{ objectFit: "contain" }}
+                className="mt-14 -rotate-[10deg] scale-125 xs:scale-150 sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24"
               />
             </div>
           ) : isPc ? (
