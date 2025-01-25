@@ -20,8 +20,8 @@ export default function About() {
           folkeskolen til nu at finde løsninger som webudvikler.
           <br />
           <br />
-          Med mit fokus inden for frontend-udvikling sætter pris på detaljen -
-          især når det kommer til interaktivitet og design. Jeg er altid
+          Med mit fokus inden for frontend-udvikling sætter jeg pris på detaljen
+          - især når det kommer til interaktivitet og design. Jeg er altid
           nysgerrig efter at lære noget nyt og kaster mig gerne over nye
           teknologier og trends.
           <br />

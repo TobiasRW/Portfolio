@@ -35,7 +35,7 @@ export default function ProjectBanner({
           style={{ backgroundColor: isPhone || isPc ? bgColor : "" }}
         >
           {isPhone ? (
-            <div className="absolute bottom-[-35%] left-[5%] h-full w-full rotate-[-10deg] scale-[1.1] xs:scale-75 sm:bottom-[-30%] sm:scale-75 md:bottom-[-35%] md:scale-[.8] lg:bottom-[-30%] lg:left-0 lg:scale-100 xl:-left-10 xl:bottom-[-25%] xl:scale-90">
+            <div className="absolute bottom-[-35%] left-[5%] h-full w-full scale-[1.1] xs:scale-75 sm:bottom-[-30%] sm:scale-75 md:bottom-[-35%] md:scale-[.8] lg:bottom-[-30%] lg:left-0 lg:scale-100 xl:-left-10 xl:bottom-[-25%] xl:scale-90">
               <Image
                 src={imageSrc}
                 alt={`${title} Banner`}
