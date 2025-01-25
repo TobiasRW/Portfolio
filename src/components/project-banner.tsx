@@ -45,17 +45,17 @@ export default function ProjectBanner({
                 alt={`${title} Banner`}
                 fill
                 style={{ objectFit: "contain" }}
-                className="mt-14 -rotate-[10deg] scale-125 xs:scale-150 sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24"
+                className="mt-14 -rotate-[10deg] scale-150 sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24"
               />
             </div>
           ) : isPc ? (
-            <div className="absolute bottom-[-30%] left-[-15%] h-full w-full scale-[1.3] xs:left-[-10%] xs:rotate-[-5deg] xs:scale-[1.2] sm:left-[-20%] sm:scale-[1.1] md:bottom-[-35%] md:scale-[1.2] lg:bottom-[-35%] lg:left-[-25%] lg:scale-[1.1] xl:bottom-[-25%]">
+            <div className="">
               <Image
                 src={imageSrc}
                 alt={`${title} Banner`}
                 fill
-                style={{ objectFit: "cover" }}
-                className="overflow-visible"
+                style={{ objectFit: "contain" }}
+                className="-ml-[20%] mt-14 -rotate-[5deg] scale-150 xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32"
               />
             </div>
           ) : (
