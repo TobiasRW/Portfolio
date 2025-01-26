@@ -11,7 +11,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "relative flex items-center justify-center text-[#2C2C2C] hover:text-foreground overflow-hidden bg-whitebg transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-background before:duration-1000 before:ease-out hover:before:h-56 hover:before:w-56 hover:border-2-whitebg border-whitebg border-2",
-        slider: "bg-whitebg dark:bg-[#2c2c2c] text-background",
+        slider:
+          "bg-whitebg dark:bg-[#2c2c2c] text-background lg:hover:scale-110 lg:transition-all",
       },
       size: {
         default: "h-9 px-4 py-2",

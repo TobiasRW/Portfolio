@@ -26,7 +26,7 @@ export default function ProjectBanner({
   return (
     <div className="z-10 mx-auto flex w-10/12 flex-col gap-4 md:w-4/6 xl:w-[60%] 2xl:w-[55%]">
       <div
-        className={`relative flex h-52 flex-col xs:h-56 sm:h-64 lg:h-96 xl:h-[420px] 2xl:h-[470px]`}
+        className={`relative flex h-52 flex-col xs:h-56 sm:h-64 lg:h-96 xl:h-[420px] 2xl:h-[470px] 3xl:h-[550px]`}
       >
         <div
           className={`relative h-full w-full shadow-xl ${
@@ -45,7 +45,7 @@ export default function ProjectBanner({
                 alt={`${title} Banner`}
                 fill
                 style={{ objectFit: "contain" }}
-                className="mt-14 -rotate-[10deg] scale-150 sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24"
+                className="mt-14 -rotate-[10deg] scale-150 sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24 3xl:-ml-28"
               />
             </div>
           ) : isPc ? (
@@ -55,7 +55,7 @@ export default function ProjectBanner({
                 alt={`${title} Banner`}
                 fill
                 style={{ objectFit: "contain" }}
-                className="-ml-[20%] mt-14 -rotate-[5deg] scale-150 xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32"
+                className="-ml-[20%] mt-14 -rotate-[5deg] scale-150 xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32 3xl:mt-36"
               />
             </div>
           ) : (

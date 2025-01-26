@@ -2,6 +2,7 @@ import Slider from "@/components/slider";
 import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
+import Dots from "@/components/dots";
 
 export default function Page() {
   const accordionItems = [
@@ -45,8 +46,8 @@ export default function Page() {
   return (
     <>
       <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
-        <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px]">
-          <div className="absolute z-0 h-full w-full bg-[radial-gradient(rgba(0,0,0,0.1)_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_70%,transparent_100%)] dark:bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
+        <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px] 3xl:h-[750px]">
+          <Dots />
           <ProjectBanner
             variant="default"
             imageSrc="/images/coelm-banner.webp"
