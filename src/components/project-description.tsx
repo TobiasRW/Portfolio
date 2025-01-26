@@ -51,7 +51,7 @@ export default function ProjectDescription({
           <hr className="h-[1px] border-none bg-foreground lg:hidden" />
 
           {/* Icons Section */}
-          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-3/6 lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:w-5/6 xl:p-6 2xl:w-4/6 3xl:w-2/6 lg:dark:bg-background">
+          <div className="flex flex-wrap gap-4 rounded-2xl lg:h-full lg:w-full lg:gap-6 lg:bg-[#EDECEC] lg:p-4 xl:w-4/6 xl:p-6 3xl:w-2/6 lg:dark:bg-background">
             {iconLabels.map((icon, index) => (
               <div
                 key={index}
@@ -60,7 +60,7 @@ export default function ProjectDescription({
                 <img
                   src={getLogoByLabel(icon, isDarkMode)}
                   alt={`icon-${index}`}
-                  className="h-6 w-6 2xl:h-8 2xl:w-8"
+                  className="h-6 w-6 xl:h-7 xl:w-7 2xl:h-8 2xl:w-8"
                 />
               </div>
             ))}

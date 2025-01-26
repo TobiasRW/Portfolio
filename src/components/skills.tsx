@@ -55,14 +55,14 @@ export const Skills = () => {
               <CarouselContent>
                 {skills.map((logo, index) => (
                   <CarouselItem
-                    className="basis-1/4 md:basis-1/5 lg:basis-1/6 lg:px-4 2xl:basis-[14%]"
+                    className="basis-1/4 md:basis-1/5 lg:basis-1/6 lg:px-4 xl:basis-[15%] 2xl:basis-[14%]"
                     key={index}
                   >
                     <div className="group relative flex aspect-square items-center justify-center rounded-lg bg-[#EBEBEB] p-4 transition-all duration-300 hover:scale-95 sm:p-6 dark:bg-[#2C2C2C]">
                       <img
                         src={getLogo(logo, isDarkMode)}
                         alt={logo.label}
-                        className="h-4/6 w-4/6 group-hover:hidden sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+                        className="h-4/6 w-4/6 group-hover:hidden sm:h-12 sm:w-12 md:h-14 md:w-14 2xl:h-16 2xl:w-16"
                       />
                       {logo.url ? (
                         <a
