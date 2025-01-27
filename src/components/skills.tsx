@@ -69,13 +69,13 @@ export const Skills = () => {
                           href={logo.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="absolute flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-100 md:px-4 md:py-2 lg:text-base dark:bg-[#f5f5f5]"
+                          className="absolute flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm dark:bg-[#f5f5f5]"
                         >
                           {logo.label}
                           <ArrowUpRight size={16} />
                         </a>
                       ) : (
-                        <div className="absolute flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-100 md:px-4 md:py-2 lg:text-base">
+                        <div className="absolute flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm">
                           {logo.label}
                         </div>
                       )}
