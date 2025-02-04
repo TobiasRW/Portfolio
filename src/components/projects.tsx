@@ -40,6 +40,14 @@ export default function Projects() {
             link="/glass-fill"
             bgColor="#6BB3ED"
           />
+          <ProjectCard
+            variant="phone"
+            imageSrc="/images/livescore-banner.webp"
+            title="Live Scores"
+            text="En fodbold livescore app."
+            link="/livescore"
+            bgColor="#26437E"
+          />
         </div>
       </div>
     </section>

@@ -70,6 +70,16 @@ export const logos: Logo[] = [
     icon: "/icons/css.svg",
     label: "CSS",
   },
+  {
+    icon: "/icons/fborg.png",
+    label: "Football Data API",
+    url: "https://www.football-data.org/documentation/quickstart",
+  },
+  {
+    icon: "/icons/api-sports.png",
+    label: "API Sports",
+    url: "https://www.api-football.com/documentation-v3",
+  },
 ];
 
 export const getLogo = (logo: Logo, isDarkMode: boolean): string => {
