@@ -62,20 +62,20 @@ export const Skills = () => {
                       <img
                         src={getLogo(logo, isDarkMode)}
                         alt={logo.label}
-                        className="h-4/6 w-4/6 group-hover:hidden sm:h-12 sm:w-12 md:h-14 md:w-14 2xl:h-16 2xl:w-16"
+                        className="h-4/6 w-4/6 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-90 group-hover:opacity-0 sm:h-12 sm:w-12 md:h-14 md:w-14 2xl:h-16 2xl:w-16"
                       />
                       {logo.url ? (
                         <a
                           href={logo.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="absolute flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm dark:bg-[#f5f5f5]"
+                          className="absolute flex translate-y-4 items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm dark:bg-[#f5f5f5]"
                         >
                           {logo.label}
                           <ArrowUpRight size={16} />
                         </a>
                       ) : (
-                        <div className="absolute flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm">
+                        <div className="absolute flex translate-y-4 items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm">
                           {logo.label}
                         </div>
                       )}
