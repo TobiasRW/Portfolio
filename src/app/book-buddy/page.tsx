@@ -61,7 +61,7 @@ export default function Page() {
       <ProjectDescription
         text={`Dette projekt er en web app kaldet "Book Buddy", som er udviklet som et fritidsprojekt. Da jeg selv nyder at læse og fordybe mig i bøger, var det oplagt for mig at udvikle en app hvor jeg kan gemme og holde styr på mine bøger. \n
           Appen er bygget med React med Next.js som framework, og bruger MySQL til at gemme data om brugerne og de bøger, de har gemt. Appen gør det muligt at oprette en profil som man kan bruge til at individuelt at gemme bøger og oprette hylder/lister til at organisere dem. \n
-          For at kunne søge efter bøger og hente information om dem, bruger appen Google Books API, som har et kæmpe bibliotek af bøger, til at finde bøger og information om dem. \n 
+          For at kunne søge efter bøger og hente information om dem, bruger appen Google Books API, som har et stort bibliotek af bøger, til at finde bøger og information om dem. \n 
           Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til knapper og modal vinduer, hvilket har gjort appen mere levende og interaktiv. 
           `}
         iconLabels={[
