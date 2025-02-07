@@ -1,5 +1,3 @@
-import { title } from "process";
-
 // locales/en.ts
 export default {
   navigation: {
