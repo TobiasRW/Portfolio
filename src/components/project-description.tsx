@@ -4,12 +4,14 @@ import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
 
 type ProjectDescriptionProps = {
+  title: string;
   text: string;
   iconLabels: string[];
   highlightWords?: string[]; // Optional
 };
 
 export default function ProjectDescription({
+  title,
   text,
   iconLabels,
   highlightWords = [],
@@ -36,7 +38,7 @@ export default function ProjectDescription({
       {/* Project Description Section */}
       <div className="mx-auto flex w-10/12 flex-col gap-6">
         <h3 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
-          Om projektet
+          {title}
         </h3>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between 2xl:gap-20">
           <p className="font-body text-sm font-light leading-normal md:text-base">
