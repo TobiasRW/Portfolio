@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
+import { useScopedI18n } from "@/locales/client";
 
 // Animation Variants
 const sideBarVariants = {
@@ -37,6 +38,8 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false); // New state for background color
+
+  const scopedT = useScopedI18n("navigation");
 
   const pathname = usePathname(); // Get the current route
 
@@ -81,7 +84,7 @@ export default function Nav() {
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
-        {pathname === "/" ? (
+        {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
           <a
             href="mailto:tobiasrw98@gmail.com"
             className="md:text-s text-xs lg:text-base"
@@ -97,7 +100,7 @@ export default function Nav() {
               size={18}
               className="group-hover:scale-11 cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
             />{" "}
-            Tilbage
+            {scopedT("back")}
           </Link>
         )}
         <nav className="">
@@ -175,21 +178,23 @@ export default function Nav() {
                 <ArrowUpRight size={28} />
               </a>
               {/* Conditionally render only on homepage */}
-              {pathname === "/" && (
+              {(pathname === "/" ||
+                pathname === "/da" ||
+                pathname === "/en") && (
                 <>
                   <hr className="h-1 w-10/12 rounded-full border-none bg-gradient-to-r from-[#1a1a1a] from-30% to-[#DADEE9] lg:hidden dark:from-[#DADEE9] dark:to-[#1a1a1a]" />
                   <li
                     className="flex items-center gap-2"
                     onClick={() => scrollToSection("projects")}
                   >
-                    <p>Projekter</p>
+                    <p>{scopedT("projects")}</p>
                     <ArrowDown size={28} />
                   </li>
                   <li
                     className="flex items-center gap-2"
                     onClick={() => scrollToSection("about")}
                   >
-                    <p>Om mig</p>
+                    <p>{scopedT("about")}</p>
                     <ArrowDown size={28} />
                   </li>
                 </>
