@@ -3,42 +3,38 @@ import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
 import Slider from "@/components/slider";
 import Dots from "@/components/dots";
+import { getScopedI18n } from "@/locales/server";
 
-export default function Page() {
+export default async function Page() {
+  const scopedT = await getScopedI18n("projectLiveScores");
   const accordionItems = [
     {
-      content:
-        "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+      content: `${scopedT("accordion.items.item1.content")}`,
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content:
-        "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. I dette projekt har jeg brugt Next.js til at bygge en fodbold livescore app, hvor man kan se live resultater og statistikker.",
+      content: `${scopedT("accordion.items.item2.content")}`,
       iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      content:
-        "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå et ensartet og moderne design.",
+      content: `${scopedT("accordion.items.item3.content")}`,
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content:
-        "TypeScript er et programmeringssprog, der bygger på JavaScript og tilføjer typekontrol. Jeg har brugt TypeScript til at skrive koden i dette projekt, hvilket har givet mig bedre kodekvalitet og færre fejl.",
+      content: `${scopedT("accordion.items.item4.content")}`,
       iconLabel: "TypeScript",
       website: "https://www.typescriptlang.org/",
     },
     {
-      content:
-        "API-Sports er en API der giver adgang til sportsdata fra forskellige sportsgrene, herunder fodbold. Jeg har brugt API-Sports til at hente live fodbold resultater til min livescore app.",
+      content: `${scopedT("accordion.items.item5.content")}`,
       iconLabel: "API Sports",
       website: "https://www.api-football.com/documentation-v3",
     },
     {
-      content:
-        "Football-data.org er en API der giver adgang til fodbolddata fra forskellige ligaer og turneringer. Jeg har brugt Football-data.org til at hente ligatabeller til min livescore app.",
+      content: `${scopedT("accordion.items.item6.content")}`,
       iconLabel: "Football Data API",
       website: "https://www.football-data.org/documentation/quickstart",
     },
@@ -59,9 +55,10 @@ export default function Page() {
         </div>
       </div>
       <ProjectDescription
-        text={`Live Scores er en fodbold-livescore-app, der viser livekampe fra de største ligaer i Europa. Appen er bygget med TypeScript i Next.js og bruger to forskellige fodbold API'er til at hente live resultater og ligatabeller. \n 
-        'api-football.com' anvendes til at hente live resultater, men da jeg benytter deres gratis version, er appen begrænset til 100 API-kald om dagen. 'football-data.org' bruges til at hente ligatabeller. Ved at kombinere de to API'er kan jeg blande data fra begge API'ers gratis udgaver. \n
-        Appen giver mulighed for at se live resultater, kampstatistikker, holdopstillinger og ligatabeller. \n 
+        title={scopedT("about.heading")}
+        text={`${scopedT("about.text.paragraph1")} \n 
+       ${scopedT("about.text.paragraph2")}\n
+       ${scopedT("about.text.paragraph3")} \n 
           `}
         iconLabels={[
           "React",
@@ -84,7 +81,10 @@ export default function Page() {
             "/images/livescore-pic4.png",
           ]}
         />
-        <Accordion items={accordionItems} />
+        <Accordion
+          items={accordionItems}
+          title={scopedT("accordion.heading")}
+        />
       </div>
     </>
   );

@@ -98,4 +98,174 @@ export default {
       },
     },
   },
+  projectBookBuddy: {
+    title: "Book Buddy",
+    about: {
+      heading: "Om Projektet",
+      text: {
+        paragraph1:
+          "Dette projekt er en web app kaldet 'Book Buddy', som er udviklet som et fritidsprojekt. Da jeg selv nyder at læse og fordybe mig i bøger, var det oplagt for mig at udvikle en app hvor jeg kan gemme og holde styr på mine bøger.",
+        paragraph2:
+          "Appen er bygget med React med Next.js som framework, og bruger MySQL til at gemme data om brugerne og de bøger, de har gemt. Appen gør det muligt at oprette en profil som man kan bruge til at individuelt at gemme bøger og oprette hylder/lister til at organisere dem.",
+        paragraph3:
+          "For at kunne søge efter bøger og hente information om dem, bruger appen Google Books API, som har et kæmpe bibliotek af bøger, til at finde bøger og information om dem.",
+        paragraph4:
+          "Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til knapper og modal vinduer, hvilket har gjort appen mere levende og interaktiv.",
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+        },
+        item2: {
+          content:
+            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. Det understøtter server-side rendering (SSR), hvilket optimerer ydelsen og brugeroplevelsen. I dette projekt har jeg brugt Next.js til at skabe en applikation, hvor brugerne kan søge efter bøger og gemme dem til senere brug.",
+        },
+        item3: {
+          content:
+            "Jeg har brugt mySQL til at oprette en database, der indeholder information omkring brugerne og de bøger, de har gemt. Databasen er designet til effektivt at håndtere dataen på en sikker og skalerbar måde, så der ikke opstår fejl eller tab af data.",
+        },
+        item4: {
+          content:
+            "Motion er et animationsbibliotek til JavaScript og React, som gør det super nemt at skabe flotte og fængende animationer. I dette projekt har jeg brugt Motion til at tilføje animationer til kanpper og modal vinduer, hvilket har gjort websitet mere levende og interaktivt.",
+        },
+        item5: {
+          content:
+            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå en ensartet og moderne design.",
+        },
+        item6: {
+          content:
+            "JavaScript er brugt gennem React til at tilføje interaktivitet og dynamik til websitet. Jeg har anvendt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende og intuitiv.",
+        },
+      },
+    },
+  },
+  projectLendr: {
+    title: "Lendr",
+    about: {
+      heading: "Om Projektet",
+      text: {
+        paragraph1:
+          "Lendr er udviklet i forbindelse med et skoleprojekt på webudvikling. Projektet skulle bestå af to forskellige frontends som begge skulle tilgå den samme backend. Vi har skabt en web app som har til formål at forbinde lejere og udlejere af kufferter og tasker. Brugere kan altså enten leje en kuffert eller tjene penge på at udleje en kuffert.",
+        paragraph2:
+          "Vi har brugt Next.js til at bygge brugerappen og Remix til at bygge et admin dashboard til Lendr's medarbejdere.",
+        paragraph3:
+          "  Vi har brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning. Vi har yderligere udviklet en API i php, som begge frontends kan tilgå for at hente og opdatere data.",
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Vi har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces. ",
+        },
+        item2: {
+          content:
+            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. I denne opgave har vi brugt Next.js til at bygge brugerappen til Lendr, som er en platform, der forbinder lejere og udlejere af kufferter og tasker.",
+        },
+        item3: {
+          content:
+            "Remix er et moderne React-baseret framework, der ligesom Next.js gør det nemt at bygge hurtige og effektive webapplikationer. I denne opgave har vi brugt Remix til at bygge et admin dashboard til Lendr, som skal fungere som et kontrolpanel for supportmedarbejdere og administratorer.",
+        },
+        item4: {
+          content:
+            "MySQL er et programmeringssprog, der bruges til at oprette og administrere databaser. I denne opgave har vi brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning.",
+        },
+        item5: {
+          content:
+            "PHP er i denne opgave brugt til at udvikle en API, som kan tilgås af forskellige frontends. API'en bruges til at hente og opdatere data i databasen, så brugere/admins kan se og administrere deres kufferter og tasker.",
+        },
+        item6: {
+          content:
+            "Shadcn er en samling af genanvendelige komponenter, der er designet til at gøre det nemt at opbygge en moderne og responsiv brugergrænseflade. Vi har i dette projekt flere af shadcn's komponenter, til at hurtugt og nemt at opbygge en flot og brugervenlig brugergrænseflade. Vi har redigeret og tilpasset komponenterne, så de passede til vores behov.",
+        },
+        item7: {
+          content:
+            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Vi har brugt det til at style websitet og opnå en ensartet og moderne design.",
+        },
+        item8: {
+          content:
+            "JavaScript er brugt gennem React til at tilføje interaktivitet og dynamik til websitet. Vi har anvendt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende og intuitiv.",
+        },
+      },
+    },
+  },
+  projectGlassFill: {
+    title: "Glass Fill",
+    about: {
+      heading: "Om Projektet",
+      text: {
+        paragraph1:
+          "Dette Projekt er en hjemmeside, der er bugget med basis HTML, CSS og JavaScript. Hjemmesiden er en simpel side, der viser en animation af et glas, der gradvist fyldes med væske når man scroller ned på siden.",
+        paragraph2:
+          "Jeg har brugt HTML til at opbygge strukturen af siden, CSS til at style elementerne og JavaScript til at tilføje interaktivitet og animationer.",
+        paragraph3:
+          "Siden viser også den oprindelige After Effects animation som siden er baseret på.",
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "HTML er det primære sprog, der bruges til at opbygge websider og applikationer. Jeg har brugt det til at strukturere indholdet og opbygge layoutet af websitet.",
+        },
+        item2: {
+          content:
+            "CSS er et sprog, der bruges til at style og designe websider. Jeg har brugt det til at tilføje farver, skrifttyper, layout og animationer til websitet.",
+        },
+        item3: {
+          content:
+            "JavaScript er et programmeringssprog, der bruges til at tilføje interaktivitet og dynamik til websider. Jeg har brugt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende.",
+        },
+      },
+    },
+  },
+  projectLiveScores: {
+    title: "Live Scores",
+    about: {
+      heading: "Om Projektet",
+      text: {
+        paragraph1:
+          "Live Scores er en fodbold-livescore-app, der viser livekampe fra de største ligaer i Europa. Appen er bygget med TypeScript i Next.js og bruger to forskellige fodbold API'er til at hente live resultater og ligatabeller.",
+        paragraph2:
+          "'api-football.com' anvendes til at hente live resultater, men da jeg benytter deres gratis version, er appen begrænset til 100 API-kald om dagen. 'football-data.org' bruges til at hente ligatabeller. Ved at kombinere de to API'er kan jeg blande data fra begge API'ers gratis udgaver.",
+        paragraph3:
+          "Appen giver mulighed for at se live resultater, kampstatistikker, holdopstillinger og ligatabeller. ",
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+        },
+        item2: {
+          content:
+            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. I dette projekt har jeg brugt Next.js til at bygge en fodbold livescore app, hvor man kan se live resultater og statistikker.",
+        },
+        item3: {
+          content:
+            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå et ensartet og moderne design.",
+        },
+        item4: {
+          content:
+            "TypeScript er et programmeringssprog, der bygger på JavaScript og tilføjer typekontrol. Jeg har brugt TypeScript til at skrive koden i dette projekt, hvilket har givet mig bedre kodekvalitet og færre fejl.",
+        },
+        item5: {
+          content:
+            "API-Sports er en API der giver adgang til sportsdata fra forskellige sportsgrene, herunder fodbold. Jeg har brugt API-Sports til at hente live fodbold resultater til min livescore app.",
+        },
+        item6: {
+          content:
+            "Football-data.org er en API der giver adgang til fodbolddata fra forskellige ligaer og turneringer. Jeg har brugt Football-data.org til at hente ligatabeller til min livescore app.",
+        },
+      },
+    },
+  },
 } as const;
