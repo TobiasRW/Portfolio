@@ -3,8 +3,21 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
-import { useScopedI18n } from "@/locales/client";
+import {
+  useScopedI18n,
+  useI18n,
+  useChangeLocale,
+  useCurrentLocale,
+} from "@/locales/client";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 // Animation Variants
 const sideBarVariants = {
@@ -38,6 +51,9 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false); // New state for background color
+
+  const changeLocale = useChangeLocale();
+  const locale = useCurrentLocale();
 
   const scopedT = useScopedI18n("navigation");
 
@@ -84,25 +100,60 @@ export default function Nav() {
         }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
-        {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
-          <a
-            href="mailto:tobiasrw98@gmail.com"
-            className="md:text-s text-xs lg:text-base"
+        <div className="flex items-center gap-4 lg:gap-6">
+          {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
+            <a
+              href="mailto:tobiasrw98@gmail.com"
+              className="md:text-s text-xs lg:text-base"
+            >
+              tobiasrw98@gmail.com
+            </a>
+          ) : (
+            <Link
+              href="/"
+              className="group flex items-center justify-center gap-2 font-heading lg:text-lg"
+            >
+              <ArrowLeft
+                size={18}
+                className="group-hover:scale-11 cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
+              />{" "}
+              {scopedT("back")}
+            </Link>
+          )}
+          <Select
+            onValueChange={(selectedLocale) => {
+              changeLocale(selectedLocale as any);
+            }}
+            value={locale}
           >
-            tobiasrw98@gmail.com
-          </a>
-        ) : (
-          <Link
-            href="/"
-            className="group flex items-center justify-center gap-2 font-heading lg:text-lg"
-          >
-            <ArrowLeft
-              size={18}
-              className="group-hover:scale-11 cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
-            />{" "}
-            {scopedT("back")}
-          </Link>
-        )}
+            <SelectTrigger
+              className="w-16 cursor-pointer rounded-full border-none bg-whitebg text-black shadow-sm dark:bg-[#EDECEC]"
+              value={locale}
+            >
+              <SelectValue placeholder={locale} />
+            </SelectTrigger>
+            <SelectContent className="bg-whitebg dark:bg-[#EDECEC]">
+              <SelectItem value="da" className="cursor-pointer lg:pb-2">
+                <Image
+                  src="/icons/da-flag.svg"
+                  alt="Danish Flag"
+                  width={24}
+                  height={24}
+                  className="w-4"
+                />
+              </SelectItem>
+              <SelectItem value="en" className="cursor-pointer">
+                <Image
+                  src="/icons/en-flag.svg"
+                  alt="Danish Flag"
+                  width={24}
+                  height={24}
+                  className="w-4"
+                />
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
         <nav className="">
           {/* Hamburger Menu */}
           <motion.div
