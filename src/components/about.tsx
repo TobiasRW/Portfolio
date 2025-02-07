@@ -1,6 +1,6 @@
 import { getScopedI18n } from "@/locales/server";
 export default async function About() {
-  const scopedT = await getScopedI18n("about");
+  const scopedT = await getScopedI18n("frontPage.about");
   return (
     <section id="about">
       <div className="mx-auto flex w-10/12 flex-col gap-8">

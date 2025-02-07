@@ -2,7 +2,7 @@ import ProjectCard from "./project-card";
 import { getScopedI18n } from "@/locales/server";
 
 export default async function Projects() {
-  const scopedT = await getScopedI18n("projects");
+  const scopedT = await getScopedI18n("frontPage.projects");
   return (
     <section id="projects">
       <div className="flex flex-col gap-8 pb-20 pt-10 md:pb-24 md:pt-14 lg:gap-14 lg:pb-28 xl:pb-32 xl:pt-20">

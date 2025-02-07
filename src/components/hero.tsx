@@ -7,7 +7,7 @@ import Dots from "./dots";
 import { useScopedI18n } from "@/locales/client";
 
 export default function Hero() {
-  const scopedT = useScopedI18n("hero");
+  const scopedT = useScopedI18n("frontPage.hero");
 
   const controls = useDragControls();
   const x = useMotionValue(0);
