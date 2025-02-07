@@ -7,7 +7,6 @@ import Image from "next/image";
 import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
 import {
   useScopedI18n,
-  useI18n,
   useChangeLocale,
   useCurrentLocale,
 } from "@/locales/client";
@@ -45,6 +44,8 @@ const links = {
   github: "https://github.com/TobiasRW",
   linkedin: "https://www.linkedin.com/in/tobias-wolmar-87991224a/",
 };
+
+type SupportedLocales = "da" | "en";
 
 // Navigation component
 export default function Nav() {
@@ -121,8 +122,8 @@ export default function Nav() {
             </Link>
           )}
           <Select
-            onValueChange={(selectedLocale) => {
-              changeLocale(selectedLocale as any);
+            onValueChange={(selectedLocale: SupportedLocales) => {
+              changeLocale(selectedLocale);
             }}
             value={locale}
           >
