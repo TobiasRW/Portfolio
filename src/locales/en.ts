@@ -37,4 +37,18 @@ export default {
       },
     },
   },
+  about: {
+    title: "Who am I?",
+    text: {
+      intro: "Hello There 👋🏻",
+      paragraph1:
+        "My name is Tobias, and I am a passionate web developer focusing on frontend development. I have a degree in multimedia design and am currently continuing my studies in web development as a top-up education.",
+      paragraph2:
+        "I love immersing myself in things—whether it's a new fantasy world, training at the gym, or an exciting coding project! I have always been a problem solver by nature, from math exercises in elementary school to now finding solutions as a web developer.",
+      paragraph3:
+        "With my focus on frontend development, I appreciate the details—especially when it comes to interactivity and design. I am always curious to learn something new and I am happy to dive into new technologies and trends.",
+      paragraph4:
+        "Right now, I am looking for a student job where I can build on my experience while learning a lot of new things. If that sounds interesting to you, don’t hesitate to contact me—I look forward to hearing from you!",
+    },
+  },
 } as const;
