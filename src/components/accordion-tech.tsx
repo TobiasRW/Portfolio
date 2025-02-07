@@ -18,16 +18,17 @@ type AccordionItemProps = {
 };
 
 type AccordionTechProps = {
+  title: string;
   items: AccordionItemProps[];
 };
 
-export default function AccordionTech({ items }: AccordionTechProps) {
+export default function AccordionTech({ title, items }: AccordionTechProps) {
   const isDarkMode = useDarkMode();
 
   return (
     <div className="mx-auto flex w-10/12 flex-col gap-6 px-6 sm:px-0 xl:w-full">
       <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
-        Teknologier
+        {title}
       </h2>
       <Accordion
         type="single"

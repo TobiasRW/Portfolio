@@ -3,22 +3,21 @@ import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
 import Slider from "@/components/slider";
 import Dots from "@/components/dots";
+import { getScopedI18n } from "@/locales/server";
 
-export default function Page() {
+export default async function Page() {
+  const scopedT = await getScopedI18n("projectGlassFill");
   const accordionItems = [
     {
-      content:
-        "HTML er det primære sprog, der bruges til at opbygge websider og applikationer. Jeg har brugt det til at strukturere indholdet og opbygge layoutet af websitet.",
+      content: `${scopedT("accordion.items.item1.content")}`,
       iconLabel: "HTML",
     },
     {
-      content:
-        "CSS er et sprog, der bruges til at style og designe websider. Jeg har brugt det til at tilføje farver, skrifttyper, layout og animationer til websitet.",
+      content: `${scopedT("accordion.items.item2.content")}`,
       iconLabel: "CSS",
     },
     {
-      content:
-        "JavaScript er et programmeringssprog, der bruges til at tilføje interaktivitet og dynamik til websider. Jeg har brugt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende.",
+      content: `${scopedT("accordion.items.item3.content")}`,
       iconLabel: "JavaScript",
     },
   ];
@@ -38,9 +37,10 @@ export default function Page() {
         </div>
       </div>
       <ProjectDescription
-        text={`Dette Projekt er en hjemmeside, der er bugget med basis HTML, CSS og JavaScript. Hjemmesiden er en simpel side, der viser en animation af et glas, der gradvist fyldes med vand når man scroller ned på siden. \n 
-        Jeg har brugt HTML til at opbygge strukturen af siden, CSS til at style elementerne og JavaScript til at tilføje interaktivitet og animationer. \n 
-        Siden viser også den oprindelige After Effects animation som siden er baseret på.
+        title={scopedT("about.heading")}
+        text={` ${scopedT("about.text.paragraph1")} \n 
+        ${scopedT("about.text.paragraph2")} \n 
+        ${scopedT("about.text.paragraph3")}
         `}
         iconLabels={["HTML", "CSS", "JavaScript"]}
         highlightWords={["HTML", "CSS", "JavaScript", "After", "Effects"]}
@@ -54,7 +54,10 @@ export default function Page() {
             "/images/glassfill-pic3.png",
           ]}
         />
-        <Accordion items={accordionItems} />
+        <Accordion
+          items={accordionItems}
+          title={scopedT("accordion.heading")}
+        />
       </div>
     </>
   );

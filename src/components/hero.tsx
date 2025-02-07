@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { motion, useDragControls, useMotionValue, animate } from "motion/react";
 import Dots from "./dots";
+import { useScopedI18n } from "@/locales/client";
 
 export default function Hero() {
+  const scopedT = useScopedI18n("frontPage.hero");
+
   const controls = useDragControls();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -53,7 +56,7 @@ export default function Hero() {
             </motion.div>
           </div>
           <h1 className="bg-gradient-to-br from-foreground from-50% to-background bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl md:mx-auto md:w-9/12 lg:text-4xl xl:w-4/6 xl:text-5xl">
-            Passioneret webudvikler med speciale i frontend-udvikling
+            {scopedT("title")}
           </h1>
           <div className="flex justify-center gap-4 lg:gap-6 xl:gap-8">
             <Button
@@ -61,7 +64,7 @@ export default function Hero() {
               className="group"
               onClick={() => scrollToSection("projects")}
             >
-              Projekter
+              {scopedT("button.projects")}
               <ArrowDown
                 size={32}
                 weight="bold"
@@ -73,7 +76,7 @@ export default function Hero() {
               className="group"
               onClick={() => scrollToSection("about")}
             >
-              Om mig
+              {scopedT("button.about")}
               <ArrowDown
                 size={32}
                 weight="bold"

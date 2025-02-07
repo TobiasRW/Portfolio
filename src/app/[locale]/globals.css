@@ -4,49 +4,49 @@
 
 @font-face {
   font-family: "Pilcrow";
-  src: url("fonts/PilcrowRounded-Regular.otf") format("opentype");
+  src: url("../fonts/PilcrowRounded-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pilcrow";
-  src: url("fonts/PilcrowRounded-Bold.otf") format("opentype");
+  src: url("../fonts/PilcrowRounded-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pilcrow";
-  src: url("fonts/PilcrowRounded-Heavy.otf") format("opentype");
+  src: url("../fonts/PilcrowRounded-Heavy.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pilcrow";
-  src: url("fonts/PilcrowRounded-Medium.otf") format("opentype");
+  src: url("../fonts/PilcrowRounded-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pilcrow";
-  src: url("fonts/PilcrowRounded-Semibold.otf") format("opentype");
+  src: url("../fonts/PilcrowRounded-Semibold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Switzer";
-  src: url("fonts/Switzer-Variable.ttf") format("truetype");
+  src: url("../fonts/Switzer-Variable.ttf") format("truetype");
   font-weight: 1 999;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Switzer";
-  src: url("fonts/Switzer-VariableItalic.ttf") format("truetype");
+  src: url("../fonts/Switzer-VariableItalic.ttf") format("truetype");
   font-weight: 1 999;
   font-style: italic;
 }
