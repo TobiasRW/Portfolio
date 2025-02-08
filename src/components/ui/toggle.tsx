@@ -18,7 +18,7 @@ export function Toggle() {
   };
 
   return (
-    <div className="flex rounded-full bg-white dark:bg-[#EDECEC] dark:bg-opacity-90">
+    <div className="flex rounded-full bg-white dark:bg-[#EDECEC]">
       {/* Danish Toggle */}
       <TogglePrimitive.Root
         pressed={locale === "da"}
