@@ -3,20 +3,9 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Toggle } from "@/components/ui/toggle";
 import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
-import {
-  useScopedI18n,
-  useChangeLocale,
-  useCurrentLocale,
-} from "@/locales/client";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { useScopedI18n } from "@/locales/client";
 
 // Animation Variants
 const sideBarVariants = {
@@ -45,16 +34,11 @@ const links = {
   linkedin: "https://www.linkedin.com/in/tobias-wolmar-87991224a/",
 };
 
-type SupportedLocales = "da" | "en";
-
 // Navigation component
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false); // New state for background color
-
-  const changeLocale = useChangeLocale();
-  const locale = useCurrentLocale();
 
   const scopedT = useScopedI18n("navigation");
 
@@ -121,39 +105,9 @@ export default function Nav() {
               {scopedT("back")}
             </Link>
           )}
-          <Select
-            onValueChange={(selectedLocale: SupportedLocales) => {
-              changeLocale(selectedLocale);
-            }}
-            value={locale}
-          >
-            <SelectTrigger
-              className="w-16 cursor-pointer rounded-full border-none bg-whitebg text-black shadow-sm dark:bg-[#EDECEC]"
-              value={locale}
-            >
-              <SelectValue placeholder={locale} />
-            </SelectTrigger>
-            <SelectContent className="bg-whitebg dark:bg-[#EDECEC]">
-              <SelectItem value="da" className="cursor-pointer lg:pb-2">
-                <Image
-                  src="/icons/da-flag.svg"
-                  alt="Danish Flag"
-                  width={24}
-                  height={24}
-                  className="w-4"
-                />
-              </SelectItem>
-              <SelectItem value="en" className="cursor-pointer">
-                <Image
-                  src="/icons/en-flag.svg"
-                  alt="Danish Flag"
-                  width={24}
-                  height={24}
-                  className="w-4"
-                />
-              </SelectItem>
-            </SelectContent>
-          </Select>
+          <div className="flex gap-2">
+            <Toggle />
+          </div>
         </div>
         <nav className="">
           {/* Hamburger Menu */}
