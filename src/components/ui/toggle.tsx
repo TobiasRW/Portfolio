@@ -5,6 +5,7 @@ import * as TogglePrimitive from "@radix-ui/react-toggle";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useCurrentLocale, useChangeLocale } from "@/locales/client";
+import { motion } from "motion/react";
 
 export function Toggle() {
   const locale = useCurrentLocale(); // Get current locale
@@ -29,13 +30,19 @@ export function Toggle() {
           locale === "da" && "text-white", // Active State
         )}
       >
-        <Image
-          src="/icons/da-flag.svg"
-          alt="Danish Flag"
-          width={24}
-          height={24}
-          className={cn("w-3 lg:w-4", locale === "en" && "grayscale")}
-        />
+        <motion.div
+          className="cursor-pointer"
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <Image
+            src="/icons/da-flag.svg"
+            alt="Danish Flag"
+            width={24}
+            height={24}
+            className={cn("w-3 lg:w-4", locale === "en" && "grayscale")}
+          />
+        </motion.div>
       </TogglePrimitive.Root>
 
       {/* English Toggle */}
@@ -48,13 +55,19 @@ export function Toggle() {
           locale === "en" && "text-white", // Active State
         )}
       >
-        <Image
-          src="/icons/en-flag.svg"
-          alt="English Flag"
-          width={24}
-          height={24}
-          className={cn("w-3 lg:w-4", locale === "da" && "grayscale")}
-        />
+        <motion.div
+          className="cursor-pointer"
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <Image
+            src="/icons/en-flag.svg"
+            alt="English Flag"
+            width={24}
+            height={24}
+            className={cn("w-3 lg:w-4", locale === "da" && "grayscale")}
+          />
+        </motion.div>
       </TogglePrimitive.Root>
     </div>
   );
