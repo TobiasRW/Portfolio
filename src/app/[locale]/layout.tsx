@@ -4,11 +4,16 @@ import Navigation from "@/components/navigation";
 import ToTop from "@/components/to-top";
 import Footer from "@/components/footer";
 import { I18nProviderClient } from "@/locales/client";
+import { getStaticParams } from "@/locales/server";
 
 export const metadata: Metadata = {
   title: "Tobias Wolmar",
   description: "Portfolio af Tobias Wolmar",
 };
+
+export function generateStaticParams() {
+  return getStaticParams();
+}
 
 export default async function RootLayout({
   children,

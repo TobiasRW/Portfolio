@@ -4,8 +4,15 @@ import Accordion from "@/components/accordion-tech";
 import Slider from "@/components/slider";
 import Dots from "@/components/dots";
 import { getScopedI18n } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 
-export default async function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
   const scopedT = await getScopedI18n("projectLendr");
 
   const accordionItems = [

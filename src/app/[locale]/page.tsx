@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import { I18nProviderClient } from "@/locales/client";
+import { setStaticParamsLocale } from "next-international/server";
 
 export default async function Home({
   params,
@@ -10,6 +11,7 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setStaticParamsLocale(locale);
 
   return (
     <>
