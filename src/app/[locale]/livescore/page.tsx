@@ -55,7 +55,7 @@ export default async function Page({
             variant="phone"
             imageSrc="/images/livescore-banner.webp"
             title="Live Scores"
-            website="https://livescore-ashy.vercel.app/"
+            website="https://livescore-eosin.vercel.app/"
             github="https://github.com/TobiasRW/livescore"
             bgColor="#26437E"
           />
