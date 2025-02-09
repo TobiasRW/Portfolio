@@ -42,14 +42,14 @@ export default async function Projects() {
             link="/glass-fill"
             bgColor="#6BB3ED"
           />
-          <ProjectCard
+          {/* <ProjectCard
             variant="phone"
             imageSrc="/images/livescore-banner.webp"
             title={scopedT("project.liveScores.name")}
             text={scopedT("project.liveScores.brief")}
             link="/livescore"
             bgColor="#26437E"
-          />
+          /> */}
         </div>
       </div>
     </section>
