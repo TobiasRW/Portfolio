@@ -9,7 +9,7 @@ export function LocalePrefetcher() {
   useEffect(() => {
     // Prefetch both locales so toggling is instant
     router.prefetch("/en");
-    router.prefetch("/da");
+    router.prefetch("/");
   }, [router]);
 
   return null; // no UI
