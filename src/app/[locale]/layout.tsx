@@ -5,6 +5,7 @@ import ToTop from "@/components/to-top";
 import Footer from "@/components/footer";
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
+import { LocalePrefetcher } from "@/components/locale-prefetcher";
 
 export const metadata: Metadata = {
   title: "Tobias Wolmar",
@@ -28,6 +29,7 @@ export default async function RootLayout({
       <body className="">
         <I18nProviderClient locale={locale}>
           <Navigation />
+          <LocalePrefetcher />
         </I18nProviderClient>
         <ToTop />
         {children}
