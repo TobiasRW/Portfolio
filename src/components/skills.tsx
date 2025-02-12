@@ -56,7 +56,7 @@ export const Skills = () => {
               <CarouselContent>
                 {skills.map((logo, index) => (
                   <CarouselItem
-                    className="basis-1/4 md:basis-1/5 lg:basis-1/6 lg:px-4 xl:basis-[15%] 2xl:basis-[14%]"
+                    className="basis-1/4 md:basis-1/5 lg:basis-1/6 lg:px-4 xl:basis-[14%] xl:px-3 2xl:basis-[13%]"
                     key={index}
                   >
                     <div className="group relative flex aspect-square items-center justify-center rounded-lg bg-[#EBEBEB] p-4 transition-all duration-300 hover:scale-95 sm:p-6 dark:bg-[#2C2C2C]">
