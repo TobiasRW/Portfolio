@@ -66,6 +66,12 @@ export const logos: Logo[] = [
     label: "CSS",
   },
   {
+    icon: "/icons/mongodb.svg",
+    dark: "/icons/mongodb-dark.svg",
+    label: "MongoDB",
+    url: "https://www.mongodb.com/docs/",
+  },
+  {
     icon: "/icons/fborg.png",
     label: "Football Data API",
     url: "https://www.football-data.org/documentation/quickstart",
