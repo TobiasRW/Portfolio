@@ -1,9 +1,4 @@
-type Logo = {
-  icon: string;
-  dark?: string;
-  label: string;
-  url?: string;
-};
+import { Logo } from "../types/types";
 
 export const logos: Logo[] = [
   {
