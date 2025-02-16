@@ -67,7 +67,6 @@ export const logos: Logo[] = [
   },
   {
     icon: "/icons/mongodb.svg",
-    dark: "/icons/mongodb-dark.svg",
     label: "MongoDB",
     url: "https://www.mongodb.com/docs/",
   },
