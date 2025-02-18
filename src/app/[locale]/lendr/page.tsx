@@ -66,7 +66,7 @@ export default async function Page({
             imageSrc="/images/lendr-banner.webp"
             title="Lendr"
             website="https://lendr-nine.vercel.app/"
-            github=""
+            github="https://github.com/eaaa-dob-wu-e24a/final-project-ent"
             bgColor="#5BAD86"
           />
         </div>
