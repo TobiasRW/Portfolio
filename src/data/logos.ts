@@ -80,6 +80,16 @@ export const logos: Logo[] = [
     label: "API Sports",
     url: "https://www.api-football.com/documentation-v3",
   },
+  {
+    icon: "/icons/mistral.svg",
+    label: "Mistral",
+    url: "https://mistral.ai/",
+  },
+  {
+    icon: "/icons/zustand.svg",
+    label: "Zustand",
+    url: "https://zustand.docs.pmnd.rs/getting-started/introduction",
+  },
 ];
 
 export const getLogo = (logo: Logo, isDarkMode: boolean): string => {

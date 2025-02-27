@@ -9,6 +9,14 @@ export const projects: Project[] = [
     link: "/coelm",
   },
   {
+    variant: "computer",
+    imageSrc: "/images/palette-banner.webp",
+    titleKey: "project.palette.name",
+    textKey: "project.palette.brief",
+    link: "/palette",
+    bgColor: "#FC7753",
+  },
+  {
     variant: "phone",
     imageSrc: "/images/bookapp-banner.webp",
     titleKey: "project.bookBuddy.name",

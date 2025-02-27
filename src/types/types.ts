@@ -7,7 +7,8 @@ export type ProjectTitles =
   | "project.bookBuddy.name"
   | "project.lendr.name"
   | "project.glassFill.name"
-  | "project.liveScores.name";
+  | "project.liveScores.name"
+  | "project.palette.name";
 
 // Define valid project text keys
 export type ProjectTexts =
@@ -15,7 +16,8 @@ export type ProjectTexts =
   | "project.bookBuddy.brief"
   | "project.lendr.brief"
   | "project.glassFill.brief"
-  | "project.liveScores.brief";
+  | "project.liveScores.brief"
+  | "project.palette.brief";
 
 // Define the structure of a project
 export type Project = {

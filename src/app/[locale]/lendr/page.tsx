@@ -76,6 +76,9 @@ export default async function Page({
         text={` ${scopedT("about.text.paragraph1")} \n 
        ${scopedT("about.text.paragraph2")} \n
        ${scopedT("about.text.paragraph3")}\n 
+       ${scopedT("about.text.testUser.heading")}
+       ${scopedT("about.text.testUser.email")}
+       ${scopedT("about.text.testUser.password")}
 
           `}
         iconLabels={[
@@ -96,6 +99,12 @@ export default async function Page({
           "PHP",
           "API",
           "backend",
+          "Email:",
+          "Password:",
+          "Kodeord:",
+          "Test",
+          "bruger:",
+          "user:",
         ]}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">

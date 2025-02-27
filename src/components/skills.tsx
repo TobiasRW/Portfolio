@@ -30,7 +30,6 @@ export const Skills = () => {
       "Motion",
       "PHP",
       "Shadcn",
-      "GSAP",
       "MongoDB",
     ].includes(logo.label),
   );

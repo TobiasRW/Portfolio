@@ -8,6 +8,7 @@ type ProjectDescriptionProps = {
   text: string;
   iconLabels: string[];
   highlightWords?: string[]; // Optional
+  testUser?: string; // Optional
 };
 
 export default function ProjectDescription({
@@ -15,6 +16,7 @@ export default function ProjectDescription({
   text,
   iconLabels,
   highlightWords = [],
+  testUser,
 }: ProjectDescriptionProps) {
   const isDarkMode = useDarkMode();
 
@@ -41,14 +43,17 @@ export default function ProjectDescription({
           {title}
         </h3>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between 2xl:gap-20">
-          <p className="font-body text-sm font-light leading-normal md:text-base">
-            {text.split("\n").map((line, index) => (
-              <span key={index}>
-                {highlightText(line)}
-                <br />
-              </span>
-            ))}
-          </p>
+          <div className="">
+            <p className="font-body text-sm font-light leading-normal md:text-base">
+              {text.split("\n").map((line, index) => (
+                <span key={index}>
+                  {highlightText(line)}
+                  <br />
+                </span>
+              ))}
+            </p>
+            <p>{testUser}</p>
+          </div>
 
           <hr className="h-[1px] border-none bg-foreground lg:hidden" />
 

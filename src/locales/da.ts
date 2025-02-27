@@ -36,6 +36,10 @@ export default {
           name: "Live Scores",
           brief: "En fodbold livescore app",
         },
+        palette: {
+          name: "Palette",
+          brief: "En farvepalet generator med AI chatbot",
+        },
       },
     },
     about: {
@@ -111,6 +115,11 @@ export default {
           "For at kunne søge efter bøger og hente information om dem, bruger appen Google Books API, som har et kæmpe bibliotek af bøger, til at finde bøger og information om dem.",
         paragraph4:
           "Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til knapper og modal vinduer, hvilket har gjort appen mere levende og interaktiv.",
+        testUser: {
+          heading: "Test bruger:",
+          user: "brugernavn: sylto",
+          password: "Password: hello",
+        },
       },
     },
     accordion: {
@@ -153,7 +162,12 @@ export default {
         paragraph2:
           "Vi har brugt Next.js til at bygge brugerappen og Remix til at bygge et admin dashboard til Lendr's medarbejdere.",
         paragraph3:
-          "  Vi har brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning. Vi har yderligere udviklet en API i php, som begge frontends kan tilgå for at hente og opdatere data.",
+          "Vi har brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning. Vi har yderligere udviklet en API i php, som begge frontends kan tilgå for at hente og opdatere data.",
+        testUser: {
+          heading: "Test bruger:",
+          email: "Email: sylto@gmail.com",
+          password: "Kodeord: hello",
+        },
       },
     },
     accordion: {
@@ -264,6 +278,58 @@ export default {
         item6: {
           content:
             "Football-data.org er en API der giver adgang til fodbolddata fra forskellige ligaer og turneringer. Jeg har brugt Football-data.org til at hente ligatabeller til min livescore app.",
+        },
+      },
+    },
+  },
+  projectPalette: {
+    title: "Palette",
+    about: {
+      heading: "Om Projektet",
+      text: {
+        paragraph1:
+          "Palette er en farvepalet generator, som er udviklet som et fritidsprojekt. Appen kan generere tilfældige farvepaletter, som brugeren kan gemme i sin profil. Derudover har appen en AI chatbot, som kan hjælpe brugeren med at finde frem til paletter som passer til deres behov.",
+        paragraph2:
+          "Appen er bygget i Next.js med TypeScript, og bruger MongoDB til at gemme data om brugerne og de farvepaletter, de har gemt. Appen bruger også Mistral API som LLM til at kunne generere farvepaletter i chat vinduet.",
+        paragraph3:
+          "Jeg har lavet appen som en øvelse i at arbejde med AI og MongoDB. Jeg har genskabt designet fra den eksisterende app 'Coolors', som er en farvepalet generator.",
+        testUser: {
+          heading: "Test bruger:",
+          email: "Email: sylto@gmail.com",
+          password: "Kodeord: hello1234",
+        },
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+        },
+        item2: {
+          content:
+            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. I dette projekt har jeg brugt Next.js til at bygge en farvepalet generator, hvor brugere kan generere og gemme farvepaletter.",
+        },
+        item3: {
+          content:
+            "MongoDB er en NoSQL database. I dette projekt har jeg brugt MongoDB til at oprette en database, der indeholder information om brugerne og de farvepaletter, de har gemt.",
+        },
+        item4: {
+          content:
+            "Mistral er en AI LLM. Jeg har brugt Mistral til at generere farvepaletter i chat vinduet, så brugeren kan få hjælp til at finde farver.",
+        },
+        item5: {
+          content:
+            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå en ensartet og moderne design.",
+        },
+        item6: {
+          content:
+            "TypeScript er et programmeringssprog, der bygger på JavaScript og tilføjer typekontrol.",
+        },
+        item7: {
+          content:
+            "Zustand er en state management library til React. Jeg har brugt Zustand til at håndtere state i appen, så brugere kan låse for enkelte farver i paletterne uden at miste state der genereres en ny palet.",
         },
       },
     },

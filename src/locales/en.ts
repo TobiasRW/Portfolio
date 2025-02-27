@@ -36,6 +36,10 @@ export default {
           name: "Live Scores",
           brief: "A football live score app",
         },
+        palette: {
+          name: "Palette",
+          brief: "A color palette generator with AI chatbot",
+        },
       },
     },
     about: {
@@ -111,6 +115,11 @@ export default {
           "To search for books and retrieve information about them, the app uses the Google Books API, which has a vast library of books, enabling users to find books and detailed information about them.",
         paragraph4:
           "I have used Tailwind CSS to style the app and Motion to add animations to buttons and modal windows, making the app feel more dynamic and interactive.",
+        testUser: {
+          heading: "Test User:",
+          user: "Username: sylto",
+          password: "Password: hello",
+        },
       },
     },
     accordion: {
@@ -154,6 +163,11 @@ export default {
           "We used Next.js to build the user app and Remix to develop an admin dashboard for Lendr's employees.",
         paragraph3:
           "We used MySQL to create a database that stores information about users and the products available for rent. Additionally, we developed an API in PHP, which both frontends can access to retrieve and update data.",
+        testUser: {
+          heading: "Test User:",
+          email: "Email: sylto@gmail.com",
+          password: "Password: hello",
+        },
       },
     },
     accordion: {
@@ -264,6 +278,58 @@ export default {
         item6: {
           content:
             "Football-data.org is an API that provides access to football data from various leagues and tournaments. I used Football-data.org to fetch league tables for my live score app.",
+        },
+      },
+    },
+  },
+  projectPalette: {
+    title: "Palette",
+    about: {
+      heading: "About the Project",
+      text: {
+        paragraph1:
+          "Palette is a color palette generator developed as a hobby project. The app can generate random color palettes that users can save to their profiles. Additionally, the app features an AI chatbot that helps users find palettes that match their needs.",
+        paragraph2:
+          "The app is built with Next.js using TypeScript and utilizes MongoDB to store data about users and the color palettes they have saved. It also integrates the Mistral API as an LLM to generate color palettes in the chat window.",
+        paragraph3:
+          "I created the app as an exercise in working with AI and MongoDB. I recreated the design from the existing app 'Coolors,' which is a color palette generator.",
+        testUser: {
+          heading: "Test User:",
+          email: "Email: sylto@gmail.com",
+          password: "Password: hello1234",
+        },
+      },
+    },
+    accordion: {
+      heading: "Technologies",
+      items: {
+        item1: {
+          content:
+            "React is used to build interactive user interfaces with components. I have used it to structure and implement the entire functionality of the website, making it easy to reuse code and achieve an efficient development process.",
+        },
+        item2: {
+          content:
+            "Next.js is a modern React-based framework that simplifies building fast and efficient web applications. In this project, I used Next.js to create a color palette generator where users can generate and save color palettes.",
+        },
+        item3: {
+          content:
+            "MongoDB is a NoSQL database. In this project, I used MongoDB to create a database that stores information about users and the color palettes they have saved.",
+        },
+        item4: {
+          content:
+            "Mistral is an AI LLM. I used Mistral to generate color palettes in the chat window, allowing users to get assistance in finding colors.",
+        },
+        item5: {
+          content:
+            "Tailwind is a CSS framework that makes it easy to build a responsive and modern user interface using utility classes. I used it to style the website and achieve a consistent and modern design.",
+        },
+        item6: {
+          content:
+            "TypeScript is a programming language that builds on JavaScript and adds type checking.",
+        },
+        item7: {
+          content:
+            "Zustand is a state management library for React. I used Zustand to manage the state in the app, allowing users to lock individual colors in palettes without losing the state when generating a new palette.",
         },
       },
     },
