@@ -2,7 +2,7 @@
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import Link from "next/link";
+import { TransitionLink } from "./utils/transition-link";
 import { Toggle } from "@/components/ui/toggle";
 import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
 import { useScopedI18n } from "@/locales/client";
@@ -94,7 +94,7 @@ export default function Nav() {
               tobiasrw98@gmail.com
             </a>
           ) : (
-            <Link
+            <TransitionLink
               href="/"
               className="group flex items-center justify-center gap-2 font-heading lg:text-lg"
             >
@@ -103,7 +103,7 @@ export default function Nav() {
                 className="group-hover:scale-11 cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
               />{" "}
               {scopedT("back")}
-            </Link>
+            </TransitionLink>
           )}
           <div className="flex gap-2">
             <Toggle />

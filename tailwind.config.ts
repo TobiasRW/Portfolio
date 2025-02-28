@@ -1,4 +1,3 @@
-import { small } from "motion/react-client";
 import type { Config } from "tailwindcss";
 
 export default {

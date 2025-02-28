@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
+import { TransitionLink } from "./utils/transition-link";
 
 // ProjectCard component props
 type ProjectCardProps = {
@@ -33,7 +33,7 @@ export default function ProjectCard({
       }`}
       style={isPhone || isComputer ? { backgroundColor: bgColor } : {}}
     >
-      <Link href={link}>
+      <TransitionLink href={link}>
         <div
           className={`absolute h-full w-full cursor-pointer transition-all duration-300 ${
             isPhone // Phone img style
@@ -64,7 +64,7 @@ export default function ProjectCard({
             {text}
           </p>
         </div>
-      </Link>
+      </TransitionLink>
     </div>
   );
 }
