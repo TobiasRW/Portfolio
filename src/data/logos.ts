@@ -96,7 +96,13 @@ export const getLogo = (logo: Logo, isDarkMode: boolean): string => {
   return isDarkMode && logo.dark ? logo.dark : logo.icon;
 };
 
-export const getLogoByLabel = (label: string, isDarkMode: boolean): string => {
+export const getLogoByLabel = (
+  label: string,
+  isDarkMode: boolean,
+): { icon: string; url?: string } => {
   const logo = logos.find((logo) => logo.label === label);
-  return logo ? getLogo(logo, isDarkMode) : "";
+  return {
+    icon: logo ? getLogo(logo, isDarkMode) : "",
+    url: logo?.url,
+  };
 };

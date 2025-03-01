@@ -46,7 +46,7 @@ export default function AccordionTech({ title, items }: AccordionTechProps) {
                 {item.content}
                 <div className="flex items-center gap-4">
                   <Image
-                    src={getLogoByLabel(item.iconLabel, isDarkMode)}
+                    src={getLogoByLabel(item.iconLabel, isDarkMode).icon}
                     alt={`icon-${index}`}
                     width={24}
                     height={24}
