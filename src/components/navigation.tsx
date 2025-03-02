@@ -89,7 +89,7 @@ export default function Nav() {
           {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
             <a
               href="mailto:tobiasrw98@gmail.com"
-              className="md:text-s text-xs lg:text-base"
+              className="text-xs md:text-sm lg:text-base"
             >
               tobiasrw98@gmail.com
             </a>
@@ -107,6 +107,25 @@ export default function Nav() {
           )}
           <div className="flex gap-2">
             <Toggle />
+          </div>
+          <div className="hidden xs:flex">
+            {pathname === "/" || pathname === "/da" ? (
+              <a
+                href="/pdfs/cv-danish.pdf"
+                download
+                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base lg:hover:bg-[#e2e2e2] dark:text-background lg:dark:hover:bg-whitebg"
+              >
+                CV
+              </a>
+            ) : (
+              <a
+                href="/pdfs/cv-english.pdf"
+                download
+                className="rounded-full bg-whitebg px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base lg:hover:bg-[#e2e2e2] dark:text-background lg:dark:hover:bg-whitebg"
+              >
+                CV
+              </a>
+            )}
           </div>
         </div>
         <nav className="">
