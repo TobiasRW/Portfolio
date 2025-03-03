@@ -56,7 +56,7 @@ export default async function Page({
             variant="phone"
             imageSrc="/images/bookapp-banner.webp"
             title="Book Buddy"
-            website="https://book-app-gamma-rose.vercel.app/"
+            website="https://bookbuddy.tobiaswolmar.dk/"
             github="https://github.com/TobiasRW/my-book-app"
           />
         </div>

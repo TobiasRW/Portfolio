@@ -61,7 +61,7 @@ export default async function Page({
             variant="pc"
             imageSrc="/images/palette-banner.webp"
             title="Palette"
-            website="https://color-palette-chi-cyan.vercel.app/"
+            website="https://palette.tobiaswolmar.dk/"
             github="https://github.com/TobiasRW/Color-Palette"
             bgColor="#FC7753"
           />
