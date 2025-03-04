@@ -47,13 +47,13 @@ export default {
       text: {
         intro: "Hejsa 👋🏻",
         paragraph1:
-          "Jeg hedder Tobias og er en passioneret webudvikler med fokus på frontend-udvikling. Jeg er uddannet multimediedesigner og læser nu videre på webudvikling som en top-up-uddannelse.",
+          "Jeg hedder Tobias og er en 26-årig webudvikler, med en passion for både frontend- og backend-udvikling. Jeg er uddannet multimediedesigner og læser nu videre på webudvikling som en top-up-uddannelse.",
         paragraph2:
           "Jeg elsker at fordybe mig i ting - uanset om det er en ny fantasy verden, træning i fitnesscenteret, eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til nu at finde løsninger som webudvikler.",
         paragraph3:
-          "Med mit fokus inden for frontend-udvikling sætter jeg pris på detaljen - især når det kommer til interaktivitet og design. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
+          "Som webudvikler sætter jeg pris på detaljen - uanset om det interaktivitet og design eller optimeret kode. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
         paragraph4:
-          "Lige nu leder jeg efter et studiejob, hvor jeg kan få lov til at bygge videre på min erfaring, samtidig med at jeg lærer en masse nyt. Hvis det lyder som noget for jer, så tøv ikke med at kontakte mig – jeg glæder mig til at høre fra jer!",
+          " Lige nu leder jeg efter en praktikplads, hvor jeg kan få lov til at bygge videre på min erfaring, samtidig med at jeg lærer en masse nyt. Hvis det lyder som noget for jer, så tøv ikke med at kontakte mig – jeg glæder mig til at høre fra jer!",
       },
     },
   },
@@ -61,6 +61,9 @@ export default {
     title: "Cølm",
     about: {
       heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+      },
       text: {
         paragraph1:
           "Dette projekt fokuserer på udviklingen af en ny visuel identitet samt et proof-of-concept webshop-design for Nimo Skin’s kommende brand, cølm.",
@@ -77,19 +80,19 @@ export default {
       items: {
         item1: {
           content:
-            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+            "Jeg har brugt React til at bygge en struktureret og modulær frontend, hvor komponenter genbruges for at skabe en skalerbar kodebase. Det har gjort det lettere at udvikle og udvide projektet efter behov.",
         },
         item2: {
           content:
-            "Vite er et værktøj, der gør udviklingen hurtig og effektiv ved at levere øjeblikkelige opdateringer under kodning. Jeg har brugt det til at gøre udviklingsprocessen mere smidig og effektiv.",
+            "Jeg har brugt Vite som react framework til at udvikle websitet. Vite har gjort det nemt at starte et nyt projekt i et mere simpelt react miljø, hvilket har optimeret udviklingsprocessen.",
         },
         item3: {
           content:
-            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå en ensartet og moderne design.",
+            "Til styling har jeg anvendt Tailwind CSS, hvilket har givet mig mulighed for hurtigt at opbygge et responsivt og moderne design. Det har gjort det nemt at holde en ensartet stil og sikre, at sitet fungerer godt på alle enheder.",
         },
         item4: {
           content:
-            "Motion gør det supernemt at lave fede animationer i React. Jeg har brugt det til at skabe dynamiske elementer og animationer, der gør websitet mere levende og engagerende. Herunder bl.a. knapper og andre interaktive elementer.",
+            "Motion har gjort det muligt at tilføje flydende animationer og interaktioner, der forbedrer brugeroplevelsen. Jeg har blandt andet brugt det til animerede knapper og sektioner, der giver websitet et mere dynamisk og engagerende udtryk.",
         },
         item5: {
           content:
@@ -97,7 +100,7 @@ export default {
         },
         item6: {
           content:
-            "GSAP er et animationsbibliotek, der gør det nemt at lave avancerede og imponerende animationer. Jeg har brugt det til de mere komplekse animationer på websitet, som ses på 'om os'-siden og i webshoppen.",
+            "GSAP har været et kraftfuldt værktøj til at skabe mere komplekse animationer. Jeg har brugt det til at skabe engagerende effekter på blandt andet 'Om os'-siden og i webshoppen, hvor animationerne hjælper med at guide brugeren gennem indholdet.",
         },
       },
     },
@@ -106,6 +109,11 @@ export default {
     title: "Book Buddy",
     about: {
       heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "API",
+      },
       text: {
         paragraph1:
           "Dette projekt er en web app kaldet 'Book Buddy', som er udviklet som et fritidsprojekt. Da jeg selv nyder at læse og fordybe mig i bøger, var det oplagt for mig at udvikle en app hvor jeg kan gemme og holde styr på mine bøger.",
@@ -127,11 +135,11 @@ export default {
       items: {
         item1: {
           content:
-            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+            "Jeg har brugt React til at bygge en struktureret og modulær frontend, hvor komponenter genbruges for at skabe en skalerbar kodebase. Det har gjort det lettere at udvikle og udvide projektet efter behov.",
         },
         item2: {
           content:
-            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. Det understøtter server-side rendering (SSR), hvilket optimerer ydelsen og brugeroplevelsen. I dette projekt har jeg brugt Next.js til at skabe en applikation, hvor brugerne kan søge efter bøger og gemme dem til senere brug.",
+            "I dette projekt har jeg brugt Next.js til at bygge en hurtig og brugervenlig webapplikation, hvor brugere kan søge efter bøger og gemme dem til senere brug. Next.js har gjort det muligt at implementere server-side rendering (SSR).",
         },
         item3: {
           content:
@@ -139,11 +147,11 @@ export default {
         },
         item4: {
           content:
-            "Motion er et animationsbibliotek til JavaScript og React, som gør det super nemt at skabe flotte og fængende animationer. I dette projekt har jeg brugt Motion til at tilføje animationer til kanpper og modal vinduer, hvilket har gjort websitet mere levende og interaktivt.",
+            "Motion har gjort det muligt at tilføje flydende animationer og interaktioner, der forbedrer brugeroplevelsen. Jeg har blandt andet brugt det til animerede knapper og sektioner, der giver websitet et mere dynamisk og engagerende udtryk.",
         },
         item5: {
           content:
-            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå en ensartet og moderne design.",
+            "Til styling har jeg anvendt Tailwind CSS, hvilket har givet mig mulighed for hurtigt at opbygge et responsivt og moderne design. Det har gjort det nemt at holde en ensartet stil og sikre, at sitet fungerer godt på alle enheder.",
         },
         item6: {
           content:
@@ -156,6 +164,11 @@ export default {
     title: "Lendr",
     about: {
       heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "API",
+      },
       text: {
         paragraph1:
           "Lendr er udviklet i forbindelse med et skoleprojekt på webudvikling. Projektet skulle bestå af to forskellige frontends som begge skulle tilgå den samme backend. Vi har skabt en web app som har til formål at forbinde lejere og udlejere af kufferter og tasker. Brugere kan altså enten leje en kuffert eller tjene penge på at udleje en kuffert.",
@@ -175,31 +188,31 @@ export default {
       items: {
         item1: {
           content:
-            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Vi har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces. ",
+            "Vi har brugt React til at skabe en dynamisk og interaktiv brugeroplevelse. Ved at opbygge vores website med genanvendelige komponenter, har vi optimeret udviklingsprocessen og sikret en ensartet brugergrænseflade.",
         },
         item2: {
           content:
-            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. I denne opgave har vi brugt Next.js til at bygge brugerappen til Lendr, som er en platform, der forbinder lejere og udlejere af kufferter og tasker.",
+            "For at levere en hurtig og effektiv brugerapp til Lendr, valgte vi Next.js. Dette framework har gjort det muligt for os at optimere ydeevnen og samtidig skabe en problemfri oplevelse for vores brugere.",
         },
         item3: {
           content:
-            "Remix er et moderne React-baseret framework, der ligesom Next.js gør det nemt at bygge hurtige og effektive webapplikationer. I denne opgave har vi brugt Remix til at bygge et admin dashboard til Lendr, som skal fungere som et kontrolpanel for supportmedarbejdere og administratorer.",
+            "I denne opgave har vi brugt Remix til at bygge et admin dashboard til Lendr, som skal fungere som et kontrolpanel for supportmedarbejdere og administratorer.",
         },
         item4: {
           content:
-            "MySQL er et programmeringssprog, der bruges til at oprette og administrere databaser. I denne opgave har vi brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning.",
+            "I denne opgave har vi brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning.",
         },
         item5: {
           content:
-            "PHP er i denne opgave brugt til at udvikle en API, som kan tilgås af forskellige frontends. API'en bruges til at hente og opdatere data i databasen, så brugere/admins kan se og administrere deres kufferter og tasker.",
+            "Vores PHP-baserede API fungerer som bindeled mellem frontend og database. Dette har muliggjort en fleksibel og sikker dataudveksling, så brugere og administratorer kan interagere med platformen.",
         },
         item6: {
           content:
-            "Shadcn er en samling af genanvendelige komponenter, der er designet til at gøre det nemt at opbygge en moderne og responsiv brugergrænseflade. Vi har i dette projekt flere af shadcn's komponenter, til at hurtugt og nemt at opbygge en flot og brugervenlig brugergrænseflade. Vi har redigeret og tilpasset komponenterne, så de passede til vores behov.",
+            "For at opnå et moderne og brugervenligt design, har vi integreret Shadcn komponenter. Dette har accelereret vores UI-udvikling og givet os mulighed for at tilpasse udseendet, så det passer perfekt til Lendr's visuelle identitet.",
         },
         item7: {
           content:
-            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Vi har brugt det til at style websitet og opnå en ensartet og moderne design.",
+            "Med Tailwind CSS har vi skabt et responsivt og stilfuldt design. Dette framework har givet os mulighed for hurtigt at style vores website og sikre en ensartet visuel oplevelse på tværs af forskellige enheder.",
         },
         item8: {
           content:
@@ -212,6 +225,9 @@ export default {
     title: "Glass Fill",
     about: {
       heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+      },
       text: {
         paragraph1:
           "Dette Projekt er en hjemmeside, der er bugget med basis HTML, CSS og JavaScript. Hjemmesiden er en simpel side, der viser en animation af et glas, der gradvist fyldes med væske når man scroller ned på siden.",
@@ -243,6 +259,10 @@ export default {
     title: "Live Scores",
     about: {
       heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "API",
+      },
       text: {
         paragraph1:
           "Live Scores er en fodbold-livescore-app, der viser livekampe fra de største ligaer i Europa. Appen er bygget med TypeScript i Next.js og bruger to forskellige fodbold API'er til at hente live resultater og ligatabeller.",
@@ -286,6 +306,11 @@ export default {
     title: "Palette",
     about: {
       heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "AI Chatbot",
+      },
       text: {
         paragraph1:
           "Palette er en farvepalet generator, som er udviklet som et fritidsprojekt. Appen kan generere tilfældige farvepaletter, som brugeren kan gemme i sin profil. Derudover har appen en AI chatbot, som kan hjælpe brugeren med at finde frem til paletter som passer til deres behov.",
@@ -305,31 +330,31 @@ export default {
       items: {
         item1: {
           content:
-            "React bruges til at bygge interaktive brugergrænseflader med komponenter. Jeg har brugt det til at opbygge hele strukturen og funktionaliteten af websitet, hvilket har gjort det nemt at genbruge kode og opnå en effektiv udviklingsproces.",
+            "Jeg har brugt React til at skabe en interaktiv og dynamisk brugergrænseflade for min farvepaletgenerator. Ved at opbygge siden med genanvendelige komponenter, har jeg sikret en effektiv udviklingsproces og en brugervenlig oplevelse.",
         },
         item2: {
           content:
-            "Next.js er et moderne React-baseret framework, der gør det nemt at bygge hurtige og effektive webapplikationer. I dette projekt har jeg brugt Next.js til at bygge en farvepalet generator, hvor brugere kan generere og gemme farvepaletter.",
+            "Next.js har været fundamentet for at skabe en hurtig og effektiv webapplikation. Jeg har brugt det til at udvikle min farvepaletgenerator, hvor brugerne nemt kan generere og gemme deres egne farvepaletter.",
         },
         item3: {
           content:
-            "MongoDB er en NoSQL database. I dette projekt har jeg brugt MongoDB til at oprette en database, der indeholder information om brugerne og de farvepaletter, de har gemt.",
+            "For at håndtere brugerdata og gemte farvepaletter har jeg implementeret MongoDB. Denne NoSQL-database giver mig fleksibiliteten til at gemme og hente data effektivt, hvilket er afgørende for funktionaliteten af min applikation.",
         },
         item4: {
           content:
-            "Mistral er en AI LLM. Jeg har brugt Mistral til at generere farvepaletter i chat vinduet, så brugeren kan få hjælp til at finde farver.",
+            "Mistral har været en central del af at tilføje intelligens til min applikation. Jeg har integreret Mistral i chatvinduet, så brugerne kan få hjælp til at generere farvepaletter, hvilket giver en mere intuitiv og assisteret oplevelse.",
         },
         item5: {
           content:
-            "Tailwind er et CSS framework, der gør det nemt at opbygge en responsiv og moderne brugergrænseflade ved brug af utility classes. Jeg har brugt det til at style websitet og opnå en ensartet og moderne design.",
+            "Med Tailwind CSS har jeg hurtigt og effektivt stylet min farvepaletgenerator. Det har gjort det muligt for mig at skabe et moderne og responsivt design, der fungerer godt på alle enheder.",
         },
         item6: {
           content:
-            "TypeScript er et programmeringssprog, der bygger på JavaScript og tilføjer typekontrol.",
+            "TypeScript har hjulpet mig med at skrive mere robust og vedligeholdelig kode. Ved at tilføje typekontrol til JavaScript har jeg reduceret fejl og forbedret udviklingsprocessen.",
         },
         item7: {
           content:
-            "Zustand er en state management library til React. Jeg har brugt Zustand til at håndtere state i appen, så brugere kan låse for enkelte farver i paletterne uden at miste state der genereres en ny palet.",
+            "Zustand er et state management library til React. Jeg har brugt det til at implementere, at brugere kan låse enkelte farver i paletterne uden at miste 'locked state' efter hver ny paletgenerering. Dette giver brugerne mere kontrol over deres farvevalg.",
         },
       },
     },

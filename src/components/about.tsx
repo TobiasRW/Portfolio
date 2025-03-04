@@ -22,7 +22,7 @@ export default async function About() {
           <br />
           {scopedT("text.paragraph4")}
         </p>
-        <div className="flex flex-col items-start gap-4 font-body text-sm font-light text-[#2A4B9A] lg:text-base 2xl:text-lg dark:text-white">
+        <div className="flex flex-col items-start gap-4 font-body text-sm font-light text-[#2A4B9A] lg:flex-row lg:gap-8 lg:text-base 2xl:text-lg dark:text-white">
           <a
             href="mailto:tobiasrw98@gmail.com"
             target="_blank"

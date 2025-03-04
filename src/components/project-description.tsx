@@ -2,13 +2,15 @@
 
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
+import Badge from "./badge";
 
 type ProjectDescriptionProps = {
   title: string;
   text: string;
   iconLabels: string[];
-  highlightWords?: string[]; // Optional
-  testUser?: string; // Optional
+  highlightWords?: string[];
+  badges?: string[];
+  testUser?: string;
 };
 
 export default function ProjectDescription({
@@ -16,6 +18,7 @@ export default function ProjectDescription({
   text,
   iconLabels,
   highlightWords = [],
+  badges = [],
   testUser,
 }: ProjectDescriptionProps) {
   const isDarkMode = useDarkMode();
@@ -39,9 +42,18 @@ export default function ProjectDescription({
     <div className="w-full rounded-b-[40px] bg-whitebg pb-10 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       {/* Project Description Section */}
       <div className="mx-auto flex w-10/12 flex-col gap-6">
-        <h3 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
-          {title}
-        </h3>
+        <div className="flex flex-col gap-2">
+          <h3 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
+            {title}
+          </h3>
+          {badges.length > 0 && (
+            <div className="flex flex-wrap gap-2 xl:gap-3">
+              {badges.map((badge, index) => (
+                <Badge key={index} title={badge} />
+              ))}
+            </div>
+          )}
+        </div>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between 2xl:gap-20">
           <div className="">
             <p className="font-body text-sm font-light leading-normal md:text-base">

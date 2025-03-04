@@ -63,6 +63,10 @@ export default async function Page({
       </div>
       <ProjectDescription
         title={scopedT("about.heading")}
+        badges={[
+          scopedT("about.badges.badge1"),
+          scopedT("about.badges.badge2"),
+        ]}
         text={`${scopedT("about.text.paragraph1")} \n 
        ${scopedT("about.text.paragraph2")}\n
        ${scopedT("about.text.paragraph3")} \n 

@@ -47,13 +47,13 @@ export default {
       text: {
         intro: "Hello There 👋🏻",
         paragraph1:
-          "My name is Tobias, and I am a passionate web developer focusing on frontend development. I have a degree in multimedia design and am currently continuing my studies in web development as a top-up education.",
+          "My name is Tobias, and I’m a 26-year-old web developer with a passion for both frontend and backend development. I have a degree in multimedia design and am currently continuing my studies in web development with a bachelor’s degree in web development.",
         paragraph2:
-          "I love immersing myself in things—whether it's a new fantasy world, training at the gym, or an exciting coding project! I have always been a problem solver by nature, from math exercises in elementary school to now finding solutions as a web developer.",
+          "I love immersing myself in things — whether it's exploring a new fantasy world, working out at the gym, or an exciting coding project! I have always been a problem solver by nature, from solving math problems in school to now finding solutions as a web developer.",
         paragraph3:
-          "With my focus on frontend development, I appreciate the details—especially when it comes to interactivity and design. I am always curious to learn something new and I am happy to dive into new technologies and trends.",
+          "As a web developer, I appreciate the details — from interactivity and design to optimized code. I'm always curious to learn something new and eager to explore new technologies and trends.",
         paragraph4:
-          "Right now, I am looking for a student job where I can build on my experience while learning a lot of new things. If that sounds interesting to you, don’t hesitate to contact me—I look forward to hearing from you!",
+          "Right now, I’m looking for an internship where I can build on my experience while learning a lot along the way. If that sounds like something for you, don’t hesitate to reach out—I look forward to hearing from you!",
       },
     },
   },
@@ -61,6 +61,9 @@ export default {
     title: "Coelm",
     about: {
       heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+      },
       text: {
         paragraph1:
           "This project focuses on developing a new visual identity and a proof-of-concept webshop design for Nimo Skin’s upcoming brand, coelm.",
@@ -77,27 +80,27 @@ export default {
       items: {
         item1: {
           content:
-            "React is used to build interactive user interfaces with components. I have used it to structure and develop the entire functionality of the website, making it easy to reuse code and achieve an efficient development process.",
+            "I used React to build a structured and modular frontend, where components are reused to create a scalable codebase. This has made it easier to develop and expand the project as needed.",
         },
         item2: {
           content:
-            "Vite is a tool that makes development fast and efficient by providing instant updates during coding. I have used it to make the development process smoother and more efficient.",
+            "I used Vite as a React framework to develop the website. Vite made it easy to start a new project in a simpler React environment, optimizing the development process.",
         },
         item3: {
           content:
-            "Tailwind is a CSS framework that makes it easy to build a responsive and modern user interface using utility classes. I have used it to style the website and achieve a consistent and modern design.",
+            "For styling, I used Tailwind CSS, which allowed me to quickly build a responsive and modern design. This made it easy to maintain a consistent style and ensure that the site works well on all devices.",
         },
         item4: {
           content:
-            "Motion makes it super easy to create cool animations in React. I have used it to create dynamic elements and animations that make the website more lively and engaging. Including buttons and other interactive elements.",
+            "Motion enabled me to add smooth animations and interactions that enhance the user experience. I used it for animated buttons and sections, giving the website a more dynamic and engaging feel.",
         },
         item5: {
           content:
-            "JavaScript is used through React to add interactivity to the website. I have used it to implement functions and interactions that make the user experience more engaging and intuitive.",
+            "JavaScript was used through React to add interactivity and dynamics to the website. I implemented functions and interactions that make the user experience more engaging and intuitive.",
         },
         item6: {
           content:
-            "GSAP is an animation library that makes it easy to create advanced and impressive animations. I have used it for the more complex animations on the website, as seen on the 'about us' (om os) page and in the webshop.",
+            "GSAP has been a powerful tool for creating more complex animations. I used it to develop engaging effects on the 'About Us' page and in the webshop, where the animations help guide users through the content.",
         },
       },
     },
@@ -106,6 +109,11 @@ export default {
     title: "Book Buddy",
     about: {
       heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "API",
+      },
       text: {
         paragraph1:
           "This project is a web app called 'Book Buddy,' developed as a personal side project. Since I enjoy reading and immersing myself in books, it was a natural choice for me to develop an app where I can store and keep track of my books.",
@@ -127,11 +135,11 @@ export default {
       items: {
         item1: {
           content:
-            "React is used to build interactive user interfaces with components. I have used it to structure and develop the entire functionality of the website, making it easy to reuse code and achieve an efficient development process.",
+            "I used React to build a structured and modular frontend, where components are reused to create a scalable codebase. This has made it easier to develop and expand the project as needed.",
         },
         item2: {
           content:
-            "Next.js is a modern React-based framework that makes it easy to build fast and efficient web applications. It supports server-side rendering (SSR), which optimizes performance and user experience. In this project, I used Next.js to create an application where users can search for books and save them for later use.",
+            "In this project, I used Next.js to build a fast and user-friendly web application where users can search for books and save them for later. Next.js made it possible to implement server-side rendering (SSR).",
         },
         item3: {
           content:
@@ -139,15 +147,15 @@ export default {
         },
         item4: {
           content:
-            "Motion is an animation library for JavaScript and React that makes it super easy to create beautiful and engaging animations. In this project, I used Motion to add animations to buttons and modal windows, making the website feel more dynamic and interactive.",
+            "Motion enabled me to add smooth animations and interactions that enhance the user experience. I used it for animated buttons and sections, giving the website a more dynamic and engaging feel.",
         },
         item5: {
           content:
-            "Tailwind is a CSS framework that simplifies the creation of a responsive and modern user interface using utility classes. I used it to style the website and achieve a consistent and modern design.",
+            "For styling, I used Tailwind CSS, which allowed me to quickly build a responsive and modern design. This made it easy to maintain a consistent style and ensure that the site works well on all devices.",
         },
         item6: {
           content:
-            "JavaScript is used through React to add interactivity to the website. I have used it to implement functions and interactions that make the user experience more engaging and intuitive.",
+            "JavaScript was used through React to add interactivity and dynamics to the website. I implemented functions and interactions that make the user experience more engaging and intuitive.",
         },
       },
     },
@@ -156,6 +164,11 @@ export default {
     title: "Lendr",
     about: {
       heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "API",
+      },
       text: {
         paragraph1:
           "Lendr was developed as part of a school project in web development. The project was to consist of two different frontends, both of which should access the same backend. We created a web app designed to connect renters and lenders of suitcases and travel bags. Users can either rent a suitcase cheaply or earn money by renting out their own.",
@@ -175,11 +188,11 @@ export default {
       items: {
         item1: {
           content:
-            "React is used to build interactive user interfaces with components. We used it to structure and develop the entire functionality of the website, making it easy to reuse code and achieve an efficient development process.",
+            "We used React to create a dynamic and interactive user experience. By building our website with reusable components, we optimized the development process and ensured a consistent user interface.",
         },
         item2: {
           content:
-            "Next.js is a modern React-based framework that makes it easy to build fast and efficient web applications. In this project, we used Next.js to build the user app for Lendr, a platform that connects renters and lenders of suitcases and bags.",
+            "To deliver a fast and efficient user app for Lendr, we chose Next.js. This framework has enabled us to optimize performance while creating a seamless experience for our users.",
         },
         item3: {
           content:
@@ -187,19 +200,19 @@ export default {
         },
         item4: {
           content:
-            "MySQL is a programming language used for creating and managing databases. In this project, we used MySQL to create a database that stores information about users and the suitcases and bags available for rent.",
+            "In this project, we used MySQL to create a database that stores information about users and the suitcases and bags available for rent.",
         },
         item5: {
           content:
-            "PHP was used in this project to develop an API accessible by different frontends. The API is used to fetch and update data in the database, allowing users and admins to view and manage their suitcases and bags.",
+            "Our PHP-based API serves as the link between the frontend and database. This has enabled flexible and secure data exchange, allowing users and administrators to interact with the Lendr platform.",
         },
         item6: {
           content:
-            "Shadcn is a collection of reusable components designed to make it easy to build a modern and responsive user interface. In this project, we used several of Shadcn’s components to quickly and efficiently create an attractive and user-friendly interface. We customized and adjusted the components to fit our specific needs.",
+            "To achieve a modern and user-friendly design, we integrated Shadcn components. This has accelerated our UI development and allowed us to customize the look to perfectly match Lendr's visual identity.",
         },
         item7: {
           content:
-            "Tailwind is a CSS framework that simplifies the creation of a responsive and modern user interface using utility classes. We used it to style the website and achieve a consistent and modern design.",
+            "With Tailwind CSS, we created a responsive and stylish design. This framework has allowed us to quickly style our website and ensure a consistent visual experience across different devices.",
         },
         item8: {
           content:
@@ -212,6 +225,9 @@ export default {
     title: "Glass Fill",
     about: {
       heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+      },
       text: {
         paragraph1:
           "This project is a website built with basic HTML, CSS, and JavaScript. The site is a simple page that shows an animation of a glass gradually filling with liquid as you scroll down the page.",
@@ -243,6 +259,10 @@ export default {
     title: "Live Scores",
     about: {
       heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "API",
+      },
       text: {
         paragraph1:
           "Live Scores is a football live score app that displays live matches from the biggest leagues in Europe. The app is built with TypeScript in Next.js and uses two different football APIs to fetch live scores and league tables.",
@@ -286,6 +306,11 @@ export default {
     title: "Palette",
     about: {
       heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "AI Chatbot",
+      },
       text: {
         paragraph1:
           "Palette is a color palette generator developed as a hobby project. The app can generate random color palettes that users can save to their profiles. Additionally, the app features an AI chatbot that helps users find palettes that match their needs.",
@@ -305,27 +330,27 @@ export default {
       items: {
         item1: {
           content:
-            "React is used to build interactive user interfaces with components. I have used it to structure and implement the entire functionality of the website, making it easy to reuse code and achieve an efficient development process.",
+            "I used React to create an interactive and dynamic user interface for my color palette generator. By building the site with reusable components, I ensured an efficient development process and a user-friendly experience.",
         },
         item2: {
           content:
-            "Next.js is a modern React-based framework that simplifies building fast and efficient web applications. In this project, I used Next.js to create a color palette generator where users can generate and save color palettes.",
+            "Next.js has been the foundation for creating a fast and efficient web application. I used it to develop my color palette generator, where users can easily generate and save their own color palettes.",
         },
         item3: {
           content:
-            "MongoDB is a NoSQL database. In this project, I used MongoDB to create a database that stores information about users and the color palettes they have saved.",
+            "To manage user data and saved color palettes, I implemented MongoDB. This NoSQL database gives me the flexibility to store and retrieve data efficiently.",
         },
         item4: {
           content:
-            "Mistral is an AI LLM. I used Mistral to generate color palettes in the chat window, allowing users to get assistance in finding colors.",
+            "Mistral has been a key part of adding intelligence to my application. I integrated Mistral into the chat window so users can get help generating color palettes, providing a more intuitive experience.",
         },
         item5: {
           content:
-            "Tailwind is a CSS framework that makes it easy to build a responsive and modern user interface using utility classes. I used it to style the website and achieve a consistent and modern design.",
+            "With Tailwind CSS, I quickly and efficiently styled my color palette generator. This has enabled me to create a modern and responsive design that works well on all devices.",
         },
         item6: {
           content:
-            "TypeScript is a programming language that builds on JavaScript and adds type checking.",
+            "TypeScript has helped me write more robust and maintainable code. By adding type safety to JavaScript, I have reduced errors and improved the development process.",
         },
         item7: {
           content:
