@@ -8,8 +8,7 @@ type ModelProps = {
   position?: [number, number, number];
   rotation?: [number, number, number];
   scale?: number | [number, number, number];
-  [key: string]: any;
-};
+} & Record<string, unknown>;
 
 export function Model(props: ModelProps) {
   const { scene } = useGLTF("/models/coelm.glb");
