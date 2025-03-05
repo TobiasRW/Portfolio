@@ -5,6 +5,7 @@ import Accordion from "@/components/accordion-tech";
 import Dots from "@/components/dots";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
+import Scene from "@/components/scene";
 
 export default async function Page({
   params,
@@ -78,7 +79,7 @@ export default async function Page({
         ]}
         highlightWords={["React", "Vite", "GSAP", "Motion", "Tailwind", "CSS"]}
       />
-      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
+      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:pb-20 xl:pt-40">
         <Slider
           images={[
             "/images/coelm-pic1.png",
@@ -91,6 +92,14 @@ export default async function Page({
           items={accordionItems}
           title={scopedT("accordion.heading")}
         />
+      </div>
+      <div className="mx-auto mt-20 w-9/12 sm:w-10/12 md:mt-28">
+        <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-start xl:text-5xl">
+          3D Model
+        </h2>
+        <div className="mt-10 overflow-hidden rounded-2xl bg-whitebg dark:bg-[#1a1a1a]">
+          <Scene />
+        </div>
       </div>
     </>
   );
