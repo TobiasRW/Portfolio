@@ -32,6 +32,14 @@ export const projects: Project[] = [
     bgColor: "#5BAD86",
   },
   {
+    variant: "phone",
+    imageSrc: "/images/livescore-banner.webp",
+    titleKey: "project.liveScores.name",
+    textKey: "project.liveScores.brief",
+    link: "/livescore",
+    bgColor: "#26437E",
+  },
+  {
     variant: "computer",
     imageSrc: "/images/glassfill-banner.webp",
     titleKey: "project.glassFill.name",
@@ -39,12 +47,4 @@ export const projects: Project[] = [
     link: "/glass-fill",
     bgColor: "#6BB3ED",
   },
-  // {
-  //   variant: "phone",
-  //   imageSrc: "/images/livescore-banner.webp",
-  //   titleKey: "project.liveScores.name",
-  //   textKey: "project.liveScores.brief",
-  //   link: "/livescore",
-  //   bgColor: "#26437E",
-  // },
 ];

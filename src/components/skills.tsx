@@ -25,6 +25,7 @@ export const Skills = () => {
       "TypeScript",
       "React",
       "Next.js",
+      "React Router",
       "MySQL",
       "JavaScript",
       "Motion",

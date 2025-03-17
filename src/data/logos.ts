@@ -18,6 +18,12 @@ export const logos: Logo[] = [
     url: "https://nextjs.org/docs",
   },
   {
+    icon: "/icons/react-router.svg",
+    dark: "/icons/react-router-dark.svg",
+    label: "React Router",
+    url: "https://reactrouter.com/home",
+  },
+  {
     icon: "/icons/remix.svg",
     dark: "/icons/remix-dark.svg",
     label: "Remix",
