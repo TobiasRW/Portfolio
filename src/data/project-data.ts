@@ -18,6 +18,14 @@ export const projects: Project[] = [
   },
   {
     variant: "phone",
+    imageSrc: "/images/bookspace-banner.webp",
+    titleKey: "project.bookSpace.name",
+    textKey: "project.bookSpace.brief",
+    link: "/book-space",
+    bgColor: "#b8b8b8",
+  },
+  {
+    variant: "phone",
     imageSrc: "/images/bookapp-banner.webp",
     titleKey: "project.bookBuddy.name",
     textKey: "project.bookBuddy.brief",
@@ -39,12 +47,12 @@ export const projects: Project[] = [
     link: "/livescore",
     bgColor: "#26437E",
   },
-  {
-    variant: "computer",
-    imageSrc: "/images/glassfill-banner.webp",
-    titleKey: "project.glassFill.name",
-    textKey: "project.glassFill.brief",
-    link: "/glass-fill",
-    bgColor: "#6BB3ED",
-  },
+  // {
+  //   variant: "computer",
+  //   imageSrc: "/images/glassfill-banner.webp",
+  //   titleKey: "project.glassFill.name",
+  //   textKey: "project.glassFill.brief",
+  //   link: "/glass-fill",
+  //   bgColor: "#6BB3ED",
+  // },
 ];

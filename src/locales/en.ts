@@ -40,6 +40,10 @@ export default {
           name: "Palette",
           brief: "A color palette generator with AI chatbot",
         },
+        bookSpace: {
+          name: "Book Space",
+          brief: "Exam project for advanced web development",
+        },
       },
     },
     about: {
@@ -355,6 +359,116 @@ export default {
         item7: {
           content:
             "Zustand is a state management library for React. I used Zustand to manage the state in the app, allowing users to lock individual colors in palettes without losing the state when generating a new palette.",
+        },
+      },
+    },
+    projectBookSpace: {
+      title: "Book Space",
+      about: {
+        heading: "About the Project",
+        badges: {
+          badge1: "Frontend",
+          badge2: "Backend",
+        },
+        text: {
+          paragraph1:
+            "Book Space is an exam project that I developed as part of my education in the second semester. The project is a web app that allows users to create a profile and save their favorite books, create lists, view recommendations, and track their reading habits.",
+          paragraph2:
+            "For this project, we were provided with a Figma prototype that we could use as a foundation for our design, which I have mostly followed.",
+          paragraph3:
+            "The app is built with React Router v7 using TypeScript and uses MongoDB to store data about users and the books they have saved. The app utilizes a JSON dataset with books, which we were given as part of the project.",
+          paragraph4:
+            "I have used Tailwind CSS to style the app and Motion to add animations to filters and modal windows, making the app more lively and interactive.",
+          testUser: {
+            heading: "Test User:",
+            email: "Email: sylto@gmail.com",
+            password: "Password: hello",
+          },
+        },
+      },
+      accordion: {
+        heading: "Technologies",
+        items: {
+          item1: {
+            content:
+              "I have used React to create an interactive and dynamic user interface for my exam project. Using React has made it easy to build a structured codebase.",
+          },
+          item2: {
+            content:
+              "I have used React Router v7 as the React framework to develop the website. With React Router's 'loader' and 'action' functions, I was able to easily fetch and update data from MongoDB directly within the components.",
+          },
+          item3: {
+            content:
+              "To manage user data and saved books, I have used MongoDB and Mongoose. This has enabled efficient data storage and retrieval, which is crucial for the app's functionality.",
+          },
+          item4: {
+            content:
+              "Motion has allowed me to add smooth animations and interactions that enhance the user experience. I have used it for filters and modal windows, giving the app a more dynamic and engaging feel.",
+          },
+          item5: {
+            content:
+              "With Tailwind CSS, I have quickly and efficiently styled the website. It has allowed me to style components rapidly and ensure a consistent visual experience across different pages.",
+          },
+          item6: {
+            content:
+              "TypeScript has helped me write more robust and maintainable code. By adding type control to JavaScript, I have reduced errors and improved the development process.",
+          },
+        },
+      },
+    },
+  },
+  projectBookSpace: {
+    title: "Book Space",
+    about: {
+      heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+      },
+      text: {
+        disclaimer:
+          "Disclaimer: The site is hosted on a free version of Render, so it may take a little time to spin up. It will typically take between 1-3 minutes",
+        paragraph1:
+          "Book Space is an exam project that I developed as part of my education in the second semester. The project is a web app that allows users to create a profile and save their favorite books, create lists, view recommendations, and track their reading habits.",
+        paragraph2:
+          "For this project, we were provided with a Figma prototype that we could use as a foundation for our design, which I have mostly followed.",
+        paragraph3:
+          "The app is built with React Router v7 using TypeScript and uses MongoDB to store data about users and the books they have saved. The app utilizes a JSON dataset with books, which we were given as part of the project.",
+        paragraph4:
+          "I have used Tailwind CSS to style the app and Motion to add animations to filters and modal windows, making the app more lively and interactive.",
+        testUser: {
+          heading: "Test User:",
+          email: "Email: sylto@gmail.com",
+          password: "Password: hello",
+        },
+      },
+    },
+    accordion: {
+      heading: "Technologies",
+      items: {
+        item1: {
+          content:
+            "I have used React to create an interactive and dynamic user interface for my exam project. Using React has made it easy to build a structured codebase.",
+        },
+        item2: {
+          content:
+            "I have used React Router v7 as the React framework to develop the website. With React Router's 'loader' and 'action' functions, I was able to easily fetch and update data from MongoDB directly within the components.",
+        },
+        item3: {
+          content:
+            "To manage user data and saved books, I have used MongoDB and Mongoose. This has enabled efficient data storage and retrieval, which is crucial for the app's functionality.",
+        },
+        item4: {
+          content:
+            "Motion has allowed me to add smooth animations and interactions that enhance the user experience. I have used it for filters and modal windows, giving the app a more dynamic and engaging feel.",
+        },
+        item5: {
+          content:
+            "With Tailwind CSS, I have quickly and efficiently styled the website. It has allowed me to style components rapidly and ensure a consistent visual experience across different pages.",
+        },
+        item6: {
+          content:
+            "TypeScript has helped me write more robust and maintainable code. By adding type control to JavaScript, I have reduced errors and improved the development process.",
         },
       },
     },

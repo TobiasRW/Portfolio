@@ -40,6 +40,10 @@ export default {
           name: "Palette",
           brief: "En farvepalet generator med AI chatbot",
         },
+        bookSpace: {
+          name: "Book Space",
+          brief: "Eksamensprojekt i avanceret webudvikling",
+        },
       },
     },
     about: {
@@ -355,6 +359,62 @@ export default {
         item7: {
           content:
             "Zustand er et state management library til React. Jeg har brugt det til at implementere, at brugere kan låse enkelte farver i paletterne uden at miste 'locked state' efter hver ny paletgenerering. Dette giver brugerne mere kontrol over deres farvevalg.",
+        },
+      },
+    },
+  },
+  projectBookSpace: {
+    title: "Book Space",
+    about: {
+      heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+      },
+      text: {
+        disclaimer:
+          "Disclaimer: Siden er hostet på en gratis version a Render, og kan derfor tage lidt tid at spinne op. Det vil typisk tage mellem 1-3 minutter.",
+        paragraph1:
+          "Book Space er et eksamensprojekt, som jeg har udviklet i forbindelse med min uddannelse på 2. semester. Projektet er en webapp, der giver brugerne mulighed for at oprette en profil og gemme deres yndlingsbøger, oprette lister, se anbefalinger og tracke deres læsevaner.",
+        paragraph2:
+          " Til dette projekt fik vi udleveret en Figma prototype, som vi kunne bruge som udgangspunkt for vores design, hvilket jeg har for det meste har fulgt.",
+        paragraph3:
+          "Appen er bygget i React Router v7 med TypeScript, og bruger MongoDB til at gemme data om brugerne og de bøger, de har gemt. Appen bruger et JSON dataset med bøger, som vi fik udleveret i forbindelse med projektet.",
+        paragraph4:
+          "Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til filtre og modal vinduer, hvilket har gjort appen mere levende og interaktiv.",
+        testUser: {
+          heading: "Test bruger:",
+          email: "Email: sylto@gmail.com",
+          password: "Kodeord: hello",
+        },
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "Jeg har brugt React til at skabe en interaktiv og dynamisk brugergrænseflade for mit eksamensprojekt. Brugen af React har gjort det nemt at opbygge en struktureret kodebase.",
+        },
+        item2: {
+          content:
+            "Jeg har brugt React Router v7 som react framework til at udvikle websitet. Ved hjælp af React Router's 'loader' og 'action' funktioner har jeg nemt kunne hente og opdatere data fra MongoDB direkte i komponenterne.",
+        },
+        item3: {
+          content:
+            "For at håndtere brugerdata og gemte bøger har jeg brugt MongoDB og Mongoose. Dette har gjort det muligt at gemme og hente data effektivt, hvilket er afgørende for funktionaliteten af appen.",
+        },
+        item4: {
+          content:
+            "Motion har gjort det muligt at tilføje flydende animationer og interaktioner, der forbedrer brugeroplevelsen. Jeg har blandt andet brugt det til filtre og modal vinduer, der giver appen et mere dynamisk og engagerende udtryk.",
+        },
+        item5: {
+          content:
+            "Med Tailwind CSS har jeg hurtigt og effektivt stylet websitet. Det har gjort det muligt for mig, hurtigt at style komponenter og sikre en ensartet visuel oplevelse på tværs af forskellige sider.",
+        },
+        item6: {
+          content:
+            "TypeScript har hjulpet mig med at skrive mere robust og vedligeholdelig kode. Ved at tilføje typekontrol til JavaScript har jeg reduceret fejl og forbedret udviklingsprocessen.",
         },
       },
     },

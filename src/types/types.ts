@@ -8,7 +8,8 @@ export type ProjectTitles =
   | "project.lendr.name"
   | "project.glassFill.name"
   | "project.liveScores.name"
-  | "project.palette.name";
+  | "project.palette.name"
+  | "project.bookSpace.name";
 
 // Define valid project text keys
 export type ProjectTexts =
@@ -17,7 +18,8 @@ export type ProjectTexts =
   | "project.lendr.brief"
   | "project.glassFill.brief"
   | "project.liveScores.brief"
-  | "project.palette.brief";
+  | "project.palette.brief"
+  | "project.bookSpace.brief";
 
 // Define the structure of a project
 export type Project = {
