@@ -3,6 +3,7 @@
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
 import Badge from "./badge";
+import Image from "next/image";
 
 type ProjectDescriptionProps = {
   title: string;
@@ -83,9 +84,11 @@ export default function ProjectDescription({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
+                    <Image
                       src={logoData.icon}
                       alt={`icon-${index}`}
+                      width={24}
+                      height={24}
                       className="h-6 w-6 transition-all duration-300 hover:scale-90 xl:h-7 xl:w-7 2xl:h-8 2xl:w-8"
                     />
                   </a>

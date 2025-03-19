@@ -10,6 +10,7 @@ import {
 import { ArrowUpRight } from "@phosphor-icons/react";
 import useDarkMode from "@/hooks/useDarkMode";
 import { logos, getLogo } from "@/data/logos";
+import Image from "next/image";
 
 export const Skills = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -60,9 +61,11 @@ export const Skills = () => {
                     key={index}
                   >
                     <div className="group relative flex aspect-square items-center justify-center rounded-lg bg-[#EBEBEB] p-4 transition-all duration-300 hover:scale-95 sm:p-6 dark:bg-[#2C2C2C]">
-                      <img
+                      <Image
                         src={getLogo(logo, isDarkMode)}
                         alt={logo.label}
+                        width={64}
+                        height={64}
                         className="h-4/6 w-4/6 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-90 group-hover:opacity-0 sm:h-12 sm:w-12 md:h-14 md:w-14 2xl:h-16 2xl:w-16"
                       />
                       {logo.url ? (

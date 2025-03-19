@@ -121,7 +121,7 @@ export default function Nav() {
               <a
                 href="/pdfs/cv-english.pdf"
                 download
-                className="rounded-full bg-whitebg px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base lg:hover:bg-[#e2e2e2] dark:text-background lg:dark:hover:bg-whitebg"
+                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base lg:hover:bg-[#e2e2e2] dark:text-background lg:dark:hover:bg-whitebg"
               >
                 CV
               </a>

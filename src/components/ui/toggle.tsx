@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
-import Image from "next/image";
+// import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useCurrentLocale, useChangeLocale } from "@/locales/client";
 import { motion } from "motion/react";
@@ -19,29 +19,18 @@ export function Toggle() {
   };
 
   return (
-    <div className="flex rounded-full bg-white dark:bg-[#EDECEC]">
+    <div className="flex gap-2 lg:gap-4">
       {/* Danish Toggle */}
       <TogglePrimitive.Root
         pressed={locale === "da"}
         onPressedChange={() => handleLocaleChange("da")}
         className={cn(
-          "flex items-center justify-center rounded-l-full p-1 pr-2 transition-all",
-          "lg:hover:bg-[#e2e2e2] lg:dark:hover:bg-whitebg", // Hover & Focus Effects
-          locale === "da" && "text-white", // Active State
+          "flex items-center justify-center font-thin transition-all",
+          locale === "da" && "font-medium text-foreground",
         )}
       >
-        <motion.div
-          className="cursor-pointer"
-          whileTap={{ scale: 0.9 }}
-          whileHover={{ scale: 1.1 }}
-        >
-          <Image
-            src="/icons/da-flag.svg"
-            alt="Danish Flag"
-            width={24}
-            height={24}
-            className={cn("w-3 lg:w-4", locale === "en" && "grayscale")}
-          />
+        <motion.div className="cursor-pointer" whileHover={{ scale: 1.1 }}>
+          DA
         </motion.div>
       </TogglePrimitive.Root>
 
@@ -50,23 +39,12 @@ export function Toggle() {
         pressed={locale === "en"}
         onPressedChange={() => handleLocaleChange("en")}
         className={cn(
-          "flex items-center justify-center rounded-r-full p-1 pl-2 transition-all",
-          "lg:hover:bg-[#EDECEC] lg:dark:hover:bg-whitebg", // Hover & Focus Effects
-          locale === "en" && "text-white", // Active State
+          "flex items-center justify-center font-thin transition-all",
+          locale === "en" && "font-medium text-foreground",
         )}
       >
-        <motion.div
-          className="cursor-pointer"
-          whileTap={{ scale: 0.9 }}
-          whileHover={{ scale: 1.1 }}
-        >
-          <Image
-            src="/icons/en-flag.svg"
-            alt="English Flag"
-            width={24}
-            height={24}
-            className={cn("w-3 lg:w-4", locale === "da" && "grayscale")}
-          />
+        <motion.div className="cursor-pointer" whileHover={{ scale: 1.1 }}>
+          EN
         </motion.div>
       </TogglePrimitive.Root>
     </div>
