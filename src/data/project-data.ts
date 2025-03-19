@@ -17,8 +17,8 @@ export const projects: Project[] = [
     bgColor: "#FC7753",
   },
   {
-    variant: "phone",
-    imageSrc: "/images/bookspace-banner.webp",
+    variant: "phone2",
+    imageSrc: "/images/bookspace-banner2.webp",
     titleKey: "project.bookSpace.name",
     textKey: "project.bookSpace.brief",
     link: "/book-space",
@@ -40,8 +40,8 @@ export const projects: Project[] = [
     bgColor: "#5BAD86",
   },
   {
-    variant: "phone",
-    imageSrc: "/images/livescore-banner.webp",
+    variant: "phone2",
+    imageSrc: "/images/livescore-banner2.webp",
     titleKey: "project.liveScores.name",
     textKey: "project.liveScores.brief",
     link: "/livescore",

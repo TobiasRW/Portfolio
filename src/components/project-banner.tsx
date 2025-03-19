@@ -3,7 +3,7 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 // Define the type for the component's props
 type ProjectBannerProps = {
-  variant?: "default" | "phone" | "pc"; // Variants for different styles
+  variant?: "default" | "phone" | "pc" | "phone2"; // Variants for different styles
   imageSrc: string; // Image source
   title: string; // Project title
   website: string; // Project link
@@ -22,6 +22,7 @@ export default function ProjectBanner({
 }: ProjectBannerProps) {
   const isPhone = variant === "phone";
   const isPc = variant === "pc";
+  const isPhone2 = variant === "phone2";
 
   return (
     <div className="z-10 mx-auto flex w-10/12 flex-col gap-4 md:w-4/6 xl:w-[60%] 2xl:w-[55%]">
@@ -33,7 +34,7 @@ export default function ProjectBanner({
             isPhone || isPc ? "bg-[#2C2C2C]" : ""
           }`}
           style={{
-            backgroundColor: isPhone || isPc ? bgColor : "",
+            backgroundColor: isPhone || isPc || isPhone2 ? bgColor : "",
             borderRadius: "1rem", // fallback radius
             clipPath: "inset(0 round 1rem)", // actual clipping
           }}
@@ -56,6 +57,16 @@ export default function ProjectBanner({
                 fill
                 style={{ objectFit: "contain" }}
                 className="-ml-[20%] mt-14 -rotate-[5deg] scale-150 xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32 3xl:mt-36"
+              />
+            </div>
+          ) : isPhone2 ? (
+            <div className="">
+              <Image
+                src={imageSrc}
+                alt={`${title} Banner`}
+                fill
+                style={{ objectFit: "contain" }}
+                className="ml-10 mt-10 -rotate-[5deg] scale-[1.7] sm:ml-14 sm:mt-7 sm:scale-[1.9] lg:-ml-8 lg:scale-[1.7] xl:-ml-14 xl:mt-10 xl:scale-[1.8] 3xl:-ml-12"
               />
             </div>
           ) : (
@@ -81,9 +92,11 @@ export default function ProjectBanner({
                 target="_blank"
                 className="flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
               >
-                <img
+                <Image
                   src="/icons/github.svg"
                   alt="Github logo"
+                  width={16}
+                  height={16}
                   className="h-4 w-4 3xl:h-5 3xl:w-5"
                 />
               </a>
@@ -107,9 +120,11 @@ export default function ProjectBanner({
             target="_blank"
             className="flex items-center justify-center rounded-full bg-white p-3"
           >
-            <img
+            <Image
               src="/icons/github.svg"
               alt="Github logo"
+              width={16}
+              height={16}
               className="h-3 w-3 sm:h-4 sm:w-4"
             />
           </a>

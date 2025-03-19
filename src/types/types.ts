@@ -1,5 +1,5 @@
 // Define the valid project variants
-export type ProjectVariant = "default" | "phone" | "computer";
+export type ProjectVariant = "default" | "phone" | "computer" | "phone2";
 
 // Define valid project title keys
 export type ProjectTitles =

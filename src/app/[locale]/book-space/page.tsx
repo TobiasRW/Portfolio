@@ -53,8 +53,8 @@ export default async function Page({
         <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px] 3xl:h-[750px]">
           <Dots />
           <ProjectBanner
-            variant="phone"
-            imageSrc="/images/bookspace-banner.webp"
+            variant="phone2"
+            imageSrc="/images/bookspace-banner2.webp"
             title="Book Space"
             website="https://book-space-pd5o.onrender.com/"
             github=""

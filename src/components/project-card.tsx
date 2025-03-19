@@ -5,7 +5,7 @@ import { TransitionLink } from "./utils/transition-link";
 
 // ProjectCard component props
 type ProjectCardProps = {
-  variant?: "default" | "phone" | "computer"; // Variant for different styles
+  variant?: "default" | "phone" | "computer" | "phone2"; // Variant for different styles
   imageSrc: string; // Image source
   title: string; // Project title
   text: string; // Project description
@@ -25,13 +25,16 @@ export default function ProjectCard({
   // Check if the variant is phone or computer
   const isPhone = variant === "phone";
   const isComputer = variant === "computer";
+  const isPhone2 = variant === "phone2";
 
   return (
     <div
       className={`group relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg xs:h-96 xs:w-[350px] sm:h-96 sm:w-[350px] md:h-80 md:w-72 lg:h-96 lg:w-[350px] 2xl:h-[440px] 2xl:w-[90%] 3xl:h-[550px] ${
         isPhone || isComputer ? "" : "bg-white"
       }`}
-      style={isPhone || isComputer ? { backgroundColor: bgColor } : {}}
+      style={
+        isPhone || isComputer || isPhone2 ? { backgroundColor: bgColor } : {}
+      }
     >
       <TransitionLink href={link}>
         <div
@@ -40,7 +43,9 @@ export default function ProjectCard({
               ? "bottom-[-35%] left-[18%] rotate-[-10deg] scale-[1.3] group-hover:scale-[1.4]"
               : isComputer // Computer img style
                 ? "bottom-[-32%] left-[-15%] scale-[1.4] group-hover:scale-150"
-                : "group-hover:scale-110" // Default img style
+                : isPhone2 // Phone2 img style
+                  ? "bottom-[-18%] left-[20%] scale-[1.5] group-hover:scale-[1.6]"
+                  : "group-hover:scale-110" // Default img style
           }`}
         >
           <Image
