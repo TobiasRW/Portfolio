@@ -32,6 +32,7 @@ export default function ToTop() {
           hidden: { y: "100%", opacity: 0 },
         }}
         transition={{ duration: 0.3 }}
+        aria-label="Scroll to top"
       >
         <ArrowUp className="h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1 3xl:h-5 3xl:w-5" />
       </motion.button>

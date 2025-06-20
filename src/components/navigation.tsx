@@ -186,28 +186,31 @@ export default function Nav() {
           >
             <div className="absolute top-0 z-[-2] h-screen w-screen bg-whitebg bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] dark:bg-background dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>
             <ul className="absolute left-10 top-24 z-[100] flex w-3/4 flex-col gap-8 font-heading text-2xl font-medium sm:left-20 sm:gap-12 sm:text-3xl">
-              <a
-                href={links.github}
-                target="_blank"
-                className="flex items-center gap-2"
-              >
-                <p>Github</p>
-                <ArrowUpRight size={28} />
-              </a>
-              <a
-                href={links.linkedin}
-                target="_blank"
-                className="flex items-center gap-2"
-              >
-                <p>LinkedIn</p>
-                <ArrowUpRight size={28} />
-              </a>
+              <li>
+                <a
+                  href={links.github}
+                  target="_blank"
+                  className="flex items-center gap-2"
+                >
+                  <p>Github</p>
+                  <ArrowUpRight size={28} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={links.linkedin}
+                  target="_blank"
+                  className="flex items-center gap-2"
+                >
+                  <p>LinkedIn</p>
+                  <ArrowUpRight size={28} />
+                </a>
+              </li>
               {/* Conditionally render only on homepage */}
               {(pathname === "/" ||
                 pathname === "/da" ||
                 pathname === "/en") && (
                 <>
-                  <hr className="h-1 w-10/12 rounded-full border-none bg-gradient-to-r from-[#1a1a1a] from-30% to-[#DADEE9] lg:hidden dark:from-[#DADEE9] dark:to-[#1a1a1a]" />
                   <li
                     className="flex items-center gap-2"
                     onClick={() => scrollToSection("projects")}

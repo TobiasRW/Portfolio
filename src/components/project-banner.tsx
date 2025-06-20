@@ -56,6 +56,7 @@ export default function ProjectBanner({
                 alt={`${title} Banner`}
                 fill
                 style={{ objectFit: "contain" }}
+                priority={true}
                 className="-ml-[20%] mt-14 -rotate-[5deg] scale-150 xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32 3xl:mt-36"
               />
             </div>
@@ -66,6 +67,7 @@ export default function ProjectBanner({
                 alt={`${title} Banner`}
                 fill
                 style={{ objectFit: "contain" }}
+                priority={true}
                 className="ml-10 mt-10 -rotate-[5deg] scale-[1.7] sm:ml-14 sm:mt-7 sm:scale-[1.9] lg:-ml-8 lg:scale-[1.7] xl:-ml-14 xl:mt-10 xl:scale-[1.8] 3xl:-ml-12"
               />
             </div>
@@ -78,6 +80,7 @@ export default function ProjectBanner({
                 objectFit: "cover",
                 objectPosition: "50% 70%",
               }}
+              priority={true}
               className="absolute"
             />
           )}
@@ -90,6 +93,7 @@ export default function ProjectBanner({
               <a
                 href={github}
                 target="_blank"
+                aria-label="Github link"
                 className="flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
               >
                 <Image
@@ -103,6 +107,7 @@ export default function ProjectBanner({
               <a
                 href={website}
                 target="_blank"
+                aria-label="Website link"
                 className="group flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
               >
                 <ArrowUpRight className="h-4 w-4 3xl:h-5 3xl:w-5 dark:text-black" />
@@ -117,6 +122,7 @@ export default function ProjectBanner({
         <div className="ml-auto flex gap-4">
           <a
             href={github}
+            aria-label="Github link"
             target="_blank"
             className="flex items-center justify-center rounded-full bg-white p-3"
           >
@@ -130,6 +136,7 @@ export default function ProjectBanner({
           </a>
           <a
             href={website}
+            aria-label="Website link"
             target="_blank"
             className="flex items-center justify-center rounded-full bg-white p-3"
           >
