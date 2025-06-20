@@ -40,7 +40,11 @@ export const logos: Logo[] = [
     label: "MySQL",
     url: "https://dev.mysql.com/doc/",
   },
-  { icon: "/icons/javascript.svg", label: "JavaScript" },
+  {
+    icon: "/icons/javascript.svg",
+    label: "JavaScript",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
   {
     icon: "/icons/motion.svg",
     label: "Motion",
@@ -66,10 +70,12 @@ export const logos: Logo[] = [
   {
     icon: "/icons/html.svg",
     label: "HTML",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     icon: "/icons/css.svg",
     label: "CSS",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     icon: "/icons/mongodb.svg",
