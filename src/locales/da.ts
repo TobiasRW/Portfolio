@@ -15,6 +15,7 @@ export default {
     },
     projects: {
       title: "Projekter",
+      titleAll: "Alle Projekter",
       viewAll: "Alle projekter",
       project: {
         coelm: {

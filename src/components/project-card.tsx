@@ -42,7 +42,7 @@ export default function ProjectCard({
             isPhone // Phone img style
               ? "bottom-[-35%] left-[18%] rotate-[-10deg] scale-[1.3] group-hover:scale-[1.4] md:scale-[1.2] md:group-hover:scale-[1.3] xl:scale-[1.3] xl:group-hover:scale-[1.4]"
               : isComputer // Computer img style
-                ? "bottom-[-32%] left-[-15%] scale-[1.4] group-hover:scale-150 md:bottom-[-35%] md:left-[-22%] md:scale-[1.2] md:group-hover:scale-[1.3] xl:bottom-[-32%] xl:scale-[1.4] xl:group-hover:scale-150"
+                ? "bottom-[-32%] left-[-20%] scale-[1.3] group-hover:scale-[1.4] xs:scale-[1.4] xs:group-hover:scale-150 md:bottom-[-35%] md:left-[-22%] md:scale-[1.2] md:group-hover:scale-[1.3] xl:bottom-[-32%] xl:scale-[1.4] xl:group-hover:scale-150"
                 : isPhone2 // Phone2 img style
                   ? "bottom-[-18%] left-[20%] scale-[1.5] group-hover:scale-[1.6] md:scale-[1.3] md:group-hover:scale-[1.4] xl:scale-[1.5] xl:group-hover:scale-[1.6]"
                   : "left-[-5%] group-hover:scale-110" // Default img style
@@ -61,7 +61,7 @@ export default function ProjectCard({
             <h3 className="font-heading text-3xl font-medium text-white md:text-2xl lg:text-4xl 3xl:text-5xl">
               {title}
             </h3>
-            <div className="ml-auto rounded-full bg-white p-2 transition-all duration-300 group-hover:scale-90 lg:p-3 3xl:p-4">
+            <div className="ml-auto rounded-full bg-white p-2 transition-all duration-300 group-hover:scale-90 xl:p-3 3xl:p-4">
               <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 3xl:h-5 3xl:w-5 dark:text-black" />
             </div>
           </div>
