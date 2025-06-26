@@ -57,7 +57,6 @@ export default async function Page({
             imageSrc="/images/bookspace-banner2.webp"
             title="Book Space"
             website="https://book-space-pd5o.onrender.com/"
-            github=""
             bgColor="#b8b8b8"
           />
         </div>

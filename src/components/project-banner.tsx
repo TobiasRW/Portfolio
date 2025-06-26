@@ -7,7 +7,7 @@ type ProjectBannerProps = {
   imageSrc: string; // Image source
   title: string; // Project title
   website: string; // Project link
-  github: string; // Github link
+  github?: string; // Github link
   bgColor?: string; // Background color for the card
 };
 
@@ -90,20 +90,22 @@ export default function ProjectBanner({
               {title}
             </h3>
             <div className="ml-auto flex gap-2 xl:gap-4">
-              <a
-                href={github}
-                target="_blank"
-                aria-label="Github link"
-                className="flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
-              >
-                <Image
-                  src="/icons/github.svg"
-                  alt="Github logo"
-                  width={16}
-                  height={16}
-                  className="h-4 w-4 3xl:h-5 3xl:w-5"
-                />
-              </a>
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  aria-label="Github link"
+                  className="flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
+                >
+                  <Image
+                    src="/icons/github.svg"
+                    alt="Github logo"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 3xl:h-5 3xl:w-5"
+                  />
+                </a>
+              )}
               <a
                 href={website}
                 target="_blank"
@@ -120,20 +122,22 @@ export default function ProjectBanner({
       <div className="flex w-full items-center justify-center lg:hidden">
         <h3 className="text-3xl font-semibold">{title}</h3>
         <div className="ml-auto flex gap-4">
-          <a
-            href={github}
-            aria-label="Github link"
-            target="_blank"
-            className="flex items-center justify-center rounded-full bg-white p-3"
-          >
-            <Image
-              src="/icons/github.svg"
-              alt="Github logo"
-              width={16}
-              height={16}
-              className="h-3 w-3 sm:h-4 sm:w-4"
-            />
-          </a>
+          {github && (
+            <a
+              href={github}
+              aria-label="Github link"
+              target="_blank"
+              className="flex items-center justify-center rounded-full bg-white p-3"
+            >
+              <Image
+                src="/icons/github.svg"
+                alt="Github logo"
+                width={16}
+                height={16}
+                className="h-3 w-3 sm:h-4 sm:w-4"
+              />
+            </a>
+          )}
           <a
             href={website}
             aria-label="Website link"
