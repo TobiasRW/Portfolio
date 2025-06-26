@@ -46,6 +46,11 @@ export default {
           name: "Book Space",
           brief: "Eksamensprojekt i avanceret webudvikling",
         },
+        candidate: {
+          name: "Candidate",
+          brief:
+            "En kandidatportal til studerende og virksomheder med AI chatbot",
+        },
       },
     },
     about: {
@@ -315,7 +320,7 @@ export default {
       badges: {
         badge1: "Frontend",
         badge2: "Backend",
-        badge3: "AI Chatbot",
+        badge3: "LLM",
       },
       text: {
         paragraph1:
@@ -417,6 +422,65 @@ export default {
         item6: {
           content:
             "TypeScript har hjulpet mig med at skrive mere robust og vedligeholdelig kode. Ved at tilføje typekontrol til JavaScript har jeg reduceret fejl og forbedret udviklingsprocessen.",
+        },
+      },
+    },
+  },
+  projectCandidate: {
+    title: "Candidate",
+    about: {
+      heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "LLM",
+      },
+      text: {
+        disclaimer:
+          "Disclaimer: Dette projekt linker til en staging-side, som ikke er i produktion. Profilerne kan derfor være forældede, og nogle funktioner kan være deaktiveret.",
+        paragraph1:
+          "Candidate er et projekt, som er udviklet i forbindelse med 2. semester på Webudvikling. Her skulle vi omskrive den eksisterende kandidatportal candidate.dk til React Router 7 og TypeScript. Projektet er et samarbejde mellem mig og mine klassekammerater.",
+        paragraph2:
+          "Siden er en kandidatportal, der forbinder studerende med virksomheder, der søger kandidater til praktikpladser og jobs. Som eksamensprojekt har jeg, i samarbejde med min eksamensgruppe, udviklet en AI-chatbot beregnet til at hjælpe virksomheder med at finde de rette kandidater til deres stillinger.",
+        paragraph3:
+          "Vi har gjort brug af Mistrals API som LLM til at kunne generere svar i chatvinduet. Da vi bruger MongoDB som database, har vi benyttet vektorbaseret søgning til at finde relevante profiler i databasen – her har vi brugt Mistrals embedding-model til at generere embeddings af profilerne.",
+        testUser: {
+          heading: "Testbruger:",
+          email: "Email: twolmar@gmail.com",
+          password: "Kodeord: hello",
+        },
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "Vi har brugt React til at skabe en interaktiv og dynamisk brugergrænseflade til vores eksamensprojekt. Brugen af React har gjort det nemt at opbygge en struktureret kodebase.",
+        },
+        item2: {
+          content:
+            "Vi har brugt React Router v7 som React-framework til at udvikle websitet. Ved hjælp af React Routers 'loader'- og 'action'-funktioner har vi kunnet hente data og behandle forespørgsler.",
+        },
+        item3: {
+          content:
+            "Vi har brugt MongoDB som database og i forlængelse heraf brugt Mongoose til at behandle dataen i React. Dette har gjort det muligt at gemme og hente data effektivt.",
+        },
+        item4: {
+          content:
+            "Motion har gjort det muligt at tilføje flydende animationer og interaktioner, der forbedrer brugeroplevelsen. Vi har i dette projekt brugt det til at animere chatvinduet.",
+        },
+        item5: {
+          content:
+            "Vi har brugt Tailwind CSS til at style vores chatvindue. Da resten af siden også gør brug af Tailwind, har det gjort det nemt at holde en ensartet stil.",
+        },
+        item6: {
+          content:
+            "TypeScript har hjulpet os med at skrive mere robust og vedligeholdelig kode. Ved at tilføje typekontrol til JavaScript har vi reduceret fejl og forbedret udviklingsprocessen.",
+        },
+        item7: {
+          content:
+            "Mistral er et AI-API, der giver adgang til forskellige AI-modeller. Vi har brugt Mistral til at generere svar i chatvinduet samt til at generere embeddings af profilerne.",
         },
       },
     },

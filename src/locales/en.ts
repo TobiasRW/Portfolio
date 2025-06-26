@@ -40,11 +40,16 @@ export default {
         },
         palette: {
           name: "Palette",
-          brief: "A color palette generator with AI chatbot",
+          brief: "A color palette generator with an AI chatbot",
         },
         bookSpace: {
           name: "Book Space",
           brief: "Exam project for advanced web development",
+        },
+        candidate: {
+          name: "Candidate",
+          brief:
+            "A candidate portal for students and companies with an AI chatbot",
         },
       },
     },
@@ -315,7 +320,7 @@ export default {
       badges: {
         badge1: "Frontend",
         badge2: "Backend",
-        badge3: "AI Chatbot",
+        badge3: "LLM",
       },
       text: {
         paragraph1:
@@ -361,60 +366,6 @@ export default {
         item7: {
           content:
             "Zustand is a state management library for React. I used Zustand to manage the state in the app, allowing users to lock individual colors in palettes without losing the state when generating a new palette.",
-        },
-      },
-    },
-    projectBookSpace: {
-      title: "Book Space",
-      about: {
-        heading: "About the Project",
-        badges: {
-          badge1: "Frontend",
-          badge2: "Backend",
-        },
-        text: {
-          paragraph1:
-            "Book Space is an exam project that I developed as part of my education in the second semester. The project is a web app that allows users to create a profile and save their favorite books, create lists, view recommendations, and track their reading habits.",
-          paragraph2:
-            "For this project, we were provided with a Figma prototype that we could use as a foundation for our design, which I have mostly followed.",
-          paragraph3:
-            "The app is built with React Router v7 using TypeScript and uses MongoDB to store data about users and the books they have saved. The app utilizes a JSON dataset with books, which we were given as part of the project.",
-          paragraph4:
-            "I have used Tailwind CSS to style the app and Motion to add animations to filters and modal windows, making the app more lively and interactive.",
-          testUser: {
-            heading: "Test User:",
-            email: "Email: sylto@gmail.com",
-            password: "Password: hello",
-          },
-        },
-      },
-      accordion: {
-        heading: "Technologies",
-        items: {
-          item1: {
-            content:
-              "I have used React to create an interactive and dynamic user interface for my exam project. Using React has made it easy to build a structured codebase.",
-          },
-          item2: {
-            content:
-              "I have used React Router v7 as the React framework to develop the website. With React Router's 'loader' and 'action' functions, I was able to easily fetch and update data from MongoDB directly within the components.",
-          },
-          item3: {
-            content:
-              "To manage user data and saved books, I have used MongoDB and Mongoose. This has enabled efficient data storage and retrieval, which is crucial for the app's functionality.",
-          },
-          item4: {
-            content:
-              "Motion has allowed me to add smooth animations and interactions that enhance the user experience. I have used it for filters and modal windows, giving the app a more dynamic and engaging feel.",
-          },
-          item5: {
-            content:
-              "With Tailwind CSS, I have quickly and efficiently styled the website. It has allowed me to style components rapidly and ensure a consistent visual experience across different pages.",
-          },
-          item6: {
-            content:
-              "TypeScript has helped me write more robust and maintainable code. By adding type control to JavaScript, I have reduced errors and improved the development process.",
-          },
         },
       },
     },
@@ -471,6 +422,65 @@ export default {
         item6: {
           content:
             "TypeScript has helped me write more robust and maintainable code. By adding type control to JavaScript, I have reduced errors and improved the development process.",
+        },
+      },
+    },
+  },
+  projectCandidate: {
+    title: "Candidate",
+    about: {
+      heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+        badge3: "LLM",
+      },
+      text: {
+        disclaimer:
+          "Disclaimer: This project links to a staging site that is not in production. Profiles may therefore be outdated, and some features may be disabled.",
+        paragraph1:
+          "Candidate is a project developed as part of the 2nd semester in Web Development. We were tasked with rewriting the existing candidate portal candidate.dk using React Router 7 and TypeScript. The project was a collaboration between me and my classmates.",
+        paragraph2:
+          "The site is a candidate portal that connects students with companies looking for candidates for internships and jobs. As an exam project, my exam group and I developed an AI chatbot designed to help companies find the right candidates for their positions.",
+        paragraph3:
+          "We used Mistral's API as the LLM to generate responses in the chat window. Since we're using MongoDB as the database, we implemented vector-based search to find relevant profiles – using Mistral’s embedding model to generate embeddings of the profiles.",
+        testUser: {
+          heading: "Test User:",
+          email: "Email: twolmar@gmail.com",
+          password: "Password: hello",
+        },
+      },
+    },
+    accordion: {
+      heading: "Technologies",
+      items: {
+        item1: {
+          content:
+            "We used React to create an interactive and dynamic user interface for our exam project. Using React made it easy to build a structured codebase.",
+        },
+        item2: {
+          content:
+            "We used React Router v7 as our React framework to develop the website. With React Router’s 'loader' and 'action' functions, we were able to fetch data and handle requests.",
+        },
+        item3: {
+          content:
+            "We used MongoDB as our database and Mongoose to handle the data in React. This allowed us to store and retrieve data efficiently.",
+        },
+        item4: {
+          content:
+            "Motion allowed us to add smooth animations and interactions that enhance the user experience. In this project, we used it to animate the chat window.",
+        },
+        item5: {
+          content:
+            "We used Tailwind CSS to style our chat window. Since the rest of the site also uses Tailwind, it was easy to maintain a consistent style.",
+        },
+        item6: {
+          content:
+            "TypeScript helped us write more robust and maintainable code. By adding type checking to JavaScript, we reduced errors and improved the development process.",
+        },
+        item7: {
+          content:
+            "Mistral is an AI API that provides access to various AI models. We used Mistral to generate chat responses and create embeddings of user profiles.",
         },
       },
     },

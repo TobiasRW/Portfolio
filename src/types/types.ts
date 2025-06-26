@@ -9,7 +9,8 @@ export type ProjectTitles =
   | "project.glassFill.name"
   | "project.liveScores.name"
   | "project.palette.name"
-  | "project.bookSpace.name";
+  | "project.bookSpace.name"
+  | "project.candidate.name";
 
 // Define valid project text keys
 export type ProjectTexts =
@@ -19,7 +20,8 @@ export type ProjectTexts =
   | "project.glassFill.brief"
   | "project.liveScores.brief"
   | "project.palette.brief"
-  | "project.bookSpace.brief";
+  | "project.bookSpace.brief"
+  | "project.candidate.brief";
 
 // Define the structure of a project
 export type Project = {

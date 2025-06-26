@@ -10,6 +10,14 @@ export const projects: Project[] = [
   },
   {
     variant: "computer",
+    imageSrc: "/images/candidate-banner.webp",
+    titleKey: "project.candidate.name",
+    textKey: "project.candidate.brief",
+    link: "/candidate",
+    bgColor: "#1E2171",
+  },
+  {
+    variant: "computer",
     imageSrc: "/images/palette-banner.webp",
     titleKey: "project.palette.name",
     textKey: "project.palette.brief",

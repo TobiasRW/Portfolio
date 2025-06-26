@@ -95,7 +95,7 @@ export const logos: Logo[] = [
   {
     icon: "/icons/mistral.svg",
     label: "Mistral",
-    url: "https://mistral.ai/",
+    url: "https://docs.mistral.ai/",
   },
   {
     icon: "/icons/zustand.svg",
