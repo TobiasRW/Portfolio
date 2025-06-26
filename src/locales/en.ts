@@ -1,7 +1,7 @@
 // locales/en.ts
 export default {
   navigation: {
-    back: "Go Back",
+    back: "Home",
     projects: "Projects",
     about: "About",
   },

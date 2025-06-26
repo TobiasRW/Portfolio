@@ -1,7 +1,7 @@
 // locales/da.ts
 export default {
   navigation: {
-    back: "Tilbage",
+    back: "Forside",
     projects: "Projekter",
     about: "Om",
   },
