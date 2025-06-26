@@ -29,7 +29,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`group relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg xs:h-96 xs:w-[350px] sm:h-96 sm:w-[350px] md:h-72 md:w-full lg:h-[350px] lg:w-11/12 xl:h-[420px] xl:w-[90%] xl:max-w-[450px] 2xl:h-[480px] ${
+      className={`group relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg xs:h-96 xs:w-[350px] sm:h-96 md:h-72 md:w-full lg:h-[350px] lg:w-11/12 xl:h-[420px] xl:w-[90%] xl:max-w-[450px] 2xl:h-[480px] ${
         isPhone || isComputer ? "" : "bg-white"
       }`}
       style={
