@@ -1,8 +1,15 @@
 import ProjectCard from "@/components/project-card";
 import { projects } from "@/data/project-data";
 import { getScopedI18n } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 
-export default async function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
   const scopedT = await getScopedI18n("frontPage.projects");
   return (
     <>
