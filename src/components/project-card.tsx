@@ -44,7 +44,7 @@ export default function ProjectCard({
               : isComputer // Computer img style
                 ? "bottom-[-32%] left-[-20%] scale-[1.3] group-hover:scale-[1.4] xs:scale-[1.4] xs:group-hover:scale-150 md:bottom-[-35%] md:left-[-22%] md:scale-[1.2] md:group-hover:scale-[1.3] xl:bottom-[-32%] xl:scale-[1.4] xl:group-hover:scale-150"
                 : isPhone2 // Phone2 img style
-                  ? "bottom-[-18%] left-[20%] scale-[1.5] group-hover:scale-[1.6] md:scale-[1.3] md:group-hover:scale-[1.4] xl:scale-[1.5] xl:group-hover:scale-[1.6]"
+                  ? "bottom-[-18%] left-[20%] scale-[1.5] group-hover:scale-[1.6] md:scale-[1.3] md:group-hover:scale-[1.4] xl:left-[15%] xl:scale-[1.5] xl:group-hover:scale-[1.6]"
                   : "left-[-5%] group-hover:scale-110" // Default img style
           }`}
         >

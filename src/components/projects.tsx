@@ -30,9 +30,7 @@ export default async function Projects() {
           <div className="mx-auto mt-8 flex w-10/12 justify-end xs:w-[350px] md:w-full lg:pr-3 xl:pr-5 3xl:mt-14 3xl:justify-center 3xl:pr-0">
             <TransitionLink href="/projects">
               <Button variant="default" className="group">
-                <span className="text-sm font-semibold">
-                  {scopedT("viewAll")}
-                </span>
+                <span className="">{scopedT("viewAll")}</span>
                 <ArrowRight
                   size={32}
                   weight="bold"

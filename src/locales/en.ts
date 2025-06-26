@@ -40,7 +40,7 @@ export default {
         },
         palette: {
           name: "Palette",
-          brief: "A color palette generator with an AI chatbot",
+          brief: "A color palette generator with LLM integration",
         },
         bookSpace: {
           name: "Book Space",
@@ -48,8 +48,7 @@ export default {
         },
         candidate: {
           name: "Candidate",
-          brief:
-            "A candidate portal for students and companies with an AI chatbot",
+          brief: "A candidate portal with LLM integration",
         },
       },
     },

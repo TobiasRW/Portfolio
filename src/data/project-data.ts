@@ -2,19 +2,20 @@ import { Project } from "../types/types";
 
 export const projects: Project[] = [
   {
-    variant: "default",
-    imageSrc: "/images/coelm-banner.webp",
-    titleKey: "project.coelm.name",
-    textKey: "project.coelm.brief",
-    link: "/coelm",
-  },
-  {
     variant: "computer",
     imageSrc: "/images/candidate-banner.webp",
     titleKey: "project.candidate.name",
     textKey: "project.candidate.brief",
     link: "/candidate",
     bgColor: "#1E2171",
+  },
+  {
+    variant: "phone2",
+    imageSrc: "/images/bookspace-banner2.webp",
+    titleKey: "project.bookSpace.name",
+    textKey: "project.bookSpace.brief",
+    link: "/book-space",
+    bgColor: "#b8b8b8",
   },
   {
     variant: "computer",
@@ -25,12 +26,19 @@ export const projects: Project[] = [
     bgColor: "#FC7753",
   },
   {
+    variant: "default",
+    imageSrc: "/images/coelm-banner.webp",
+    titleKey: "project.coelm.name",
+    textKey: "project.coelm.brief",
+    link: "/coelm",
+  },
+  {
     variant: "phone2",
-    imageSrc: "/images/bookspace-banner2.webp",
-    titleKey: "project.bookSpace.name",
-    textKey: "project.bookSpace.brief",
-    link: "/book-space",
-    bgColor: "#b8b8b8",
+    imageSrc: "/images/livescore-banner2.webp",
+    titleKey: "project.liveScores.name",
+    textKey: "project.liveScores.brief",
+    link: "/livescore",
+    bgColor: "#26437E",
   },
   {
     variant: "phone",
@@ -46,14 +54,6 @@ export const projects: Project[] = [
     textKey: "project.lendr.brief",
     link: "/lendr",
     bgColor: "#5BAD86",
-  },
-  {
-    variant: "phone2",
-    imageSrc: "/images/livescore-banner2.webp",
-    titleKey: "project.liveScores.name",
-    textKey: "project.liveScores.brief",
-    link: "/livescore",
-    bgColor: "#26437E",
   },
   // {
   //   variant: "computer",
