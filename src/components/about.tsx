@@ -3,7 +3,7 @@ export default async function About() {
   const scopedT = await getScopedI18n("frontPage.about");
   return (
     <section id="about">
-      <div className="mx-auto flex w-10/12 flex-col gap-8">
+      <div className="mx-auto flex w-10/12 flex-col gap-8 lg:w-11/12 xl:w-10/12">
         <h2 className="text-center font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           {scopedT("title")}
         </h2>
