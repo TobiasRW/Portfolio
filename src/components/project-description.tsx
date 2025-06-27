@@ -81,8 +81,14 @@ export default function ProjectDescription({
                 return (
                   <div
                     key={index}
-                    className="flex h-12 w-12 items-center justify-center gap-2 rounded-full bg-[#EDECEC] p-4 lg:h-14 lg:w-14 dark:bg-[#2C2C2C]"
+                    className="group relative flex h-12 w-12 items-center justify-center gap-2 rounded-full bg-[#EDECEC] p-4 lg:h-14 lg:w-14 dark:bg-[#2C2C2C]"
                   >
+                    {/* Tooltip */}
+                    <div className="absolute bottom-full left-1/2 mb-2 hidden w-max -translate-x-1/2 rounded bg-[#EDECEC] px-2 py-1 text-xs drop-shadow-sm group-hover:block dark:bg-[#2C2C2C]">
+                      {iconLabel}
+                      <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-[#EDECEC] dark:border-t-[#2C2C2C]"></div>
+                    </div>
+                    {/* Logo */}
                     <a
                       href={logoData.url}
                       target="_blank"
@@ -93,7 +99,7 @@ export default function ProjectDescription({
                         alt={`icon-${index}`}
                         width={24}
                         height={24}
-                        className="h-6 w-6 transition-all duration-300 hover:scale-90 xl:h-7 xl:w-7 2xl:h-8 2xl:w-8"
+                        className="h-6 w-6 xl:h-7 xl:w-7 2xl:h-8 2xl:w-8"
                       />
                     </a>
                   </div>
