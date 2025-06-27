@@ -2,10 +2,8 @@
 
 import * as React from "react";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
-// import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useCurrentLocale, useChangeLocale } from "@/locales/client";
-import { motion } from "motion/react";
 
 export function Toggle() {
   const locale = useCurrentLocale(); // Get current locale
@@ -29,9 +27,7 @@ export function Toggle() {
           locale === "da" && "font-medium text-foreground",
         )}
       >
-        <motion.div className="cursor-pointer" whileHover={{ scale: 1.1 }}>
-          DA
-        </motion.div>
+        <div className="cursor-pointer">DA</div>
       </TogglePrimitive.Root>
 
       {/* English Toggle */}
@@ -43,9 +39,7 @@ export function Toggle() {
           locale === "en" && "font-medium text-foreground",
         )}
       >
-        <motion.div className="cursor-pointer" whileHover={{ scale: 1.1 }}>
-          EN
-        </motion.div>
+        <div className="cursor-pointer">EN</div>
       </TogglePrimitive.Root>
     </div>
   );

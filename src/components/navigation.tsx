@@ -113,7 +113,7 @@ export default function Nav() {
               <a
                 href="/pdfs/cv-danish.pdf"
                 download
-                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base lg:hover:bg-[#e2e2e2] dark:text-background lg:dark:hover:bg-whitebg"
+                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base dark:text-background"
               >
                 CV
               </a>
@@ -121,7 +121,7 @@ export default function Nav() {
               <a
                 href="/pdfs/cv-english.pdf"
                 download
-                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base lg:hover:bg-[#e2e2e2] dark:text-background lg:dark:hover:bg-whitebg"
+                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base dark:text-background"
               >
                 CV
               </a>
@@ -161,7 +161,7 @@ export default function Nav() {
               <p>Github</p>
               <ArrowUpRight
                 size={16}
-                className="mt-1 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-110"
+                className="mt-1 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:scale-110"
               />
             </a>
             <a
@@ -172,7 +172,7 @@ export default function Nav() {
               <p>LinkedIn</p>
               <ArrowUpRight
                 size={16}
-                className="mt-1 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-110"
+                className="mt-1 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:scale-110"
               />
             </a>
           </div>
