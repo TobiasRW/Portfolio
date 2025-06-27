@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
+import { ArrowDown, MapPinSimple } from "@phosphor-icons/react/dist/ssr";
 import { motion, useDragControls, useMotionValue, animate } from "motion/react";
 import Dots from "./dots";
 import { useScopedI18n } from "@/locales/client";
@@ -32,8 +32,8 @@ export default function Hero() {
     <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
       <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:rounded-b-[70px] 3xl:h-[700px]">
         <Dots />
-        <div className="z-10 mx-auto flex w-10/12 flex-col gap-6 pt-10 lg:gap-10 lg:pt-16">
-          <div className="relative mx-auto flex w-72 items-center justify-center sm:w-80">
+        <div className="z-10 mx-auto flex w-10/12 flex-col gap-6 pt-10 lg:gap-8 lg:pt-16">
+          <div className="relative mx-auto flex w-72 flex-col items-center justify-center gap-4 sm:w-80">
             <div className="mx-auto h-32 w-32 overflow-hidden rounded-full border-2 border-whitebg bg-gradient-to-tr from-[#d9d9d9] to-[#d1cccc] sm:h-36 sm:w-36 lg:h-40 lg:w-40 xl:h-44 xl:w-44 dark:border-none dark:from-[#1A1A1A] dark:to-[#2D2D2D]">
               <Image
                 src="/images/portrait.webp"
@@ -42,6 +42,10 @@ export default function Hero() {
                 height={200}
                 className=""
               />
+            </div>
+            <div className="flex">
+              <MapPinSimple weight="fill" className="mt-1 text-foreground" />
+              <p>Aarhus</p>
             </div>
             <motion.div
               className="absolute right-3 top-8 z-20 -rotate-12 cursor-pointer rounded-full bg-whitebg px-3 py-2 font-heading text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"
