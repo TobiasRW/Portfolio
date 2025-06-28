@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { TransitionLink } from "./utils/transition-link";
 
 // ProjectCard component props
@@ -11,6 +10,7 @@ type ProjectCardProps = {
   text: string; // Project description
   link: string; // Project link
   bgColor?: string; // Background color for the card
+  tags?: string[]; // Optional tags for the project
 };
 
 // ProjectCard component
@@ -21,6 +21,7 @@ export default function ProjectCard({
   text,
   link,
   bgColor = "#2C2C2C", // Default background color is #2C2C2C
+  tags = [], // Default tags is an empty array
 }: ProjectCardProps) {
   // Check if the variant is phone or computer
   const isPhone = variant === "phone";
@@ -57,18 +58,28 @@ export default function ProjectCard({
           />
         </div>
         <div className="absolute top-4 mx-auto flex w-full flex-col gap-1 px-4">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center">
             <h3 className="font-heading text-3xl font-medium text-white md:text-2xl lg:text-4xl 3xl:text-5xl">
               {title}
             </h3>
-            <div className="ml-auto rounded-full bg-white p-2 transition-all duration-300 xl:p-3 3xl:p-4">
-              <ArrowUpRight className="h-3 w-3 transition-all group-hover:translate-x-[2px] group-hover:translate-y-[-2px] sm:h-4 sm:w-4 3xl:h-5 3xl:w-5 dark:text-black" />
-            </div>
           </div>
           <p className="w-10/12 font-body text-xs font-light text-white lg:text-sm 2xl:text-base 3xl:text-lg">
             {text}
           </p>
         </div>
+        {/* Tags section */}
+        {tags.length > 0 && (
+          <div className="absolute bottom-0 flex w-full flex-wrap gap-2 bg-gradient-to-t pb-2 pl-2 pt-6">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="rounded-full bg-foreground/80 px-2 py-1 text-xs text-whitebg dark:bg-background/80"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </TransitionLink>
     </div>
   );

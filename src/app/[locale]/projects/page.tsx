@@ -27,6 +27,7 @@ export default async function Page({
               text={scopedT(proj.textKey)}
               link={proj.link}
               bgColor={proj.bgColor}
+              tags={proj.tags}
             />
           ))}
         </div>

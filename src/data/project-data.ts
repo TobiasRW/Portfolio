@@ -8,6 +8,7 @@ export const projects: Project[] = [
     textKey: "project.candidate.brief",
     link: "/candidate",
     bgColor: "#1E2171",
+    tags: ["Frontend", "Backend", "LLM"],
   },
   {
     variant: "phone2",
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     textKey: "project.bookSpace.brief",
     link: "/book-space",
     bgColor: "#b8b8b8",
+    tags: ["Frontend", "Backend"],
   },
   {
     variant: "computer",
@@ -24,6 +26,7 @@ export const projects: Project[] = [
     textKey: "project.palette.brief",
     link: "/palette",
     bgColor: "#FC7753",
+    tags: ["Frontend", "Backend", "LLM"],
   },
   {
     variant: "default",
@@ -31,6 +34,7 @@ export const projects: Project[] = [
     titleKey: "project.coelm.name",
     textKey: "project.coelm.brief",
     link: "/coelm",
+    tags: ["Frontend"],
   },
   {
     variant: "phone2",
@@ -39,6 +43,7 @@ export const projects: Project[] = [
     textKey: "project.liveScores.brief",
     link: "/livescore",
     bgColor: "#26437E",
+    tags: ["Frontend", "API"],
   },
   {
     variant: "phone",
@@ -46,6 +51,7 @@ export const projects: Project[] = [
     titleKey: "project.bookBuddy.name",
     textKey: "project.bookBuddy.brief",
     link: "/book-buddy",
+    tags: ["Frontend", "Backend", "API"],
   },
   {
     variant: "phone",
@@ -54,6 +60,7 @@ export const projects: Project[] = [
     textKey: "project.lendr.brief",
     link: "/lendr",
     bgColor: "#5BAD86",
+    tags: ["Frontend", "Backend"],
   },
   // {
   //   variant: "computer",

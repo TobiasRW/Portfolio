@@ -31,6 +31,7 @@ export type Project = {
   textKey: ProjectTexts;
   link: string;
   bgColor?: string;
+  tags?: string[];
 };
 
 // Define logo types

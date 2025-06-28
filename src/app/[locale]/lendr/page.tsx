@@ -76,7 +76,6 @@ export default async function Page({
         badges={[
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
-          scopedT("about.badges.badge3"),
         ]}
         text={` ${scopedT("about.text.paragraph1")} \n 
        ${scopedT("about.text.paragraph2")} \n
