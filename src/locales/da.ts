@@ -57,13 +57,13 @@ export default {
       text: {
         intro: "Hejsa 👋🏻",
         paragraph1:
-          "Jeg hedder Tobias og er en 26-årig webudvikler, med en passion for både frontend- og backend-udvikling. Jeg er uddannet multimediedesigner og læser nu videre på webudvikling som en top-up-uddannelse.",
+          "Jeg hedder Tobias og er en 27-årig webudvikler, med en passion for både frontend- og backend-udvikling. Jeg er uddannet multimediedesigner og læser nu videre på webudvikling som en top-up-uddannelse.",
         paragraph2:
           "Jeg elsker at fordybe mig i ting - uanset om det er en ny fantasy verden, træning i fitnesscenteret, eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til nu at finde løsninger som webudvikler.",
         paragraph3:
           "Som webudvikler sætter jeg pris på detaljen - uanset om det interaktivitet og design eller optimeret kode. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
         paragraph4:
-          " Lige nu leder jeg efter en praktikplads, hvor jeg kan få lov til at bygge videre på min erfaring, samtidig med at jeg lærer en masse nyt. Hvis det lyder som noget for jer, så tøv ikke med at kontakte mig – jeg glæder mig til at høre fra jer!",
+          "Jeg starter i praktik til August 2025 hos Impact, hvor jeg skal arbejde med frontend-udvikling. Jeg glæder mig til at få mere erfaring og udvikle mine færdigheder yderligere.",
       },
     },
   },

@@ -55,15 +55,15 @@ export default {
     about: {
       title: "Who am I?",
       text: {
-        intro: "Hello There 👋🏻",
+        intro: "Hi there 👋🏻",
         paragraph1:
-          "My name is Tobias, and I’m a 26-year-old web developer with a passion for both frontend and backend development. I have a degree in multimedia design and am currently continuing my studies in web development with a bachelor’s degree in web development.",
+          "My name is Tobias, and I'm a 27-year-old web developer with a passion for both frontend and backend development. I have a background in multimedia design and am currently studying web development as a top-up degree.",
         paragraph2:
-          "I love immersing myself in things — whether it's exploring a new fantasy world, working out at the gym, or an exciting coding project! I have always been a problem solver by nature, from solving math problems in school to now finding solutions as a web developer.",
+          "I love diving deep into things – whether it's a new fantasy world, working out at the gym, or an exciting coding project! I've always been a natural problem solver, from math exercises in school to now finding solutions as a web developer.",
         paragraph3:
-          "As a web developer, I appreciate the details — from interactivity and design to optimized code. I'm always curious to learn something new and eager to explore new technologies and trends.",
+          "As a web developer, I value the details – whether it's interactivity and design or optimized code. I'm always curious to learn something new and eager to explore new technologies and trends.",
         paragraph4:
-          "Right now, I’m looking for an internship where I can build on my experience while learning a lot along the way. If that sounds like something for you, don’t hesitate to reach out—I look forward to hearing from you!",
+          "I'll be starting my internship at Impact in August 2025, where I’ll be working with frontend development. I'm looking forward to gaining more experience and further developing my skills.",
       },
     },
   },
