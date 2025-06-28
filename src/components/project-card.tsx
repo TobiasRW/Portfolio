@@ -69,11 +69,11 @@ export default function ProjectCard({
         </div>
         {/* Tags section */}
         {tags.length > 0 && (
-          <div className="absolute bottom-0 flex w-full flex-wrap gap-2 bg-gradient-to-t pb-2 pl-2 pt-6">
+          <div className="absolute bottom-0 flex w-full flex-wrap gap-2 bg-gradient-to-t pb-2 pl-2 pt-6 md:pl-1 lg:pl-2">
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="rounded-full bg-foreground/80 px-2 py-1 text-xs text-whitebg dark:bg-background/80"
+                className="rounded-full bg-foreground/80 px-2 py-1 text-xs text-whitebg md:gap-1 md:text-[10px] lg:gap-2 lg:text-xs dark:bg-background/80"
               >
                 {tag}
               </span>
