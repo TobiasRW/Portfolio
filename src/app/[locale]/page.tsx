@@ -17,8 +17,8 @@ export default async function Home({
     <>
       <I18nProviderClient locale={locale}>
         <Hero />
+        <Skills />
       </I18nProviderClient>
-      <Skills />
       <Projects />
       <About />
     </>

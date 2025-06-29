@@ -13,6 +13,9 @@ export default {
         about: "About",
       },
     },
+    skills: {
+      link: "Read more",
+    },
     projects: {
       title: "Projects",
       titleAll: "All Projects",

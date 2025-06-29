@@ -11,10 +11,13 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 import useDarkMode from "@/hooks/useDarkMode";
 import { logos, getLogo } from "@/data/logos";
 import Image from "next/image";
+import { useScopedI18n } from "@/locales/client";
 
 export const Skills = () => {
   const [api, setApi] = useState<CarouselApi>();
   const isDarkMode = useDarkMode();
+
+  const scopedT = useScopedI18n("frontPage.skills");
 
   useEffect(() => {
     if (!api) return;
@@ -68,6 +71,9 @@ export const Skills = () => {
                         height={64}
                         className="h-4/6 w-4/6 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-90 group-hover:opacity-0 sm:h-12 sm:w-12 md:h-14 md:w-14 2xl:h-16 2xl:w-16"
                       />
+                      <p className="absolute bottom-1 font-heading text-[8px] font-medium text-foreground/80 opacity-0 transition-all duration-300 group-hover:bottom-2 group-hover:opacity-100 sm:bottom-1 sm:text-xs md:text-sm">
+                        {logo.label}
+                      </p>
                       {logo.url ? (
                         <a
                           href={logo.url}
@@ -75,7 +81,7 @@ export const Skills = () => {
                           rel="noopener noreferrer"
                           className="absolute flex translate-y-4 items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm dark:bg-[#f5f5f5]"
                         >
-                          {logo.label}
+                          {scopedT("link")}
                           <ArrowUpRight size={16} />
                         </a>
                       ) : (

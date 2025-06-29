@@ -13,6 +13,9 @@ export default {
         about: "Om Mig",
       },
     },
+    skills: {
+      link: "Læs mere",
+    },
     projects: {
       title: "Projekter",
       titleAll: "Alle Projekter",
