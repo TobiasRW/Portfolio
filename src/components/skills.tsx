@@ -79,10 +79,10 @@ export const Skills = () => {
                           href={logo.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="absolute flex translate-y-4 items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm dark:bg-[#f5f5f5]"
+                          className="absolute flex translate-y-4 items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-[8px] font-bold text-black opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 xs:text-[10px] sm:text-xs md:px-4 md:py-2 lg:text-sm dark:bg-[#f5f5f5]"
                         >
                           {scopedT("link")}
-                          <ArrowUpRight size={16} />
+                          <ArrowUpRight className="h-2 w-2 xs:h-3 xs:w-3 md:h-4 md:w-4" />
                         </a>
                       ) : (
                         <div className="absolute flex translate-y-4 items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 font-heading text-xs font-bold text-black opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:px-4 md:py-2 lg:text-sm">

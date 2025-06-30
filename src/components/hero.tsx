@@ -70,7 +70,6 @@ export default function Hero() {
             >
               {scopedT("button.projects")}
               <ArrowDown
-                size={32}
                 weight="bold"
                 className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
               />
@@ -82,7 +81,6 @@ export default function Hero() {
             >
               {scopedT("button.about")}
               <ArrowDown
-                size={32}
                 weight="bold"
                 className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
               />
