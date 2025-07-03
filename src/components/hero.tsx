@@ -45,7 +45,7 @@ export default function Hero() {
             </div>
             <div className="flex">
               <MapPinSimple weight="fill" className="mt-1 text-foreground" />
-              <p>Aarhus</p>
+              <p>{scopedT("location")}</p>
             </div>
             <motion.div
               className="absolute right-3 top-8 z-20 -rotate-12 cursor-pointer rounded-full bg-whitebg px-3 py-2 font-heading text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"

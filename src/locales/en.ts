@@ -8,6 +8,7 @@ export default {
   frontPage: {
     hero: {
       title: "Passionate web developer specializing in frontend development",
+      location: "Aarhus, Denmark",
       button: {
         projects: "Projects",
         about: "About",
