@@ -54,6 +54,10 @@ export default {
           name: "Candidate",
           brief: "A candidate portal with LLM integration",
         },
+        fitApp: {
+          name: "Fit App",
+          brief: "A web app for fitness tracking and workout planning",
+        },
       },
     },
     about: {
@@ -484,6 +488,56 @@ export default {
         item7: {
           content:
             "Mistral is an AI API that provides access to various AI models. We used Mistral to generate chat responses and create embeddings of user profiles.",
+        },
+      },
+    },
+  },
+  projectFitApp: {
+    title: "Fit App",
+    about: {
+      heading: "About the Project",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+      },
+      text: {
+        disclaimer:
+          "Disclaimer: The functionality to create new users has been disabled. Please use the test user to log in.",
+        paragraph1:
+          "Fit App is a personal hobby project I developed to track my workouts and progress. The app allows you to create a profile, set up training plans, log workouts, and view statistics over time.",
+        paragraph2:
+          "The app is built with Next.js and TypeScript, and uses Supabase to manage user and workout data. Basic PWA support has been added, so the app can be installed directly on mobile and used like a regular app.",
+        paragraph3:
+          "I wanted a quick and easy way to log my workouts while also being able to track my progress over time. That’s why I wanted to gather all the features I needed in one place – with the ability to customize them to my needs.",
+        testUser: {
+          heading: "Test User:",
+          email: "Email: test@test.com",
+          password: "Password: hello123",
+        },
+      },
+    },
+    accordion: {
+      heading: "Technologies",
+      items: {
+        item1: {
+          content:
+            "I used Next.js as the React framework to develop the project, which made it possible to build a structured codebase. I have also made use of server actions to handle data updates.",
+        },
+        item2: {
+          content:
+            "I used Supabase as the database, which integrates well with Next.js. Supabase provides a range of features that make it easy to manage user data and authentication.",
+        },
+        item3: {
+          content:
+            "Framer Motion made it possible to add smooth animations and interactions that enhance the user experience. In this project, I used it to animate various modals and interactive elements.",
+        },
+        item4: {
+          content:
+            "I used Tailwind CSS to style my components. Tailwind made it easy to implement responsive design and ensure a consistent style across the application.",
+        },
+        item5: {
+          content:
+            "TypeScript helped me write more robust and maintainable code. By adding type checking to JavaScript, I reduced errors and improved the development process.",
         },
       },
     },

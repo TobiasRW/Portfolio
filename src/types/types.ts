@@ -10,7 +10,8 @@ export type ProjectTitles =
   | "project.liveScores.name"
   | "project.palette.name"
   | "project.bookSpace.name"
-  | "project.candidate.name";
+  | "project.candidate.name"
+  | "project.fitApp.name";
 
 // Define valid project text keys
 export type ProjectTexts =
@@ -21,7 +22,8 @@ export type ProjectTexts =
   | "project.liveScores.brief"
   | "project.palette.brief"
   | "project.bookSpace.brief"
-  | "project.candidate.brief";
+  | "project.candidate.brief"
+  | "project.fitApp.brief";
 
 // Define the structure of a project
 export type Project = {

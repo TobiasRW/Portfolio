@@ -54,6 +54,10 @@ export default {
           name: "Candidate",
           brief: "En kandidatportal med LLM integration",
         },
+        fitApp: {
+          name: "Fit App",
+          brief: "En web app til fitness tracking og træningsplanlægning",
+        },
       },
     },
     about: {
@@ -484,6 +488,56 @@ export default {
         item7: {
           content:
             "Mistral er et AI-API, der giver adgang til forskellige AI-modeller. Vi har brugt Mistral til at generere svar i chatvinduet samt til at generere embeddings af profilerne.",
+        },
+      },
+    },
+  },
+  projectFitApp: {
+    title: "Fit App",
+    about: {
+      heading: "Om Projektet",
+      badges: {
+        badge1: "Frontend",
+        badge2: "Backend",
+      },
+      text: {
+        disclaimer:
+          "Disclaimer: Funktionaliteten til at oprette nye brugere er slået fra. Brug derfor testbrugeren til at logge ind.",
+        paragraph1:
+          "Fit App er et personligt hobbyprojekt, som jeg har udviklet for at kunne tracke min træning og mine fremskridt. Appen giver mulighed for at oprette en profil, oprette træningsplaner, logge træning og se statestikker over tid.",
+        paragraph2:
+          "Appen er bygget i Next.js med TypeScript, og bruger Supabase til at håndtere bruger- og træningsdata. Der er tilføjet grundlæggende PWA-support, så appen kan installeres direkte på mobilen og bruges som en normal app.",
+        paragraph3:
+          "Jeg ønskede en nem og hurtig måde at logge min træning på og samtidig kunne følge mine fremskridt over tid. Derfor ville jeg samle de funktioner, jeg havde brug for, ét sted – med mulighed for at tilpasse dem til mine egne behov.",
+        testUser: {
+          heading: "Testbruger:",
+          email: "Email: test@test.com",
+          password: "Kodeord: hello123",
+        },
+      },
+    },
+    accordion: {
+      heading: "Teknologier",
+      items: {
+        item1: {
+          content:
+            "Jeg har brugt Next.js som React-framework til at udvikle projektet, hvilket har gjort det muligt at opbygge en struktureret kodebase. Her har jeg gjort brug af server actions til at håndtere dataopdateringer.",
+        },
+        item2: {
+          content:
+            "Jeg har brugt Supabase som database, hvilket snakker godt sammen med Next.js. Supabase tilbyder en række funktioner, der gør det nemt at håndtere brugerdata og autentificering.",
+        },
+        item3: {
+          content:
+            "Motion har gjort det muligt at tilføje flydende animationer og interaktioner, der forbedrer brugeroplevelsen. Jeg har i dette projekt brugt det til at animere de forskellige modal vinduer og interaktive elementer.",
+        },
+        item4: {
+          content:
+            "Jeg har brugt Tailwind CSS til at style mine komponenter. Tailwind har gjort det nemt at implementere responsive design og sikre en ensartet stil på tværs af applikationen.",
+        },
+        item5: {
+          content:
+            "TypeScript har hjulpet mig med at skrive mere robust og vedligeholdelig kode. Ved at tilføje typekontrol til JavaScript har jeg reduceret fejl og forbedret udviklingsprocessen.",
         },
       },
     },

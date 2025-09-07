@@ -41,6 +41,11 @@ export const logos: Logo[] = [
     url: "https://dev.mysql.com/doc/",
   },
   {
+    icon: "/icons/supabase.svg",
+    label: "Supabase",
+    url: "https://supabase.com/docs",
+  },
+  {
     icon: "/icons/javascript.svg",
     label: "JavaScript",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -118,3 +123,20 @@ export const getLogoByLabel = (
     url: logo?.url,
   };
 };
+
+export const skillLogos = logos.filter((logo) =>
+  [
+    "Tailwind CSS",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "React Router",
+    "Supabase",
+    "MySQL",
+    "JavaScript",
+    "Motion",
+    "PHP",
+    "Shadcn",
+    "MongoDB",
+  ].includes(logo.label),
+);

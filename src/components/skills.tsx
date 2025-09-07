@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import useDarkMode from "@/hooks/useDarkMode";
-import { logos, getLogo } from "@/data/logos";
+import { skillLogos, getLogo } from "@/data/logos";
 import Image from "next/image";
 import { useScopedI18n } from "@/locales/client";
 
@@ -23,21 +23,7 @@ export const Skills = () => {
     if (!api) return;
   }, [api]);
 
-  const skills = logos.filter((logo) =>
-    [
-      "Tailwind CSS",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "React Router",
-      "MySQL",
-      "JavaScript",
-      "Motion",
-      "PHP",
-      "Shadcn",
-      "MongoDB",
-    ].includes(logo.label),
-  );
+  const skills = skillLogos;
 
   return (
     <div className="w-full rounded-b-[40px] bg-whitebg pb-20 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">

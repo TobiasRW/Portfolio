@@ -12,6 +12,15 @@ export const projects: Project[] = [
   },
   {
     variant: "phone2",
+    imageSrc: "/images/fit-app-banner.webp",
+    titleKey: "project.fitApp.name",
+    textKey: "project.fitApp.brief",
+    link: "/fit-app",
+    bgColor: "#1db954",
+    tags: ["Frontend", "Backend"],
+  },
+  {
+    variant: "phone2",
     imageSrc: "/images/bookspace-banner2.webp",
     titleKey: "project.bookSpace.name",
     textKey: "project.bookSpace.brief",
