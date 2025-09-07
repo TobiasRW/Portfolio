@@ -63,7 +63,9 @@ export default async function Page({
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
         ]}
-        text={` ${scopedT("about.text.paragraph1")} \n
+        text={` 
+            ${scopedT("about.text.disclaimer")} \n
+            ${scopedT("about.text.paragraph1")} \n
           ${scopedT("about.text.paragraph2")}\n
         ${scopedT("about.text.paragraph3")} \n 
          ${scopedT("about.text.testUser.heading")}
@@ -87,6 +89,7 @@ export default async function Page({
           "Test",
           "bruger:",
           "TypeScript",
+          "Disclaimer:",
         ]}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
