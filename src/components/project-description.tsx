@@ -2,6 +2,7 @@
 
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
+import highlightText from "@/helpers/highlightText";
 import Badge from "./badge";
 import Image from "next/image";
 
@@ -24,21 +25,6 @@ export default function ProjectDescription({
 }: ProjectDescriptionProps) {
   const isDarkMode = useDarkMode();
 
-  const highlightText = (text: string) => {
-    const lowerHighlightWords = highlightWords.map((hw) => hw.toLowerCase()); // Normaliser
-    return text.split(" ").map((word, index) => {
-      const cleanWord = word.replace(/[,!?]/g, "").toLowerCase(); // Fjern tegnsætning og normaliser
-      const isHighlighted = lowerHighlightWords.includes(cleanWord);
-
-      return (
-        <span key={index} className={isHighlighted ? "font-normal italic" : ""}>
-          {word}
-          {index < text.split(" ").length - 1 && " "} {/* Tilføj mellemrum */}
-        </span>
-      );
-    });
-  };
-
   return (
     <div className="w-full rounded-b-[40px] bg-whitebg pb-10 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       {/* Project Description Section */}
@@ -60,7 +46,7 @@ export default function ProjectDescription({
             <p className="font-body text-sm font-light leading-normal md:text-base">
               {text.split("\n").map((line, index) => (
                 <span key={index}>
-                  {highlightText(line)}
+                  {highlightText(line, highlightWords)}
                   <br />
                 </span>
               ))}
