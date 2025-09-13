@@ -34,10 +34,6 @@ export default {
           name: "Lendr",
           brief: "En app til udlejning af kufferter og rejsetasker",
         },
-        glassFill: {
-          name: "Glass Fill",
-          brief: "Interaktivt website med scroll-effekter",
-        },
         liveScores: {
           name: "Live Scores",
           brief: "En fodbold livescore app",
@@ -75,6 +71,12 @@ export default {
       },
     },
   },
+  testUser: {
+    heading: "Testbruger:",
+    user: "Brugernavn: ",
+    email: "Email: ",
+    password: "Kodeord: ",
+  },
   projectCoelm: {
     title: "Cølm",
     about: {
@@ -86,7 +88,7 @@ export default {
         paragraph1:
           "Dette projekt fokuserer på udviklingen af en ny visuel identitet samt et proof-of-concept webshop-design for Nimo Skin’s kommende brand, cølm.",
         paragraph2:
-          "Projektet er udarbejdet i React med Vite som værktøj, hvilket har givet et hurtigt og effektivt udviklingsmiljø. Målet har været at skabe en engagerende og interaktiv side, hvilket er opnået ved hjælp af animationsbibliotekerne 'Motion' og 'GSAP'.",
+          "Projektet er udarbejdet i React med Vite som værktøj, hvilket har givet et hurtigt og effektivt udviklingsmiljø. Målet har været at skabe en engagerende og interaktiv side, hvilket er opnået ved hjælp af animationsbibliotekerne Motion og GSAP.",
         paragraph3:
           "Til styling af siden har jeg anvendt Tailwind CSS, hvilket har gjort det enkelt at skabe en responsiv og moderne brugeroplevelse. Alt indhold på siden, herunder billeder skabt i Blender, samt design og animationer, er udviklet fra bunden.",
         paragraph4:
@@ -142,9 +144,8 @@ export default {
         paragraph4:
           "Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til knapper og modal vinduer, hvilket har gjort appen mere levende og interaktiv.",
         testUser: {
-          heading: "Test bruger:",
-          user: "brugernavn: sylto",
-          password: "Password: hello",
+          user: "sylto",
+          password: "hello",
         },
       },
     },
@@ -195,9 +196,8 @@ export default {
         paragraph3:
           "Vi har brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning. Vi har yderligere udviklet en API i php, som begge frontends kan tilgå for at hente og opdatere data.",
         testUser: {
-          heading: "Test bruger:",
-          email: "Email: sylto@gmail.com",
-          password: "Kodeord: hello",
+          email: "sylto@gmail.com",
+          password: "hello",
         },
       },
     },
@@ -235,40 +235,6 @@ export default {
         item8: {
           content:
             "JavaScript er brugt gennem React til at tilføje interaktivitet og dynamik til websitet. Vi har anvendt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende og intuitiv.",
-        },
-      },
-    },
-  },
-  projectGlassFill: {
-    title: "Glass Fill",
-    about: {
-      heading: "Om Projektet",
-      badges: {
-        badge1: "Frontend",
-      },
-      text: {
-        paragraph1:
-          "Dette Projekt er en hjemmeside, der er bugget med basis HTML, CSS og JavaScript. Hjemmesiden er en simpel side, der viser en animation af et glas, der gradvist fyldes med væske når man scroller ned på siden.",
-        paragraph2:
-          "Jeg har brugt HTML til at opbygge strukturen af siden, CSS til at style elementerne og JavaScript til at tilføje interaktivitet og animationer.",
-        paragraph3:
-          "Siden viser også den oprindelige After Effects animation som siden er baseret på.",
-      },
-    },
-    accordion: {
-      heading: "Teknologier",
-      items: {
-        item1: {
-          content:
-            "HTML er det primære sprog, der bruges til at opbygge websider og applikationer. Jeg har brugt det til at strukturere indholdet og opbygge layoutet af websitet.",
-        },
-        item2: {
-          content:
-            "CSS er et sprog, der bruges til at style og designe websider. Jeg har brugt det til at tilføje farver, skrifttyper, layout og animationer til websitet.",
-        },
-        item3: {
-          content:
-            "JavaScript er et programmeringssprog, der bruges til at tilføje interaktivitet og dynamik til websider. Jeg har brugt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende.",
         },
       },
     },
@@ -337,9 +303,8 @@ export default {
         paragraph3:
           "Jeg har lavet appen som en øvelse i at arbejde med AI og MongoDB. Jeg har genskabt designet fra den eksisterende app 'Coolors', som er en farvepalet generator.",
         testUser: {
-          heading: "Test bruger:",
-          email: "Email: sylto@gmail.com",
-          password: "Kodeord: hello1234",
+          email: "sylto@gmail.com",
+          password: "hello1234",
         },
       },
     },
@@ -397,9 +362,8 @@ export default {
         paragraph4:
           "Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til filtre og modal vinduer, hvilket har gjort appen mere levende og interaktiv.",
         testUser: {
-          heading: "Test bruger:",
-          email: "Email: sylto@gmail.com",
-          password: "Kodeord: hello",
+          email: "sylto@gmail.com",
+          password: "hello",
         },
       },
     },
@@ -450,11 +414,10 @@ export default {
         paragraph2:
           "Siden er en kandidatportal, der forbinder studerende med virksomheder, der søger kandidater til praktikpladser og jobs. Som eksamensprojekt har jeg, i samarbejde med min eksamensgruppe, udviklet en AI-chatbot beregnet til at hjælpe virksomheder med at finde de rette kandidater til deres stillinger.",
         paragraph3:
-          "Vi har gjort brug af Mistrals API som LLM til at kunne generere svar i chatvinduet. Da vi bruger MongoDB som database, har vi benyttet vektorbaseret søgning til at finde relevante profiler i databasen – her har vi brugt Mistrals embedding-model til at generere embeddings af profilerne.",
+          "Vi har gjort brug af Mistral's API som LLM til at kunne generere svar i chatvinduet. Da vi bruger MongoDB som database, har vi benyttet vektorbaseret søgning til at finde relevante profiler i databasen – her har vi brugt Mistral's embedding-model til at generere embeddings af profilerne.",
         testUser: {
-          heading: "Testbruger:",
-          email: "Email: twolmar@gmail.com",
-          password: "Kodeord: hello",
+          email: "twolmar@gmail.com",
+          password: "hello",
         },
       },
     },
@@ -510,9 +473,8 @@ export default {
         paragraph3:
           "Jeg ønskede en nem og hurtig måde at logge min træning på og samtidig kunne følge mine fremskridt over tid. Derfor ville jeg samle de funktioner, jeg havde brug for, ét sted – med mulighed for at tilpasse dem til mine egne behov.",
         testUser: {
-          heading: "Testbruger:",
-          email: "Email: test@test.com",
-          password: "Kodeord: hello123",
+          email: "test@test.com",
+          password: "hello123",
         },
       },
     },

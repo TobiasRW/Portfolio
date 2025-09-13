@@ -17,42 +17,42 @@ export default async function Page({
 
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "Remix",
       website: "https://remix.run/docs/en/main",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "MySQL",
       website: "https://dev.mysql.com/doc/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "PHP",
       website: "https://www.php.net/",
     },
     {
-      content: `${scopedT("accordion.items.item6.content")}`,
+      content: scopedT("accordion.items.item6.content"),
       iconLabel: "Shadcn",
       website: "https://ui.shadcn.com/docs",
     },
     {
-      content: `${scopedT("accordion.items.item7.content")}`,
+      content: scopedT("accordion.items.item7.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item8.content")}`,
+      content: scopedT("accordion.items.item8.content"),
       iconLabel: "JavaScript",
     },
   ];
@@ -77,15 +77,20 @@ export default async function Page({
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
         ]}
-        text={` ${scopedT("about.text.paragraph1")} \n 
-       ${scopedT("about.text.paragraph2")} \n
-       ${scopedT("about.text.paragraph3")}\n 
-       ${scopedT("about.text.testUser.heading")}
-       ${scopedT("about.text.testUser.email")}
-       ${scopedT("about.text.testUser.password")}
-
-          `}
-        iconLabels={[
+        text={[
+          {
+            content: scopedT("about.text.paragraph1"),
+          },
+          {
+            content: scopedT("about.text.paragraph2"),
+            highlightWords: ["Next.js", "Remix"],
+          },
+          {
+            content: scopedT("about.text.paragraph3"),
+            highlightWords: ["MySQL", "PHP", "API"],
+          },
+        ]}
+        techStack={[
           "React",
           "Next.js",
           "Remix",
@@ -95,21 +100,10 @@ export default async function Page({
           "Tailwind CSS",
           "JavaScript",
         ]}
-        highlightWords={[
-          "React",
-          "Next.js",
-          "Remix",
-          "MySQL",
-          "PHP",
-          "API",
-          "backend",
-          "Email:",
-          "Password:",
-          "Kodeord:",
-          "Test",
-          "bruger:",
-          "user:",
-        ]}
+        testUser={{
+          email: scopedT("about.text.testUser.email"),
+          password: scopedT("about.text.testUser.password"),
+        }}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
         <Slider

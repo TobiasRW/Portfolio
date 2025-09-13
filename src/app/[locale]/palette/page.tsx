@@ -17,37 +17,37 @@ export default async function Page({
 
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "MongoDB",
       website: "https://www.mongodb.com/",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "Mistral",
       website: "https://mistral.ai/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item6.content")}`,
+      content: scopedT("accordion.items.item6.content"),
       iconLabel: "TypeScript",
       website: "https://www.typescriptlang.org/",
     },
     {
-      content: `${scopedT("accordion.items.item7.content")}`,
+      content: scopedT("accordion.items.item7.content"),
       iconLabel: "Zustand",
       website: "https://zustand.docs.pmnd.rs/getting-started/introduction",
     },
@@ -74,15 +74,20 @@ export default async function Page({
           scopedT("about.badges.badge2"),
           scopedT("about.badges.badge3"),
         ]}
-        text={` ${scopedT("about.text.paragraph1")} \n 
-       ${scopedT("about.text.paragraph2")} \n
-       ${scopedT("about.text.paragraph3")}\n 
-       ${scopedT("about.text.testUser.heading")}
-       ${scopedT("about.text.testUser.email")}
-       ${scopedT("about.text.testUser.password")}
-
-          `}
-        iconLabels={[
+        text={[
+          {
+            content: scopedT("about.text.paragraph1"),
+          },
+          {
+            content: scopedT("about.text.paragraph2"),
+            highlightWords: ["Next.js", "MongoDB", "Mistral", "TypeScript"],
+          },
+          {
+            content: scopedT("about.text.paragraph3"),
+            highlightWords: ["MongoDB"],
+          },
+        ]}
+        techStack={[
           "React",
           "Next.js",
           "MongoDB",
@@ -91,19 +96,10 @@ export default async function Page({
           "TypeScript",
           "Zustand",
         ]}
-        highlightWords={[
-          "React",
-          "Next.js",
-          "MongoDB",
-          "Mistral",
-          "TypeScript",
-          "Email:",
-          "Password:",
-          "Kodeord:",
-          "Test",
-          "bruger:",
-          "user:",
-        ]}
+        testUser={{
+          email: scopedT("about.text.testUser.email"),
+          password: scopedT("about.text.testUser.password"),
+        }}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
         <Slider

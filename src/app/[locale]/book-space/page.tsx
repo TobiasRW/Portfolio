@@ -16,32 +16,32 @@ export default async function Page({
   const scopedT = await getScopedI18n("projectBookSpace");
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "React Router",
       website: "https://reactrouter.com/home",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "MongoDB",
       website: "https://www.mongodb.com/docs/",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "Motion",
       website: "https://motion.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item6.content")}`,
+      content: scopedT("accordion.items.item6.content"),
       iconLabel: "TypeScript",
       website: "https://www.typescriptlang.org/",
     },
@@ -67,16 +67,20 @@ export default async function Page({
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
         ]}
-        text={` ${scopedT("about.text.disclaimer")}\n
-        ${scopedT("about.text.paragraph1")}
-          ${scopedT("about.text.paragraph2")}\n
-        ${scopedT("about.text.paragraph3")} \n 
-        ${scopedT("about.text.paragraph4")} \n 
-         ${scopedT("about.text.testUser.heading")}
-       ${scopedT("about.text.testUser.email")}
-       ${scopedT("about.text.testUser.password")}
-          `}
-        iconLabels={[
+        disclaimer={scopedT("about.text.disclaimer")}
+        text={[
+          { content: scopedT("about.text.paragraph1") },
+          { content: scopedT("about.text.paragraph2") },
+          {
+            content: scopedT("about.text.paragraph3"),
+            highlightWords: ["React", "Router", "v7", "MongoDB", "TypeScript"],
+          },
+          {
+            content: scopedT("about.text.paragraph4"),
+            highlightWords: ["Tailwind", "CSS", "Motion"],
+          },
+        ]}
+        techStack={[
           "React",
           "React Router",
           "MongoDB",
@@ -84,24 +88,10 @@ export default async function Page({
           "Tailwind CSS",
           "TypeScript",
         ]}
-        highlightWords={[
-          "React",
-          "Router",
-          "Disclaimer:",
-          "MongoDB",
-          "TypeScript",
-          "Motion",
-          "Tailwind",
-          "CSS",
-          "Username:",
-          "Brugernavn:",
-          "Password:",
-          "Kodeord:",
-          "Test",
-          "bruger:",
-          "user:",
-          "email:",
-        ]}
+        testUser={{
+          email: scopedT("about.text.testUser.email"),
+          password: scopedT("about.text.testUser.password"),
+        }}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
         <Slider

@@ -6,7 +6,6 @@ export type ProjectTitles =
   | "project.coelm.name"
   | "project.bookBuddy.name"
   | "project.lendr.name"
-  | "project.glassFill.name"
   | "project.liveScores.name"
   | "project.palette.name"
   | "project.bookSpace.name"
@@ -18,7 +17,6 @@ export type ProjectTexts =
   | "project.coelm.brief"
   | "project.bookBuddy.brief"
   | "project.lendr.brief"
-  | "project.glassFill.brief"
   | "project.liveScores.brief"
   | "project.palette.brief"
   | "project.bookSpace.brief"
@@ -35,6 +33,20 @@ export type Project = {
   bgColor?: string;
   tags?: string[];
 };
+
+// Define the structure types for the project description component
+export type DescriptionText = {
+  content: string;
+  highlightWords?: string[];
+};
+
+export type TestUser = {
+  email?: string;
+  username?: string;
+  password: string;
+};
+
+//_____________ LOGO TYPES _______________//
 
 // Define logo types
 export type Logo = {
