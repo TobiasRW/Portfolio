@@ -28,10 +28,10 @@ export default async function RootLayout({
       <body className="">
         <I18nProviderClient locale={locale}>
           <Navigation />
+          <ToTop />
+          {children}
+          <Footer />
         </I18nProviderClient>
-        <ToTop />
-        {children}
-        <Footer />
       </body>
     </html>
   );

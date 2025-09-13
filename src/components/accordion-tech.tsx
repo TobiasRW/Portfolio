@@ -10,16 +10,11 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
-
-type AccordionItemProps = {
-  content: string;
-  website?: string;
-  iconLabel: string; // Reference to the label in the logos.ts file
-};
+import { AccordionEntry } from "@/types/types";
 
 type AccordionTechProps = {
   title: string;
-  items: AccordionItemProps[];
+  items: AccordionEntry[];
 };
 
 export default function AccordionTech({ title, items }: AccordionTechProps) {

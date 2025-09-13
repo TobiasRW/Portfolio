@@ -16,32 +16,32 @@ export default async function Page({
   const scopedT = await getScopedI18n("projectBookBuddy");
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "MySQL",
       website: "https://dev.mysql.com/doc/",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "Motion",
       website: "https://motion.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item6.content")}`,
+      content: scopedT("accordion.items.item6.content"),
       iconLabel: "JavaScript",
       website: "",
     },
@@ -68,15 +68,24 @@ export default async function Page({
           scopedT("about.badges.badge2"),
           scopedT("about.badges.badge3"),
         ]}
-        text={` ${scopedT("about.text.paragraph1")} \n
-          ${scopedT("about.text.paragraph2")}\n
-        ${scopedT("about.text.paragraph3")} \n 
-        ${scopedT("about.text.paragraph4")} \n
-         ${scopedT("about.text.testUser.heading")}
-       ${scopedT("about.text.testUser.user")}
-       ${scopedT("about.text.testUser.password")}
-          `}
-        iconLabels={[
+        text={[
+          {
+            content: scopedT("about.text.paragraph1"),
+          },
+          {
+            content: scopedT("about.text.paragraph2"),
+            highlightWords: ["React", "Next.js", "MySQL"],
+          },
+          {
+            content: scopedT("about.text.paragraph3"),
+            highlightWords: ["Google", "Books", "API"],
+          },
+          {
+            content: scopedT("about.text.paragraph4"),
+            highlightWords: ["Tailwind", "CSS", "Motion"],
+          },
+        ]}
+        techStack={[
           "React",
           "Next.js",
           "MySQL",
@@ -84,24 +93,10 @@ export default async function Page({
           "Tailwind CSS",
           "JavaScript",
         ]}
-        highlightWords={[
-          "React",
-          "Next.js",
-          "MySQL",
-          "Motion",
-          "Tailwind",
-          "CSS",
-          "Google",
-          "Books",
-          "API",
-          "Username:",
-          "Brugernavn:",
-          "Password:",
-          "Kodeord:",
-          "Test",
-          "bruger:",
-          "user:",
-        ]}
+        testUser={{
+          username: scopedT("about.text.testUser.user"),
+          password: scopedT("about.text.testUser.password"),
+        }}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
         <Slider

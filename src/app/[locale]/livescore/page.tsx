@@ -16,32 +16,32 @@ export default async function Page({
   const scopedT = await getScopedI18n("projectLiveScores");
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "TypeScript",
       website: "https://www.typescriptlang.org/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "API Sports",
       website: "https://www.api-football.com/documentation-v3",
     },
     {
-      content: `${scopedT("accordion.items.item6.content")}`,
+      content: scopedT("accordion.items.item6.content"),
       iconLabel: "Football Data API",
       website: "https://www.football-data.org/documentation/quickstart",
     },
@@ -67,11 +67,19 @@ export default async function Page({
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
         ]}
-        text={`${scopedT("about.text.paragraph1")} \n 
-       ${scopedT("about.text.paragraph2")}\n
-       ${scopedT("about.text.paragraph3")} \n 
-          `}
-        iconLabels={[
+        text={[
+          {
+            content: scopedT("about.text.paragraph1"),
+            highlightWords: ["Next.js", "TypeScript"],
+          },
+          {
+            content: scopedT("about.text.paragraph2"),
+          },
+          {
+            content: scopedT("about.text.paragraph3"),
+          },
+        ]}
+        techStack={[
           "React",
           "Next.js",
           "TypeScript",
@@ -79,7 +87,6 @@ export default async function Page({
           "API Sports",
           "Football Data API",
         ]}
-        highlightWords={["React", "Next.js", "TypeScript"]}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
         <Slider

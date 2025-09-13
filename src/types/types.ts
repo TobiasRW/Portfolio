@@ -1,12 +1,14 @@
 // Define the valid project variants
 export type ProjectVariant = "default" | "phone" | "computer" | "phone2";
 
+// Define valid project banner variants
+export type ProjectBannerVariant = "default" | "phone" | "pc" | "phone2";
+
 // Define valid project title keys
 export type ProjectTitles =
   | "project.coelm.name"
   | "project.bookBuddy.name"
   | "project.lendr.name"
-  | "project.glassFill.name"
   | "project.liveScores.name"
   | "project.palette.name"
   | "project.bookSpace.name"
@@ -18,7 +20,6 @@ export type ProjectTexts =
   | "project.coelm.brief"
   | "project.bookBuddy.brief"
   | "project.lendr.brief"
-  | "project.glassFill.brief"
   | "project.liveScores.brief"
   | "project.palette.brief"
   | "project.bookSpace.brief"
@@ -36,10 +37,38 @@ export type Project = {
   tags?: string[];
 };
 
+// Define the structure types for the project description component
+export type DescriptionText = {
+  content: string;
+  highlightWords?: string[];
+};
+
+export type TestUser = {
+  email?: string;
+  username?: string;
+  password: string;
+};
+
+//_____________ LOGO TYPES _______________//
+
 // Define logo types
 export type Logo = {
   icon: string;
   dark?: string;
   label: string;
   url?: string;
+};
+
+//______________ SLIDER TYPES _______________//
+
+// Define slider variant types
+export type SliderVariant = "default" | "background";
+
+//______________ ACCORDION TYPES _______________//
+
+// Define accordion entry type
+export type AccordionEntry = {
+  content: string;
+  website?: string;
+  iconLabel: string;
 };

@@ -34,10 +34,6 @@ export default {
           name: "Lendr",
           brief: "An app for renting suitcases and travel bags",
         },
-        glassFill: {
-          name: "Glass Fill",
-          brief: "Interactive website with scroll effects",
-        },
         liveScores: {
           name: "Live Scores",
           brief: "A football live score app",
@@ -75,6 +71,12 @@ export default {
       },
     },
   },
+  testUser: {
+    heading: "Test User:",
+    user: "Username: ",
+    email: "Email: ",
+    password: "Password: ",
+  },
   projectCoelm: {
     title: "Coelm",
     about: {
@@ -86,7 +88,7 @@ export default {
         paragraph1:
           "This project focuses on developing a new visual identity and a proof-of-concept webshop design for Nimo Skin’s upcoming brand, coelm.",
         paragraph2:
-          "The project was built using React with Vite as a tool, providing a fast and efficient development environment. The goal was to create an engaging and interactive site, which was achieved using the animation libraries 'Motion' and 'GSAP'.",
+          "The project was built using React with Vite as a tool, providing a fast and efficient development environment. The goal was to create an engaging and interactive site, which was achieved using the animation libraries Motion and GSAP.",
         paragraph3:
           "For the styling of the site, I used Tailwind CSS, making it easy to create a responsive and modern user experience. All content on the site, including images created in Blender, as well as the design and animations, were developed from scratch.",
         paragraph4:
@@ -142,9 +144,8 @@ export default {
         paragraph4:
           "I have used Tailwind CSS to style the app and Motion to add animations to buttons and modal windows, making the app feel more dynamic and interactive.",
         testUser: {
-          heading: "Test User:",
-          user: "Username: sylto",
-          password: "Password: hello",
+          user: "sylto",
+          password: "hello",
         },
       },
     },
@@ -195,9 +196,8 @@ export default {
         paragraph3:
           "We used MySQL to create a database that stores information about users and the products available for rent. Additionally, we developed an API in PHP, which both frontends can access to retrieve and update data.",
         testUser: {
-          heading: "Test User:",
-          email: "Email: sylto@gmail.com",
-          password: "Password: hello",
+          email: "sylto@gmail.com",
+          password: "hello",
         },
       },
     },
@@ -235,40 +235,6 @@ export default {
         item8: {
           content:
             "JavaScript is used through React to add interactivity to the website. We implemented it to create functions and interactions that enhance the user experience, making it more engaging and intuitive.",
-        },
-      },
-    },
-  },
-  projectGlassFill: {
-    title: "Glass Fill",
-    about: {
-      heading: "About the Project",
-      badges: {
-        badge1: "Frontend",
-      },
-      text: {
-        paragraph1:
-          "This project is a website built with basic HTML, CSS, and JavaScript. The site is a simple page that shows an animation of a glass gradually filling with liquid as you scroll down the page.",
-        paragraph2:
-          "I used HTML to structure the content and build the layout of the site, CSS to style the elements, and JavaScript to add interactivity and animations.",
-        paragraph3:
-          "The site also displays the original After Effects animation that the site is based on.",
-      },
-    },
-    accordion: {
-      heading: "Technologies",
-      items: {
-        item1: {
-          content:
-            "HTML is the primary language used to build web pages and applications. I used it to structure the content and build the layout of the site.",
-        },
-        item2: {
-          content:
-            "CSS is a language used to style and design web pages. I used it to add colors, fonts, layout, and animations to the site.",
-        },
-        item3: {
-          content:
-            "JavaScript is a programming language used to add interactivity to web pages. I used it to implement functions and interactions that make the user experience more engaging.",
         },
       },
     },
@@ -337,9 +303,8 @@ export default {
         paragraph3:
           "I created the app as an exercise in working with AI and MongoDB. I recreated the design from the existing app 'Coolors,' which is a color palette generator.",
         testUser: {
-          heading: "Test User:",
-          email: "Email: sylto@gmail.com",
-          password: "Password: hello1234",
+          email: "sylto@gmail.com",
+          password: "hello1234",
         },
       },
     },
@@ -397,9 +362,8 @@ export default {
         paragraph4:
           "I have used Tailwind CSS to style the app and Motion to add animations to filters and modal windows, making the app more lively and interactive.",
         testUser: {
-          heading: "Test User:",
-          email: "Email: sylto@gmail.com",
-          password: "Password: hello",
+          email: "sylto@gmail.com",
+          password: "hello",
         },
       },
     },
@@ -452,9 +416,8 @@ export default {
         paragraph3:
           "We used Mistral's API as the LLM to generate responses in the chat window. Since we're using MongoDB as the database, we implemented vector-based search to find relevant profiles – using Mistral’s embedding model to generate embeddings of the profiles.",
         testUser: {
-          heading: "Test User:",
-          email: "Email: twolmar@gmail.com",
-          password: "Password: hello",
+          email: "twolmar@gmail.com",
+          password: "hello",
         },
       },
     },
@@ -510,9 +473,8 @@ export default {
         paragraph3:
           "I wanted a quick and easy way to log my workouts while also being able to track my progress over time. That’s why I wanted to gather all the features I needed in one place – with the ability to customize them to my needs.",
         testUser: {
-          heading: "Test User:",
-          email: "Email: test@test.com",
-          password: "Password: hello123",
+          email: "test@test.com",
+          password: "hello123",
         },
       },
     },

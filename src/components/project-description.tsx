@@ -2,42 +2,31 @@
 
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
+import highlightText from "@/helpers/highlightText";
+import type { TestUser, DescriptionText } from "@/types/types";
 import Badge from "./badge";
 import Image from "next/image";
+import { useScopedI18n } from "@/locales/client";
 
 type ProjectDescriptionProps = {
   title: string;
-  text: string;
-  iconLabels: string[];
-  highlightWords?: string[];
+  disclaimer?: string;
+  text: DescriptionText[];
+  techStack: string[];
   badges?: string[];
-  testUser?: string;
+  testUser?: TestUser;
 };
 
 export default function ProjectDescription({
   title,
+  disclaimer,
   text,
-  iconLabels,
-  highlightWords = [],
+  techStack,
   badges = [],
   testUser,
 }: ProjectDescriptionProps) {
   const isDarkMode = useDarkMode();
-
-  const highlightText = (text: string) => {
-    const lowerHighlightWords = highlightWords.map((hw) => hw.toLowerCase()); // Normaliser
-    return text.split(" ").map((word, index) => {
-      const cleanWord = word.replace(/[,!?]/g, "").toLowerCase(); // Fjern tegnsætning og normaliser
-      const isHighlighted = lowerHighlightWords.includes(cleanWord);
-
-      return (
-        <span key={index} className={isHighlighted ? "font-normal italic" : ""}>
-          {word}
-          {index < text.split(" ").length - 1 && " "} {/* Tilføj mellemrum */}
-        </span>
-      );
-    });
-  };
+  const scopedT = useScopedI18n("testUser");
 
   return (
     <div className="w-full rounded-b-[40px] bg-whitebg pb-10 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
@@ -55,17 +44,54 @@ export default function ProjectDescription({
             </div>
           )}
         </div>
+
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between 2xl:gap-20">
           <div className="">
-            <p className="font-body text-sm font-light leading-normal md:text-base">
-              {text.split("\n").map((line, index) => (
-                <span key={index}>
-                  {highlightText(line)}
-                  <br />
-                </span>
-              ))}
-            </p>
-            <p>{testUser}</p>
+            {disclaimer && (
+              <p className="mb-4 font-body text-sm font-light leading-normal md:text-base">
+                <span className="font-normal italic">Disclaimer:</span>{" "}
+                {disclaimer}
+              </p>
+            )}
+
+            {text.map((text, index) => (
+              <p
+                key={index}
+                className="mb-4 font-body text-sm font-light leading-normal md:text-base"
+              >
+                {highlightText(text.content, text.highlightWords ?? [])}
+              </p>
+            ))}
+
+            {testUser && (
+              <div className="mt-4">
+                <p className="font-body text-sm font-normal italic leading-normal md:text-base">
+                  {scopedT("heading")}
+                </p>
+                {testUser.email && (
+                  <p className="font-body text-sm font-light leading-normal md:text-base">
+                    <span className="font-normal italic">
+                      {scopedT("email")}
+                    </span>{" "}
+                    {testUser.email}
+                  </p>
+                )}
+                {testUser.username && (
+                  <p className="font-body text-sm font-light leading-normal md:text-base">
+                    <span className="font-normal italic">
+                      {scopedT("user")}
+                    </span>{" "}
+                    {testUser.username}
+                  </p>
+                )}
+                <p className="font-body text-sm font-light leading-normal md:text-base">
+                  <span className="font-normal italic">
+                    {scopedT("password")}
+                  </span>{" "}
+                  {testUser.password}
+                </p>
+              </div>
+            )}
           </div>
 
           <hr className="h-[1px] border-none bg-foreground lg:hidden" />
@@ -76,8 +102,8 @@ export default function ProjectDescription({
               Techstack
             </p>
             <div className="flex flex-wrap gap-4">
-              {iconLabels.map((iconLabel, index) => {
-                const logoData = getLogoByLabel(iconLabel, isDarkMode);
+              {techStack.map((item, index) => {
+                const logoData = getLogoByLabel(item, isDarkMode);
                 return (
                   <div
                     key={index}
@@ -85,7 +111,7 @@ export default function ProjectDescription({
                   >
                     {/* Tooltip */}
                     <div className="absolute bottom-full left-1/2 mb-2 hidden w-max -translate-x-1/2 rounded bg-[#EDECEC] px-2 py-1 text-xs drop-shadow-sm group-hover:block dark:bg-[#2C2C2C]">
-                      {iconLabel}
+                      {item}
                       <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-[#EDECEC] dark:border-t-[#2C2C2C]"></div>
                     </div>
                     {/* Logo */}

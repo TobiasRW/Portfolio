@@ -16,27 +16,27 @@ export default async function Page({
   const scopedT = await getScopedI18n("projectFitApp");
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "Next.js",
       website: "https://nextjs.org/docs",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "Supabase",
       website: "https://supabase.com/docs",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "Motion",
       website: "https://motion.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "TypeScript",
       website: "https://www.typescriptlang.org/",
     },
@@ -63,16 +63,18 @@ export default async function Page({
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
         ]}
-        text={` 
-            ${scopedT("about.text.disclaimer")} \n
-            ${scopedT("about.text.paragraph1")} \n
-          ${scopedT("about.text.paragraph2")}\n
-        ${scopedT("about.text.paragraph3")} \n 
-         ${scopedT("about.text.testUser.heading")}
-       ${scopedT("about.text.testUser.email")}
-       ${scopedT("about.text.testUser.password")}
-          `}
-        iconLabels={[
+        disclaimer={scopedT("about.text.disclaimer")}
+        text={[
+          {
+            content: scopedT("about.text.paragraph1"),
+          },
+          {
+            content: scopedT("about.text.paragraph2"),
+            highlightWords: ["TypeScript", "Supabase", "Next.js"],
+          },
+          { content: scopedT("about.text.paragraph3") },
+        ]}
+        techStack={[
           "React",
           "Next.js",
           "Supabase",
@@ -80,17 +82,10 @@ export default async function Page({
           "Tailwind CSS",
           "TypeScript",
         ]}
-        highlightWords={[
-          "Next.js",
-          "Supabase",
-          "Email:",
-          "Password:",
-          "Kodeord:",
-          "Test",
-          "bruger:",
-          "TypeScript",
-          "Disclaimer:",
-        ]}
+        testUser={{
+          email: scopedT("about.text.testUser.email"),
+          password: scopedT("about.text.testUser.password"),
+        }}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
         <Slider

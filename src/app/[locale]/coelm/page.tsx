@@ -18,31 +18,31 @@ export default async function Page({
 
   const accordionItems = [
     {
-      content: `${scopedT("accordion.items.item1.content")}`,
+      content: scopedT("accordion.items.item1.content"),
       iconLabel: "React",
       website: "https://react.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item2.content")}`,
+      content: scopedT("accordion.items.item2.content"),
       iconLabel: "Vite",
       website: "https://vitejs.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item3.content")}`,
+      content: scopedT("accordion.items.item3.content"),
       iconLabel: "Tailwind CSS",
       website: "https://tailwindcss.com/",
     },
     {
-      content: `${scopedT("accordion.items.item4.content")}`,
+      content: scopedT("accordion.items.item4.content"),
       iconLabel: "Motion",
       website: "https://motion.dev/",
     },
     {
-      content: `${scopedT("accordion.items.item5.content")}`,
+      content: scopedT("accordion.items.item5.content"),
       iconLabel: "JavaScript",
     },
     {
-      content: `${scopedT("accordion.items.item6.content")}`,
+      content: scopedT("accordion.items.item6.content"),
       iconLabel: "GSAP",
       website: "https://gsap.com/",
     },
@@ -65,11 +65,22 @@ export default async function Page({
       <ProjectDescription
         title={scopedT("about.heading")}
         badges={[scopedT("about.badges.badge1")]}
-        text={` ${scopedT("about.text.paragraph1")} \n 
-        ${scopedT("about.text.paragraph2")} \n
-       ${scopedT("about.text.paragraph3")} \n
-      ${scopedT("about.text.paragraph4")} `}
-        iconLabels={[
+        text={[
+          {
+            content: scopedT("about.text.paragraph1"),
+            highlightWords: ["React", "Vite"],
+          },
+          {
+            content: scopedT("about.text.paragraph2"),
+            highlightWords: ["GSAP", "Motion"],
+          },
+          {
+            content: scopedT("about.text.paragraph3"),
+            highlightWords: ["Tailwind", "CSS"],
+          },
+          { content: scopedT("about.text.paragraph4") },
+        ]}
+        techStack={[
           "React",
           "Vite",
           "GSAP",
@@ -77,7 +88,6 @@ export default async function Page({
           "Tailwind CSS",
           "JavaScript",
         ]}
-        highlightWords={["React", "Vite", "GSAP", "Motion", "Tailwind", "CSS"]}
       />
       <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:pb-20 xl:pt-40">
         <Slider
