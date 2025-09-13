@@ -2,7 +2,6 @@ import About from "@/components/about";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
-import { I18nProviderClient } from "@/locales/client";
 import { setStaticParamsLocale } from "next-international/server";
 
 export default async function Home({
@@ -15,10 +14,8 @@ export default async function Home({
 
   return (
     <>
-      <I18nProviderClient locale={locale}>
-        <Hero />
-        <Skills />
-      </I18nProviderClient>
+      <Hero />
+      <Skills />
       <Projects />
       <About />
     </>

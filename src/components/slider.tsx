@@ -11,9 +11,10 @@ import {
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { SliderVariant } from "@/types/types";
 
 type SliderImageProps = {
-  variant?: "default" | "background";
+  variant?: SliderVariant;
   bgColor?: string;
   images: string[];
 };

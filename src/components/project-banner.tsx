@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ProjectBannerVariant } from "@/types/types";
 
 // Define the type for the component's props
 type ProjectBannerProps = {
-  variant?: "default" | "phone" | "pc" | "phone2"; // Variants for different styles
+  variant?: ProjectBannerVariant; // Variants for different styles
   imageSrc: string; // Image source
   title: string; // Project title
   website: string; // Project link

@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import { TransitionLink } from "./utils/transition-link";
+import { ProjectVariant } from "@/types/types";
 
 // ProjectCard component props
 type ProjectCardProps = {
-  variant?: "default" | "phone" | "computer" | "phone2"; // Variant for different styles
+  variant?: ProjectVariant; // Variant for different styles
   imageSrc: string; // Image source
   title: string; // Project title
   text: string; // Project description

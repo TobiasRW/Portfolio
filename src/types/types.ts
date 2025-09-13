@@ -1,6 +1,9 @@
 // Define the valid project variants
 export type ProjectVariant = "default" | "phone" | "computer" | "phone2";
 
+// Define valid project banner variants
+export type ProjectBannerVariant = "default" | "phone" | "pc" | "phone2";
+
 // Define valid project title keys
 export type ProjectTitles =
   | "project.coelm.name"
@@ -54,4 +57,18 @@ export type Logo = {
   dark?: string;
   label: string;
   url?: string;
+};
+
+//______________ SLIDER TYPES _______________//
+
+// Define slider variant types
+export type SliderVariant = "default" | "background";
+
+//______________ ACCORDION TYPES _______________//
+
+// Define accordion entry type
+export type AccordionEntry = {
+  content: string;
+  website?: string;
+  iconLabel: string;
 };
