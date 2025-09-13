@@ -71,12 +71,4 @@ export const projects: Project[] = [
     bgColor: "#5BAD86",
     tags: ["Frontend", "Backend"],
   },
-  // {
-  //   variant: "computer",
-  //   imageSrc: "/images/glassfill-banner.webp",
-  //   titleKey: "project.glassFill.name",
-  //   textKey: "project.glassFill.brief",
-  //   link: "/glass-fill",
-  //   bgColor: "#6BB3ED",
-  // },
 ];
