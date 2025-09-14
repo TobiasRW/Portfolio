@@ -29,12 +29,12 @@ export default function Hero() {
   };
 
   return (
-    <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
-      <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:rounded-b-[70px] 3xl:h-[700px]">
+    <div className="bg-whitebg w-screen dark:bg-[#1A1A1A]">
+      <div className="bg-background 3xl:h-[700px] relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:rounded-b-[70px]">
         <Dots />
         <div className="z-10 mx-auto flex w-10/12 flex-col gap-6 pt-10 lg:gap-8 lg:pt-16">
           <div className="relative mx-auto flex w-72 flex-col items-center justify-center gap-4 sm:w-80">
-            <div className="mx-auto h-32 w-32 overflow-hidden rounded-full border-2 border-whitebg bg-gradient-to-tr from-[#d9d9d9] to-[#d1cccc] sm:h-36 sm:w-36 lg:h-40 lg:w-40 xl:h-44 xl:w-44 dark:border-none dark:from-[#1A1A1A] dark:to-[#2D2D2D]">
+            <div className="border-whitebg mx-auto h-32 w-32 overflow-hidden rounded-full border-2 bg-gradient-to-tr from-[#d9d9d9] to-[#d1cccc] sm:h-36 sm:w-36 lg:h-40 lg:w-40 xl:h-44 xl:w-44 dark:border-none dark:from-[#1A1A1A] dark:to-[#2D2D2D]">
               <Image
                 src="/images/portrait.webp"
                 alt="Hero"
@@ -44,11 +44,11 @@ export default function Hero() {
               />
             </div>
             <div className="flex">
-              <MapPinSimple weight="fill" className="mt-1 text-foreground" />
+              <MapPinSimple weight="fill" className="text-foreground mt-1" />
               <p>{scopedT("location")}</p>
             </div>
             <motion.div
-              className="absolute right-3 top-8 z-20 -rotate-12 cursor-pointer rounded-full bg-whitebg px-3 py-2 font-heading text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"
+              className="bg-whitebg font-heading absolute top-8 right-3 z-20 cursor-pointer rounded-full px-3 py-2 text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"
               drag
               dragControls={controls}
               style={{ x, y, rotate }}
@@ -59,7 +59,7 @@ export default function Hero() {
               Tobias Wolmar 👋🏻
             </motion.div>
           </div>
-          <h1 className="bg-gradient-to-br from-foreground from-50% to-background bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl md:mx-auto md:w-9/12 lg:text-4xl xl:w-4/6 xl:text-5xl">
+          <h1 className="from-foreground to-background bg-gradient-to-br from-50% bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl md:mx-auto md:w-9/12 lg:text-4xl xl:w-4/6 xl:text-5xl">
             {scopedT("title")}
           </h1>
           <div className="flex justify-center gap-4 lg:gap-6 xl:gap-8">

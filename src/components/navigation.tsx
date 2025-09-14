@@ -96,11 +96,11 @@ export default function Nav() {
           ) : (
             <TransitionLink
               href="/"
-              className="group flex items-center justify-center gap-2 font-heading lg:text-lg"
+              className="group font-heading flex items-center justify-center gap-2 lg:text-lg"
             >
               <ArrowLeft
                 size={18}
-                className="group-hover:scale-11 cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
+                className="cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
               />{" "}
               {scopedT("back")}
             </TransitionLink>
@@ -108,12 +108,12 @@ export default function Nav() {
           <div className="flex gap-2">
             <Toggle />
           </div>
-          <div className="hidden xs:flex">
+          <div className="xs:flex hidden">
             {pathname === "/" || pathname === "/da" ? (
               <a
                 href="/pdfs/cv-danish.pdf"
                 download
-                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base dark:text-background"
+                className="font-heading text-foreground dark:text-background rounded-full bg-white px-3 text-sm transition-all duration-300 lg:px-4 lg:text-base"
               >
                 CV
               </a>
@@ -121,7 +121,7 @@ export default function Nav() {
               <a
                 href="/pdfs/cv-english.pdf"
                 download
-                className="rounded-full bg-white px-3 font-heading text-sm text-foreground transition-all duration-300 lg:px-4 lg:text-base dark:text-background"
+                className="font-heading text-foreground dark:text-background rounded-full bg-white px-3 text-sm transition-all duration-300 lg:px-4 lg:text-base"
               >
                 CV
               </a>
@@ -135,24 +135,24 @@ export default function Nav() {
             onClick={toggleMenu}
           >
             <motion.span
-              className="z-50 h-[3px] w-6 rounded-full bg-foreground"
+              className="bg-foreground z-50 h-[3px] w-6 rounded-full"
               variants={hamburgerVariants.line1}
               animate={isOpen ? "open" : "closed"}
             />
             <motion.span
-              className="z-50 h-[3px] w-8 rounded-full bg-foreground"
+              className="bg-foreground z-50 h-[3px] w-8 rounded-full"
               variants={hamburgerVariants.line2}
               animate={isOpen ? "open" : "closed"}
             />
             <motion.span
-              className="z-50 h-[3px] w-5 rounded-full bg-foreground"
+              className="bg-foreground z-50 h-[3px] w-5 rounded-full"
               variants={hamburgerVariants.line3}
               animate={isOpen ? "open" : "closed"}
             />
           </motion.div>
 
           {/* Menu items for laptops */}
-          <div className="hidden font-heading text-xl lg:flex lg:items-center lg:gap-10">
+          <div className="font-heading hidden text-xl lg:flex lg:items-center lg:gap-10">
             <a
               href={links.github}
               target="_blank"
@@ -179,13 +179,13 @@ export default function Nav() {
 
           {/* Sidebar for mobile & tablet */}
           <motion.div
-            className="absolute right-0 top-0 z-20 h-[100vh] w-[70%] md:w-[45%] lg:hidden"
+            className="absolute top-0 right-0 z-20 h-[100vh] w-[70%] md:w-[45%] lg:hidden"
             variants={sideBarVariants}
             animate={isOpen ? "open" : "closed"}
             initial="closed"
           >
-            <div className="absolute top-0 z-[-2] h-screen w-screen bg-whitebg bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] dark:bg-background dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>
-            <ul className="absolute left-10 top-24 z-[100] flex w-3/4 flex-col gap-8 font-heading text-2xl font-medium sm:left-20 sm:gap-12 sm:text-3xl">
+            <div className="bg-whitebg dark:bg-background absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>
+            <ul className="font-heading absolute top-24 left-10 z-[100] flex w-3/4 flex-col gap-8 text-2xl font-medium sm:left-20 sm:gap-12 sm:text-3xl">
               <li>
                 <a
                   href={links.github}

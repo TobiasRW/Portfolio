@@ -16,14 +16,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={clsx(
-          "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-heading text-sm font-semibold transition-colors disabled:pointer-events-none disabled:opacity-50 md:text-base xl:text-lg [&:not(:hover):before]:duration-200 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+          "font-heading inline-flex cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors disabled:pointer-events-none disabled:opacity-50 md:text-base xl:text-lg [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 [&:not(:hover):before]:duration-200",
           className,
           {
-            ["relative flex items-center justify-center bg-whitebg text-[#2C2C2C] drop-shadow-sm transition-all"]:
+            ["bg-whitebg relative flex items-center justify-center text-[#2C2C2C] drop-shadow-sm transition-all"]:
               variant === "default",
           },
           {
-            ["hover:border-2-whitebg relative flex items-center justify-center overflow-hidden border-2 border-whitebg bg-whitebg text-[#2C2C2C] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-background before:duration-1000 before:ease-out hover:text-foreground hover:before:h-56 hover:before:w-56"]:
+            ["hover:border-2-whitebg border-whitebg bg-whitebg before:bg-background hover:text-foreground relative flex items-center justify-center overflow-hidden border-2 text-[#2C2C2C] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:duration-1000 before:ease-out hover:before:h-56 hover:before:w-56"]:
               variant === "fancy",
           },
           {
