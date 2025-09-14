@@ -3,24 +3,22 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { ProjectBannerVariant } from "@/types/types";
 import clsx from "clsx";
 
-// Define the type for the component's props
 type ProjectBannerProps = {
-  variant?: ProjectBannerVariant; // Variants for different styles
-  imageSrc: string; // Image source
-  title: string; // Project title
-  website: string; // Project link
-  github?: string; // Github link
-  bgColor?: string; // Background color for the card
+  variant?: ProjectBannerVariant;
+  imageSrc: string;
+  title: string;
+  website: string;
+  github?: string;
+  bgColor?: string;
 };
 
-// ProjectBanner component
 export default function ProjectBanner({
-  variant = "default", // Default variant is "default"
+  variant = "default",
   imageSrc,
   title,
   website,
   github,
-  bgColor = "#2C2C2C", // Default background color
+  bgColor = "#2C2C2C",
 }: ProjectBannerProps) {
   const isPhone = variant === "phone";
   const isPc = variant === "pc";
