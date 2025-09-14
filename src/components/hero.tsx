@@ -4,24 +4,12 @@ import {
   ArrowDownIcon,
   MapPinSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
-import { motion, useDragControls, useMotionValue, animate } from "motion/react";
 import Dots from "./dots";
 import { useScopedI18n } from "@/locales/client";
 import Button from "./ui/button";
 
 export default function Hero() {
   const scopedT = useScopedI18n("frontPage.hero");
-
-  const controls = useDragControls();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotate = useMotionValue(-12);
-
-  const handleDragEnd = () => {
-    animate(x, 0, { type: "spring", stiffness: 300, damping: 20 });
-    animate(y, 0, { type: "spring", stiffness: 300, damping: 20 });
-    animate(rotate, -12, { type: "spring", stiffness: 300, damping: 20 });
-  };
 
   // Utility function to scroll to a given element ID
   const scrollToSection = (id: string) => {
@@ -53,17 +41,9 @@ export default function Hero() {
               />
               <p>{scopedT("location")}</p>
             </div>
-            <motion.div
-              className="bg-whitebg font-heading absolute top-8 right-3 z-20 cursor-pointer rounded-full px-3 py-2 text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]"
-              drag
-              dragControls={controls}
-              style={{ x, y, rotate }}
-              onDragEnd={handleDragEnd}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
+            <div className="bg-whitebg font-heading absolute top-8 right-3 z-20 -rotate-12 rounded-full px-3 py-2 text-xs font-medium shadow-lg sm:right-1 sm:text-sm lg:-right-3 lg:text-base xl:top-10 dark:bg-[#1d1d1d]">
               Tobias Wolmar 👋🏻
-            </motion.div>
+            </div>
           </div>
           <h1 className="from-foreground to-background bg-gradient-to-br from-50% bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl md:mx-auto md:w-9/12 lg:text-4xl xl:w-4/6 xl:text-5xl">
             {scopedT("title")}
