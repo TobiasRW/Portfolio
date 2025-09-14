@@ -1,20 +1,30 @@
 "use client";
 import { ArrowUpIcon } from "@phosphor-icons/react";
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
-import { useState } from "react";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
 
 export default function ToTop() {
   const [hidden, setHidden] = useState<boolean>(false);
 
-  const { scrollY } = useScroll();
+  useEffect(() => {
+    let lastScrollY = 0;
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
+    // Function to handle scroll events
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isHidden = currentScrollY > lastScrollY && currentScrollY > 400;
+      setHidden(isHidden);
+      lastScrollY = currentScrollY;
+    };
 
-    const isHidden = latest > previous && latest > 400;
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    setHidden(isHidden);
-  });
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -22,20 +32,19 @@ export default function ToTop() {
 
   return (
     <>
-      <motion.button
+      <button
         onClick={scrollToTop}
-        className="group bg-whitebg fixed right-6 bottom-14 z-30 rounded-full p-3 shadow-lg xl:p-4"
-        initial="hidden"
-        animate={hidden ? "visible" : "hidden"}
-        variants={{
-          visible: { y: 0, opacity: 1 },
-          hidden: { y: "100%", opacity: 0 },
-        }}
-        transition={{ duration: 0.3 }}
+        className={clsx(
+          "group bg-whitebg fixed right-6 bottom-14 z-30 cursor-pointer rounded-full p-3 shadow-lg transition-all duration-300 xl:p-4",
+          {
+            ["translate-y-5 opacity-0"]: !hidden,
+            ["translate-y-0 opacity-100"]: hidden,
+          },
+        )}
         aria-label="Scroll to top"
       >
         <ArrowUpIcon className="3xl:h-5 3xl:w-5 h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1" />
-      </motion.button>
+      </button>
     </>
   );
 }
