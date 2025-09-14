@@ -3,9 +3,9 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TransitionLink } from "./utils/transition-link";
-import { Toggle } from "@/components/ui/toggle";
 import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
 import { useScopedI18n } from "@/locales/client";
+import Toggle from "./ui/toggle";
 
 // Animation Variants
 const sideBarVariants = {

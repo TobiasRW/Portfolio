@@ -4,7 +4,6 @@ import React from "react";
 type ButtonProps = {
   variant?: "default" | "fancy" | "slider";
   size?: "default" | "sm" | "lg" | "icon";
-  children: React.ReactNode;
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 

@@ -4,7 +4,7 @@ import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
 import highlightText from "@/helpers/highlightText";
 import type { TestUser, DescriptionText } from "@/types/types";
-import Badge from "./badge";
+import Badge from "./ui/badge";
 import Image from "next/image";
 import { useScopedI18n } from "@/locales/client";
 
