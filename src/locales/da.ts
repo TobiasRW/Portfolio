@@ -352,7 +352,7 @@ export default {
       },
       text: {
         disclaimer:
-          "Disclaimer: Siden er hostet på en gratis version a Render, og kan derfor tage lidt tid at spinne op. Det vil typisk tage mellem 1-3 minutter.",
+          "Siden er hostet på en gratis version a Render, og kan derfor tage lidt tid at spinne op. Det vil typisk tage mellem 1-3 minutter.",
         paragraph1:
           "Book Space er et eksamensprojekt, som jeg har udviklet i forbindelse med min uddannelse på 2. semester. Projektet er en webapp, der giver brugerne mulighed for at oprette en profil og gemme deres yndlingsbøger, oprette lister, se anbefalinger og tracke deres læsevaner.",
         paragraph2:
@@ -408,7 +408,7 @@ export default {
       },
       text: {
         disclaimer:
-          "Disclaimer: Dette projekt linker til en staging-side, som ikke er i produktion. Profilerne kan derfor være forældede, og nogle funktioner kan være deaktiveret.",
+          "Dette projekt linker til en staging-side, som ikke er i produktion. Profilerne kan derfor være forældede, og nogle funktioner kan være deaktiveret.",
         paragraph1:
           "Candidate er et projekt, som er udviklet i forbindelse med 2. semester på Webudvikling. Her skulle vi omskrive den eksisterende kandidatportal candidate.dk til React Router 7 og TypeScript. Projektet er et samarbejde mellem mig og mine klassekammerater.",
         paragraph2:
@@ -465,7 +465,7 @@ export default {
       },
       text: {
         disclaimer:
-          "Disclaimer: Funktionaliteten til at oprette nye brugere er slået fra. Brug derfor testbrugeren til at logge ind.",
+          "Funktionaliteten til at oprette nye brugere er slået fra. Brug derfor testbrugeren til at logge ind.",
         paragraph1:
           "Fit App er et personligt hobbyprojekt, som jeg har udviklet for at kunne tracke min træning og mine fremskridt. Appen giver mulighed for at oprette en profil, oprette træningsplaner, logge træning og se statestikker over tid.",
         paragraph2:

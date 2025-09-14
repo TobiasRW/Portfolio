@@ -352,7 +352,7 @@ export default {
       },
       text: {
         disclaimer:
-          "Disclaimer: The site is hosted on a free version of Render, so it may take a little time to spin up. It will typically take between 1-3 minutes",
+          "The site is hosted on a free version of Render, so it may take a little time to spin up. It will typically take between 1-3 minutes",
         paragraph1:
           "Book Space is an exam project that I developed as part of my education in the second semester. The project is a web app that allows users to create a profile and save their favorite books, create lists, view recommendations, and track their reading habits.",
         paragraph2:
@@ -408,7 +408,7 @@ export default {
       },
       text: {
         disclaimer:
-          "Disclaimer: This project links to a staging site that is not in production. Profiles may therefore be outdated, and some features may be disabled.",
+          "This project links to a staging site that is not in production. Profiles may therefore be outdated, and some features may be disabled.",
         paragraph1:
           "Candidate is a project developed as part of the 2nd semester in Web Development. We were tasked with rewriting the existing candidate portal candidate.dk using React Router 7 and TypeScript. The project was a collaboration between me and my classmates.",
         paragraph2:
@@ -465,7 +465,7 @@ export default {
       },
       text: {
         disclaimer:
-          "Disclaimer: The functionality to create new users has been disabled. Please use the test user to log in.",
+          "The functionality to create new users has been disabled. Please use the test user to log in.",
         paragraph1:
           "Fit App is a personal hobby project I developed to track my workouts and progress. The app allows you to create a profile, set up training plans, log workouts, and view statistics over time.",
         paragraph2:
