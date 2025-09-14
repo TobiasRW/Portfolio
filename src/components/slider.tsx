@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { MagnifyingGlassPlusIcon } from "@phosphor-icons/react";
 import Image from "next/image";
-import { motion } from "motion/react";
 import { SliderVariant } from "@/types/types";
 import clsx from "clsx";
 import EmblaSlider from "./embla-slider";
@@ -68,28 +67,19 @@ export default function Slider({
 
       {/* Modal */}
       {selectedImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+        <div
           onClick={closeModal}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          className="fade-in fixed inset-0 z-50 items-center justify-center bg-black/70 transition-opacity duration-300"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ type: "tween" }}
-            className="3xl:w-8/12 relative aspect-video w-10/12 sm:w-11/12 xl:w-9/12"
-          >
+          <div className="3xl:w-8/12 pop-in relative aspect-video w-10/12 sm:w-11/12 xl:w-9/12">
             <Image
               src={selectedImage}
               alt="snapshot"
               fill
               className="cursor-pointer object-contain"
             />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
     </div>
   );
