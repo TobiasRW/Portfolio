@@ -12,6 +12,7 @@ import { MagnifyingGlassPlus } from "@phosphor-icons/react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { SliderVariant } from "@/types/types";
+import clsx from "clsx";
 
 type SliderImageProps = {
   variant?: SliderVariant;
@@ -41,44 +42,32 @@ export default function Slider({
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                {isBackground ? (
-                  <div
-                    onClick={() => openModal(image)}
-                    className="group relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-md xl:aspect-[4/3]"
-                    style={{ backgroundColor: bgColor }}
-                  >
-                    <Image
-                      src={image}
-                      alt="snapshot"
-                      fill
-                      style={{ objectFit: "contain" }}
+                <div
+                  className={clsx(
+                    "group relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-md",
+                    {
+                      ["xl:aspect-[4/3]"]: isBackground,
+                    },
+                  )}
+                  onClick={() => openModal(image)}
+                  style={isBackground ? { backgroundColor: bgColor } : {}}
+                >
+                  <Image
+                    src={image}
+                    alt="snapshot"
+                    fill
+                    className={clsx({
+                      ["object-contain"]: isBackground,
+                      ["object-cover"]: !isBackground,
+                    })}
+                  />
+                  <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
+                    <MagnifyingGlassPlus
+                      weight="light"
+                      className="h-[18px] w-[18px]"
                     />
-                    <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
-                      <MagnifyingGlassPlus
-                        weight="light"
-                        className="h-[18px] w-[18px]"
-                      />
-                    </div>
                   </div>
-                ) : (
-                  <div
-                    onClick={() => openModal(image)}
-                    className="group relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-md"
-                  >
-                    <Image
-                      src={image}
-                      alt="snapshot"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
-                      <MagnifyingGlassPlus
-                        weight="light"
-                        className="h-[18px] w-[18px]"
-                      />
-                    </div>
-                  </div>
-                )}
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
