@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { ArrowDown, MapPinSimple } from "@phosphor-icons/react/dist/ssr";
 import { motion, useDragControls, useMotionValue, animate } from "motion/react";
 import Dots from "./dots";
 import { useScopedI18n } from "@/locales/client";
+import Button from "./ui/button";
 
 export default function Hero() {
   const scopedT = useScopedI18n("frontPage.hero");
@@ -64,7 +64,6 @@ export default function Hero() {
           </h1>
           <div className="flex justify-center gap-4 lg:gap-6 xl:gap-8">
             <Button
-              variant="default"
               className="group"
               onClick={() => scrollToSection("projects")}
             >
@@ -74,11 +73,7 @@ export default function Hero() {
                 className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
               />
             </Button>
-            <Button
-              variant="default"
-              className="group"
-              onClick={() => scrollToSection("about")}
-            >
+            <Button className="group" onClick={() => scrollToSection("about")}>
               {scopedT("button.about")}
               <ArrowDown
                 weight="bold"

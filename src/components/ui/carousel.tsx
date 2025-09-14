@@ -9,7 +9,7 @@ import AutoScroll, {
   type AutoScrollOptionsType,
 } from "embla-carousel-auto-scroll";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import Button from "./button";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;

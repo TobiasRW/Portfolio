@@ -1,9 +1,9 @@
 import ProjectCard from "./project-card";
 import { getScopedI18n } from "@/locales/server";
 import { projects } from "../data/project-data";
-import { Button } from "./ui/button";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { TransitionLink } from "./utils/transition-link";
+import Button from "./ui/button";
 
 export default async function Projects() {
   const scopedT = await getScopedI18n("frontPage.projects");
