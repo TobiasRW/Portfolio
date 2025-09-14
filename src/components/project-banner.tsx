@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { ProjectBannerVariant } from "@/types/types";
+import clsx from "clsx";
 
 // Define the type for the component's props
 type ProjectBannerProps = {
@@ -24,6 +25,7 @@ export default function ProjectBanner({
   const isPhone = variant === "phone";
   const isPc = variant === "pc";
   const isPhone2 = variant === "phone2";
+  const isDefault = variant === "default";
 
   return (
     <div className="z-10 mx-auto flex w-10/12 flex-col gap-4 md:w-4/6 xl:w-[60%] 2xl:w-[55%]">
@@ -31,60 +33,36 @@ export default function ProjectBanner({
         className={`relative flex h-52 flex-col xs:h-56 sm:h-64 lg:h-96 xl:h-[420px] 2xl:h-[470px] 3xl:h-[550px]`}
       >
         <div
-          className={`relative h-full w-full shadow-xl ${
-            isPhone || isPc ? "bg-[#2C2C2C]" : ""
-          }`}
+          className="relative h-full w-full shadow-xl"
           style={{
-            backgroundColor: isPhone || isPc || isPhone2 ? bgColor : "",
+            backgroundColor: bgColor,
             borderRadius: "1rem", // fallback radius
             clipPath: "inset(0 round 1rem)", // actual clipping
           }}
         >
-          {isPhone ? (
-            <div className="">
-              <Image
-                src={imageSrc}
-                alt={`${title} Banner`}
-                fill
-                style={{ objectFit: "contain" }}
-                className="mt-14 -rotate-[10deg] scale-150 sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24 3xl:-ml-28"
-              />
-            </div>
-          ) : isPc ? (
-            <div className="">
-              <Image
-                src={imageSrc}
-                alt={`${title} Banner`}
-                fill
-                style={{ objectFit: "contain" }}
-                priority={true}
-                className="-ml-[20%] mt-14 -rotate-[5deg] scale-150 xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32 3xl:mt-36"
-              />
-            </div>
-          ) : isPhone2 ? (
-            <div className="">
-              <Image
-                src={imageSrc}
-                alt={`${title} Banner`}
-                fill
-                style={{ objectFit: "contain" }}
-                priority={true}
-                className="ml-10 mt-10 -rotate-[5deg] scale-[1.7] sm:ml-14 sm:mt-7 sm:scale-[1.9] lg:-ml-8 lg:scale-[1.7] xl:-ml-14 xl:mt-10 xl:scale-[1.8] 3xl:-ml-12"
-              />
-            </div>
-          ) : (
-            <Image
-              src={imageSrc}
-              alt={`${title} Banner`}
-              fill
-              style={{
-                objectFit: "cover",
-                objectPosition: "50% 70%",
-              }}
-              priority={true}
-              className="absolute"
-            />
-          )}
+          <Image
+            src={imageSrc}
+            alt={`${title} Banner`}
+            fill
+            priority={true}
+            className={clsx(
+              {
+                ["absolute object-cover object-[50%_70%]"]: isDefault,
+              },
+              {
+                ["mt-14 -rotate-[10deg] scale-150 object-contain sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:-ml-16 xl:mt-24 3xl:-ml-28"]:
+                  isPhone,
+              },
+              {
+                ["-ml-[20%] mt-14 -rotate-[5deg] scale-150 object-contain xs:-ml-[25%] xs:scale-[1.8] sm:-ml-[30%] lg:-ml-[25%] lg:mt-24 xl:mt-28 xl:scale-[1.9] 2xl:mt-32 3xl:mt-36"]:
+                  isPc,
+              },
+              {
+                ["ml-10 mt-10 -rotate-[5deg] scale-[1.7] object-contain sm:ml-14 sm:mt-7 sm:scale-[1.9] lg:-ml-8 lg:scale-[1.7] xl:-ml-14 xl:mt-10 xl:scale-[1.8] 3xl:-ml-12"]:
+                  isPhone2,
+              },
+            )}
+          />
           {/* Name and button - Laptop */}
           <div className="absolute right-10 top-5 hidden h-1/6 lg:flex lg:flex-col lg:gap-2 xl:right-14 xl:top-6 xl:gap-3">
             <h3 className="text-4xl font-medium text-white xl:text-5xl">
