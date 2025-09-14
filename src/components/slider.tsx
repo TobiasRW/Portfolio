@@ -1,18 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { SliderVariant } from "@/types/types";
 import clsx from "clsx";
+import EmblaSlider from "./embla-slider";
 
 type SliderImageProps = {
   variant?: SliderVariant;
@@ -38,42 +32,38 @@ export default function Slider({
         <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Snapshots
         </h2>
-        <Carousel opts={{ loop: true }}>
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <div
-                  className={clsx(
-                    "group relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-md",
-                    {
-                      ["xl:aspect-[4/3]"]: isBackground,
-                    },
-                  )}
-                  onClick={() => openModal(image)}
-                  style={isBackground ? { backgroundColor: bgColor } : {}}
-                >
-                  <Image
-                    src={image}
-                    alt="snapshot"
-                    fill
-                    className={clsx({
-                      ["object-contain"]: isBackground,
-                      ["object-cover"]: !isBackground,
-                    })}
+        <EmblaSlider>
+          {images.map((image, index) => (
+            <div key={index}>
+              <div
+                className={clsx(
+                  "group relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-md",
+                  {
+                    ["xl:aspect-[4/3]"]: isBackground,
+                  },
+                )}
+                onClick={() => openModal(image)}
+                style={isBackground ? { backgroundColor: bgColor } : {}}
+              >
+                <Image
+                  src={image}
+                  alt="snapshot"
+                  fill
+                  className={clsx({
+                    ["object-contain"]: isBackground,
+                    ["object-cover"]: !isBackground,
+                  })}
+                />
+                <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
+                  <MagnifyingGlassPlus
+                    weight="light"
+                    className="h-[18px] w-[18px]"
                   />
-                  <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
-                    <MagnifyingGlassPlus
-                      weight="light"
-                      className="h-[18px] w-[18px]"
-                    />
-                  </div>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+              </div>
+            </div>
+          ))}
+        </EmblaSlider>
       </div>
 
       {/* Modal */}
