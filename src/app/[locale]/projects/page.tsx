@@ -14,10 +14,10 @@ export default async function Page({
   return (
     <>
       <div className="pt-20 md:mx-auto md:w-10/12 lg:w-11/12">
-        <h2 className="pb-10 text-center font-heading text-2xl font-semibold sm:text-3xl md:text-4xl lg:pb-20 xl:pt-20 xl:text-5xl">
+        <h2 className="font-heading pb-10 text-center text-2xl font-semibold sm:text-3xl md:text-4xl lg:pb-20 xl:pt-20 xl:text-5xl">
           {scopedT("titleAll")}
         </h2>
-        <div className="grid gap-8 md:grid-cols-3 lg:gap-y-20 xl:gap-y-14 3xl:grid-cols-4">
+        <div className="3xl:grid-cols-4 grid gap-8 md:grid-cols-3 lg:gap-y-20 xl:gap-y-14">
           {projects.map((proj, index) => (
             <ProjectCard
               key={index}

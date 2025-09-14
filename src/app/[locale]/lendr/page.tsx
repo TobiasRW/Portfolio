@@ -58,8 +58,8 @@ export default async function Page({
   ];
   return (
     <>
-      <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
-        <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px] 3xl:h-[750px]">
+      <div className="bg-whitebg w-screen dark:bg-[#1A1A1A]">
+        <div className="bg-background 3xl:h-[750px] relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px]">
           <Dots />
           <ProjectBanner
             variant="phone"
@@ -105,7 +105,7 @@ export default async function Page({
           password: scopedT("about.text.testUser.password"),
         }}
       />
-      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:py-40">
+      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:py-40">
         <Slider
           variant="background"
           bgColor="#5BAD86"

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="mt-20 flex h-32 items-end rounded-t-[40px] bg-whitebg lg:h-40 lg:rounded-t-[50px] 2xl:h-48 2xl:rounded-t-[70px] dark:bg-[#1a1a1a] dark:text-white">
-      <div className="mx-auto flex w-11/12 items-center justify-between py-4 font-heading text-lg font-semibold md:text-2xl lg:w-10/12 lg:py-8 lg:text-3xl 2xl:text-4xl">
+    <footer className="bg-whitebg mt-20 flex h-32 items-end rounded-t-[40px] lg:h-40 lg:rounded-t-[50px] 2xl:h-48 2xl:rounded-t-[70px] dark:bg-[#1a1a1a] dark:text-white">
+      <div className="font-heading mx-auto flex w-11/12 items-center justify-between py-4 text-lg font-semibold md:text-2xl lg:w-10/12 lg:py-8 lg:text-3xl 2xl:text-4xl">
         <div className="flex gap-4 md:gap-8 lg:gap-10">
           <a href="https://github.com/TobiasRW" target="_blank" className="">
             Github

@@ -50,8 +50,8 @@ export default async function Page({
 
   return (
     <>
-      <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
-        <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px] 3xl:h-[750px]">
+      <div className="bg-whitebg w-screen dark:bg-[#1A1A1A]">
+        <div className="bg-background 3xl:h-[750px] relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px]">
           <Dots />
           <ProjectBanner
             variant="default"
@@ -89,7 +89,7 @@ export default async function Page({
           "JavaScript",
         ]}
       />
-      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr,1fr] xl:gap-14 xl:pb-20 xl:pt-40">
+      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:pt-40 xl:pb-20">
         <Slider
           images={[
             "/images/coelm-pic1.png",
@@ -107,7 +107,7 @@ export default async function Page({
         <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-start xl:text-5xl">
           3D Model
         </h2>
-        <div className="mt-10 overflow-hidden rounded-2xl bg-whitebg dark:bg-[#1a1a1a]">
+        <div className="bg-whitebg mt-10 overflow-hidden rounded-2xl dark:bg-[#1a1a1a]">
           <Scene />
         </div>
       </div>
