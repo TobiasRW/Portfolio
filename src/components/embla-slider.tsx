@@ -18,9 +18,9 @@ export default function EmblaSlider({ children }: EmblaSliderProps) {
         variant="slider"
         size="icon"
         onClick={() => emblaApi?.scrollPrev()}
-        className="absolute -left-8 top-1/2 -translate-y-1/2 md:-left-12"
+        className="absolute top-1/2 -left-8 -translate-y-1/2 md:-left-12"
       >
-        <ArrowLeftIcon className="h-4 w-4 text-foreground" />
+        <ArrowLeftIcon className="text-foreground h-4 w-4" />
         <span className="sr-only">Previous slide</span>
       </Button>
 
@@ -38,9 +38,9 @@ export default function EmblaSlider({ children }: EmblaSliderProps) {
         variant="slider"
         size="icon"
         onClick={() => emblaApi?.scrollNext()}
-        className="absolute -right-8 top-1/2 -translate-y-1/2 md:-right-12"
+        className="absolute top-1/2 -right-8 -translate-y-1/2 md:-right-12"
       >
-        <ArrowRightIcon className="h-4 w-4 text-foreground" />
+        <ArrowRightIcon className="text-foreground h-4 w-4" />
         <span className="sr-only">Next slide</span>
       </Button>
     </section>

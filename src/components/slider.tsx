@@ -54,7 +54,7 @@ export default function Slider({
                     ["object-cover"]: !isBackground,
                   })}
                 />
-                <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
+                <div className="absolute right-2 bottom-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:right-3 sm:bottom-3 sm:p-2 lg:flex">
                   <MagnifyingGlassPlusIcon
                     weight="light"
                     className="h-[18px] w-[18px]"
@@ -80,7 +80,7 @@ export default function Slider({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "tween" }}
-            className="relative aspect-video w-10/12 sm:w-11/12 xl:w-9/12 3xl:w-8/12"
+            className="3xl:w-8/12 relative aspect-video w-10/12 sm:w-11/12 xl:w-9/12"
           >
             <Image
               src={selectedImage}

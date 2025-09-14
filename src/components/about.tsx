@@ -4,7 +4,7 @@ export default async function About() {
   return (
     <section id="about">
       <div className="mx-auto flex w-10/12 flex-col gap-8 lg:w-11/12 xl:w-10/12">
-        <h2 className="text-center font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
+        <h2 className="font-heading text-center text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           {scopedT("title")}
         </h2>
         <p className="font-body text-sm font-light lg:text-base 2xl:text-lg">
@@ -22,7 +22,7 @@ export default async function About() {
           <br />
           {scopedT("text.paragraph4")}
         </p>
-        <div className="flex flex-col items-start gap-4 font-body text-sm font-light text-[#2A4B9A] lg:flex-row lg:gap-8 lg:text-base 2xl:text-lg dark:text-white">
+        <div className="font-body flex flex-col items-start gap-4 text-sm font-light text-[#2A4B9A] lg:flex-row lg:gap-8 lg:text-base 2xl:text-lg dark:text-white">
           <a
             href="mailto:tobiasrw98@gmail.com"
             target="_blank"

@@ -18,7 +18,7 @@ export default function Toggle() {
       <button
         onClick={() => handleLocaleChange("da")}
         className={clsx(
-          "flex cursor-pointer items-center justify-center text-foreground transition-all",
+          "text-foreground flex cursor-pointer items-center justify-center transition-all",
           { ["font-medium"]: locale === "da" },
           { ["font-thin"]: locale !== "da" },
         )}
@@ -28,7 +28,7 @@ export default function Toggle() {
       <button
         onClick={() => handleLocaleChange("en")}
         className={clsx(
-          "flex cursor-pointer items-center justify-center text-foreground transition-all",
+          "text-foreground flex cursor-pointer items-center justify-center transition-all",
           { ["font-medium"]: locale === "en" },
           { ["font-thin"]: locale !== "en" },
         )}

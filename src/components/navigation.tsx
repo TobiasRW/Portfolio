@@ -3,7 +3,11 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TransitionLink } from "./utils/transition-link";
-import { ArrowUpRightIcon, ArrowDownIcon, ArrowLeftIcon } from "@phosphor-icons/react";
+import {
+  ArrowUpRightIcon,
+  ArrowDownIcon,
+  ArrowLeftIcon,
+} from "@phosphor-icons/react";
 import { useScopedI18n } from "@/locales/client";
 import Toggle from "./ui/toggle";
 

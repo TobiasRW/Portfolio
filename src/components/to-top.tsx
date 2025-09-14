@@ -24,7 +24,7 @@ export default function ToTop() {
     <>
       <motion.button
         onClick={scrollToTop}
-        className="group fixed bottom-14 right-6 z-30 rounded-full bg-whitebg p-3 shadow-lg xl:p-4"
+        className="group bg-whitebg fixed right-6 bottom-14 z-30 rounded-full p-3 shadow-lg xl:p-4"
         initial="hidden"
         animate={hidden ? "visible" : "hidden"}
         variants={{
@@ -34,7 +34,7 @@ export default function ToTop() {
         transition={{ duration: 0.3 }}
         aria-label="Scroll to top"
       >
-        <ArrowUpIcon className="h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1 3xl:h-5 3xl:w-5" />
+        <ArrowUpIcon className="3xl:h-5 3xl:w-5 h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1" />
       </motion.button>
     </>
   );

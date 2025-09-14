@@ -44,8 +44,8 @@ export default async function Page({
 
   return (
     <>
-      <div className="w-screen bg-whitebg dark:bg-[#1A1A1A]">
-        <div className="relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] bg-background sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px] 3xl:h-[750px]">
+      <div className="bg-whitebg w-screen dark:bg-[#1A1A1A]">
+        <div className="bg-background 3xl:h-[750px] relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px]">
           <Dots />
           <ProjectBanner
             variant="phone2"

@@ -20,13 +20,13 @@ export default function Collapsible({
   return (
     <div
       className={clsx(
-        "rounded-md bg-whitebg drop-shadow-sm dark:bg-[#2C2C2C]",
+        "bg-whitebg rounded-md drop-shadow-sm dark:bg-[#2C2C2C]",
         className,
       )}
     >
       <div
         onClick={() => setIsOpen((v) => !v)}
-        className="flex cursor-pointer select-none items-center justify-between px-4 py-4 font-light italic sm:text-lg md:text-xl"
+        className="flex cursor-pointer items-center justify-between px-4 py-4 font-light italic select-none sm:text-lg md:text-xl"
       >
         {trigger}
         <CaretDownIcon

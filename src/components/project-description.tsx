@@ -29,7 +29,7 @@ export default function ProjectDescription({
   const scopedT = useScopedI18n("testUser");
 
   return (
-    <div className="w-full rounded-b-[40px] bg-whitebg pb-10 pt-10 md:pb-24 md:pt-14 lg:rounded-b-[50px] lg:pb-28 xl:pb-32 xl:pt-20 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
+    <div className="bg-whitebg w-full rounded-b-[40px] pt-10 pb-10 md:pt-14 md:pb-24 lg:rounded-b-[50px] lg:pb-28 xl:pt-20 xl:pb-32 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       {/* Project Description Section */}
       <div className="mx-auto flex w-10/12 flex-col gap-6">
         <div className="flex flex-col gap-2">
@@ -48,7 +48,7 @@ export default function ProjectDescription({
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-14 xl:justify-between 2xl:gap-20">
           <div className="">
             {disclaimer && (
-              <p className="mb-4 font-body text-sm font-light leading-normal md:text-base">
+              <p className="font-body mb-4 text-sm leading-normal font-light md:text-base">
                 <span className="font-normal italic">Disclaimer:</span>{" "}
                 {disclaimer}
               </p>
@@ -57,7 +57,7 @@ export default function ProjectDescription({
             {text.map((text, index) => (
               <p
                 key={index}
-                className="mb-4 font-body text-sm font-light leading-normal md:text-base"
+                className="font-body mb-4 text-sm leading-normal font-light md:text-base"
               >
                 {highlightText(text.content, text.highlightWords ?? [])}
               </p>
@@ -65,11 +65,11 @@ export default function ProjectDescription({
 
             {testUser && (
               <div className="mt-4">
-                <p className="font-body text-sm font-normal italic leading-normal md:text-base">
+                <p className="font-body text-sm leading-normal font-normal italic md:text-base">
                   {scopedT("heading")}
                 </p>
                 {testUser.email && (
-                  <p className="font-body text-sm font-light leading-normal md:text-base">
+                  <p className="font-body text-sm leading-normal font-light md:text-base">
                     <span className="font-normal italic">
                       {scopedT("email")}
                     </span>{" "}
@@ -77,14 +77,14 @@ export default function ProjectDescription({
                   </p>
                 )}
                 {testUser.username && (
-                  <p className="font-body text-sm font-light leading-normal md:text-base">
+                  <p className="font-body text-sm leading-normal font-light md:text-base">
                     <span className="font-normal italic">
                       {scopedT("user")}
                     </span>{" "}
                     {testUser.username}
                   </p>
                 )}
-                <p className="font-body text-sm font-light leading-normal md:text-base">
+                <p className="font-body text-sm leading-normal font-light md:text-base">
                   <span className="font-normal italic">
                     {scopedT("password")}
                   </span>{" "}
@@ -94,11 +94,11 @@ export default function ProjectDescription({
             )}
           </div>
 
-          <hr className="h-[1px] border-none bg-foreground lg:hidden" />
+          <hr className="bg-foreground h-[1px] border-none lg:hidden" />
 
           {/* Icons Section */}
-          <div className="flex flex-col gap-4 rounded-2xl lg:w-full lg:self-start xl:w-4/6 3xl:w-2/6">
-            <p className="hidden font-heading text-2xl font-semibold lg:block">
+          <div className="3xl:w-2/6 flex flex-col gap-4 rounded-2xl lg:w-full lg:self-start xl:w-4/6">
+            <p className="font-heading hidden text-2xl font-semibold lg:block">
               Techstack
             </p>
             <div className="flex flex-wrap gap-4">
@@ -112,7 +112,7 @@ export default function ProjectDescription({
                     {/* Tooltip */}
                     <div className="absolute bottom-full left-1/2 mb-2 hidden w-max -translate-x-1/2 rounded bg-[#EDECEC] px-2 py-1 text-xs drop-shadow-sm group-hover:block dark:bg-[#2C2C2C]">
                       {item}
-                      <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-[#EDECEC] dark:border-t-[#2C2C2C]"></div>
+                      <div className="absolute top-full left-1/2 h-0 w-0 -translate-x-1/2 border-t-4 border-r-4 border-l-4 border-t-[#EDECEC] border-r-transparent border-l-transparent dark:border-t-[#2C2C2C]"></div>
                     </div>
                     {/* Logo */}
                     <a

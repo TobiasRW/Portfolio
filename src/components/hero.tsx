@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
-import { ArrowDownIcon, MapPinSimpleIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowDownIcon,
+  MapPinSimpleIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { motion, useDragControls, useMotionValue, animate } from "motion/react";
 import Dots from "./dots";
 import { useScopedI18n } from "@/locales/client";
@@ -44,7 +47,10 @@ export default function Hero() {
               />
             </div>
             <div className="flex">
-              <MapPinSimpleIcon weight="fill" className="text-foreground mt-1" />
+              <MapPinSimpleIcon
+                weight="fill"
+                className="text-foreground mt-1"
+              />
               <p>{scopedT("location")}</p>
             </div>
             <motion.div
