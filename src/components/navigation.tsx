@@ -1,7 +1,6 @@
 "use client";
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TransitionLink } from "./utils/transition-link";
 import {
   ArrowUpRightIcon,
@@ -10,27 +9,7 @@ import {
 } from "@phosphor-icons/react";
 import { useScopedI18n } from "@/locales/client";
 import Toggle from "./ui/toggle";
-
-// Animation Variants
-const sideBarVariants = {
-  open: {
-    x: 0,
-    transition: { duration: 0.3, ease: "easeInOut" },
-  },
-  closed: {
-    x: "100%",
-    transition: { duration: 0.3, ease: "easeInOut" },
-  },
-};
-
-const hamburgerVariants = {
-  line1: { open: { rotate: 45, y: 7 }, closed: { rotate: 0, y: 0 } },
-  line2: { open: { opacity: 0 }, closed: { opacity: 1 } },
-  line3: {
-    open: { rotate: -45, y: -7, width: 24 },
-    closed: { rotate: 0, y: 0, width: 20 },
-  },
-};
+import clsx from "clsx";
 
 // stored links
 const links = {
@@ -42,23 +21,38 @@ const links = {
 export default function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false); // New state for background color
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const scopedT = useScopedI18n("navigation");
 
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
 
-  const { scrollY } = useScroll();
+  useEffect(() => {
+    let lastScrollY = 0;
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
+    // Function to handle scroll events
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-    const isHidden = latest > previous && latest > 100;
-    const isScrolled = latest > 400;
+      // Determine if the navbar should be hidden or shown
+      const isHidden = currentScrollY > lastScrollY && currentScrollY > 100;
+      const isScrolled = currentScrollY > 400;
 
-    setHidden(isHidden);
-    setScrolled(isScrolled);
-  });
+      setHidden(isHidden);
+      setScrolled(isScrolled);
+
+      // Update lastScrollY to the current position
+      lastScrollY = currentScrollY;
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMenu: React.MouseEventHandler<HTMLDivElement> = () => {
     setIsOpen(!isOpen);
@@ -75,19 +69,14 @@ export default function Nav() {
 
   return (
     <>
-      <motion.header
-        className={`fixed z-50 flex h-20 w-screen items-center justify-between px-4 transition-colors duration-300 lg:px-10 xl:px-16 ${
-          scrolled
-            ? "bg-background dark:text-white"
-            : "bg-transparent dark:text-white"
-        }`}
-        initial="visible"
-        animate={hidden ? "hidden" : "visible"}
-        variants={{
-          visible: { y: 0, opacity: 1 },
-          hidden: { y: "-100%", opacity: 0 },
-        }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
+      <header
+        className={clsx(
+          "fixed z-50 flex h-20 w-screen items-center justify-between px-4 transition-all duration-300 lg:px-10 xl:px-16",
+          { ["bg-background dark:text-white"]: scrolled },
+          { ["bg-transparent dark:text-white"]: !scrolled },
+          { ["-translate-y-full transform opacity-0"]: hidden },
+          { ["translate-y-0 transform opacity-100"]: !hidden },
+        )}
       >
         <div className="flex items-center gap-4 lg:gap-6">
           {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
@@ -134,26 +123,34 @@ export default function Nav() {
         </div>
         <nav className="">
           {/* Hamburger Menu */}
-          <motion.div
+          <div
             className="flex flex-col items-end gap-1 lg:hidden"
             onClick={toggleMenu}
           >
-            <motion.span
-              className="bg-foreground z-50 h-[3px] w-6 rounded-full"
-              variants={hamburgerVariants.line1}
-              animate={isOpen ? "open" : "closed"}
+            <span
+              className={clsx(
+                "bg-foreground z-50 h-[3px] w-6 rounded-full transition-all duration-300",
+                { ["translate-y-[7px] rotate-45"]: isOpen },
+                { ["translate-y-0 rotate-0"]: !isOpen },
+              )}
             />
-            <motion.span
-              className="bg-foreground z-50 h-[3px] w-8 rounded-full"
-              variants={hamburgerVariants.line2}
-              animate={isOpen ? "open" : "closed"}
+            <span
+              className={clsx(
+                "bg-foreground z-50 h-[3px] w-8 rounded-full transition-opacity duration-300",
+                {
+                  ["opacity-0"]: isOpen,
+                  ["opacity-100"]: !isOpen,
+                },
+              )}
             />
-            <motion.span
-              className="bg-foreground z-50 h-[3px] w-5 rounded-full"
-              variants={hamburgerVariants.line3}
-              animate={isOpen ? "open" : "closed"}
+            <span
+              className={clsx(
+                "bg-foreground z-50 h-[3px] rounded-full transition-all duration-300",
+                { ["w-6 -translate-y-[7px] -rotate-45"]: isOpen },
+                { ["w-5 translate-y-0 rotate-0"]: !isOpen },
+              )}
             />
-          </motion.div>
+          </div>
 
           {/* Menu items for laptops */}
           <div className="font-heading hidden text-xl lg:flex lg:items-center lg:gap-10">
@@ -182,11 +179,12 @@ export default function Nav() {
           </div>
 
           {/* Sidebar for mobile & tablet */}
-          <motion.div
-            className="absolute top-0 right-0 z-20 h-[100vh] w-[70%] md:w-[45%] lg:hidden"
-            variants={sideBarVariants}
-            animate={isOpen ? "open" : "closed"}
-            initial="closed"
+          <div
+            className={clsx(
+              "absolute top-0 right-0 z-20 h-[100vh] w-[70%] transition-transform duration-300 ease-in-out md:w-[45%] lg:hidden",
+              { ["translate-x-0"]: isOpen },
+              { ["translate-x-full"]: !isOpen },
+            )}
           >
             <div className="bg-whitebg dark:bg-background absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>
             <ul className="font-heading absolute top-24 left-10 z-[100] flex w-3/4 flex-col gap-8 text-2xl font-medium sm:left-20 sm:gap-12 sm:text-3xl">
@@ -232,9 +230,9 @@ export default function Nav() {
                 </>
               )}
             </ul>
-          </motion.div>
+          </div>
         </nav>
-      </motion.header>
+      </header>
     </>
   );
 }
