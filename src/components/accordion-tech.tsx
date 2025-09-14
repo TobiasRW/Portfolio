@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
@@ -41,7 +41,7 @@ export default function AccordionTech({ title, items }: AccordionTechProps) {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center rounded-full bg-[#EDECEC] p-[6px] transition-all duration-200 hover:bg-gray-200 2xl:p-2"
                 >
-                  <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 dark:text-black" />
+                  <ArrowUpRightIcon className="h-3 w-3 sm:h-4 sm:w-4 dark:text-black" />
                 </a>
               )}
             </div>

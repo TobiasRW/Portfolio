@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ArrowDown, MapPinSimple } from "@phosphor-icons/react/dist/ssr";
+import { ArrowDownIcon, MapPinSimpleIcon } from "@phosphor-icons/react/dist/ssr";
 import { motion, useDragControls, useMotionValue, animate } from "motion/react";
 import Dots from "./dots";
 import { useScopedI18n } from "@/locales/client";
@@ -44,7 +44,7 @@ export default function Hero() {
               />
             </div>
             <div className="flex">
-              <MapPinSimple weight="fill" className="text-foreground mt-1" />
+              <MapPinSimpleIcon weight="fill" className="text-foreground mt-1" />
               <p>{scopedT("location")}</p>
             </div>
             <motion.div
@@ -68,14 +68,14 @@ export default function Hero() {
               onClick={() => scrollToSection("projects")}
             >
               {scopedT("button.projects")}
-              <ArrowDown
+              <ArrowDownIcon
                 weight="bold"
                 className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
               />
             </Button>
             <Button className="group" onClick={() => scrollToSection("about")}>
               {scopedT("button.about")}
-              <ArrowDown
+              <ArrowDownIcon
                 weight="bold"
                 className="transition-transform duration-500 ease-in-out group-hover:translate-y-[2px]"
               />

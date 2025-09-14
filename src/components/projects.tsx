@@ -1,7 +1,7 @@
 import ProjectCard from "./project-card";
 import { getScopedI18n } from "@/locales/server";
 import { projects } from "../data/project-data";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { TransitionLink } from "./utils/transition-link";
 import Button from "./ui/button";
 
@@ -32,7 +32,7 @@ export default async function Projects() {
             <TransitionLink href="/projects">
               <Button variant="default" className="group">
                 <span className="">{scopedT("viewAll")}</span>
-                <ArrowRight
+                <ArrowRightIcon
                   size={32}
                   weight="bold"
                   className="transition-transform duration-500 ease-in-out group-hover:translate-x-[2px]"

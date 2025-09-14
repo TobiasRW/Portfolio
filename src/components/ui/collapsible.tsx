@@ -1,6 +1,6 @@
 "use client";
 
-import { CaretDown } from "@phosphor-icons/react";
+import { CaretDownIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useState } from "react";
 
@@ -29,7 +29,7 @@ export default function Collapsible({
         className="flex cursor-pointer select-none items-center justify-between px-4 py-4 font-light italic sm:text-lg md:text-xl"
       >
         {trigger}
-        <CaretDown
+        <CaretDownIcon
           className={clsx("ml-2 transition-transform duration-300", {
             ["rotate-180"]: isOpen,
           })}

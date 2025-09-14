@@ -3,7 +3,7 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TransitionLink } from "./utils/transition-link";
-import { ArrowUpRight, ArrowDown, ArrowLeft } from "@phosphor-icons/react";
+import { ArrowUpRightIcon, ArrowDownIcon, ArrowLeftIcon } from "@phosphor-icons/react";
 import { useScopedI18n } from "@/locales/client";
 import Toggle from "./ui/toggle";
 
@@ -98,7 +98,7 @@ export default function Nav() {
               href="/"
               className="group font-heading flex items-center justify-center gap-2 lg:text-lg"
             >
-              <ArrowLeft
+              <ArrowLeftIcon
                 size={18}
                 className="cursor-pointer transition-transform duration-200 group-hover:-translate-x-1"
               />{" "}
@@ -159,7 +159,7 @@ export default function Nav() {
               className="group flex items-center gap-2"
             >
               <p>Github</p>
-              <ArrowUpRight
+              <ArrowUpRightIcon
                 size={16}
                 className="mt-1 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:scale-110"
               />
@@ -170,7 +170,7 @@ export default function Nav() {
               className="group flex items-center gap-2"
             >
               <p>LinkedIn</p>
-              <ArrowUpRight
+              <ArrowUpRightIcon
                 size={16}
                 className="mt-1 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:scale-110"
               />
@@ -193,7 +193,7 @@ export default function Nav() {
                   className="flex items-center gap-2"
                 >
                   <p>Github</p>
-                  <ArrowUpRight size={28} />
+                  <ArrowUpRightIcon size={28} />
                 </a>
               </li>
               <li>
@@ -203,7 +203,7 @@ export default function Nav() {
                   className="flex items-center gap-2"
                 >
                   <p>LinkedIn</p>
-                  <ArrowUpRight size={28} />
+                  <ArrowUpRightIcon size={28} />
                 </a>
               </li>
               {/* Conditionally render only on homepage */}
@@ -216,14 +216,14 @@ export default function Nav() {
                     onClick={() => scrollToSection("projects")}
                   >
                     <p>{scopedT("projects")}</p>
-                    <ArrowDown size={28} />
+                    <ArrowDownIcon size={28} />
                   </li>
                   <li
                     className="flex items-center gap-2"
                     onClick={() => scrollToSection("about")}
                   >
                     <p>{scopedT("about")}</p>
-                    <ArrowDown size={28} />
+                    <ArrowDownIcon size={28} />
                   </li>
                 </>
               )}

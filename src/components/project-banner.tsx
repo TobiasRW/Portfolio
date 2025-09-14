@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { ProjectBannerVariant } from "@/types/types";
 import clsx from "clsx";
 
@@ -89,7 +89,7 @@ export default function ProjectBanner({
                 aria-label="Website link"
                 className="group flex items-center justify-center rounded-full bg-white p-3 transition-all duration-300 hover:scale-95 3xl:p-4"
               >
-                <ArrowUpRight className="h-4 w-4 3xl:h-5 3xl:w-5 dark:text-black" />
+                <ArrowUpRightIcon className="h-4 w-4 3xl:h-5 3xl:w-5 dark:text-black" />
               </a>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function ProjectBanner({
             target="_blank"
             className="flex items-center justify-center rounded-full bg-white p-3"
           >
-            <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 dark:text-black" />
+            <ArrowUpRightIcon className="h-3 w-3 sm:h-4 sm:w-4 dark:text-black" />
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MagnifyingGlassPlus } from "@phosphor-icons/react";
+import { MagnifyingGlassPlusIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { SliderVariant } from "@/types/types";
@@ -55,7 +55,7 @@ export default function Slider({
                   })}
                 />
                 <div className="absolute bottom-2 right-2 hidden scale-0 cursor-pointer items-center justify-center rounded-full bg-white p-1 text-black opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:bottom-3 sm:right-3 sm:p-2 lg:flex">
-                  <MagnifyingGlassPlus
+                  <MagnifyingGlassPlusIcon
                     weight="light"
                     className="h-[18px] w-[18px]"
                   />

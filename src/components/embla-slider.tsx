@@ -3,7 +3,7 @@
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Button from "./ui/button";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 type EmblaSliderProps = {
   children?: React.ReactNode;
@@ -20,7 +20,7 @@ export default function EmblaSlider({ children }: EmblaSliderProps) {
         onClick={() => emblaApi?.scrollPrev()}
         className="absolute -left-8 top-1/2 -translate-y-1/2 md:-left-12"
       >
-        <ArrowLeft className="h-4 w-4 text-foreground" />
+        <ArrowLeftIcon className="h-4 w-4 text-foreground" />
         <span className="sr-only">Previous slide</span>
       </Button>
 
@@ -40,7 +40,7 @@ export default function EmblaSlider({ children }: EmblaSliderProps) {
         onClick={() => emblaApi?.scrollNext()}
         className="absolute -right-8 top-1/2 -translate-y-1/2 md:-right-12"
       >
-        <ArrowRight className="h-4 w-4 text-foreground" />
+        <ArrowRightIcon className="h-4 w-4 text-foreground" />
         <span className="sr-only">Next slide</span>
       </Button>
     </section>
