@@ -78,7 +78,7 @@ export default function Nav() {
           { ["translate-y-0 transform opacity-100"]: !hidden },
         )}
       >
-        <div className="flex items-center gap-4 lg:gap-6">
+        <nav className="flex items-center gap-4 lg:gap-6">
           {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
             <a
               href="mailto:tobiasrw98@gmail.com"
@@ -120,8 +120,8 @@ export default function Nav() {
               </a>
             )}
           </div>
-        </div>
-        <nav className="">
+        </nav>
+        <div className="">
           {/* Hamburger Menu */}
           <div
             className="flex flex-col items-end gap-1 lg:hidden"
@@ -152,60 +152,34 @@ export default function Nav() {
             />
           </div>
 
-          {/* Menu items for laptops */}
-          <div className="font-heading hidden text-xl lg:flex lg:items-center lg:gap-10">
-            <a
-              href={links.github}
-              target="_blank"
-              className="group flex items-center gap-2"
-            >
-              <p>Github</p>
-              <ArrowUpRightIcon
-                size={16}
-                className="mt-1 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:scale-110"
-              />
-            </a>
-            <a
-              href={links.linkedin}
-              target="_blank"
-              className="group flex items-center gap-2"
-            >
-              <p>LinkedIn</p>
-              <ArrowUpRightIcon
-                size={16}
-                className="mt-1 transition-transform duration-200 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] group-hover:scale-110"
-              />
-            </a>
-          </div>
-
-          {/* Sidebar for mobile & tablet */}
+          {/* Menu items */}
           <div
             className={clsx(
-              "absolute top-0 right-0 z-20 h-[100vh] w-[70%] transition-transform duration-300 ease-in-out md:w-[45%] lg:hidden",
+              "absolute top-0 right-0 z-20 h-[100vh] w-[70%] transition-transform duration-300 ease-in-out md:w-[45%] lg:static lg:h-auto lg:w-auto lg:items-center lg:gap-10 lg:text-xl",
               { ["translate-x-0"]: isOpen },
-              { ["translate-x-full"]: !isOpen },
+              { ["translate-x-full lg:translate-x-0"]: !isOpen },
             )}
           >
-            <div className="bg-whitebg dark:bg-background absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>
-            <ul className="font-heading absolute top-24 left-10 z-[100] flex w-3/4 flex-col gap-8 text-2xl font-medium sm:left-20 sm:gap-12 sm:text-3xl">
+            <div className="bg-whitebg dark:bg-background absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] lg:hidden dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>
+            <ul className="font-heading absolute top-24 left-10 z-[100] flex w-3/4 flex-col gap-8 text-2xl font-medium sm:left-20 sm:gap-12 sm:text-3xl lg:static lg:top-auto lg:left-auto lg:w-auto lg:flex-row lg:gap-10 lg:text-xl lg:font-normal">
               <li>
                 <a
                   href={links.github}
                   target="_blank"
-                  className="flex items-center gap-2"
+                  className="group flex items-center gap-2"
                 >
                   <p>Github</p>
-                  <ArrowUpRightIcon size={28} />
+                  <ArrowUpRightIcon className="h-7 w-7 lg:mt-1 lg:h-4 lg:w-4 lg:transition-transform lg:duration-200 lg:group-hover:translate-x-[2px] lg:group-hover:translate-y-[-2px] lg:group-hover:scale-110" />
                 </a>
               </li>
               <li>
                 <a
                   href={links.linkedin}
                   target="_blank"
-                  className="flex items-center gap-2"
+                  className="group flex items-center gap-2"
                 >
                   <p>LinkedIn</p>
-                  <ArrowUpRightIcon size={28} />
+                  <ArrowUpRightIcon className="h-7 w-7 lg:mt-1 lg:h-4 lg:w-4 lg:transition-transform lg:duration-200 lg:group-hover:translate-x-[2px] lg:group-hover:translate-y-[-2px] lg:group-hover:scale-110" />
                 </a>
               </li>
               {/* Conditionally render only on homepage */}
@@ -214,14 +188,14 @@ export default function Nav() {
                 pathname === "/en") && (
                 <>
                   <li
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 lg:hidden"
                     onClick={() => scrollToSection("projects")}
                   >
                     <p>{scopedT("projects")}</p>
                     <ArrowDownIcon size={28} />
                   </li>
                   <li
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 lg:hidden"
                     onClick={() => scrollToSection("about")}
                   >
                     <p>{scopedT("about")}</p>
@@ -231,7 +205,7 @@ export default function Nav() {
               )}
             </ul>
           </div>
-        </nav>
+        </div>
       </header>
     </>
   );
