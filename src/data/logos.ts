@@ -2,14 +2,44 @@ import { Logo } from "../types/types";
 
 export const logos: Logo[] = [
   {
+    icon: "/icons/motion.svg",
+    label: "Motion",
+    url: "https://motion.dev/",
+  },
+  {
+    icon: "/icons/gsap.svg",
+    label: "GSAP",
+    url: "https://gsap.com/",
+  },
+  {
+    icon: "/icons/html.svg",
+    label: "HTML",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    icon: "/icons/css.svg",
+    label: "CSS",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  {
     icon: "/icons/tailwind.svg",
     label: "Tailwind CSS",
     url: "https://tailwindcss.com/",
   },
   {
+    icon: "/icons/javascript.svg",
+    label: "JavaScript",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
     icon: "/icons/typescript.svg",
     label: "TypeScript",
     url: "https://www.typescriptlang.org/",
+  },
+  {
+    icon: "/icons/react.svg",
+    label: "React",
+    url: "https://react.dev/",
   },
   {
     icon: "/icons/next-js.svg",
@@ -30,9 +60,9 @@ export const logos: Logo[] = [
     url: "https://remix.run/docs/en/main",
   },
   {
-    icon: "/icons/react.svg",
-    label: "React",
-    url: "https://react.dev/",
+    icon: "/icons/git.svg",
+    label: "Git",
+    url: "https://git-scm.com/doc",
   },
   {
     icon: "/icons/mysql.svg",
@@ -40,22 +70,17 @@ export const logos: Logo[] = [
     label: "MySQL",
     url: "https://dev.mysql.com/doc/",
   },
+  { icon: "/icons/php.svg", label: "PHP", url: "https://www.php.net/docs.php" },
   {
     icon: "/icons/supabase.svg",
     label: "Supabase",
     url: "https://supabase.com/docs",
   },
   {
-    icon: "/icons/javascript.svg",
-    label: "JavaScript",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    icon: "/icons/mongodb.svg",
+    label: "MongoDB",
+    url: "https://www.mongodb.com/docs/",
   },
-  {
-    icon: "/icons/motion.svg",
-    label: "Motion",
-    url: "https://motion.dev/",
-  },
-  { icon: "/icons/php.svg", label: "PHP", url: "https://www.php.net/docs.php" },
   {
     icon: "/icons/shadcn.svg",
     dark: "/icons/shadcn-dark.svg",
@@ -68,24 +93,9 @@ export const logos: Logo[] = [
     url: "https://vite.dev/",
   },
   {
-    icon: "/icons/gsap.svg",
-    label: "GSAP",
-    url: "https://gsap.com/",
-  },
-  {
-    icon: "/icons/html.svg",
-    label: "HTML",
-    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-  },
-  {
-    icon: "/icons/css.svg",
-    label: "CSS",
-    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-  },
-  {
-    icon: "/icons/mongodb.svg",
-    label: "MongoDB",
-    url: "https://www.mongodb.com/docs/",
+    icon: "/icons/zustand.svg",
+    label: "Zustand",
+    url: "https://zustand.docs.pmnd.rs/getting-started/introduction",
   },
   {
     icon: "/icons/fborg.png",
@@ -101,11 +111,6 @@ export const logos: Logo[] = [
     icon: "/icons/mistral.svg",
     label: "Mistral",
     url: "https://docs.mistral.ai/",
-  },
-  {
-    icon: "/icons/zustand.svg",
-    label: "Zustand",
-    url: "https://zustand.docs.pmnd.rs/getting-started/introduction",
   },
 ];
 
@@ -127,16 +132,14 @@ export const getLogoByLabel = (
 export const skillLogos = logos.filter((logo) =>
   [
     "Tailwind CSS",
+    "Motion",
     "TypeScript",
+    "PHP",
     "React",
     "Next.js",
     "React Router",
+    "Git",
     "Supabase",
-    "MySQL",
-    "JavaScript",
-    "Motion",
-    "PHP",
-    "Shadcn",
     "MongoDB",
   ].includes(logo.label),
 );
