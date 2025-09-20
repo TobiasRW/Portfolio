@@ -115,7 +115,7 @@ function Cards({
             <p className="font-heading xs:text-sm text-xs transition-opacity duration-500 group-hover:opacity-0 md:text-base 2xl:text-lg">
               {logo.label}
             </p>
-            <span className="font-body text-[8px] font-extralight italic transition-opacity duration-500 group-hover:opacity-0 sm:text-[10px] lg:text-xs 2xl:text-sm dark:font-thin">
+            <span className="font-body text-[8px] font-extralight italic transition-opacity duration-500 group-hover:opacity-0 sm:text-[10px] lg:text-xs 2xl:text-sm dark:xl:font-thin">
               {logo.tag}
             </span>
           </div>
