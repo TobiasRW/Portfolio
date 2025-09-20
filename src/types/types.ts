@@ -57,6 +57,9 @@ export type Logo = {
   dark?: string;
   label: string;
   url?: string;
+  bgLight?: string;
+  bgDark?: string;
+  tag?: string;
 };
 
 //______________ SLIDER TYPES _______________//
