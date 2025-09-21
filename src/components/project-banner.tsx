@@ -43,23 +43,15 @@ export default function ProjectBanner({
             alt={`${title} Banner`}
             fill
             priority={true}
-            className={clsx(
-              {
-                ["absolute object-cover object-[50%_70%]"]: isDefault,
-              },
-              {
-                ["3xl:-ml-28 mt-14 scale-150 -rotate-[10deg] object-contain sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:mt-24 xl:-ml-16"]:
-                  isPhone,
-              },
-              {
-                ["xs:-ml-[25%] xs:scale-[1.8] 3xl:mt-36 mt-14 -ml-[20%] scale-150 -rotate-[5deg] object-contain sm:-ml-[30%] lg:mt-24 lg:-ml-[25%] xl:mt-28 xl:scale-[1.9] 2xl:mt-32"]:
-                  isPc,
-              },
-              {
-                ["3xl:-ml-12 mt-10 ml-10 scale-[1.7] -rotate-[5deg] object-contain sm:mt-7 sm:ml-14 sm:scale-[1.9] lg:-ml-8 lg:scale-[1.7] xl:mt-10 xl:-ml-14 xl:scale-[1.8]"]:
-                  isPhone2,
-              },
-            )}
+            className={clsx({
+              ["absolute object-cover object-[50%_70%]"]: isDefault,
+              ["3xl:-ml-28 mt-14 scale-150 -rotate-[10deg] object-contain sm:mt-20 sm:scale-[1.9] lg:-ml-10 lg:scale-[1.6] xl:mt-24 xl:-ml-16"]:
+                isPhone,
+              ["xs:-ml-[25%] xs:scale-[1.8] 3xl:mt-36 mt-14 -ml-[20%] scale-150 -rotate-[5deg] object-contain sm:-ml-[30%] lg:mt-24 lg:-ml-[25%] xl:mt-28 xl:scale-[1.9] 2xl:mt-32"]:
+                isPc,
+              ["3xl:-ml-12 mt-10 ml-10 scale-[1.7] -rotate-[5deg] object-contain sm:mt-7 sm:ml-14 sm:scale-[1.9] lg:-ml-8 lg:scale-[1.7] xl:mt-10 xl:-ml-14 xl:scale-[1.8]"]:
+                isPhone2,
+            })}
           />
           {/* Name and button - Laptop */}
           <div className="absolute top-5 right-10 hidden h-1/6 lg:flex lg:flex-col lg:gap-2 xl:top-6 xl:right-14 xl:gap-3">

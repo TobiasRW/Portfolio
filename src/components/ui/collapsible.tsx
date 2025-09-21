@@ -38,8 +38,7 @@ export default function Collapsible({
       <div
         className={clsx(
           "overflow-hidden border-t border-[#2C2C2C] transition-all duration-500 ease-in-out dark:border-[#EDECEC]",
-          { ["invisible max-h-0"]: !isOpen },
-          { ["visible max-h-96"]: isOpen },
+          { ["invisible max-h-0"]: !isOpen, ["visible max-h-96"]: isOpen },
         )}
       >
         <div className="px-4 py-2">{children}</div>

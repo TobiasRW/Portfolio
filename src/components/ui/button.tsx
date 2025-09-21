@@ -21,19 +21,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           {
             ["bg-whitebg relative flex items-center justify-center text-[#2C2C2C] drop-shadow-sm transition-all"]:
               variant === "default",
-          },
-          {
             ["hover:border-2-whitebg border-whitebg bg-whitebg before:bg-background hover:text-foreground relative flex items-center justify-center overflow-hidden border-2 text-[#2C2C2C] transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:duration-1000 before:ease-out hover:before:h-56 hover:before:w-56"]:
               variant === "fancy",
-          },
-          {
             ["bg-whitebg text-background lg:transition-all lg:hover:scale-110 dark:bg-[#2c2c2c]"]:
               variant === "slider",
           },
-          { ["h-9 px-4 py-2"]: size === "default" },
-          { ["h-8 px-3 text-xs"]: size === "sm" },
-          { ["h-10 px-8"]: size === "lg" },
-          { ["h-8 w-8"]: size === "icon" },
+          {
+            ["h-9 px-4 py-2"]: size === "default",
+            ["h-8 px-3 text-xs"]: size === "sm",
+            ["h-10 px-8"]: size === "lg",
+            ["h-8 w-8"]: size === "icon",
+          },
         )}
         {...rest}
       >

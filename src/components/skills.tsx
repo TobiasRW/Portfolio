@@ -16,7 +16,7 @@ export default function Skills() {
   return (
     <div className="bg-whitebg w-full rounded-b-[40px] pt-10 pb-20 md:pt-14 md:pb-24 lg:rounded-b-[50px] lg:pb-28 xl:pt-20 xl:pb-32 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       <div className="container mx-auto">
-        <div className="flex flex-col gap-10 md:gap-14 xl:gap-16 2xl:gap-20">
+        <div className="flex flex-col gap-10 md:gap-14 2xl:gap-20">
           <h2 className="font-heading text-center text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
             Skills
           </h2>
@@ -93,7 +93,7 @@ function Cards({
       {skills.map((logo, index) => (
         <div
           key={index}
-          className="group relative flex items-center gap-2 rounded bg-[#EBEBEB] px-3 py-2 transition-all duration-300 hover:scale-95 dark:bg-[#2C2C2C]"
+          className="group relative flex items-center gap-2 rounded bg-[#EBEBEB] p-2 transition-all duration-300 hover:scale-95 2xl:p-3 dark:bg-[#2C2C2C]"
         >
           <div
             className="bg-foreground/10 xs:p-2 rounded p-[6px]"
@@ -108,11 +108,11 @@ function Cards({
               alt={logo.label}
               width={64}
               height={64}
-              className="xs:h-5 xs:w-5 h-4 w-4 lg:h-6 lg:w-6 xl:h-7 xl:w-7 2xl:h-8 2xl:w-8"
+              className="xs:h-5 xs:w-5 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
             />
           </div>
           <div className="flex flex-col">
-            <p className="font-heading xs:text-sm text-xs transition-opacity duration-500 group-hover:opacity-0 md:text-base 2xl:text-lg">
+            <p className="font-heading xs:text-sm text-xs transition-opacity duration-500 group-hover:opacity-0 md:text-base xl:text-lg">
               {logo.label}
             </p>
             <span className="font-body text-[8px] font-extralight italic transition-opacity duration-500 group-hover:opacity-0 sm:text-[10px] lg:text-xs 2xl:text-sm dark:xl:font-thin">

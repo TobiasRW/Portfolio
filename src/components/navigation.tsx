@@ -72,10 +72,12 @@ export default function Nav() {
       <header
         className={clsx(
           "fixed z-50 flex h-20 w-screen items-center justify-between px-4 transition-all duration-300 lg:px-10 xl:px-16",
-          { ["bg-background dark:text-white"]: scrolled },
-          { ["bg-transparent dark:text-white"]: !scrolled },
-          { ["-translate-y-full transform opacity-0"]: hidden },
-          { ["translate-y-0 transform opacity-100"]: !hidden },
+          {
+            ["bg-background dark:text-white"]: scrolled,
+            ["bg-transparent dark:text-white"]: !scrolled,
+            ["-translate-y-full transform opacity-0"]: hidden,
+            ["translate-y-0 transform opacity-100"]: !hidden,
+          },
         )}
       >
         <nav className="flex items-center gap-4 lg:gap-6">
@@ -130,8 +132,10 @@ export default function Nav() {
             <span
               className={clsx(
                 "bg-foreground z-50 h-[3px] w-6 rounded-full transition-all duration-300",
-                { ["translate-y-[7px] rotate-45"]: isOpen },
-                { ["translate-y-0 rotate-0"]: !isOpen },
+                {
+                  ["translate-y-[7px] rotate-45"]: isOpen,
+                  ["translate-y-0 rotate-0"]: !isOpen,
+                },
               )}
             />
             <span
@@ -146,8 +150,10 @@ export default function Nav() {
             <span
               className={clsx(
                 "bg-foreground z-50 h-[3px] rounded-full transition-all duration-300",
-                { ["w-6 -translate-y-[7px] -rotate-45"]: isOpen },
-                { ["w-5 translate-y-0 rotate-0"]: !isOpen },
+                {
+                  ["w-6 -translate-y-[7px] -rotate-45"]: isOpen,
+                  ["w-5 translate-y-0 rotate-0"]: !isOpen,
+                },
               )}
             />
           </div>
@@ -156,8 +162,10 @@ export default function Nav() {
           <div
             className={clsx(
               "absolute top-0 right-0 z-20 h-[100vh] w-[70%] transition-transform duration-300 ease-in-out md:w-[45%] lg:static lg:h-auto lg:w-auto lg:items-center lg:gap-10 lg:text-xl",
-              { ["translate-x-0"]: isOpen },
-              { ["translate-x-full lg:translate-x-0"]: !isOpen },
+              {
+                ["translate-x-0"]: isOpen,
+                ["translate-x-full lg:translate-x-0"]: !isOpen,
+              },
             )}
           >
             <div className="bg-whitebg dark:bg-background absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,200,0.08)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)] lg:hidden dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(36,64,155,0.15)_20%,rgba(0,163,255,0)_80%,rgba(0,163,255,0)_100%)]"></div>

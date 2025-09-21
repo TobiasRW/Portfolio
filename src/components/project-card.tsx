@@ -40,16 +40,12 @@ export default function ProjectCard({
             {
               ["bottom-[-35%] left-[18%] scale-[1.3] rotate-[-10deg] group-hover:scale-[1.4] md:scale-[1.2] md:group-hover:scale-[1.3] xl:scale-[1.3] xl:group-hover:scale-[1.4]"]:
                 isPhone,
-            },
-            {
               ["xs:scale-[1.4] xs:group-hover:scale-150 bottom-[-32%] left-[-20%] scale-[1.3] group-hover:scale-[1.4] md:bottom-[-35%] md:left-[-22%] md:scale-[1.2] md:group-hover:scale-[1.3] xl:bottom-[-32%] xl:scale-[1.4] xl:group-hover:scale-150"]:
                 isComputer,
-            },
-            {
               ["bottom-[-18%] left-[20%] scale-[1.5] group-hover:scale-[1.6] md:scale-[1.3] md:group-hover:scale-[1.4] xl:left-[15%] xl:scale-[1.5] xl:group-hover:scale-[1.6]"]:
                 isPhone2,
+              ["left-[-5%] group-hover:scale-110"]: isDefault,
             },
-            { ["left-[-5%] group-hover:scale-110"]: isDefault },
           )}
         >
           <Image
