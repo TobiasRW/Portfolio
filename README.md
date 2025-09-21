@@ -5,11 +5,9 @@ My personal portfolio website built with Next.js and TypeScript, designed to giv
   <img src="public/images/portfolio-readme-image.png" alt="Homepage Screenshot" width="600" align="left" />
   <div align="center">
     <br><br><br>
-    <h3>Live site</h3>
+    <h3>See it in action</h3>
     <div>
-      <a href="https://portfolio.tobiaswolmar.dk/">🇩🇰 Danish</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="https://portfolio.tobiaswolmar.dk/en">🇬🇧 English</a>
+      <a href="https://portfolio.tobiaswolmar.dk/">🌐 Live Site</a>
     </div>
   </div>
   <br clear="left"/>
