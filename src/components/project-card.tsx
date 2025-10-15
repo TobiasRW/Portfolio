@@ -12,6 +12,7 @@ type ProjectCardProps = {
   link: string;
   bgColor?: string;
   tags?: string[];
+  className?: string;
 };
 
 export default function ProjectCard({
@@ -22,6 +23,7 @@ export default function ProjectCard({
   link,
   bgColor = "#2C2C2C",
   tags = [],
+  className,
 }: ProjectCardProps) {
   const isPhone = variant === "phone";
   const isComputer = variant === "computer";
@@ -30,7 +32,10 @@ export default function ProjectCard({
 
   return (
     <div
-      className="group xs:h-96 xs:w-[350px] relative mx-auto h-[365px] w-10/12 overflow-hidden rounded-lg shadow-lg sm:h-96 md:h-72 md:w-full lg:h-[350px] lg:w-11/12 xl:h-[420px] xl:w-[90%] xl:max-w-[450px] 2xl:h-[480px]"
+      className={clsx(
+        "group xs:h-96 xs:w-[350px] relative mx-auto h-[365px] w-11/12 max-w-[450px] overflow-hidden rounded-lg shadow-lg sm:h-96 md:h-72 md:w-full lg:h-[350px] xl:h-[420px] 2xl:h-[480px]",
+        className,
+      )}
       style={!isDefault ? { backgroundColor: bgColor } : {}}
     >
       <TransitionLink href={link}>
@@ -58,11 +63,11 @@ export default function ProjectCard({
         </div>
         <div className="absolute top-4 mx-auto flex w-full flex-col gap-1 px-4">
           <div className="flex items-center">
-            <h3 className="font-heading 3xl:text-5xl text-3xl font-medium text-white md:text-2xl lg:text-4xl">
+            <h3 className="font-heading text-3xl font-medium text-white md:text-2xl lg:text-4xl">
               {title}
             </h3>
           </div>
-          <p className="font-body 3xl:text-lg w-10/12 text-xs font-light text-white lg:text-sm 2xl:text-base">
+          <p className="font-body w-10/12 text-xs font-light text-white lg:text-sm 2xl:text-base">
             {text}
           </p>
         </div>

@@ -15,7 +15,7 @@ export default function Skills() {
 
   return (
     <div className="bg-whitebg w-full rounded-b-[40px] pt-10 pb-20 md:pt-14 md:pb-24 lg:rounded-b-[50px] lg:pb-28 xl:pt-20 xl:pb-32 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-[1920px]">
         <div className="flex flex-col gap-10 md:gap-14 2xl:gap-20">
           <h2 className="font-heading text-center text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
             Skills

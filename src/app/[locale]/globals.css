@@ -11,6 +11,11 @@
   --font-body: "Switzer", sans-serif;
 
   --breakpoint-xs: 460px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1792px;
 }
 
@@ -147,4 +152,41 @@ body {
   transition-property: opacity, background, transform, filter;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+
+  & > .more-projects {
+    justify-self: end;
+    padding-right: calc((100% - 350px) / 2);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "project project project"
+      ". . btn";
+
+    & > .more-projects {
+      grid-area: btn;
+      padding-right: calc((100% - 450px) / 2);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    gap: 3rem;
+  }
+
+  @media (min-width: 1792px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "project project project project"
+      ". . . btn";
+
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

@@ -31,7 +31,7 @@ export default function ProjectDescription({
   return (
     <div className="bg-whitebg w-full rounded-b-[40px] pt-10 pb-10 md:pt-14 md:pb-24 lg:rounded-b-[50px] lg:pb-28 xl:pt-20 xl:pb-32 2xl:rounded-b-[70px] dark:bg-[#1a1a1a]">
       {/* Project Description Section */}
-      <div className="mx-auto flex w-10/12 flex-col gap-6">
+      <div className="mx-auto flex w-10/12 max-w-[1920px] flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h3 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
             {title}

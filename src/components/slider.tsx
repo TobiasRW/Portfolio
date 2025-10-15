@@ -26,7 +26,7 @@ export default function Slider({
   const isBackground = variant === "background";
 
   return (
-    <div className="relative mx-auto w-10/12 py-20 lg:py-40 xl:py-0">
+    <div className="3xl:mx-0 relative mx-auto w-10/12 py-20 lg:py-40 xl:py-0">
       <div className="flex w-full max-w-full flex-col gap-6 px-6 sm:px-0">
         <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
           Snapshots

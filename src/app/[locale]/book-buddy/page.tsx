@@ -98,7 +98,7 @@ export default async function Page({
           password: scopedT("about.text.testUser.password"),
         }}
       />
-      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:py-40">
+      <div className="mx-auto max-w-[1920px] xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:py-40">
         <Slider
           variant="background"
           bgColor="#2c2c2c"

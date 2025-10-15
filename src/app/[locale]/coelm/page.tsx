@@ -89,7 +89,7 @@ export default async function Page({
           "JavaScript",
         ]}
       />
-      <div className="mx-auto xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:pt-40 xl:pb-20">
+      <div className="mx-auto max-w-[1920px] xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:py-40">
         <Slider
           images={[
             "/images/coelm-pic1.png",
