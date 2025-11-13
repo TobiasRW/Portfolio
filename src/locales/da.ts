@@ -1,4 +1,3 @@
-// locales/da.ts
 export default {
   navigation: {
     back: "Forside",
@@ -61,13 +60,13 @@ export default {
       text: {
         intro: "Hejsa 👋🏻",
         paragraph1:
-          "Jeg hedder Tobias og er en 27-årig webudvikler, med en passion for både frontend- og backend-udvikling. Jeg er uddannet multimediedesigner og læser nu videre på webudvikling som en top-up-uddannelse.",
+          "Jeg hedder Tobias og er en 27-årig webudvikler med en passion for både frontend- og backendudvikling. Jeg er uddannet multimediedesigner og færdiggør min professionsbachelor i webudvikling i januar 2026.",
         paragraph2:
-          "Jeg elsker at fordybe mig i ting - uanset om det er en ny fantasy verden, træning i fitnesscenteret, eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til nu at finde løsninger som webudvikler.",
+          "Jeg elsker at fordybe mig i ting – uanset om det er en ny fantasyverden, træning i fitnesscenteret eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til nu at finde løsninger som webudvikler.",
         paragraph3:
-          "Som webudvikler sætter jeg pris på detaljen - uanset om det interaktivitet og design eller optimeret kode. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
+          "Som webudvikler sætter jeg pris på detaljen – uanset om det er interaktivitet og design eller optimeret kode. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
         paragraph4:
-          "Jeg starter i praktik til August 2025 hos Impact, hvor jeg skal arbejde med frontend-udvikling. Jeg glæder mig til at få mere erfaring og udvikle mine færdigheder yderligere.",
+          "Lige nu er jeg i praktik hos IMPACT som frontendudvikler indtil januar 2026 og ser frem til at starte min karriere som webudvikler efterfølgende. Jeg søger derfor en fuldtidsstilling som frontend- eller fullstackudvikler, hvor jeg kan bidrage med mine færdigheder og udvikle dem yderligere.",
       },
     },
   },

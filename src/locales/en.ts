@@ -1,4 +1,3 @@
-// locales/en.ts
 export default {
   navigation: {
     back: "Home",
@@ -61,13 +60,13 @@ export default {
       text: {
         intro: "Hi there 👋🏻",
         paragraph1:
-          "My name is Tobias, and I'm a 27-year-old web developer with a passion for both frontend and backend development. I have a background in multimedia design and am currently studying web development as a top-up degree.",
+          "My name is Tobias, and I’m a 27-year-old web developer with a passion for both frontend and backend development. I hold a degree in Multimedia Design and will complete my Bachelor’s degree in Web Development in January 2026.",
         paragraph2:
           "I love diving deep into things – whether it's a new fantasy world, working out at the gym, or an exciting coding project! I've always been a natural problem solver, from math exercises in school to now finding solutions as a web developer.",
         paragraph3:
           "As a web developer, I value the details – whether it's interactivity and design or optimized code. I'm always curious to learn something new and eager to explore new technologies and trends.",
         paragraph4:
-          "I'll be starting my internship at Impact in August 2025, where I’ll be working with frontend development. I'm looking forward to gaining more experience and further developing my skills.",
+          "I’m currently completing my internship at IMPACT as a frontend developer until January 2026 and look forward to starting my career as a web developer afterward. I’m therefore seeking a full time position as a frontend or fullstack developer, where I can contribute with my skills and continue to grow.",
       },
     },
   },
