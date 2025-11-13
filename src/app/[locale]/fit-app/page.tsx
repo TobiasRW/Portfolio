@@ -63,7 +63,6 @@ export default async function Page({
           scopedT("about.badges.badge1"),
           scopedT("about.badges.badge2"),
         ]}
-        disclaimer={scopedT("about.text.disclaimer")}
         text={[
           {
             content: scopedT("about.text.paragraph1"),
