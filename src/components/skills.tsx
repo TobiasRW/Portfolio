@@ -91,8 +91,11 @@ function Cards({
   return (
     <div className="mx-auto grid w-11/12 grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
       {skills.map((logo, index) => (
-        <div
+        <a
           key={index}
+          href={logo.url}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative flex items-center gap-2 rounded bg-[#EBEBEB] p-2 transition-all duration-300 hover:scale-95 2xl:p-3 dark:bg-[#2C2C2C]"
         >
           <div
@@ -120,17 +123,12 @@ function Cards({
             </span>
           </div>
           {logo.url && (
-            <a
-              href={logo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-heading xs:text-[10px] absolute right-4 flex items-center justify-center rounded-full bg-[#f5f5f5] px-3 py-1 text-[8px] font-medium text-black opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100 sm:text-xs md:px-[14px] md:py-[6px] lg:text-sm dark:bg-[#f5f5f5]"
-            >
+            <div className="font-heading xs:text-[10px] ] text-foreground absolute right-4 flex items-center justify-center rounded-full px-3 py-1 text-[8px] font-medium opacity-0 transition-all duration-500 group-hover:opacity-100 sm:text-xs md:px-[14px] md:py-[6px] lg:text-sm">
               {scopedT("link")}
               <ArrowUpRightIcon className="xs:h-3 xs:w-3 h-2 w-2 md:h-4 md:w-4" />
-            </a>
+            </div>
           )}
-        </div>
+        </a>
       ))}
     </div>
   );
