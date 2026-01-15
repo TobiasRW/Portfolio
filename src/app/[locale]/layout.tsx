@@ -5,6 +5,7 @@ import ToTop from "@/components/to-top";
 import Footer from "@/components/footer";
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Tobias Wolmar",
@@ -30,6 +31,7 @@ export default async function RootLayout({
           <Navigation />
           <ToTop />
           {children}
+          <SpeedInsights />
           <Footer />
         </I18nProviderClient>
       </body>
