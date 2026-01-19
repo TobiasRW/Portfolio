@@ -20,7 +20,7 @@ export default function Skills() {
           <h2 className="font-heading text-center text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
             Skills
           </h2>
-          <Cards skills={skills} isDarkMode={isDarkMode} />
+          <Carousel skills={skills} isDarkMode={isDarkMode} />
         </div>
       </div>
     </div>
