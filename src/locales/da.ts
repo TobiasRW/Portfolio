@@ -60,13 +60,13 @@ export default {
       text: {
         intro: "Hejsa 👋🏻",
         paragraph1:
-          "Jeg hedder Tobias og er en 27-årig webudvikler med en passion for både frontend- og backendudvikling. Jeg er uddannet multimediedesigner og færdiggør min professionsbachelor i webudvikling i januar 2026.",
+          "Jeg hedder Tobias og er en 27-årig nyuddannet webudvikler med en passion for både frontend- og full stack-udvikling. Jeg er sulten efter at udvikle mine færdigheder yderligere i en professionel sammenhæng.",
         paragraph2:
-          "Jeg elsker at fordybe mig i ting – uanset om det er en ny fantasyverden, træning i fitnesscenteret eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til nu at finde løsninger som webudvikler.",
+          "Jeg elsker at fordybe mig i ting – uanset om det er en ny fantasyverden, træning i fitnesscenteret eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til i dag, hvor jeg finder løsninger som webudvikler.",
         paragraph3:
-          "Som webudvikler sætter jeg pris på detaljen – uanset om det er interaktivitet og design eller optimeret kode. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
+          "Som frontendudvikler sætter jeg pris på detaljen – uanset om det handler om interaktivitet, design eller performance. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.",
         paragraph4:
-          "Lige nu er jeg i praktik hos IMPACT som frontendudvikler indtil januar 2026 og ser frem til at starte min karriere som webudvikler efterfølgende. Jeg søger derfor en fuldtidsstilling som frontend- eller fullstackudvikler, hvor jeg kan bidrage med mine færdigheder og udvikle dem yderligere.",
+          "Jeg har for nylig afsluttet en praktikperiode som frontendudvikler hos IMPACT i forbindelse med mit bachelorprojekt, hvor jeg har opnået værdifuld erhvervserfaring fra et professionelt arbejdsmiljø. Dette har kun styrket min motivation for at fortsætte min karriere inden for webudvikling, og jeg søger derfor nye muligheder for at vokse og bidrage med mine færdigheder i en fuldtidsstilling.",
       },
     },
   },

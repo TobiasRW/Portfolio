@@ -58,15 +58,15 @@ export default {
     about: {
       title: "Who am I?",
       text: {
-        intro: "Hi there 👋🏻",
+        intro: "Hi 👋🏻",
         paragraph1:
-          "My name is Tobias, and I’m a 27-year-old web developer with a passion for both frontend and backend development. I hold a degree in Multimedia Design and will complete my Bachelor’s degree in Web Development in January 2026.",
+          "My name is Tobias, and I am a 27 year old newly graduated web developer with a passion for both frontend and full-stack development. I am eager to further develop my skills in a professional environment.",
         paragraph2:
-          "I love diving deep into things – whether it's a new fantasy world, working out at the gym, or an exciting coding project! I've always been a natural problem solver, from math exercises in school to now finding solutions as a web developer.",
+          "I love diving deep into things—whether it’s a new fantasy universe, working out at the gym, or an exciting coding project! I have always been a natural problem solver, from math challenges in elementary school to solving real world problems as a web developer today.",
         paragraph3:
-          "As a web developer, I value the details – whether it's interactivity and design or optimized code. I'm always curious to learn something new and eager to explore new technologies and trends.",
+          "As a frontend developer, I value attention to detail—whether it’s interactivity, design, or performance. I am always curious to learn something new and enjoy exploring new technologies and trends.",
         paragraph4:
-          "I’m currently completing my internship at IMPACT as a frontend developer until January 2026 and look forward to starting my career as a web developer afterward. I’m therefore seeking a full time position as a frontend or fullstack developer, where I can contribute with my skills and continue to grow.",
+          "I recently completed a frontend developer internship at IMPACT as part of my bachelor’s project, where I gained valuable hands-on experience in a professional work environment. This experience has strengthened my motivation to pursue a career in web development, and I am now seeking new opportunities to grow and contribute my skills in a full-time position.",
       },
     },
   },
