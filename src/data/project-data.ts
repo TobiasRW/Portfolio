@@ -20,6 +20,14 @@ export const projects: Project[] = [
     tags: ["Frontend", "Backend"],
   },
   {
+    variant: "default",
+    imageSrc: "/images/coelm-banner.webp",
+    titleKey: "project.coelm.name",
+    textKey: "project.coelm.brief",
+    link: "/coelm",
+    tags: ["Frontend"],
+  },
+  {
     variant: "phone2",
     imageSrc: "/images/bookspace-banner2.webp",
     titleKey: "project.bookSpace.name",
@@ -36,14 +44,6 @@ export const projects: Project[] = [
     link: "/palette",
     bgColor: "#FC7753",
     tags: ["Frontend", "Backend", "LLM"],
-  },
-  {
-    variant: "default",
-    imageSrc: "/images/coelm-banner.webp",
-    titleKey: "project.coelm.name",
-    textKey: "project.coelm.brief",
-    link: "/coelm",
-    tags: ["Frontend"],
   },
   {
     variant: "phone2",
