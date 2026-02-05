@@ -55,7 +55,7 @@ export default async function Page({
             variant="phone2"
             imageSrc="/images/livescore-banner2.webp"
             title="Live Scores"
-            website="https://livescore-eosin.vercel.app/"
+            website="https://livescore.tobiaswolmar.dk/"
             github="https://github.com/TobiasRW/livescore"
             bgColor="#26437E"
           />

@@ -57,7 +57,7 @@ export default async function Page({
             variant="default"
             imageSrc="/images/coelm-banner.webp"
             title={scopedT("title")}
-            website="https://hovedopgave-v2.tobiaswolmar.dk/"
+            website="https://coelm.tobiaswolmar.dk/"
             github="https://github.com/TobiasRW/hovedopgave"
           />
         </div>

@@ -62,13 +62,13 @@ export const projects: Project[] = [
     link: "/book-buddy",
     tags: ["Frontend", "Backend", "API"],
   },
-  {
-    variant: "phone",
-    imageSrc: "/images/lendr-banner.webp",
-    titleKey: "project.lendr.name",
-    textKey: "project.lendr.brief",
-    link: "/lendr",
-    bgColor: "#5BAD86",
-    tags: ["Frontend", "Backend"],
-  },
+  // {
+  //   variant: "phone",
+  //   imageSrc: "/images/lendr-banner.webp",
+  //   titleKey: "project.lendr.name",
+  //   textKey: "project.lendr.brief",
+  //   link: "/lendr",
+  //   bgColor: "#5BAD86",
+  //   tags: ["Frontend", "Backend"],
+  // },
 ];
