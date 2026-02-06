@@ -54,21 +54,4 @@ export const projects: Project[] = [
     bgColor: "#26437E",
     tags: ["Frontend", "API"],
   },
-  {
-    variant: "phone",
-    imageSrc: "/images/bookapp-banner.webp",
-    titleKey: "project.bookBuddy.name",
-    textKey: "project.bookBuddy.brief",
-    link: "/book-buddy",
-    tags: ["Frontend", "Backend", "API"],
-  },
-  // {
-  //   variant: "phone",
-  //   imageSrc: "/images/lendr-banner.webp",
-  //   titleKey: "project.lendr.name",
-  //   textKey: "project.lendr.brief",
-  //   link: "/lendr",
-  //   bgColor: "#5BAD86",
-  //   tags: ["Frontend", "Backend"],
-  // },
 ];
