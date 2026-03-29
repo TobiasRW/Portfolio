@@ -89,10 +89,6 @@
   }
 }
 
-:global(.dark) .variant-slider {
-  background-color: #2c2c2c;
-}
-
 .content {
   position: relative;
   z-index: 10;

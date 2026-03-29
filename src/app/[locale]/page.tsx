@@ -1,5 +1,5 @@
 import About from "@/components/about";
-import Hero from "@/components/hero";
+import Hero from "@/components/sections/hero/hero";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import { setStaticParamsLocale } from "next-international/server";
