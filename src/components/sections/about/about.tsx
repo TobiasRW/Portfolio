@@ -1,13 +1,13 @@
 import { getScopedI18n } from "@/locales/server";
+import styles from "./about.module.css";
+
 export default async function About() {
   const scopedT = await getScopedI18n("frontPage.about");
   return (
-    <section id="about" className="mx-auto max-w-[1920px]">
-      <div className="mx-auto flex w-10/12 flex-col gap-8 md:w-11/12">
-        <h2 className="font-heading text-center text-2xl font-semibold sm:text-3xl md:text-4xl xl:text-5xl">
-          {scopedT("title")}
-        </h2>
-        <p className="font-body text-sm font-light lg:text-base 2xl:text-lg">
+    <section id="about" className={styles.root}>
+      <div className={styles.content}>
+        <h2 className={styles.title}>{scopedT("title")}</h2>
+        <p className={styles.paragraph}>
           {scopedT("text.intro")}
           <br />
           <br />
@@ -22,21 +22,21 @@ export default async function About() {
           <br />
           {scopedT("text.paragraph4")}
         </p>
-        <div className="font-body flex flex-col items-start gap-4 text-sm font-light text-[#2A4B9A] lg:flex-row lg:gap-8 lg:text-base 2xl:text-lg dark:text-white">
+        <div className={styles.links}>
           <a
             href="mailto:tobiasrw98@gmail.com"
             target="_blank"
-            className="underline"
+            className={styles.link}
           >
             tobiasrw98@gmail.com
           </a>
-          <a href="tel:30305154" target="_blank" className="underline">
+          <a href="tel:30305154" target="_blank" className={styles.link}>
             Tlf: 30 30 51 54
           </a>
           <a
             href="https://www.linkedin.com/in/tobias-wolmar-87991224a/"
             target="_blank"
-            className="underline"
+            className={styles.link}
           >
             LinkedIn
           </a>
