@@ -1,7 +1,7 @@
 import About from "@/components/about";
 import Hero from "@/components/sections/hero/hero";
 import Projects from "@/components/projects";
-import Skills from "@/components/skills";
+import Skills from "@/components/sections/skills/skills";
 import { setStaticParamsLocale } from "next-international/server";
 
 export default async function Home({
