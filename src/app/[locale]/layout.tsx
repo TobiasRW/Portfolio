@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/layout/navigation/navigation";
 import ToTop from "@/components/to-top";
-import Footer from "@/components/footer";
+import Footer from "@/components/layout/footer/footer";
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
 
