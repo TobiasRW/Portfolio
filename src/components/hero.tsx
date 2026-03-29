@@ -6,7 +6,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Dots from "./visuals/dots/dots";
 import { useScopedI18n } from "@/locales/client";
-import Button from "./ui/button";
+import Button from "./ui/button/button";
 
 export default function Hero() {
   const scopedT = useScopedI18n("frontPage.hero");
