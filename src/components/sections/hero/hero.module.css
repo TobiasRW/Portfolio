@@ -160,7 +160,7 @@
 }
 
 .button:hover .arrow {
-  transform: translateY(2px);
+  transform: translateY(3px);
 }
 
 .arrow {
