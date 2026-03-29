@@ -2,7 +2,7 @@ import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
 import Accordion from "@/components/accordion-tech";
 import Slider from "@/components/slider";
-import Dots from "@/components/dots";
+import Dots from "@/components/visuals/dots/dots";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 

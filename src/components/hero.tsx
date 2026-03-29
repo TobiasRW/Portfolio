@@ -4,7 +4,7 @@ import {
   ArrowDownIcon,
   MapPinSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
-import Dots from "./dots";
+import Dots from "./visuals/dots/dots";
 import { useScopedI18n } from "@/locales/client";
 import Button from "./ui/button";
 
