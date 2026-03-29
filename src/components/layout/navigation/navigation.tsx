@@ -16,7 +16,7 @@ const links = {
 };
 
 // Navigation component
-export default function Nav() {
+export function Nav() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);

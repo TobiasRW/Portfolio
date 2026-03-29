@@ -6,7 +6,7 @@ import { TransitionLink } from "../../utils/transition-link";
 import Button from "../../ui/button/button";
 import styles from "./projects.module.css";
 
-export default async function Projects() {
+export async function Projects() {
   const scopedT = await getScopedI18n("frontPage.projects");
   return (
     <section id="projects" className={styles.root}>

@@ -9,7 +9,7 @@ import styles from "./hero.module.css";
 import Dots from "@/components/visuals/dots/dots";
 import Button from "@/components/ui/button/button";
 
-export default function Hero() {
+export function Hero() {
   const scopedT = useScopedI18n("frontPage.hero");
 
   // Utility function to scroll to a given element ID

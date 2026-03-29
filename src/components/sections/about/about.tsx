@@ -1,7 +1,7 @@
 import { getScopedI18n } from "@/locales/server";
 import styles from "./about.module.css";
 
-export default async function About() {
+export async function About() {
   const scopedT = await getScopedI18n("frontPage.about");
   return (
     <section id="about" className={styles.root}>

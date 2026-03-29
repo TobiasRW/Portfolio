@@ -9,7 +9,7 @@ import EmblaCarousel from "@/components/embla-carousel";
 import { Logo } from "@/types/types";
 import styles from "./skills.module.css";
 
-export default function Skills() {
+export function Skills() {
   const isDarkMode = useDarkMode();
   const skills = skillLogos;
 

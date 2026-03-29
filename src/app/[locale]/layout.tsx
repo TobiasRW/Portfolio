@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navigation from "@/components/layout/navigation/navigation";
 import ToTop from "@/components/to-top";
-import Footer from "@/components/layout/footer/footer";
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
+import { Footer, Nav } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Tobias Wolmar",
@@ -27,7 +26,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className="">
         <I18nProviderClient locale={locale}>
-          <Navigation />
+          <Nav />
           <ToTop />
           {children}
           <Footer />
