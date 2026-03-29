@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navigation from "@/components/navigation";
+import Navigation from "@/components/layout/navigation/navigation";
 import ToTop from "@/components/to-top";
 import Footer from "@/components/footer";
 import { I18nProviderClient } from "@/locales/client";
