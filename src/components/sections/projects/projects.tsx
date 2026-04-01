@@ -1,4 +1,4 @@
-import ProjectCard from "../../project-card";
+import { ProjectCard } from "@/components/project";
 import { getScopedI18n } from "@/locales/server";
 import { projects } from "../../../data/project-data";
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";

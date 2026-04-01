@@ -1,0 +1,241 @@
+.root {
+  position: relative;
+  margin-inline: auto;
+  width: 91.666%;
+  max-width: 450px;
+  height: 365px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+  @media (min-width: 460px) {
+    width: 350px;
+    height: 384px;
+  }
+
+  @media (min-width: 640px) {
+    height: 384px;
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 288px;
+  }
+
+  @media (min-width: 1024px) {
+    height: 350px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 420px;
+  }
+
+  @media (min-width: 1536px) {
+    height: 480px;
+  }
+}
+
+.image-wrapper {
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  cursor: pointer;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.image-wrapper-phone {
+  bottom: -35%;
+  left: 18%;
+  transform: scale(1.3) rotate(-10deg);
+
+  &:hover {
+    transform: scale(1.4) rotate(-10deg);
+  }
+
+  @media (min-width: 768px) {
+    transform: scale(1.2) rotate(-10deg);
+
+    &:hover {
+      transform: scale(1.3) rotate(-10deg);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    transform: scale(1.3) rotate(-10deg);
+
+    &:hover {
+      transform: scale(1.4) rotate(-10deg);
+    }
+  }
+}
+
+.image-wrapper-computer {
+  bottom: -32%;
+  left: -20%;
+  transform: scale(1.3) rotate(0);
+
+  &:hover {
+    transform: scale(1.4) rotate(0);
+  }
+
+  @media (min-width: 460px) {
+    transform: scale(1.4) rotate(0);
+
+    &:hover {
+      transform: scale(1.5) rotate(0);
+    }
+  }
+
+  @media (min-width: 768px) {
+    bottom: -35%;
+    left: -22%;
+    transform: scale(1.2) rotate(0);
+
+    &:hover {
+      transform: scale(1.3) rotate(0);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    bottom: -32%;
+    transform: scale(1.4) rotate(0);
+
+    &:hover {
+      transform: scale(1.5) rotate(0);
+    }
+  }
+}
+
+.image-wrapper-phone2 {
+  bottom: -18%;
+  left: 20%;
+  transform: scale(1.5) rotate(0);
+
+  &:hover {
+    transform: scale(1.6) rotate(0);
+  }
+
+  @media (min-width: 768px) {
+    transform: scale(1.3) rotate(0);
+
+    &:hover {
+      transform: scale(1.4) rotate(0);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    left: 15%;
+    transform: scale(1.5) rotate(0);
+
+    &:hover {
+      transform: scale(1.6) rotate(0);
+    }
+  }
+}
+
+.image-wrapper-default {
+  left: -5%;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.image {
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 1rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: white;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 2.25rem;
+  }
+}
+
+.description {
+  font-family: var(--font-body);
+  width: 83.333%;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: white;
+
+  @media (min-width: 1024px) {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1536px) {
+    font-size: 1rem;
+  }
+}
+
+.tags {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+
+  @media (min-width: 768px) {
+    gap: 0.25rem;
+    padding-left: 0.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+.tag {
+  border-radius: calc(infinity * 1px);
+  background-color: rgb(22 22 22 / 0.8);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-whitebg);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgb(22 22 22 / 0.8);
+    color: var(--color-whitebg);
+  }
+
+  @media (min-width: 768px) {
+    font-size: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 0.75rem;
+  }
+}

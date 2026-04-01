@@ -1,6 +1,6 @@
 import styles from "./dots.module.css";
 
-export default function Dots() {
+export function Dots() {
   return (
     <>
       <div className={styles.root}></div>

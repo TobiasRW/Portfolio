@@ -1,8 +1,7 @@
 import Slider from "@/components/slider-component";
-import ProjectBanner from "@/components/project-banner";
-import ProjectDescription from "@/components/project-description";
+import { ProjectBanner, ProjectDescription } from "@/components/project";
 import { Accordion } from "@/components/ui";
-import Dots from "@/components/visuals/dots/dots";
+import { Dots } from "@/components/visuals";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 import { Scene } from "@/components/renders";

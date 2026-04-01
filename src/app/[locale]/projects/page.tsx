@@ -1,8 +1,8 @@
-import ProjectCard from "@/components/project-card";
 import { projects } from "@/data/project-data";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 import styles from "../page.module.css";
+import { ProjectCard } from "@/components/project";
 
 export default async function Page({
   params,

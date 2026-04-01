@@ -5,9 +5,9 @@ import {
   MapPinSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { useScopedI18n } from "@/locales/client";
-import styles from "./hero.module.css";
-import Dots from "@/components/visuals/dots/dots";
+import { Dots } from "@/components/visuals";
 import { Button } from "@/components/ui";
+import styles from "./hero.module.css";
 
 export function Hero() {
   const scopedT = useScopedI18n("frontPage.hero");
