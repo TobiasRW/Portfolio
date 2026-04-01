@@ -1,6 +1,9 @@
-import { ProjectBanner, ProjectDescription } from "@/components/project";
+import {
+  ProjectBanner,
+  ProjectDescription,
+  ProjectImageSlider,
+} from "@/components/project";
 import { Accordion } from "@/components/ui";
-import Slider from "@/components/slider-component";
 import { Dots } from "@/components/visuals";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
@@ -102,7 +105,7 @@ export default async function Page({
         }}
       />
       <div className={styles.content}>
-        <Slider
+        <ProjectImageSlider
           variant="background"
           bgColor="#FC7753"
           images={[
