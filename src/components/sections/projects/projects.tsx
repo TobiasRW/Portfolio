@@ -3,7 +3,7 @@ import { getScopedI18n } from "@/locales/server";
 import { projects } from "../../../data/project-data";
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { TransitionLink } from "../../utils/transition-link";
-import Button from "../../ui/button/button";
+import { Button } from "@/components/ui";
 import styles from "./projects.module.css";
 
 export async function Projects() {

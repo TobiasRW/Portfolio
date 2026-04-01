@@ -5,7 +5,7 @@ import Image from "next/image";
 import { getLogoByLabel } from "@/data/logos";
 import useDarkMode from "@/hooks/useDarkMode";
 import { AccordionEntry } from "@/types/types";
-import Collapsible from "./ui/collapsible";
+import { Collapsible } from "./ui";
 
 type AccordionTechProps = {
   title: string;

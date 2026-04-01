@@ -7,7 +7,7 @@ import {
 import { useScopedI18n } from "@/locales/client";
 import styles from "./hero.module.css";
 import Dots from "@/components/visuals/dots/dots";
-import Button from "@/components/ui/button/button";
+import { Button } from "@/components/ui";
 
 export function Hero() {
   const scopedT = useScopedI18n("frontPage.hero");

@@ -2,7 +2,7 @@
 
 import highlightText from "@/helpers/highlightText";
 import type { TestUser, DescriptionText } from "@/types/types";
-import Badge from "./ui/badge";
+import { Badge } from "./ui";
 import { useScopedI18n } from "@/locales/client";
 import Icon from "./icon";
 

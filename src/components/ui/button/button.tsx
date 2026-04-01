@@ -8,7 +8,7 @@ type ButtonProps = {
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     { variant = "default", size = "default", className, children, ...rest },
     ref,
@@ -29,7 +29,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
-
-Button.displayName = "Button";
-
-export default Button;

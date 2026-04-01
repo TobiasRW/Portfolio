@@ -2,7 +2,7 @@
 
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Button from "./ui/button/button";
+import { Button } from "./ui";
 import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 type EmblaSliderProps = {

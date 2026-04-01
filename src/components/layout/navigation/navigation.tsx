@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { TransitionLink } from "../../utils/transition-link";
 import { ArrowUpRightIcon, ArrowLeftIcon } from "@phosphor-icons/react";
 import { useScopedI18n } from "@/locales/client";
-import Toggle from "../../ui/toggle";
+import { Toggle } from "@/components/ui";
 import clsx from "clsx";
 
 // stored links
@@ -54,15 +54,6 @@ export function Nav() {
 
   const toggleMenu: React.MouseEventHandler<HTMLDivElement> = () => {
     setIsOpen(!isOpen);
-  };
-
-  // Utility function to scroll to a given element ID
-  const scrollToSection = (id: string) => {
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
   };
 
   return (
