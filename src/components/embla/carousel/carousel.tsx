@@ -3,16 +3,14 @@ import AutoScroll, {
   type AutoScrollOptionsType,
 } from "embla-carousel-auto-scroll";
 import useEmblaCarousel from "embla-carousel-react";
+import styles from "./carousel.module.css";
 
 interface EmblaCarouselProps {
   children?: React.ReactNode;
   speed?: number;
 }
 
-export default function EmblaCarousel({
-  children,
-  speed = 1,
-}: EmblaCarouselProps) {
+export function Carousel({ children, speed = 1 }: EmblaCarouselProps) {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     AutoScroll({
       delay: speed,
@@ -24,13 +22,10 @@ export default function EmblaCarousel({
 
   return (
     <section>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="-mx-2 flex md:-mx-2 lg:-mx-3">
+      <div className={styles.container} ref={emblaRef}>
+        <div className={styles.track}>
           {React.Children.toArray(children).map((child, index) => (
-            <div
-              key={index}
-              className="mx-2 flex-[0_0_auto] basis-1/5 md:mx-2 md:basis-1/6 lg:mx-3 lg:basis-[13%] xl:basis-[12%] 2xl:basis-[11%]"
-            >
+            <div key={index} className={styles.item}>
               {child}
             </div>
           ))}

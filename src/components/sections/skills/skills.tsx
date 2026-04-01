@@ -5,8 +5,8 @@ import useDarkMode from "@/hooks/useDarkMode";
 import { skillLogos, getLogo } from "@/data/logos";
 import Image from "next/image";
 import { useScopedI18n } from "@/locales/client";
-import EmblaCarousel from "@/components/embla-carousel";
 import { Logo } from "@/types/types";
+import { Carousel as EmblaCarousel } from "@/components/embla";
 import styles from "./skills.module.css";
 
 export function Skills() {

@@ -4,8 +4,8 @@ import { useState } from "react";
 import { MagnifyingGlassPlusIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import { SliderVariant } from "@/types/types";
+import { Slider as EmblaSlider } from "@/components/embla";
 import clsx from "clsx";
-import EmblaSlider from "./embla-slider";
 
 type SliderImageProps = {
   variant?: SliderVariant;
@@ -13,7 +13,7 @@ type SliderImageProps = {
   images: string[];
 };
 
-export default function Slider({
+export default function SliderComponent({
   variant = "default",
   images,
   bgColor = "#2C2C2C",
