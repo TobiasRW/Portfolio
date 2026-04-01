@@ -5,7 +5,7 @@ import { Accordion } from "@/components/ui";
 import Dots from "@/components/visuals/dots/dots";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
-import Scene from "@/components/scene";
+import { Scene } from "@/components/renders";
 import styles from "../page.module.css";
 
 export default async function Page({

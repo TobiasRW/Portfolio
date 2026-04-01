@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import { useGLTF } from "@react-three/drei";
 
 useGLTF.preload("/models/coelm.glb");

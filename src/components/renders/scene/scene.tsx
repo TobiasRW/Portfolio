@@ -1,17 +1,18 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Model } from "./model";
+import { Model } from "../model/model";
 import {
   ContactShadows,
   Environment,
   OrbitControls,
   PerspectiveCamera,
 } from "@react-three/drei";
+import styles from "./scene.module.css";
 
-export default function Scene() {
+export function Scene() {
   return (
-    <div className="h-[300px] md:h-[400px] lg:h-[500px]">
+    <div className={styles.root}>
       <Canvas>
         <Environment preset="city" />
         <directionalLight position={[5, -5, 5]} intensity={4} />
