@@ -1,6 +1,6 @@
 import ProjectBanner from "@/components/project-banner";
 import ProjectDescription from "@/components/project-description";
-import Accordion from "@/components/accordion-tech";
+import { Accordion } from "@/components/ui";
 import Slider from "@/components/slider-component";
 import Dots from "@/components/visuals/dots/dots";
 import { getScopedI18n } from "@/locales/server";

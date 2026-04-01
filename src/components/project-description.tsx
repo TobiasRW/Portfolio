@@ -2,9 +2,8 @@
 
 import highlightText from "@/helpers/highlightText";
 import type { TestUser, DescriptionText } from "@/types/types";
-import { Badge } from "./ui";
+import { Badge, Icon } from "./ui";
 import { useScopedI18n } from "@/locales/client";
-import Icon from "./icon";
 
 type ProjectDescriptionProps = {
   title: string;

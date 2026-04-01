@@ -1,0 +1,75 @@
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 9999px;
+  background-color: #edecec;
+
+  &:hover .tooltip {
+    display: block;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #2c2c2c;
+  }
+
+  @media (min-width: 1024px) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 0.5rem;
+  display: none;
+  width: max-content;
+  transform: translateX(-50%);
+  border-radius: 0.375rem;
+  background-color: #edecec;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1));
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #2c2c2c;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-top: 4px solid #edecec;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+
+  @media (prefers-color-scheme: dark) {
+    border-top-color: #2c2c2c;
+  }
+}
+
+.image {
+  height: 1.5rem;
+  width: 1.5rem;
+
+  @media (min-width: 1280px) {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+
+  @media (min-width: 1536px) {
+    height: 2rem;
+    width: 2rem;
+  }
+}
