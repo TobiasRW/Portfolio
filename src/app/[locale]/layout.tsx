@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ToTop from "@/components/to-top";
+
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
 import { Footer, Nav } from "@/components/layout";
+import { ToTop } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Tobias Wolmar",

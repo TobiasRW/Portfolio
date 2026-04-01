@@ -2,8 +2,9 @@
 import { ArrowUpIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
+import styles from "./to-top.module.css";
 
-export default function ToTop() {
+export function ToTop() {
   const [hidden, setHidden] = useState<boolean>(false);
 
   useEffect(() => {
@@ -34,16 +35,13 @@ export default function ToTop() {
     <>
       <button
         onClick={scrollToTop}
-        className={clsx(
-          "group bg-whitebg fixed right-6 bottom-14 z-30 cursor-pointer rounded-full p-3 shadow-lg transition-all duration-300 xl:p-4",
-          {
-            ["translate-y-5 opacity-0"]: !hidden,
-            ["translate-y-0 opacity-100"]: hidden,
-          },
-        )}
+        className={clsx(styles.root, {
+          [styles.hidden]: !hidden,
+          [styles.visible]: hidden,
+        })}
         aria-label="Scroll to top"
       >
-        <ArrowUpIcon className="3xl:h-5 3xl:w-5 h-4 w-4 text-[#1a1a1a] transition-all duration-300 group-hover:-translate-y-1" />
+        <ArrowUpIcon className={styles.icon} />
       </button>
     </>
   );

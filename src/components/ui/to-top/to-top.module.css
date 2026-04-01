@@ -1,0 +1,48 @@
+.root {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 3.5rem;
+  z-index: 30;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-color: var(--color-whitebg);
+  padding: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  border: none;
+
+  &.hidden {
+    transform: translateY(1.25rem);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &:hover .icon {
+    transform: translateY(-0.25rem);
+  }
+
+  @media (min-width: 1280px) {
+    padding: 1rem;
+  }
+}
+
+.icon {
+  height: 1rem;
+  width: 1rem;
+  color: #1a1a1a;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+
+  @media (min-width: 1792px) {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
