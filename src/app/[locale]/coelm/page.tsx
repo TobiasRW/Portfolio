@@ -6,6 +6,7 @@ import Dots from "@/components/visuals/dots/dots";
 import { getScopedI18n } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 import Scene from "@/components/scene";
+import styles from "../page.module.css";
 
 export default async function Page({
   params,
@@ -50,8 +51,8 @@ export default async function Page({
 
   return (
     <>
-      <div className="bg-whitebg w-screen dark:bg-[#1A1A1A]">
-        <div className="bg-background 3xl:h-[750px] relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px]">
+      <div className={styles.root}>
+        <div className={styles.hero}>
           <Dots />
           <ProjectBanner
             variant="default"
@@ -89,7 +90,7 @@ export default async function Page({
           "JavaScript",
         ]}
       />
-      <div className="mx-auto max-w-[1920px] xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:py-40">
+      <div className={styles.content}>
         <Slider
           images={[
             "/images/coelm-pic1.png",
@@ -103,11 +104,9 @@ export default async function Page({
           title={scopedT("accordion.heading")}
         />
       </div>
-      <div className="mx-auto mt-20 w-9/12 sm:w-10/12 md:mt-28">
-        <h2 className="font-heading text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-start xl:text-5xl">
-          3D Model
-        </h2>
-        <div className="bg-whitebg mt-10 overflow-hidden rounded-2xl dark:bg-[#1a1a1a]">
+      <div className={styles.model}>
+        <h2 className={styles["model-title"]}>3D Model</h2>
+        <div className={styles.scene}>
           <Scene />
         </div>
       </div>
