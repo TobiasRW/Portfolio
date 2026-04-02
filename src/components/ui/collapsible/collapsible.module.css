@@ -3,7 +3,7 @@
   border-radius: 0.375rem;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: #2c2c2c;
   }
 }
@@ -19,11 +19,11 @@
   user-select: none;
   font-size: 1rem;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     font-size: 1.125rem;
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     font-size: 1.25rem;
   }
 }
@@ -46,7 +46,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     border-top-color: #edecec;
   }
 

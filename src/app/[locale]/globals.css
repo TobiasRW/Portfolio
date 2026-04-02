@@ -9,7 +9,7 @@
   --font-body: 'Switzer', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (--dark) {
   :root {
     --background: #161616;
     --foreground: #edecec;
@@ -189,7 +189,7 @@ body {
     padding-right: calc((100% - 350px) / 2);
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       'project project project'
@@ -201,11 +201,11 @@ body {
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     gap: 3rem;
   }
 
-  @media (min-width: 1792px) {
+  @media (--3xl) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       'project project project project'

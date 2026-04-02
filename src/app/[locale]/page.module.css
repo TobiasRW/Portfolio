@@ -2,7 +2,7 @@
   background-color: var(--whitebg);
   width: 100vw;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: #1a1a1a;
   }
 }
@@ -18,30 +18,30 @@
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     height: 450px;
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     height: 550px;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     height: 600px;
   }
 
-  @media (min-width: 1536px) {
+  @media (--2xl) {
     height: 650px;
     border-bottom-right-radius: 70px;
     border-bottom-left-radius: 70px;
   }
 
-  @media (min-width: 1792px) {
+  @media (--3xl) {
     height: 750px;
   }
 }
@@ -50,7 +50,7 @@
   margin-inline: auto;
   max-width: 1920px;
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     display: grid;
     width: 83.333%;
     grid-template-columns: 1.5fr 1fr;
@@ -68,11 +68,11 @@
   margin-top: 5rem;
   width: 75%;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     width: 83.333%;
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     margin-top: 7rem;
   }
 }
@@ -82,19 +82,19 @@
   font-size: 1.5rem;
   font-weight: 600;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     font-size: 1.875rem;
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     font-size: 2.25rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     text-align: start;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     font-size: 3rem;
   }
 }
@@ -105,7 +105,7 @@
   overflow: hidden;
   border-radius: 1rem;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: #1a1a1a;
   }
 }
@@ -117,12 +117,12 @@
 .projects {
   padding-top: 5rem;
 
-  @media (min-width: 768px) {
+  @media (--md) {
     margin-inline: auto;
     width: 83.333%;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     width: 91.667%;
   }
 }
@@ -134,19 +134,19 @@
   font-weight: 600;
   text-align: center;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     font-size: 1.875rem;
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     font-size: 2.25rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     padding-bottom: 5rem;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     padding-top: 5rem;
     font-size: 3rem;
   }
@@ -158,19 +158,19 @@
   max-width: 1920px;
   gap: 2rem;
 
-  @media (min-width: 768px) {
+  @media (--md) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     row-gap: 5rem;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     row-gap: 3.5rem;
   }
 
-  @media (min-width: 1792px) {
+  @media (--3xl) {
     grid-template-columns: repeat(4, 1fr);
   }
 }

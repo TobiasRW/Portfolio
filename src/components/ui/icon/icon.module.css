@@ -23,11 +23,11 @@
     display: block;
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: #2c2c2c;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     width: 3.5rem;
     height: 3.5rem;
   }
@@ -47,7 +47,7 @@
   font-size: 0.75rem;
   filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1));
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: #2c2c2c;
   }
 }
@@ -63,7 +63,7 @@
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     border-top-color: #2c2c2c;
   }
 }
@@ -73,12 +73,12 @@
   width: 1.5rem;
   object-fit: contain;
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     height: 1.75rem;
     width: 1.75rem;
   }
 
-  @media (min-width: 1536px) {
+  @media (--2xl) {
     height: 2rem;
     width: 2rem;
   }

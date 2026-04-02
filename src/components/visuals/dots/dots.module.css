@@ -16,7 +16,7 @@
   );
   background-size: 16px 16px;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-image: radial-gradient(
       rgba(255, 255, 255, 0.1) 1px,
       transparent 1px

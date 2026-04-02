@@ -1,11 +1,11 @@
 .root {
   height: 300px;
 
-  @media (min-width: 768px) {
+  @media (--sm) {
     height: 400px;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     height: 500px;
   }
 }

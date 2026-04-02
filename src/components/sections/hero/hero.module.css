@@ -2,7 +2,7 @@
   background-color: var(--whitebg);
   width: 100vw;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: #1a1a1a;
   }
 }
@@ -18,26 +18,26 @@
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     height: 450px;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     height: 550px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     height: 600px;
   }
 
-  @media (min-width: 1536px) {
+  @media (--2xl) {
     border-bottom-left-radius: 70px;
     border-bottom-right-radius: 70px;
   }
 
-  @media (min-width: 1792px) {
+  @media (--3xl) {
     height: 700px;
   }
 }
@@ -52,7 +52,7 @@
   gap: 1.5rem;
   padding-top: 2.5rem;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     gap: 2rem;
     padding-top: 4rem;
   }
@@ -69,7 +69,7 @@
   justify-content: center;
   gap: 1rem;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     width: 22rem;
   }
 }
@@ -84,21 +84,21 @@
   height: 8rem;
   width: 8rem;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     height: 9rem;
     width: 9rem;
   }
-  @media (min-width: 1024px) {
+  @media (--lg) {
     height: 10rem;
     width: 10rem;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     height: 11rem;
     width: 11rem;
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     border: none;
     background-image: linear-gradient(to top right, #1a1a1a, #2d2d2d);
   }
@@ -142,21 +142,21 @@
   font-size: 1.5rem;
   font-weight: 600;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     font-size: 1.875rem;
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     font-size: 2.25rem;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     width: 66.666667%;
     font-size: 3rem;
   }
@@ -167,10 +167,10 @@
   justify-content: center;
   gap: 1rem;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     gap: 1.5rem;
   }
-  @media (min-width: 1280px) {
+  @media (--xl) {
     gap: 2rem;
   }
 }

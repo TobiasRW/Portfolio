@@ -11,12 +11,12 @@
   transition-property: all;
   transition-duration: 300ms;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
 
-  @media (min-width: 1280px) {
+  @media (--xl) {
     padding-left: 4rem;
     padding-right: 4rem;
   }
@@ -24,7 +24,7 @@
   &.scrolled {
     background-color: var(--background);
 
-    @media (prefers-color-scheme: dark) {
+    @media (--dark) {
       color: #ffffff;
     }
   }
@@ -32,7 +32,7 @@
   &.top {
     background-color: transparent;
 
-    @media (prefers-color-scheme: dark) {
+    @media (--dark) {
       color: #ffffff;
     }
   }
@@ -63,7 +63,7 @@
   align-items: center;
   gap: 1rem;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     gap: 1.5rem;
   }
 }
@@ -71,11 +71,11 @@
 .email {
   font-size: 0.75rem;
 
-  @media (min-width: 768px) {
+  @media (--md) {
     font-size: 0.875rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     font-size: 1rem;
   }
 }
@@ -87,7 +87,7 @@
   justify-content: center;
   gap: 0.5rem;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     font-size: 1.125rem;
   }
 }
@@ -110,14 +110,14 @@
 .cvWrapper {
   display: none;
 
-  @media (min-width: 460px) {
+  @media (--sm) {
     display: flex;
   }
 }
 
 .cv {
   display: none;
-  @media (min-width: 460px) {
+  @media (--xs) {
     display: flex;
     font-family: var(--font-heading);
     color: var(--foreground);
@@ -130,13 +130,13 @@
     transition-duration: 300ms;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 1rem;
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     color: var(--background);
   }
 }
@@ -148,7 +148,7 @@
   gap: 0.25rem;
   cursor: pointer;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     display: none;
   }
 }
@@ -207,7 +207,7 @@
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 
-  @media (prefers-color-scheme: dark) {
+  @media (--dark) {
     background-color: var(--background);
   }
 
@@ -215,11 +215,11 @@
     transform: translateX(0);
   }
 
-  @media (min-width: 768px) {
+  @media (--md) {
     width: 45%;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     transform: translateX(0);
     position: static;
     height: auto;
@@ -246,13 +246,13 @@
   font-size: 1.5rem;
   font-weight: 500;
 
-  @media (min-width: 640px) {
+  @media (--sm) {
     left: 5rem;
     gap: 3rem;
     font-size: 1.875rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     position: static;
     width: auto;
     flex-direction: row;
@@ -268,7 +268,7 @@
   gap: 0.5rem;
 
   &:hover .arrow {
-    @media (min-width: 1024px) {
+    @media (--lg) {
       transform: translate(2px, -2px) scale(1.1);
     }
   }
@@ -282,7 +282,7 @@
   height: 1.75rem;
   width: 1.75rem;
 
-  @media (min-width: 1024px) {
+  @media (--lg) {
     margin-top: 0.25rem;
     height: 1rem;
     width: 1rem;
