@@ -17,7 +17,7 @@ export function Footer() {
           <a href="mailto:tobiasrw98@gmail.com">Email</a>
         </div>
         <div>
-          <p>Tobias Wolmar</p>
+          <p className={styles.name}>Tobias Wolmar</p>
         </div>
       </div>
     </footer>

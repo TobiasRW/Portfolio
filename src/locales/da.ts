@@ -8,6 +8,7 @@ export default {
     hero: {
       title: 'Frontend Engineer',
       location: 'Aarhus',
+      workplace: '@ Whiteaway Group',
       button: {
         projects: 'Projekter',
         about: 'Om Mig',
@@ -60,13 +61,13 @@ export default {
       text: {
         intro: 'Hejsa 👋🏻',
         paragraph1:
-          'Jeg hedder Tobias og er en 27-årig nyuddannet webudvikler med en passion for både frontend- og full stack-udvikling. Jeg er sulten efter at udvikle mine færdigheder yderligere i en professionel sammenhæng.',
+          'Jeg hedder Tobias og er uddannet webudvikler med en passion for både frontend- og fullstack-udvikling.',
         paragraph2:
           'Jeg elsker at fordybe mig i ting – uanset om det er en ny fantasyverden, træning i fitnesscenteret eller et spændende kodeprojekt! Jeg har altid været en problemløser af natur, lige fra matematikopgaver i folkeskolen til i dag, hvor jeg finder løsninger som webudvikler.',
         paragraph3:
           'Som frontendudvikler sætter jeg pris på detaljen – uanset om det handler om interaktivitet, design eller performance. Jeg er altid nysgerrig efter at lære noget nyt og kaster mig gerne over nye teknologier og trends.',
         paragraph4:
-          'Jeg har for nylig afsluttet en praktikperiode som frontendudvikler hos IMPACT i forbindelse med mit bachelorprojekt, hvor jeg har opnået værdifuld erhvervserfaring fra et professionelt arbejdsmiljø. Dette har kun styrket min motivation for at fortsætte min karriere inden for webudvikling, og jeg søger derfor nye muligheder for at vokse og bidrage med mine færdigheder i en fuldtidsstilling.',
+          'Hvis I er interesserede i at høre mere om mig eller har spørgsmål, er I meget velkomne til at kontakte mig.',
       },
     },
   },

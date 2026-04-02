@@ -3,6 +3,7 @@ import Image from 'next/image';
 import {
   ArrowDownIcon,
   MapPinSimpleIcon,
+  CodeIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import { useScopedI18n } from '@/locales/client';
 import { Dots } from '@/components/visuals';
@@ -41,7 +42,11 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 className={styles.title}>{scopedT('title')}</h1>
+          <div className={styles['title-container']}>
+            <h1 className={styles.title}>{scopedT('title')}</h1>
+
+            <p className={styles.workplace}>{scopedT('workplace')}</p>
+          </div>
 
           <div className={styles.buttons}>
             <Button
