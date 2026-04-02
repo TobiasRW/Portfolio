@@ -1,0 +1,11 @@
+.root {
+  height: 300px;
+
+  @media (--sm) {
+    height: 400px;
+  }
+
+  @media (--lg) {
+    height: 500px;
+  }
+}

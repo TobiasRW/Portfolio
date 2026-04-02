@@ -1,7 +1,8 @@
-import ProjectCard from "@/components/project-card";
-import { projects } from "@/data/project-data";
-import { getScopedI18n } from "@/locales/server";
-import { setStaticParamsLocale } from "next-international/server";
+import { projects } from '@/data/project-data';
+import { getScopedI18n } from '@/locales/server';
+import { setStaticParamsLocale } from 'next-international/server';
+import styles from '../page.module.css';
+import { ProjectCard } from '@/components/project';
 
 export default async function Page({
   params,
@@ -10,14 +11,12 @@ export default async function Page({
 }) {
   const { locale } = await params;
   setStaticParamsLocale(locale);
-  const scopedT = await getScopedI18n("frontPage.projects");
+  const scopedT = await getScopedI18n('frontPage.projects');
   return (
     <>
-      <div className="pt-20 md:mx-auto md:w-10/12 lg:w-11/12">
-        <h2 className="font-heading pb-10 text-center text-2xl font-semibold sm:text-3xl md:text-4xl lg:pb-20 xl:pt-20 xl:text-5xl">
-          {scopedT("titleAll")}
-        </h2>
-        <div className="3xl:grid-cols-4 mx-auto grid max-w-[1920px] gap-8 md:grid-cols-3 lg:gap-y-20 xl:gap-y-14">
+      <div className={styles.projects}>
+        <h2 className={styles['projects-title']}>{scopedT('titleAll')}</h2>
+        <div className={styles['projects-grid']}>
           {projects.map((proj, index) => (
             <ProjectCard
               key={index}

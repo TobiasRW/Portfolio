@@ -1,10 +1,13 @@
-import ProjectBanner from "@/components/project-banner";
-import ProjectDescription from "@/components/project-description";
-import Accordion from "@/components/accordion-tech";
-import Slider from "@/components/slider";
-import Dots from "@/components/dots";
-import { getScopedI18n } from "@/locales/server";
-import { setStaticParamsLocale } from "next-international/server";
+import {
+  ProjectBanner,
+  ProjectDescription,
+  ProjectImageSlider,
+} from '@/components/project';
+import { Accordion } from '@/components/ui';
+import { Dots } from '@/components/visuals';
+import { getScopedI18n } from '@/locales/server';
+import { setStaticParamsLocale } from 'next-international/server';
+import styles from '../page.module.css';
 
 export default async function Page({
   params,
@@ -13,46 +16,46 @@ export default async function Page({
 }) {
   const { locale } = await params;
   setStaticParamsLocale(locale);
-  const scopedT = await getScopedI18n("projectLiveScores");
+  const scopedT = await getScopedI18n('projectLiveScores');
   const accordionItems = [
     {
-      content: scopedT("accordion.items.item1.content"),
-      iconLabel: "React",
-      website: "https://react.dev/",
+      content: scopedT('accordion.items.item1.content'),
+      iconLabel: 'React',
+      website: 'https://react.dev/',
     },
     {
-      content: scopedT("accordion.items.item2.content"),
-      iconLabel: "Next.js",
-      website: "https://nextjs.org/docs",
+      content: scopedT('accordion.items.item2.content'),
+      iconLabel: 'Next.js',
+      website: 'https://nextjs.org/docs',
     },
     {
-      content: scopedT("accordion.items.item3.content"),
-      iconLabel: "Tailwind CSS",
-      website: "https://tailwindcss.com/",
+      content: scopedT('accordion.items.item3.content'),
+      iconLabel: 'Tailwind CSS',
+      website: 'https://tailwindcss.com/',
     },
     {
-      content: scopedT("accordion.items.item4.content"),
-      iconLabel: "TypeScript",
-      website: "https://www.typescriptlang.org/",
+      content: scopedT('accordion.items.item4.content'),
+      iconLabel: 'TypeScript',
+      website: 'https://www.typescriptlang.org/',
     },
     {
-      content: scopedT("accordion.items.item5.content"),
-      iconLabel: "API Sports",
-      website: "https://www.api-football.com/documentation-v3",
+      content: scopedT('accordion.items.item5.content'),
+      iconLabel: 'API Sports',
+      website: 'https://www.api-football.com/documentation-v3',
     },
     {
-      content: scopedT("accordion.items.item6.content"),
-      iconLabel: "Football Data API",
-      website: "https://www.football-data.org/documentation/quickstart",
+      content: scopedT('accordion.items.item6.content'),
+      iconLabel: 'Football Data API',
+      website: 'https://www.football-data.org/documentation/quickstart',
     },
   ];
   return (
     <>
-      <div className="bg-whitebg w-screen dark:bg-[#1A1A1A]">
-        <div className="bg-background 3xl:h-[750px] relative flex h-[420px] w-screen items-center justify-center rounded-b-[40px] sm:h-[450px] lg:h-[550px] lg:rounded-b-[50px] xl:h-[600px] 2xl:h-[650px] 2xl:rounded-b-[70px]">
+      <div className={styles.root}>
+        <div className={styles.hero}>
           <Dots />
           <ProjectBanner
-            variant="phone2"
+            variant="phone"
             imageSrc="/images/livescore-banner2.webp"
             title="Live Scores"
             website="https://livescore.tobiaswolmar.dk/"
@@ -62,46 +65,46 @@ export default async function Page({
         </div>
       </div>
       <ProjectDescription
-        title={scopedT("about.heading")}
+        title={scopedT('about.heading')}
         badges={[
-          scopedT("about.badges.badge1"),
-          scopedT("about.badges.badge2"),
+          scopedT('about.badges.badge1'),
+          scopedT('about.badges.badge2'),
         ]}
         text={[
           {
-            content: scopedT("about.text.paragraph1"),
-            highlightWords: ["Next.js", "TypeScript"],
+            content: scopedT('about.text.paragraph1'),
+            highlightWords: ['Next.js', 'TypeScript'],
           },
           {
-            content: scopedT("about.text.paragraph2"),
+            content: scopedT('about.text.paragraph2'),
           },
           {
-            content: scopedT("about.text.paragraph3"),
+            content: scopedT('about.text.paragraph3'),
           },
         ]}
         techStack={[
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "API Sports",
-          "Football Data API",
+          'React',
+          'Next.js',
+          'TypeScript',
+          'Tailwind CSS',
+          'API Sports',
+          'Football Data API',
         ]}
       />
-      <div className="mx-auto max-w-[1920px] xl:grid xl:w-10/12 xl:grid-cols-[1.5fr_1fr] xl:gap-14 xl:py-40">
-        <Slider
+      <div className={styles.content}>
+        <ProjectImageSlider
           variant="background"
           bgColor="#26437E"
           images={[
-            "/images/livescore-pic1.png",
-            "/images/livescore-pic2.png",
-            "/images/livescore-pic3.png",
-            "/images/livescore-pic4.png",
+            '/images/livescore-pic1.png',
+            '/images/livescore-pic2.png',
+            '/images/livescore-pic3.png',
+            '/images/livescore-pic4.png',
           ]}
         />
         <Accordion
           items={accordionItems}
-          title={scopedT("accordion.heading")}
+          title={scopedT('accordion.heading')}
         />
       </div>
     </>

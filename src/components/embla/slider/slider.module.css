@@ -1,0 +1,58 @@
+.root {
+  position: relative;
+}
+
+.prev {
+  position: absolute;
+  top: 50%;
+  left: -2rem;
+  translate: 0 -50%;
+
+  @media (--md) {
+    left: -3rem;
+  }
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  translate: 0 -50%;
+
+  @media (--md) {
+    right: -3rem;
+  }
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+}
+
+.item {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  padding-inline: 0.5rem;
+}
+
+.icon {
+  color: var(--foreground);
+  height: 1rem;
+  width: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}

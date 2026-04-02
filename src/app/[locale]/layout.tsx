@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Navigation from "@/components/navigation";
-import ToTop from "@/components/to-top";
-import Footer from "@/components/footer";
-import { I18nProviderClient } from "@/locales/client";
-import { getStaticParams } from "@/locales/server";
+import type { Metadata } from 'next';
+import './globals.css';
+
+import { I18nProviderClient } from '@/locales/client';
+import { getStaticParams } from '@/locales/server';
+import { Footer, Nav } from '@/components/layout';
+import { ToTop } from '@/components/ui';
 
 export const metadata: Metadata = {
-  title: "Tobias Wolmar",
-  description: "Portfolio af Tobias Wolmar",
+  title: 'Tobias Wolmar',
+  description: 'Portfolio af Tobias Wolmar',
 };
 
 export function generateStaticParams() {
@@ -25,9 +25,9 @@ export default async function RootLayout({
   const { locale } = await params;
   return (
     <html lang={locale}>
-      <body className="">
+      <body>
         <I18nProviderClient locale={locale}>
-          <Navigation />
+          <Nav />
           <ToTop />
           {children}
           <Footer />

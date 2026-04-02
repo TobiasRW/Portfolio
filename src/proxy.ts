@@ -1,5 +1,5 @@
-import { createI18nMiddleware } from "next-international/middleware";
-import { NextRequest } from "next/server";
+import { createI18nMiddleware } from 'next-international/middleware';
+import { NextRequest } from 'next/server';
 
 // const I18nMiddleware = createI18nMiddleware({
 //   locales: ["da", "en"],
@@ -7,9 +7,9 @@ import { NextRequest } from "next/server";
 // });
 
 const I18nMiddleware = createI18nMiddleware({
-  locales: ["da", "en"],
-  defaultLocale: "da",
-  urlMappingStrategy: "rewriteDefault",
+  locales: ['da', 'en'],
+  defaultLocale: 'da',
+  urlMappingStrategy: 'rewriteDefault',
 });
 
 export function proxy(request: NextRequest) {
@@ -17,5 +17,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)"],
+  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)'],
 };
