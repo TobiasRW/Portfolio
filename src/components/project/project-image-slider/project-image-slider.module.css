@@ -78,6 +78,10 @@
   }
 }
 
+.image {
+  object-fit: contain;
+}
+
 .icon-hover {
   position: absolute;
   right: 0.5rem;

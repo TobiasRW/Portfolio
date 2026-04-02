@@ -1,5 +1,5 @@
 .root {
-  background-color: var(--color-whitebg);
+  background-color: var(--whitebg);
   width: 100%;
   border-radius: 0 0 40px 40px;
   padding-top: 2.5rem;
@@ -152,16 +152,6 @@
   font-style: italic;
 }
 
-.divider {
-  background-color: var(--color-foreground);
-  height: 1px;
-  border: none;
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-}
-
 .tech-section {
   display: flex;
   flex-direction: column;
@@ -178,7 +168,7 @@
   }
 
   @media (min-width: 1792px) {
-    width: 50%;
+    width: 33.33%;
   }
 }
 

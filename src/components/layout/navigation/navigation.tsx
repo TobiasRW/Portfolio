@@ -112,7 +112,7 @@ export function Nav() {
                   target="_blank"
                   className={styles.social}
                 >
-                  <p>Github</p>
+                  <p className={styles.text}>Github</p>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>
@@ -122,7 +122,7 @@ export function Nav() {
                   target="_blank"
                   className={styles.social}
                 >
-                  <p>LinkedIn</p>
+                  <p className={styles.text}>LinkedIn</p>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>

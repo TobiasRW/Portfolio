@@ -86,8 +86,6 @@ export function ProjectDescription({
             )}
           </div>
 
-          <hr className={styles.divider} />
-
           {/* Icons Section */}
           <div className={styles["tech-section"]}>
             <p className={styles["tech-title"]}>Techstack</p>

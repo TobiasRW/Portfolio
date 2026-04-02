@@ -51,7 +51,7 @@ export default async function Page({
         <div className={styles.hero}>
           <Dots />
           <ProjectBanner
-            variant="phone2"
+            variant="phone"
             imageSrc="/images/fit-app-banner.webp"
             title="Fit App"
             bgColor="#1db954"

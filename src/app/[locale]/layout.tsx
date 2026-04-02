@@ -25,7 +25,7 @@ export default async function RootLayout({
   const { locale } = await params;
   return (
     <html lang={locale}>
-      <body className="">
+      <body>
         <I18nProviderClient locale={locale}>
           <Nav />
           <ToTop />

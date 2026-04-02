@@ -40,7 +40,12 @@ export function ProjectImageSlider({
                 onClick={() => openModal(image)}
                 style={isBackground ? { backgroundColor: bgColor } : {}}
               >
-                <Image src={image} alt="snapshot" fill />
+                <Image
+                  src={image}
+                  alt="snapshot"
+                  fill
+                  className={styles.image}
+                />
                 <div className={styles["icon-hover"]}>
                   <MagnifyingGlassPlusIcon
                     weight="light"

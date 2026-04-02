@@ -274,6 +274,11 @@
   }
 }
 
+.text {
+  font-family: var(--font-heading);
+  
+}
+
 .arrow {
   height: 1.75rem;
   width: 1.75rem;

@@ -56,7 +56,7 @@ export default async function Page({
         <div className={styles.hero}>
           <Dots />
           <ProjectBanner
-            variant="phone2"
+            variant="phone"
             imageSrc="/images/bookspace-banner2.webp"
             title="Book Space"
             website="https://book-space-pd5o.onrender.com/"

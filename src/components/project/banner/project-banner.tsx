@@ -21,9 +21,8 @@ export function ProjectBanner({
   github,
   bgColor = "#2C2C2C",
 }: ProjectBannerProps) {
-  const isPhone = variant === "phone";
   const isPc = variant === "pc";
-  const isPhone2 = variant === "phone2";
+  const isPhone = variant === "phone";
   const isDefault = variant === "default";
 
   return (
@@ -42,9 +41,8 @@ export function ProjectBanner({
             priority={true}
             className={clsx({
               [styles["image-default"]]: isDefault,
-              [styles["image-phone"]]: isPhone,
               [styles["image-pc"]]: isPc,
-              [styles["image-phone2"]]: isPhone2,
+              [styles["image-phone"]]: isPhone,
             })}
           />
           {/* Name and button - Laptop */}

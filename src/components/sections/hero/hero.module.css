@@ -106,11 +106,11 @@
 
 .location {
   display: flex;
+  align-items: center;
 }
 
 .icon {
   color: var(--foreground);
-  margin-top: 0.25rem;
 }
 
 .title {

@@ -8,7 +8,7 @@
 }
 
 .button {
-  color: var(--color-foreground);
+  color: var(--foreground);
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -20,7 +20,7 @@
   border: none;
   padding: 0;
   font-family: var(--font-body);
-  font-weight: 100;
+  font-weight: 200;
 
   &.active {
     font-weight: 500;

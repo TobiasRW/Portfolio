@@ -224,11 +224,11 @@
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   font-size: 0.75rem;
-  color: var(--color-whitebg);
+  color: var(--whitebg);
 
   @media (prefers-color-scheme: dark) {
     background-color: rgb(22 22 22 / 0.8);
-    color: var(--color-whitebg);
+    color: var(--whitebg);
   }
 
   @media (min-width: 768px) {

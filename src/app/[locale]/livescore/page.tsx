@@ -55,7 +55,7 @@ export default async function Page({
         <div className={styles.hero}>
           <Dots />
           <ProjectBanner
-            variant="phone2"
+            variant="phone"
             imageSrc="/images/livescore-banner2.webp"
             title="Live Scores"
             website="https://livescore.tobiaswolmar.dk/"

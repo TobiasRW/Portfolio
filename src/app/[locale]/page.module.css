@@ -1,5 +1,5 @@
 .root {
-  background-color: var(--color-whitebg);
+  background-color: var(--whitebg);
   width: 100vw;
 
   @media (prefers-color-scheme: dark) {
@@ -8,7 +8,7 @@
 }
 
 .hero {
-  background-color: var(--color-background);
+  background-color: var(--background);
   position: relative;
   display: flex;
   align-items: center;
@@ -23,13 +23,17 @@
   }
 
   @media (min-width: 768px) {
-    height: 550px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
   }
 
   @media (min-width: 1024px) {
+    height: 550px;
+  }
+
+  @media (min-width: 1280px) {
     height: 600px;
+
   }
 
   @media (min-width: 1536px) {
@@ -47,7 +51,7 @@
   margin-inline: auto;
   max-width: 1920px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     display: grid;
     width: 83.333%;
     grid-template-columns: 1.5fr 1fr;
@@ -75,7 +79,7 @@
 }
 
 .model-title {
-  font-family: "Pilcrow", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 600;
 
@@ -97,7 +101,7 @@
 }
 
 .scene {
-  background-color: var(--color-whitebg);
+  background-color: var(--whitebg);
   margin-top: 2.5rem;
   overflow: hidden;
   border-radius: 1rem;
@@ -125,7 +129,7 @@
 }
 
 .projects-title {
-  font-family: "Pilcrow", sans-serif;
+  font-family: var(--font-heading);
   padding-bottom: 2.5rem;
   font-size: 1.5rem;
   font-weight: 600;
