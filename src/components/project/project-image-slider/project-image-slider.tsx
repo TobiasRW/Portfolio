@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { MagnifyingGlassPlusIcon } from '@phosphor-icons/react';
 import Image from 'next/image';
 import { SliderVariant } from '@/types/types';
-import { Slider as EmblaSlider } from '@/components/embla';
+import { Slider } from '@/components/embla';
 import clsx from 'clsx';
 import styles from './project-image-slider.module.css';
 
@@ -30,7 +30,7 @@ export function ProjectImageSlider({
     <div className={styles.root}>
       <div className={styles.section}>
         <h2 className={styles.title}>Snapshots</h2>
-        <EmblaSlider>
+        <Slider>
           {images.map((image, index) => (
             <div key={index}>
               <div
@@ -55,7 +55,7 @@ export function ProjectImageSlider({
               </div>
             </div>
           ))}
-        </EmblaSlider>
+        </Slider>
       </div>
 
       {/* Modal */}

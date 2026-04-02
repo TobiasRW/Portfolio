@@ -20,14 +20,19 @@ export function Collapsible({
 
   return (
     <div className={clsx(styles.root, className)}>
-      <div onClick={() => setIsOpen((v) => !v)} className={styles.trigger}>
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((v) => !v)}
+        className={styles.trigger}
+      >
         {trigger}
         <CaretDownIcon
           className={clsx(styles.icon, {
             [styles.open]: isOpen,
           })}
         />
-      </div>
+      </button>
       <div
         className={clsx(styles.content, {
           [styles.closed]: !isOpen,

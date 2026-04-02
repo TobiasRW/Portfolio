@@ -36,6 +36,7 @@ export async function About() {
           <a
             href="https://www.linkedin.com/in/tobias-wolmar-87991224a/"
             target="_blank"
+            rel="noopener noreferrer"
             className={styles.link}
           >
             LinkedIn

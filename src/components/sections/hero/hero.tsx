@@ -3,7 +3,6 @@ import Image from 'next/image';
 import {
   ArrowDownIcon,
   MapPinSimpleIcon,
-  CodeIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import { useScopedI18n } from '@/locales/client';
 import { Dots } from '@/components/visuals';

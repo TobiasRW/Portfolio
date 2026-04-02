@@ -52,10 +52,6 @@ export function Nav() {
     };
   }, []);
 
-  const toggleMenu: React.MouseEventHandler<HTMLDivElement> = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <header
       className={clsx(
@@ -92,7 +88,12 @@ export function Nav() {
           </a>
         </nav>
         <div>
-          <div className={styles.hamburger} onClick={toggleMenu}>
+          <button
+            type="button"
+            aria-expanded={isOpen}
+            className={styles.hamburger}
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <span
               className={clsx(styles.line1, isOpen ? styles.open : undefined)}
             />
@@ -102,7 +103,7 @@ export function Nav() {
             <span
               className={clsx(styles.line3, isOpen ? styles.open : undefined)}
             />
-          </div>
+          </button>
 
           <div className={clsx(styles.menu, isOpen ? styles.open : undefined)}>
             <ul className={styles.list}>
@@ -110,9 +111,10 @@ export function Nav() {
                 <a
                   href={links.github}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.social}
                 >
-                  <p className={styles.text}>Github</p>
+                  <p className={styles.text}>GitHub</p>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>
@@ -120,6 +122,7 @@ export function Nav() {
                 <a
                   href={links.linkedin}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.social}
                 >
                   <p className={styles.text}>LinkedIn</p>

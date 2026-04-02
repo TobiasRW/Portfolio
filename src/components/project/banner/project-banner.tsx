@@ -53,12 +53,13 @@ export function ProjectBanner({
                 <a
                   href={github}
                   target="_blank"
-                  aria-label="Github link"
+                  aria-label="GitHub link"
+                  rel="noopener noreferrer"
                   className={styles['button']}
                 >
                   <Image
                     src="/icons/github.svg"
-                    alt="Github logo"
+                    alt="GitHub logo"
                     width={16}
                     height={16}
                     className={styles['button-icon']}
@@ -69,6 +70,7 @@ export function ProjectBanner({
                 href={website}
                 target="_blank"
                 aria-label="Website link"
+                rel="noopener noreferrer"
                 className={styles['button']}
               >
                 <ArrowUpRightIcon className={styles['button-icon']} />
@@ -84,7 +86,8 @@ export function ProjectBanner({
           {github && (
             <a
               href={github}
-              aria-label="Github link"
+              aria-label="GitHub link"
+              rel="noopener noreferrer"
               target="_blank"
               className={styles['button']}
             >
@@ -101,6 +104,7 @@ export function ProjectBanner({
             href={website}
             aria-label="Website link"
             target="_blank"
+            rel="noopener noreferrer"
             className={styles['button']}
           >
             <ArrowUpRightIcon className={styles['button-icon']} />
