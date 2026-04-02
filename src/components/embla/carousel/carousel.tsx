@@ -11,7 +11,7 @@ interface EmblaCarouselProps {
 }
 
 export function Carousel({ children, speed = 1 }: EmblaCarouselProps) {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef] = useEmblaCarousel({ loop: true, skipSnaps: true }, [
     AutoScroll({
       delay: speed,
       speed,
