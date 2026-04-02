@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Canvas } from "@react-three/fiber";
-import { Model } from "../model/model";
+import { Canvas } from '@react-three/fiber';
+import { Model } from '../model/model';
 import {
   ContactShadows,
   Environment,
   OrbitControls,
   PerspectiveCamera,
-} from "@react-three/drei";
-import styles from "./scene.module.css";
+} from '@react-three/drei';
+import styles from './scene.module.css';
 
 export function Scene() {
   return (

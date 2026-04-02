@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import AutoScroll, {
   type AutoScrollOptionsType,
-} from "embla-carousel-auto-scroll";
-import useEmblaCarousel from "embla-carousel-react";
-import styles from "./carousel.module.css";
+} from 'embla-carousel-auto-scroll';
+import useEmblaCarousel from 'embla-carousel-react';
+import styles from './carousel.module.css';
 
 interface EmblaCarouselProps {
   children?: React.ReactNode;

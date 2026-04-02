@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { ArrowUpRightIcon } from "@phosphor-icons/react";
-import useDarkMode from "@/hooks/useDarkMode";
-import { skillLogos, getLogo } from "@/data/logos";
-import Image from "next/image";
-import { useScopedI18n } from "@/locales/client";
-import { Logo } from "@/types/types";
-import { Carousel as EmblaCarousel } from "@/components/embla";
-import styles from "./skills.module.css";
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import useDarkMode from '@/hooks/useDarkMode';
+import { skillLogos, getLogo } from '@/data/logos';
+import Image from 'next/image';
+import { useScopedI18n } from '@/locales/client';
+import { Logo } from '@/types/types';
+import { Carousel as EmblaCarousel } from '@/components/embla';
+import styles from './skills.module.css';
 
 export function Skills() {
   const isDarkMode = useDarkMode();
@@ -32,7 +32,7 @@ function Carousel({
   skills: Logo[];
   isDarkMode: boolean;
 }) {
-  const scopedT = useScopedI18n("frontPage.skills");
+  const scopedT = useScopedI18n('frontPage.skills');
   return (
     <div className={styles.carousel}>
       <div className={styles.left}></div>
@@ -55,7 +55,7 @@ function Carousel({
                 rel="noopener noreferrer"
                 className={styles.link}
               >
-                {scopedT("link")}
+                {scopedT('link')}
                 <ArrowUpRightIcon className={styles.icon} />
               </a>
             ) : (

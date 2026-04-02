@@ -1,4 +1,4 @@
-import styles from "./badge.module.css";
+import styles from './badge.module.css';
 
 type BadgeProps = {
   title: string;

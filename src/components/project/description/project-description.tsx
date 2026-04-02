@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import highlightText from "@/helpers/highlightText";
-import type { TestUser, DescriptionText } from "@/types/types";
-import { Badge, Icon } from "../../ui";
-import { useScopedI18n } from "@/locales/client";
-import styles from "./project-description.module.css";
+import highlightText from '@/helpers/highlightText';
+import type { TestUser, DescriptionText } from '@/types/types';
+import { Badge, Icon } from '../../ui';
+import { useScopedI18n } from '@/locales/client';
+import styles from './project-description.module.css';
 
 type ProjectDescriptionProps = {
   title: string;
@@ -23,12 +23,12 @@ export function ProjectDescription({
   badges = [],
   testUser,
 }: ProjectDescriptionProps) {
-  const scopedT = useScopedI18n("testUser");
+  const scopedT = useScopedI18n('testUser');
 
   return (
     <div className={styles.root}>
       {/* Project Description Section */}
-      <div className={styles["content-wrapper"]}>
+      <div className={styles['content-wrapper']}>
         <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
           {badges.length > 0 && (
@@ -40,11 +40,11 @@ export function ProjectDescription({
           )}
         </div>
 
-        <div className={styles["main-content"]}>
+        <div className={styles['main-content']}>
           <div>
             {disclaimer && (
               <p className={styles.disclaimer}>
-                <span className={styles["disclaimer-label"]}>Disclaimer:</span>{" "}
+                <span className={styles['disclaimer-label']}>Disclaimer:</span>{' '}
                 {disclaimer}
               </p>
             )}
@@ -56,30 +56,30 @@ export function ProjectDescription({
             ))}
 
             {testUser && (
-              <div className={styles["test-user-section"]}>
-                <p className={styles["test-user-heading"]}>
-                  {scopedT("heading")}
+              <div className={styles['test-user-section']}>
+                <p className={styles['test-user-heading']}>
+                  {scopedT('heading')}
                 </p>
                 {testUser.email && (
-                  <p className={styles["test-user-item"]}>
-                    <span className={styles["test-user-label"]}>
-                      {scopedT("email")}
-                    </span>{" "}
+                  <p className={styles['test-user-item']}>
+                    <span className={styles['test-user-label']}>
+                      {scopedT('email')}
+                    </span>{' '}
                     {testUser.email}
                   </p>
                 )}
                 {testUser.username && (
-                  <p className={styles["test-user-item"]}>
-                    <span className={styles["test-user-label"]}>
-                      {scopedT("user")}
-                    </span>{" "}
+                  <p className={styles['test-user-item']}>
+                    <span className={styles['test-user-label']}>
+                      {scopedT('user')}
+                    </span>{' '}
                     {testUser.username}
                   </p>
                 )}
-                <p className={styles["test-user-item"]}>
-                  <span className={styles["test-user-label"]}>
-                    {scopedT("password")}
-                  </span>{" "}
+                <p className={styles['test-user-item']}>
+                  <span className={styles['test-user-label']}>
+                    {scopedT('password')}
+                  </span>{' '}
                   {testUser.password}
                 </p>
               </div>
@@ -87,9 +87,9 @@ export function ProjectDescription({
           </div>
 
           {/* Icons Section */}
-          <div className={styles["tech-section"]}>
-            <p className={styles["tech-title"]}>Techstack</p>
-            <div className={styles["tech-icons"]}>
+          <div className={styles['tech-section']}>
+            <p className={styles['tech-title']}>Techstack</p>
+            <div className={styles['tech-icons']}>
               {techStack.map((item, index) => {
                 return <Icon key={index} label={item} hasTooltip />;
               })}

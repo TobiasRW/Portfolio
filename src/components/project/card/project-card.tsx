@@ -1,9 +1,9 @@
-"use client";
-import Image from "next/image";
-import { TransitionLink } from "../../utils/transition-link";
-import { ProjectVariant } from "@/types/types";
-import { clsx } from "clsx";
-import styles from "./project-card.module.css";
+'use client';
+import Image from 'next/image';
+import { TransitionLink } from '../../utils/transition-link';
+import { ProjectVariant } from '@/types/types';
+import { clsx } from 'clsx';
+import styles from './project-card.module.css';
 
 type ProjectCardProps = {
   variant?: ProjectVariant;
@@ -17,19 +17,19 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({
-  variant = "default",
+  variant = 'default',
   imageSrc,
   title,
   text,
   link,
-  bgColor = "#2C2C2C",
+  bgColor = '#2C2C2C',
   tags = [],
   className,
 }: ProjectCardProps) {
-  const isPhone = variant === "phone";
-  const isComputer = variant === "computer";
-  const isPhone2 = variant === "phone2";
-  const isDefault = variant === "default";
+  const isPhone = variant === 'phone';
+  const isComputer = variant === 'computer';
+  const isPhone2 = variant === 'phone2';
+  const isDefault = variant === 'default';
 
   return (
     <div
@@ -38,11 +38,11 @@ export function ProjectCard({
     >
       <TransitionLink href={link}>
         <div
-          className={clsx(styles["image-wrapper"], {
-            [styles["image-wrapper-phone"]]: isPhone,
-            [styles["image-wrapper-computer"]]: isComputer,
-            [styles["image-wrapper-phone2"]]: isPhone2,
-            [styles["image-wrapper-default"]]: isDefault,
+          className={clsx(styles['image-wrapper'], {
+            [styles['image-wrapper-phone']]: isPhone,
+            [styles['image-wrapper-computer']]: isComputer,
+            [styles['image-wrapper-phone2']]: isPhone2,
+            [styles['image-wrapper-default']]: isDefault,
           })}
         >
           <Image
@@ -52,7 +52,7 @@ export function ProjectCard({
             className={styles.image}
           />
         </div>
-        <div className={styles["text-overlay"]}>
+        <div className={styles['text-overlay']}>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.description}>{text}</p>
         </div>

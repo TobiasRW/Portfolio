@@ -1,5 +1,5 @@
-import { About, Hero, Projects, Skills } from "@/components/sections";
-import { setStaticParamsLocale } from "next-international/server";
+import { About, Hero, Projects, Skills } from '@/components/sections';
+import { setStaticParamsLocale } from 'next-international/server';
 
 export default async function Home({
   params,

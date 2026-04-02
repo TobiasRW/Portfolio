@@ -1,7 +1,7 @@
-"use client";
-import { useGLTF } from "@react-three/drei";
+'use client';
+import { useGLTF } from '@react-three/drei';
 
-useGLTF.preload("/models/coelm.glb");
+useGLTF.preload('/models/coelm.glb');
 
 // Define model props
 type ModelProps = {
@@ -11,6 +11,6 @@ type ModelProps = {
 } & Record<string, unknown>;
 
 export function Model(props: ModelProps) {
-  const { scene } = useGLTF("/models/coelm.glb");
+  const { scene } = useGLTF('/models/coelm.glb');
   return <primitive object={scene} {...props} />;
 }

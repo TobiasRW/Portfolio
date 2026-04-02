@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import styles from "./navigation.module.css";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { TransitionLink } from "../../utils/transition-link";
-import { ArrowUpRightIcon, ArrowLeftIcon } from "@phosphor-icons/react";
-import { useScopedI18n } from "@/locales/client";
-import { Toggle } from "@/components/ui";
-import clsx from "clsx";
+import styles from './navigation.module.css';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { TransitionLink } from '../../utils/transition-link';
+import { ArrowUpRightIcon, ArrowLeftIcon } from '@phosphor-icons/react';
+import { useScopedI18n } from '@/locales/client';
+import { Toggle } from '@/components/ui';
+import clsx from 'clsx';
 
 // stored links
 const links = {
-  github: "https://github.com/TobiasRW",
-  linkedin: "https://www.linkedin.com/in/tobias-wolmar-87991224a/",
+  github: 'https://github.com/TobiasRW',
+  linkedin: 'https://www.linkedin.com/in/tobias-wolmar-87991224a/',
 };
 
 // Navigation component
@@ -21,7 +21,7 @@ export function Nav() {
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const scopedT = useScopedI18n("navigation");
+  const scopedT = useScopedI18n('navigation');
 
   const pathname = usePathname();
 
@@ -44,11 +44,11 @@ export function Nav() {
     };
 
     // Add scroll event listener
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Cleanup function to remove the event listener
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -66,14 +66,14 @@ export function Nav() {
     >
       <div className={styles.container}>
         <nav className={styles.nav}>
-          {pathname === "/" || pathname === "/da" || pathname === "/en" ? (
+          {pathname === '/' || pathname === '/da' || pathname === '/en' ? (
             <a href="mailto:tobiasrw98@gmail.com" className={styles.email}>
               tobiasrw98@gmail.com
             </a>
           ) : (
-            <TransitionLink href="/" className={styles["return-link"]}>
-              <ArrowLeftIcon size={18} className={styles["return-icon"]} />
-              {scopedT("back")}
+            <TransitionLink href="/" className={styles['return-link']}>
+              <ArrowLeftIcon size={18} className={styles['return-icon']} />
+              {scopedT('back')}
             </TransitionLink>
           )}
           <div className={styles.controls}>
@@ -81,9 +81,9 @@ export function Nav() {
           </div>
           <a
             href={
-              pathname === "/" || pathname === "/da"
-                ? "/pdfs/cv-danish.pdf"
-                : "/pdfs/cv-english.pdf"
+              pathname === '/' || pathname === '/da'
+                ? '/pdfs/cv-danish.pdf'
+                : '/pdfs/cv-english.pdf'
             }
             download
             className={styles.cv}

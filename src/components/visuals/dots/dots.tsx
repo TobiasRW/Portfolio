@@ -1,4 +1,4 @@
-import styles from "./dots.module.css";
+import styles from './dots.module.css';
 
 export function Dots() {
   return (

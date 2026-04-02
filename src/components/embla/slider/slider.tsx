@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { Button } from "../../ui";
-import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
-import styles from "./slider.module.css";
+import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { Button } from '../../ui';
+import { ArrowLeftIcon, ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
+import styles from './slider.module.css';
 
 type EmblaSliderProps = {
   children?: React.ReactNode;
@@ -22,7 +22,7 @@ export function Slider({ children }: EmblaSliderProps) {
         className={styles.prev}
       >
         <ArrowLeftIcon className={styles.icon} />
-        <span className={styles["sr-only"]}>Previous slide</span>
+        <span className={styles['sr-only']}>Previous slide</span>
       </Button>
 
       <div className={styles.container} ref={emblaRef}>
@@ -42,7 +42,7 @@ export function Slider({ children }: EmblaSliderProps) {
         className={styles.next}
       >
         <ArrowRightIcon className={styles.icon} />
-        <span className={styles["sr-only"]}>Next slide</span>
+        <span className={styles['sr-only']}>Next slide</span>
       </Button>
     </section>
   );

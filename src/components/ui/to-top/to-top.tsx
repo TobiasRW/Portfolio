@@ -1,8 +1,8 @@
-"use client";
-import { ArrowUpIcon } from "@phosphor-icons/react";
-import clsx from "clsx";
-import { useEffect, useState } from "react";
-import styles from "./to-top.module.css";
+'use client';
+import { ArrowUpIcon } from '@phosphor-icons/react';
+import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+import styles from './to-top.module.css';
 
 export function ToTop() {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -19,16 +19,16 @@ export function ToTop() {
     };
 
     // Add scroll event listener
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Cleanup function to remove the event listener
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

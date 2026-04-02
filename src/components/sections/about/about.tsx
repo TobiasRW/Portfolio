@@ -1,26 +1,26 @@
-import { getScopedI18n } from "@/locales/server";
-import styles from "./about.module.css";
+import { getScopedI18n } from '@/locales/server';
+import styles from './about.module.css';
 
 export async function About() {
-  const scopedT = await getScopedI18n("frontPage.about");
+  const scopedT = await getScopedI18n('frontPage.about');
   return (
     <section id="about" className={styles.root}>
       <div className={styles.content}>
-        <h2 className={styles.title}>{scopedT("title")}</h2>
+        <h2 className={styles.title}>{scopedT('title')}</h2>
         <p className={styles.paragraph}>
-          {scopedT("text.intro")}
+          {scopedT('text.intro')}
           <br />
           <br />
-          {scopedT("text.paragraph1")}
+          {scopedT('text.paragraph1')}
           <br />
           <br />
-          {scopedT("text.paragraph2")}
+          {scopedT('text.paragraph2')}
           <br />
           <br />
-          {scopedT("text.paragraph3")}
+          {scopedT('text.paragraph3')}
           <br />
           <br />
-          {scopedT("text.paragraph4")}
+          {scopedT('text.paragraph4')}
         </p>
         <div className={styles.links}>
           <a

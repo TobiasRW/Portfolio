@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { getLogoByLabel } from "@/data/logos";
-import useDarkMode from "@/hooks/useDarkMode";
-import Image from "next/image";
-import styles from "./icon.module.css";
+import { getLogoByLabel } from '@/data/logos';
+import useDarkMode from '@/hooks/useDarkMode';
+import Image from 'next/image';
+import styles from './icon.module.css';
 
 type Props = {
   label: string;

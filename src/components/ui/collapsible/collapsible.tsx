@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import styles from "./collapsible.module.css";
-import { CaretDownIcon } from "@phosphor-icons/react";
-import clsx from "clsx";
-import { useState } from "react";
+import styles from './collapsible.module.css';
+import { CaretDownIcon } from '@phosphor-icons/react';
+import clsx from 'clsx';
+import { useState } from 'react';
 
 type CollapsibleProps = {
   trigger: string;
@@ -34,7 +34,7 @@ export function Collapsible({
           [styles.open]: isOpen,
         })}
       >
-        <div className={styles["content-inner"]}>{children}</div>
+        <div className={styles['content-inner']}>{children}</div>
       </div>
     </div>
   );

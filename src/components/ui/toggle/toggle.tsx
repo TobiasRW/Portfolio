@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import styles from "./toggle.module.css";
-import { useCurrentLocale, useChangeLocale } from "@/locales/client";
-import clsx from "clsx";
+import styles from './toggle.module.css';
+import { useCurrentLocale, useChangeLocale } from '@/locales/client';
+import clsx from 'clsx';
 
 export function Toggle() {
   const locale = useCurrentLocale(); // Get current locale
@@ -11,14 +11,14 @@ export function Toggle() {
   return (
     <div className={styles.root}>
       <button
-        onClick={() => changeLocale("da")}
-        className={clsx(styles.button, { [styles.active]: locale === "da" })}
+        onClick={() => changeLocale('da')}
+        className={clsx(styles.button, { [styles.active]: locale === 'da' })}
       >
         DA
       </button>
       <button
-        onClick={() => changeLocale("en")}
-        className={clsx(styles.button, { [styles.active]: locale === "en" })}
+        onClick={() => changeLocale('en')}
+        className={clsx(styles.button, { [styles.active]: locale === 'en' })}
       >
         EN
       </button>

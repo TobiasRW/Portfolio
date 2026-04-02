@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
-import Image from "next/image";
-import { getLogoByLabel } from "@/data/logos";
-import useDarkMode from "@/hooks/useDarkMode";
-import { AccordionEntry } from "@/types/types";
-import { Collapsible } from "../collapsible/collapsible";
-import styles from "./accordion.module.css";
+import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
+import Image from 'next/image';
+import { getLogoByLabel } from '@/data/logos';
+import useDarkMode from '@/hooks/useDarkMode';
+import { AccordionEntry } from '@/types/types';
+import { Collapsible } from '../collapsible/collapsible';
+import styles from './accordion.module.css';
 
 type AccordionTechProps = {
   title: string;

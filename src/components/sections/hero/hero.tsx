@@ -1,22 +1,22 @@
-"use client";
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
 import {
   ArrowDownIcon,
   MapPinSimpleIcon,
-} from "@phosphor-icons/react/dist/ssr";
-import { useScopedI18n } from "@/locales/client";
-import { Dots } from "@/components/visuals";
-import { Button } from "@/components/ui";
-import styles from "./hero.module.css";
+} from '@phosphor-icons/react/dist/ssr';
+import { useScopedI18n } from '@/locales/client';
+import { Dots } from '@/components/visuals';
+import { Button } from '@/components/ui';
+import styles from './hero.module.css';
 
 export function Hero() {
-  const scopedT = useScopedI18n("frontPage.hero");
+  const scopedT = useScopedI18n('frontPage.hero');
 
   // Utility function to scroll to a given element ID
   const scrollToSection = (id: string) => {
     const target = document.getElementById(id);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -37,25 +37,25 @@ export function Hero() {
 
             <div className={styles.location}>
               <MapPinSimpleIcon weight="fill" className={styles.icon} />
-              <p>{scopedT("location")}</p>
+              <p>{scopedT('location')}</p>
             </div>
           </div>
 
-          <h1 className={styles.title}>{scopedT("title")}</h1>
+          <h1 className={styles.title}>{scopedT('title')}</h1>
 
           <div className={styles.buttons}>
             <Button
               className={styles.button}
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection('projects')}
             >
-              {scopedT("button.projects")}
+              {scopedT('button.projects')}
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>
             <Button
               className={styles.button}
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection('about')}
             >
-              {scopedT("button.about")}
+              {scopedT('button.about')}
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>
           </div>
