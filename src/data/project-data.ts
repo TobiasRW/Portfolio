@@ -11,7 +11,7 @@ export const projects: Project[] = [
     tags: ['Frontend', 'Backend', 'LLM'],
   },
   {
-    variant: 'phone2',
+    variant: 'phone',
     imageSrc: '/images/fit-app-banner.webp',
     titleKey: 'project.fitApp.name',
     textKey: 'project.fitApp.brief',
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     tags: ['Frontend'],
   },
   {
-    variant: 'phone2',
+    variant: 'phone',
     imageSrc: '/images/bookspace-banner2.webp',
     titleKey: 'project.bookSpace.name',
     textKey: 'project.bookSpace.brief',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     tags: ['Frontend', 'Backend', 'LLM'],
   },
   {
-    variant: 'phone2',
+    variant: 'phone',
     imageSrc: '/images/livescore-banner2.webp',
     titleKey: 'project.liveScores.name',
     textKey: 'project.liveScores.brief',

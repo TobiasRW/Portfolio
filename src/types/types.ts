@@ -1,8 +1,8 @@
 // Define the valid project variants
-export type ProjectVariant = 'default' | 'phone' | 'computer' | 'phone2';
+export type ProjectVariant = 'default' | 'phone' | 'computer';
 
 // Define valid project banner variants
-export type ProjectBannerVariant = 'default' | 'phone' | 'pc' | 'phone2';
+export type ProjectBannerVariant = 'default' | 'phone' | 'pc';
 
 // Define valid project title keys
 export type ProjectTitles =

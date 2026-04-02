@@ -28,7 +28,6 @@ export function ProjectCard({
 }: ProjectCardProps) {
   const isPhone = variant === 'phone';
   const isComputer = variant === 'computer';
-  const isPhone2 = variant === 'phone2';
   const isDefault = variant === 'default';
 
   return (
@@ -41,7 +40,6 @@ export function ProjectCard({
           className={clsx(styles['image-wrapper'], {
             [styles['image-wrapper-phone']]: isPhone,
             [styles['image-wrapper-computer']]: isComputer,
-            [styles['image-wrapper-phone2']]: isPhone2,
             [styles['image-wrapper-default']]: isDefault,
           })}
         >
