@@ -12,6 +12,8 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   border: none;
+  width: 3rem;
+  height: 3rem;
 
   &.hidden {
     transform: translateY(1.25rem);
