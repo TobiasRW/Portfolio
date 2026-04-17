@@ -5,8 +5,7 @@ import {
   MapPinSimpleIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import { useScopedI18n } from '@/locales/client';
-import { Dots } from '@/components/visuals';
-import { Button } from '@/components/ui';
+import { Button, DotBackground, Typography } from 'wolmar-ui';
 import styles from './hero.module.css';
 
 export function Hero() {
@@ -23,7 +22,7 @@ export function Hero() {
   return (
     <div className={styles.root}>
       <div className={styles.hero}>
-        <Dots />
+        <DotBackground size="sm" />
         <div className={styles.content}>
           <div className={styles.profile}>
             <div className={styles.image}>
@@ -38,14 +37,18 @@ export function Hero() {
 
             <div className={styles.location}>
               <MapPinSimpleIcon weight="fill" className={styles.icon} />
-              <p>{scopedT('location')}</p>
+              <Typography as="span">{scopedT('location')}</Typography>
             </div>
           </div>
 
           <div className={styles['title-container']}>
-            <h1 className={styles.title}>{scopedT('title')}</h1>
+            <Typography variant="h1" weight="600" className={styles.title}>
+              {scopedT('title')}
+            </Typography>
 
-            <p className={styles.workplace}>{scopedT('workplace')}</p>
+            <Typography className={styles.workplace}>
+              {scopedT('workplace')}
+            </Typography>
           </div>
 
           <div className={styles.buttons}>
@@ -53,14 +56,18 @@ export function Hero() {
               className={styles.button}
               onClick={() => scrollToSection('projects')}
             >
-              {scopedT('button.projects')}
+              <Typography variant="body" as="span" color="dark">
+                {scopedT('button.projects')}
+              </Typography>
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>
             <Button
               className={styles.button}
               onClick={() => scrollToSection('about')}
             >
-              {scopedT('button.about')}
+              <Typography variant="body" as="span" color="dark">
+                {scopedT('button.about')}
+              </Typography>
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>
           </div>

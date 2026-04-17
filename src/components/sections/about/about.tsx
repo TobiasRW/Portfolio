@@ -1,27 +1,22 @@
 import { getScopedI18n } from '@/locales/server';
 import styles from './about.module.css';
+import { Typography } from 'wolmar-ui';
 
 export async function About() {
   const scopedT = await getScopedI18n('frontPage.about');
   return (
     <section id="about" className={styles.root}>
       <div className={styles.content}>
-        <h2 className={styles.title}>{scopedT('title')}</h2>
-        <p className={styles.paragraph}>
-          {scopedT('text.intro')}
-          <br />
-          <br />
-          {scopedT('text.paragraph1')}
-          <br />
-          <br />
-          {scopedT('text.paragraph2')}
-          <br />
-          <br />
-          {scopedT('text.paragraph3')}
-          <br />
-          <br />
-          {scopedT('text.paragraph4')}
-        </p>
+        <Typography variant="h2" as="h3" weight="600" className={styles.title}>
+          {scopedT('title')}
+        </Typography>
+        <div className={styles.paragraphs}>
+          <Typography weight="300">{scopedT('text.intro')}</Typography>
+          <Typography weight="300">{scopedT('text.paragraph1')}</Typography>
+          <Typography weight="300">{scopedT('text.paragraph2')}</Typography>
+          <Typography weight="300">{scopedT('text.paragraph3')}</Typography>
+          <Typography weight="300">{scopedT('text.paragraph4')}</Typography>
+        </div>
         <div className={styles.links}>
           <a
             href="mailto:tobiasrw98@gmail.com"

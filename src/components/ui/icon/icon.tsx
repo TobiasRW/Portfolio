@@ -7,21 +7,14 @@ import styles from './icon.module.css';
 
 type Props = {
   label: string;
-  hasTooltip?: boolean;
 };
 
-export function Icon({ label, hasTooltip = false }: Props) {
+export function Icon({ label }: Props) {
   const isDarkMode = useDarkMode();
   const logoData = getLogoByLabel(label, isDarkMode);
 
   return (
     <div className={styles.root}>
-      {hasTooltip && (
-        <div className={styles.tooltip}>
-          {label}
-          <div className={styles.arrow}></div>
-        </div>
-      )}
       {logoData.url ? (
         <a href={logoData.url} target="_blank" rel="noopener noreferrer">
           <Image

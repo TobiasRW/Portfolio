@@ -74,14 +74,8 @@ export default async function Page({
         text={[
           { content: scopedT('about.text.paragraph1') },
           { content: scopedT('about.text.paragraph2') },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['React', 'Router', 'v7', 'MongoDB', 'TypeScript'],
-          },
-          {
-            content: scopedT('about.text.paragraph4'),
-            highlightWords: ['Tailwind', 'CSS', 'Motion'],
-          },
+          { content: scopedT('about.text.paragraph3') },
+          { content: scopedT('about.text.paragraph4') },
         ]}
         techStack={[
           'React',

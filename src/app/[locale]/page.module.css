@@ -77,28 +77,6 @@
   }
 }
 
-.model-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  @media (--sm) {
-    font-size: 1.875rem;
-  }
-
-  @media (--md) {
-    font-size: 2.25rem;
-  }
-
-  @media (--lg) {
-    text-align: start;
-  }
-
-  @media (--xl) {
-    font-size: 3rem;
-  }
-}
-
 .scene {
   background-color: var(--whitebg);
   margin-top: 2.5rem;

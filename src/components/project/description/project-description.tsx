@@ -1,10 +1,10 @@
 'use client';
 
-import highlightText from '@/helpers/highlightText';
 import type { TestUser, DescriptionText } from '@/types/types';
-import { Badge, Icon } from '../../ui';
+import { Icon } from '../../ui';
 import { useScopedI18n } from '@/locales/client';
 import styles from './project-description.module.css';
+import { Badge, Tooltip, Typography } from 'wolmar-ui';
 
 type ProjectDescriptionProps = {
   title: string;
@@ -30,69 +30,77 @@ export function ProjectDescription({
       {/* Project Description Section */}
       <div className={styles['content-wrapper']}>
         <div className={styles.header}>
-          <h3 className={styles.title}>{title}</h3>
+          <Typography variant="h2" weight="600">
+            {title}
+          </Typography>
           {badges.length > 0 && (
             <div className={styles.badges}>
               {badges.map((badge, index) => (
-                <Badge key={index} title={badge} />
+                <Badge key={index} asChild>
+                  <Typography variant="caption">{badge}</Typography>
+                </Badge>
               ))}
             </div>
           )}
         </div>
 
         <div className={styles['main-content']}>
-          <div>
+          <div className={styles['text-section']}>
             {disclaimer && (
-              <p className={styles.disclaimer}>
-                <span className={styles['disclaimer-label']}>Disclaimer:</span>{' '}
+              <Typography weight="300">
+                <Typography as="span" weight="400">
+                  Disclaimer:
+                </Typography>{' '}
                 {disclaimer}
-              </p>
+              </Typography>
             )}
 
             {text.map((text, index) => (
-              <p key={index} className={styles.paragraph}>
-                {highlightText(text.content, text.highlightWords ?? [])}
-              </p>
+              <Typography weight="300" key={index}>
+                {text.content}
+              </Typography>
             ))}
 
             {testUser && (
-              <div className={styles['test-user-section']}>
-                <p className={styles['test-user-heading']}>
-                  {scopedT('heading')}
-                </p>
+              <div>
+                <Typography weight="400">{scopedT('heading')}</Typography>
                 {testUser.email && (
-                  <p className={styles['test-user-item']}>
-                    <span className={styles['test-user-label']}>
+                  <Typography weight="300">
+                    <Typography weight="400" as="span">
                       {scopedT('email')}
-                    </span>{' '}
+                    </Typography>{' '}
                     {testUser.email}
-                  </p>
+                  </Typography>
                 )}
                 {testUser.username && (
-                  <p className={styles['test-user-item']}>
-                    <span className={styles['test-user-label']}>
+                  <Typography weight="300">
+                    <Typography weight="400" as="span">
                       {scopedT('user')}
-                    </span>{' '}
+                    </Typography>{' '}
                     {testUser.username}
-                  </p>
+                  </Typography>
                 )}
-                <p className={styles['test-user-item']}>
-                  <span className={styles['test-user-label']}>
+                <Typography weight="300">
+                  <Typography weight="400" as="span">
                     {scopedT('password')}
-                  </span>{' '}
+                  </Typography>{' '}
                   {testUser.password}
-                </p>
+                </Typography>
               </div>
             )}
           </div>
 
           {/* Icons Section */}
           <div className={styles['tech-section']}>
-            <p className={styles['tech-title']}>Techstack</p>
+            <Typography variant="h4" as="h3">
+              Techstack
+            </Typography>
             <div className={styles['tech-icons']}>
-              {techStack.map((item, index) => {
-                return <Icon key={index} label={item} hasTooltip />;
-              })}
+              {techStack.map((item) => (
+                <Tooltip key={item} content={item}>
+                  <Icon label={item} />
+                </Tooltip>
+              ))}
             </div>
           </div>
         </div>

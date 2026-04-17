@@ -55,22 +55,7 @@
 }
 
 .title {
-  font-family: var(--font-heading);
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  @media (--sm) {
-    font-size: 1.875rem;
-  }
-
-  @media (--md) {
-    font-size: 2.25rem;
-  }
-
-  @media (--xl) {
-    font-size: 3rem;
-  }
 }
 
 .carousel {
@@ -135,28 +120,30 @@
   padding: 1rem;
   transition: all 300ms;
 
-  &:hover {
-    transform: scale(0.95);
-  }
-
-  &:hover .logo {
-    transform: translateY(-0.5rem) scale(0.9);
-    opacity: 0;
-  }
-
-  &:hover .label {
-    bottom: 0.5rem;
-    opacity: 1;
-  }
-
-  &:hover .link,
-  &:hover .badge {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
   @media (--sm) {
     padding: 1.5rem;
+  }
+
+  @media (--lg) {
+    &:hover {
+      transform: scale(0.95);
+    }
+
+    &:hover .logo {
+      transform: translateY(-0.5rem) scale(0.9);
+      opacity: 0;
+    }
+
+    &:hover .label {
+      bottom: 0.5rem;
+      opacity: 1;
+    }
+
+    &:hover .link,
+    &:hover .badge {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   @media (--dark) {
@@ -232,28 +219,10 @@
 
 .link {
   composes: link-root;
-  font-size: 8px;
-
-  @media (--xs) {
-    font-size: 10px;
-  }
-
-  @media (--sm) {
-    font-size: 0.75rem;
-  }
-
-  @media (--lg) {
-    font-size: 0.875rem;
-  }
 }
 
 .badge {
   composes: badge-root;
-  font-size: 0.75rem;
-
-  @media (--lg) {
-    font-size: 0.875rem;
-  }
 }
 
 .icon {

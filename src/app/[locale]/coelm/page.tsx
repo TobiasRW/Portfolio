@@ -9,6 +9,7 @@ import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import { Scene } from '@/components/renders';
 import styles from '../page.module.css';
+import { Typography } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -69,18 +70,9 @@ export default async function Page({
         title={scopedT('about.heading')}
         badges={[scopedT('about.badges.badge1')]}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-            highlightWords: ['React', 'Vite'],
-          },
-          {
-            content: scopedT('about.text.paragraph2'),
-            highlightWords: ['GSAP', 'Motion'],
-          },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['Tailwind', 'CSS'],
-          },
+          { content: scopedT('about.text.paragraph1') },
+          { content: scopedT('about.text.paragraph2') },
+          { content: scopedT('about.text.paragraph3') },
           { content: scopedT('about.text.paragraph4') },
         ]}
         techStack={[
@@ -107,7 +99,9 @@ export default async function Page({
         />
       </div>
       <div className={styles.model}>
-        <h2 className={styles['model-title']}>3D Model</h2>
+        <Typography variant="h2" as="h4" weight="600">
+          3D Model
+        </Typography>
         <div className={styles.scene}>
           <Scene />
         </div>

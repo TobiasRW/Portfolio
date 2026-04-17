@@ -67,13 +67,8 @@ export default async function Page({
           scopedT('about.badges.badge2'),
         ]}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-          },
-          {
-            content: scopedT('about.text.paragraph2'),
-            highlightWords: ['TypeScript', 'Supabase', 'Next.js'],
-          },
+          { content: scopedT('about.text.paragraph1') },
+          { content: scopedT('about.text.paragraph2') },
           { content: scopedT('about.text.paragraph3') },
         ]}
         techStack={[

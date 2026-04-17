@@ -79,15 +79,9 @@ export default async function Page({
         ]}
         disclaimer={scopedT('about.text.disclaimer')}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-            highlightWords: ['React', 'Router', '7', 'TypeScript.'],
-          },
+          { content: scopedT('about.text.paragraph1') },
           { content: scopedT('about.text.paragraph2') },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['MongoDB', "Mistral's", 'LLM', 'API'],
-          },
+          { content: scopedT('about.text.paragraph3') },
         ]}
         techStack={[
           'React',

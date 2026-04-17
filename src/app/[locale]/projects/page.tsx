@@ -2,7 +2,10 @@ import { projects } from '@/data/project-data';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
-import { ProjectCard } from '@/components/project';
+import { ProjectCard } from 'wolmar-ui';
+import Image from 'next/image';
+import { mapProjects } from '@/components/utils/mapped-projects';
+import { TransitionLink } from '@/components/utils/transition-link';
 
 export default async function Page({
   params,
@@ -12,22 +15,38 @@ export default async function Page({
   const { locale } = await params;
   setStaticParamsLocale(locale);
   const scopedT = await getScopedI18n('frontPage.projects');
+
+  const mappedProjects = mapProjects(scopedT);
+
   return (
     <>
       <div className={styles.projects}>
         <h2 className={styles['projects-title']}>{scopedT('titleAll')}</h2>
         <div className={styles['projects-grid']}>
           {projects.map((proj, index) => (
-            <ProjectCard
+            <ProjectCard.Root
               key={index}
+              project={mappedProjects[index]}
               variant={proj.variant}
-              imageSrc={proj.imageSrc}
-              title={scopedT(proj.titleKey)}
-              text={scopedT(proj.textKey)}
-              link={proj.link}
-              bgColor={proj.bgColor}
-              tags={proj.tags}
-            />
+              color={proj.bgColor}
+            >
+              <ProjectCard.Content as={TransitionLink} href={proj.link}>
+                <ProjectCard.Image asChild>
+                  <Image
+                    src={proj.imageSrc}
+                    alt={mappedProjects[index].title}
+                    fill
+                    priority
+                    sizes="(max-width: 460px) 100vw, (max-width: 768px) 50vw, 33vw"
+                  />
+                </ProjectCard.Image>
+                <ProjectCard.TextContent>
+                  <ProjectCard.Title variant="h2" weight="500" />
+                  <ProjectCard.Description />
+                </ProjectCard.TextContent>
+                <ProjectCard.Tags />
+              </ProjectCard.Content>
+            </ProjectCard.Root>
           ))}
         </div>
       </div>

@@ -8,6 +8,7 @@ import { useScopedI18n } from '@/locales/client';
 import { Logo } from '@/types/types';
 import { Carousel as EmblaCarousel } from '@/components/embla';
 import styles from './skills.module.css';
+import { Typography } from 'wolmar-ui';
 
 export function Skills() {
   const isDarkMode = useDarkMode();
@@ -17,7 +18,9 @@ export function Skills() {
     <div className={styles.root}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Skills</h2>
+          <Typography variant="h2" weight="600" className={styles.title}>
+            Skills
+          </Typography>
           <Carousel skills={skills} isDarkMode={isDarkMode} />
         </div>
       </div>
@@ -47,7 +50,7 @@ function Carousel({
               height={64}
               className={styles.logo}
             />
-            <p className={styles.label}>{logo.label}</p>
+            <Typography className={styles.label}>{logo.label}</Typography>
             {logo.url ? (
               <a
                 href={logo.url}
@@ -55,11 +58,27 @@ function Carousel({
                 rel="noopener noreferrer"
                 className={styles.link}
               >
-                {scopedT('link')}
+                <Typography
+                  color="dark"
+                  variant="bodySmall"
+                  as="span"
+                  weight="500"
+                >
+                  {scopedT('link')}
+                </Typography>
                 <ArrowUpRightIcon className={styles.icon} />
               </a>
             ) : (
-              <div className={styles.badge}>{logo.label}</div>
+              <div className={styles.badge}>
+                <Typography
+                  color="dark"
+                  variant="bodySmall"
+                  as="span"
+                  weight="500"
+                >
+                  {logo.label}
+                </Typography>
+              </div>
             )}
           </div>
         ))}

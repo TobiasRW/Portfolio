@@ -40,7 +40,6 @@ export type Project = {
 // Define the structure types for the project description component
 export type DescriptionText = {
   content: string;
-  highlightWords?: string[];
 };
 
 export type TestUser = {
