@@ -2,9 +2,9 @@
 
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Button } from '../../ui';
 import { ArrowLeftIcon, ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 import styles from './slider.module.css';
+import { Button, Typography } from 'wolmar-ui';
 
 type EmblaSliderProps = {
   children?: React.ReactNode;
@@ -16,13 +16,13 @@ export function Slider({ children }: EmblaSliderProps) {
   return (
     <section className={styles.root}>
       <Button
-        variant="slider"
-        size="icon"
+        icon
+        size={{ mobile: 'sm', desktop: 'md' }}
         onClick={() => emblaApi?.scrollPrev()}
         className={styles.prev}
+        aria-label="Go to previous slide"
       >
         <ArrowLeftIcon className={styles.icon} />
-        <span className={styles['sr-only']}>Previous slide</span>
       </Button>
 
       <div className={styles.container} ref={emblaRef}>
@@ -36,13 +36,13 @@ export function Slider({ children }: EmblaSliderProps) {
       </div>
 
       <Button
-        variant="slider"
-        size="icon"
+        icon
+        size={{ mobile: 'sm', desktop: 'md' }}
         onClick={() => emblaApi?.scrollNext()}
         className={styles.next}
+        aria-label="Go to next slide"
       >
         <ArrowRightIcon className={styles.icon} />
-        <span className={styles['sr-only']}>Next slide</span>
       </Button>
     </section>
   );

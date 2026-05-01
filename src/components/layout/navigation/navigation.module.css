@@ -102,56 +102,21 @@
   transform: translateX(-0.25rem);
 }
 
-.controls {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.cvWrapper {
-  display: none;
-
-  @media (--sm) {
-    display: flex;
-  }
-}
-
 .cv {
   display: none;
   @media (--xs) {
     display: flex;
     font-family: var(--font-heading);
-    color: var(--foreground);
-    border-radius: 9999px;
-    background-color: #ffffff;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    font-size: 0.875rem;
-    transition-property: all;
-    transition-duration: 300ms;
-  }
-
-  @media (--lg) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 1rem;
-  }
-
-  @media (--dark) {
-    color: var(--background);
   }
 }
 
 .hamburger {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
+  position: relative;
+  z-index: 60;
 
   @media (--lg) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -268,6 +233,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: fit-content;
 
   &:hover .arrow {
     @media (--lg) {

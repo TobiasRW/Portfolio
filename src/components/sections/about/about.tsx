@@ -1,23 +1,26 @@
 import { getScopedI18n } from '@/locales/server';
 import styles from './about.module.css';
-import { Typography } from 'wolmar-ui';
+import { Flex, Typography } from 'wolmar-ui';
 
 export async function About() {
   const scopedT = await getScopedI18n('frontPage.about');
   return (
     <section id="about" className={styles.root}>
-      <div className={styles.content}>
+      <Flex direction="column" gap="8">
         <Typography variant="h2" as="h3" weight="600" className={styles.title}>
           {scopedT('title')}
         </Typography>
-        <div className={styles.paragraphs}>
+        <Flex direction="column" gap="4">
           <Typography weight="300">{scopedT('text.intro')}</Typography>
           <Typography weight="300">{scopedT('text.paragraph1')}</Typography>
           <Typography weight="300">{scopedT('text.paragraph2')}</Typography>
           <Typography weight="300">{scopedT('text.paragraph3')}</Typography>
           <Typography weight="300">{scopedT('text.paragraph4')}</Typography>
-        </div>
-        <div className={styles.links}>
+        </Flex>
+        <Flex
+          direction={{ mobile: 'column', desktop: 'row' }}
+          gap={{ mobile: '4', desktop: '8' }}
+        >
           <a
             href="mailto:tobiasrw98@gmail.com"
             target="_blank"
@@ -36,8 +39,8 @@ export async function About() {
           >
             LinkedIn
           </a>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
     </section>
   );
 }

@@ -4,7 +4,7 @@ import './globals.css';
 import { I18nProviderClient } from '@/locales/client';
 import { getStaticParams } from '@/locales/server';
 import { Footer, Nav } from '@/components/layout';
-import { ToTop } from '@/components/ui';
+import { ToTop } from '@/components/layout';
 
 export const metadata: Metadata = {
   title: 'Tobias Wolmar',

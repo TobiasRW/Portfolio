@@ -8,23 +8,32 @@ import { useScopedI18n } from '@/locales/client';
 import { Logo } from '@/types/types';
 import { Carousel as EmblaCarousel } from '@/components/embla';
 import styles from './skills.module.css';
-import { Typography } from 'wolmar-ui';
+import { Button, Flex, Typography } from 'wolmar-ui';
 
 export function Skills() {
   const isDarkMode = useDarkMode();
   const skills = skillLogos;
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <div className={styles.container}>
-        <div className={styles.content}>
-          <Typography variant="h2" weight="600" className={styles.title}>
+        <Flex
+          direction="column"
+          gap={{ mobile: '10', tablet: '12', desktop: '14' }}
+          align="center"
+        >
+          <Typography
+            variant={{ mobile: 'h3', tablet: 'h2' }}
+            as="h2"
+            weight="600"
+            className={styles.title}
+          >
             Skills
           </Typography>
           <Carousel skills={skills} isDarkMode={isDarkMode} />
-        </div>
+        </Flex>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -51,35 +60,24 @@ function Carousel({
               className={styles.logo}
             />
             <Typography className={styles.label}>{logo.label}</Typography>
-            {logo.url ? (
-              <a
-                href={logo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
+
+            <Button
+              as="a"
+              href={logo.url ?? '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              <Typography
+                color="dark"
+                variant="bodySmall"
+                as="span"
+                weight="500"
               >
-                <Typography
-                  color="dark"
-                  variant="bodySmall"
-                  as="span"
-                  weight="500"
-                >
-                  {scopedT('link')}
-                </Typography>
-                <ArrowUpRightIcon className={styles.icon} />
-              </a>
-            ) : (
-              <div className={styles.badge}>
-                <Typography
-                  color="dark"
-                  variant="bodySmall"
-                  as="span"
-                  weight="500"
-                >
-                  {logo.label}
-                </Typography>
-              </div>
-            )}
+                {scopedT('link')}
+              </Typography>
+              <ArrowUpRightIcon className={styles.icon} />
+            </Button>
           </div>
         ))}
       </EmblaCarousel>

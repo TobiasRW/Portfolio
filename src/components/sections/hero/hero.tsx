@@ -5,7 +5,7 @@ import {
   MapPinSimpleIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import { useScopedI18n } from '@/locales/client';
-import { Button, DotBackground, Typography } from 'wolmar-ui';
+import { Button, DotBackground, Flex, Typography } from 'wolmar-ui';
 import styles from './hero.module.css';
 
 export function Hero() {
@@ -20,11 +20,25 @@ export function Hero() {
   };
 
   return (
-    <div className={styles.root}>
-      <div className={styles.hero}>
+    <section className={styles.root}>
+      <Flex
+        className={styles.hero}
+        align={{ mobile: 'end', tablet: 'center' }}
+        justify="center"
+      >
         <DotBackground size="sm" />
-        <div className={styles.content}>
-          <div className={styles.profile}>
+        <Flex
+          direction="column"
+          gap={{ mobile: '6', desktop: '8' }}
+          paddingBlock={{ mobile: '5', desktop: '8' }}
+        >
+          <Flex
+            direction="column"
+            gap="4"
+            align="center"
+            justify="center"
+            className={styles.profile}
+          >
             <div className={styles.image}>
               <Image
                 src="/images/portrait.webp"
@@ -35,28 +49,33 @@ export function Hero() {
               />
             </div>
 
-            <div className={styles.location}>
+            <Flex align="center" gap="1">
               <MapPinSimpleIcon weight="fill" className={styles.icon} />
               <Typography as="span">{scopedT('location')}</Typography>
-            </div>
-          </div>
+            </Flex>
+          </Flex>
 
-          <div className={styles['title-container']}>
-            <Typography variant="h1" weight="600" className={styles.title}>
+          <Flex direction="column" gap="2" align="center" justify="center">
+            <Typography
+              variant={{ mobile: 'h3', tablet: 'h2', desktop: 'h1' }}
+              as="h1"
+              weight="600"
+              className={styles.title}
+            >
               {scopedT('title')}
             </Typography>
 
             <Typography className={styles.workplace}>
               {scopedT('workplace')}
             </Typography>
-          </div>
+          </Flex>
 
-          <div className={styles.buttons}>
+          <Flex justify="center" gap={{ mobile: '4', desktop: '6' }}>
             <Button
               className={styles.button}
               onClick={() => scrollToSection('projects')}
             >
-              <Typography variant="body" as="span" color="dark">
+              <Typography variant="body" as="span" color="dark" weight="500">
                 {scopedT('button.projects')}
               </Typography>
               <ArrowDownIcon weight="bold" className={styles.arrow} />
@@ -65,14 +84,14 @@ export function Hero() {
               className={styles.button}
               onClick={() => scrollToSection('about')}
             >
-              <Typography variant="body" as="span" color="dark">
+              <Typography variant="body" as="span" color="dark" weight="500">
                 {scopedT('button.about')}
               </Typography>
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>
-          </div>
-        </div>
-      </div>
-    </div>
+          </Flex>
+        </Flex>
+      </Flex>
+    </section>
   );
 }
