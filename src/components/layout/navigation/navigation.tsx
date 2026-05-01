@@ -53,15 +53,19 @@ export function Nav() {
   }, []);
 
   return (
-    <header
+    <Flex
+      as="header"
+      align="center"
+      justify="between"
+      paddingInline={{ mobile: '4', tablet: '8', desktop: '16' }}
       className={clsx(
         styles.root,
         scrolled ? styles.scrolled : styles.top,
         hidden ? styles.hidden : styles.visible,
       )}
     >
-      <div className={styles.container}>
-        <nav className={styles.nav}>
+      <Flex align="center" justify="between" className={styles.container}>
+        <Flex as="nav" align="center" gap={{ mobile: '4', desktop: '6' }}>
           {pathname === '/' || pathname === '/da' || pathname === '/en' ? (
             <Typography
               as="a"
@@ -98,7 +102,7 @@ export function Nav() {
           >
             CV
           </Button>
-        </nav>
+        </Flex>
         <div>
           <Button
             variant="ghost"
@@ -121,7 +125,12 @@ export function Nav() {
           </Button>
 
           <div className={clsx(styles.menu, isOpen ? styles.open : undefined)}>
-            <ul className={styles.list}>
+            <Flex
+              as="ul"
+              direction={{ mobile: 'column', desktop: 'row' }}
+              gap={{ mobile: '8', desktop: '10' }}
+              className={styles.list}
+            >
               <li>
                 <a
                   href={links.github}
@@ -129,7 +138,7 @@ export function Nav() {
                   rel="noopener noreferrer"
                   className={styles.social}
                 >
-                  <p className={styles.text}>GitHub</p>
+                  <span className={styles.text}>GitHub</span>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>
@@ -140,14 +149,14 @@ export function Nav() {
                   rel="noopener noreferrer"
                   className={styles.social}
                 >
-                  <p className={styles.text}>LinkedIn</p>
+                  <span className={styles.text}>LinkedIn</span>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>
-            </ul>
+            </Flex>
           </div>
         </div>
-      </div>
-    </header>
+      </Flex>
+    </Flex>
   );
 }
