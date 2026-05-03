@@ -1,27 +1,13 @@
 .root {
   background-color: var(--whitebg);
-  width: 100%;
   border-radius: 0 0 40px 40px;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 
   @media (--dark) {
     background-color: #1a1a1a;
   }
 
   @media (--md) {
-    padding-top: 3.5rem;
-    padding-bottom: 6rem;
     border-radius: 0 0 50px 50px;
-  }
-
-  @media (--lg) {
-    padding-bottom: 7rem;
-  }
-
-  @media (--xl) {
-    padding-top: 5rem;
-    padding-bottom: 8rem;
   }
 
   @media (--2xl) {
@@ -35,53 +21,9 @@
   display: flex;
   width: 83.333%;
   max-width: 1920px;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  @media (--xl) {
-    gap: 0.75rem;
-  }
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  @media (--lg) {
-    flex-direction: row;
-    align-items: center;
-    gap: 3.5rem;
-  }
-
-  @media (--2xl) {
-    justify-content: space-between;
-    gap: 5rem;
-  }
-}
-
-.text-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .tech-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   border-radius: 1rem;
 
   @media (--lg) {
@@ -96,10 +38,4 @@
   @media (--3xl) {
     width: 33.33%;
   }
-}
-
-.tech-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
 }

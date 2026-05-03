@@ -4,7 +4,7 @@ import type { TestUser, DescriptionText } from '@/types/types';
 import { Icon } from '../../ui';
 import { useScopedI18n } from '@/locales/client';
 import styles from './project-description.module.css';
-import { Badge, Tooltip, Typography } from 'wolmar-ui';
+import { Badge, Container, Flex, Tooltip, Typography } from 'wolmar-ui';
 
 type ProjectDescriptionProps = {
   title: string;
@@ -26,26 +26,34 @@ export function ProjectDescription({
   const scopedT = useScopedI18n('testUser');
 
   return (
-    <div className={styles.root}>
+    <Container
+      as="section"
+      paddingBlock={{ mobile: '10', tablet: '14', desktop: '16' }}
+      className={styles.root}
+    >
       {/* Project Description Section */}
-      <div className={styles['content-wrapper']}>
-        <div className={styles.header}>
+      <Flex direction="column" gap="6" className={styles['content-wrapper']}>
+        <Flex direction="column" gap="2">
           <Typography variant="h2" weight="600">
             {title}
           </Typography>
           {badges.length > 0 && (
-            <div className={styles.badges}>
+            <Flex wrap="wrap" gap="2">
               {badges.map((badge, index) => (
                 <Badge key={index} asChild>
                   <Typography variant="caption">{badge}</Typography>
                 </Badge>
               ))}
-            </div>
+            </Flex>
           )}
-        </div>
+        </Flex>
 
-        <div className={styles['main-content']}>
-          <div className={styles['text-section']}>
+        <Flex
+          direction={{ mobile: 'column', desktop: 'row' }}
+          gap={{ mobile: '6', desktop: '16' }}
+          align="center"
+        >
+          <Flex direction="column" gap="4">
             {disclaimer && (
               <Typography weight="300">
                 <Typography as="span" weight="400">
@@ -88,23 +96,23 @@ export function ProjectDescription({
                 </Typography>
               </div>
             )}
-          </div>
+          </Flex>
 
           {/* Icons Section */}
-          <div className={styles['tech-section']}>
+          <Flex direction="column" gap="4" className={styles['tech-section']}>
             <Typography variant="h4" as="h3">
               Techstack
             </Typography>
-            <div className={styles['tech-icons']}>
+            <Flex gap="4" wrap="wrap">
               {techStack.map((item) => (
                 <Tooltip key={item} content={item}>
                   <Icon label={item} />
                 </Tooltip>
               ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Container>
   );
 }
