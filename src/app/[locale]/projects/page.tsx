@@ -1,4 +1,3 @@
-import { projects } from '@/data/project-data';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
@@ -23,18 +22,18 @@ export default async function Page({
       <div className={styles.projects}>
         <h2 className={styles['projects-title']}>{scopedT('titleAll')}</h2>
         <div className={styles['projects-grid']}>
-          {projects.map((proj, index) => (
+          {mappedProjects.map((proj, index) => (
             <ProjectCard.Root
               key={index}
-              project={mappedProjects[index]}
+              project={proj}
               variant={proj.variant}
-              color={proj.bgColor}
+              color={proj.color}
             >
-              <ProjectCard.Content as={TransitionLink} href={proj.link}>
+              <ProjectCard.Content as={TransitionLink} href={proj.route!}>
                 <ProjectCard.Image asChild>
                   <Image
-                    src={proj.imageSrc}
-                    alt={mappedProjects[index].title}
+                    src={proj.image}
+                    alt={proj.title}
                     fill
                     priority
                     sizes="(max-width: 460px) 100vw, (max-width: 768px) 50vw, 33vw"

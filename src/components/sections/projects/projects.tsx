@@ -1,6 +1,5 @@
 import { ProjectCard, Button, Typography, Flex } from 'wolmar-ui';
 import { getScopedI18n } from '@/locales/server';
-import { projects } from '../../../data/project-data';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { TransitionLink } from '../../utils/transition-link';
 import styles from './projects.module.css';
@@ -30,22 +29,22 @@ export async function Projects() {
         </Typography>
         <div className={styles.wrapper}>
           <div className={styles.grid}>
-            {projects.slice(0, 4).map((proj, index) => (
+            {mappedProjects.slice(0, 4).map((proj, index) => (
               <ProjectCard.Root
                 key={index}
-                project={mappedProjects[index]}
+                project={proj}
                 variant={proj.variant}
-                color={proj.bgColor}
+                color={proj.color}
               >
                 <ProjectCard.Content
                   as={TransitionLink}
-                  href={proj.link}
+                  href={proj.route!}
                   className={index > 2 ? styles.hide : undefined}
                 >
                   <ProjectCard.Image asChild>
                     <Image
-                      src={proj.imageSrc}
-                      alt={mappedProjects[index].title}
+                      src={proj.image}
+                      alt={proj.title}
                       fill
                       priority
                       sizes="(max-width: 460px) 100vw, (max-width: 768px) 50vw, 33vw"

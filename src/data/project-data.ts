@@ -9,6 +9,7 @@ export const projects: Project[] = [
     link: '/candidate',
     bgColor: '#1E2171',
     tags: ['Frontend', 'Backend', 'LLM'],
+    website: 'https://candidate-dk-staging-phqud.ondigitalocean.app/',
   },
   {
     variant: 'phone',
@@ -18,6 +19,8 @@ export const projects: Project[] = [
     link: '/fit-app',
     bgColor: '#1db954',
     tags: ['Frontend', 'Backend'],
+    website: 'https://fit-app-lilac.vercel.app/',
+    github: 'https://github.com/TobiasRW/fit-app',
   },
   {
     variant: 'default',
@@ -26,6 +29,8 @@ export const projects: Project[] = [
     textKey: 'project.coelm.brief',
     link: '/coelm',
     tags: ['Frontend'],
+    website: 'https://coelm.tobiaswolmar.dk/',
+    github: 'https://github.com/TobiasRW/hovedopgave',
   },
   {
     variant: 'phone',
@@ -35,6 +40,7 @@ export const projects: Project[] = [
     link: '/book-space',
     bgColor: '#b8b8b8',
     tags: ['Frontend', 'Backend'],
+    website: 'https://book-space-pd5o.onrender.com/',
   },
   {
     variant: 'computer',
@@ -44,6 +50,8 @@ export const projects: Project[] = [
     link: '/palette',
     bgColor: '#FC7753',
     tags: ['Frontend', 'Backend', 'LLM'],
+    website: 'https://palette.tobiaswolmar.dk/',
+    github: 'https://github.com/TobiasRW/Color-Palette',
   },
   {
     variant: 'phone',
@@ -53,5 +61,7 @@ export const projects: Project[] = [
     link: '/livescore',
     bgColor: '#26437E',
     tags: ['Frontend', 'API'],
+    website: 'https://livescore.tobiaswolmar.dk/',
+    github: 'https://github.com/TobiasRW/livescore',
   },
 ];

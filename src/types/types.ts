@@ -35,6 +35,8 @@ export type Project = {
   link: string;
   bgColor?: string;
   tags?: string[];
+  website?: string;
+  github?: string;
 };
 
 // Define the structure types for the project description component
