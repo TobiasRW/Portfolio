@@ -31,7 +31,7 @@ export type Project = {
   name: string;
   variant: ProjectVariant;
   imageSrc: string;
-  titleKey: ProjectTitles;
+  title: string;
   textKey: ProjectTexts;
   link: string;
   bgColor?: string;

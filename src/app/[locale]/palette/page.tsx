@@ -8,7 +8,7 @@ import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
-import { getProject } from '@/components/utils/get-project';
+import { getMappedProject } from '@/components/utils/mapped-projects';
 
 export default async function Page({
   params,
@@ -63,7 +63,7 @@ export default async function Page({
           <Dots />
           <ProjectBanner
             variant="computer"
-            project={getProject('palette', scopedT)}
+            project={getMappedProject('palette')}
             color="#FC7753"
           />
         </div>
