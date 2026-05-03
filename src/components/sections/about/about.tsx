@@ -1,11 +1,16 @@
 import { getScopedI18n } from '@/locales/server';
 import styles from './about.module.css';
-import { Flex, Typography } from 'wolmar-ui';
+import { Container, Flex, Typography } from 'wolmar-ui';
 
 export async function About() {
   const scopedT = await getScopedI18n('frontPage.about');
   return (
-    <section id="about" className={styles.root}>
+    <Container
+      as="section"
+      id="about"
+      width={{ mobile: '83.333%', tablet: '91.666%' }}
+      className={styles.root}
+    >
       <Flex direction="column" gap="8">
         <Typography variant="h2" as="h3" weight="600" className={styles.title}>
           {scopedT('title')}
@@ -41,6 +46,6 @@ export async function About() {
           </a>
         </Flex>
       </Flex>
-    </section>
+    </Container>
   );
 }

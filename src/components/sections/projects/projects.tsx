@@ -1,4 +1,11 @@
-import { ProjectCard, Button, Typography, Flex } from 'wolmar-ui';
+import {
+  ProjectCard,
+  Button,
+  Typography,
+  Flex,
+  Container,
+  Grid,
+} from 'wolmar-ui';
 import { getScopedI18n } from '@/locales/server';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { TransitionLink } from '../../utils/transition-link';
@@ -12,7 +19,7 @@ export async function Projects() {
   const mappedProjects = mapProjects(scopedT);
 
   return (
-    <section id="projects" className={styles.root}>
+    <Container as="section" id="projects" className={styles.root}>
       <Flex
         direction="column"
         gap={{ mobile: '10', tablet: '12', desktop: '14' }}
@@ -27,8 +34,12 @@ export async function Projects() {
         >
           {scopedT('title')}
         </Typography>
-        <div className={styles.wrapper}>
-          <div className={styles.grid}>
+        <Container width="91.6667%" className={styles.wrapper}>
+          <Grid
+            gap={{ mobile: '8', desktop: '12' }}
+            columns={{ mobile: '1', tablet: '3' }}
+            className={styles.grid}
+          >
             {mappedProjects.slice(0, 4).map((proj, index) => (
               <ProjectCard.Root
                 key={index}
@@ -73,9 +84,9 @@ export async function Projects() {
                 </Button>
               </TransitionLink>
             </div>
-          </div>
-        </div>
+          </Grid>
+        </Container>
       </Flex>
-    </section>
+    </Container>
   );
 }

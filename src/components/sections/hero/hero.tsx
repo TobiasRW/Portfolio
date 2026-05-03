@@ -5,7 +5,7 @@ import {
   MapPinSimpleIcon,
 } from '@phosphor-icons/react/dist/ssr';
 import { useScopedI18n } from '@/locales/client';
-import { Button, DotBackground, Flex, Typography } from 'wolmar-ui';
+import { Button, Container, DotBackground, Flex, Typography } from 'wolmar-ui';
 import styles from './hero.module.css';
 
 export function Hero() {
@@ -20,7 +20,7 @@ export function Hero() {
   };
 
   return (
-    <section className={styles.root}>
+    <Container as="section" width="100vw" className={styles.root}>
       <Flex
         className={styles.hero}
         align={{ mobile: 'end', tablet: 'center' }}
@@ -92,6 +92,6 @@ export function Hero() {
           </Flex>
         </Flex>
       </Flex>
-    </section>
+    </Container>
   );
 }

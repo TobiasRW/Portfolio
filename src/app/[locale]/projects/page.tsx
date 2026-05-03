@@ -1,7 +1,7 @@
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
-import { ProjectCard } from 'wolmar-ui';
+import { Container, Grid, ProjectCard, Typography } from 'wolmar-ui';
 import Image from 'next/image';
 import { mapProjects } from '@/components/utils/mapped-projects';
 import { TransitionLink } from '@/components/utils/transition-link';
@@ -19,9 +19,26 @@ export default async function Page({
 
   return (
     <>
-      <div className={styles.projects}>
-        <h2 className={styles['projects-title']}>{scopedT('titleAll')}</h2>
-        <div className={styles['projects-grid']}>
+      <Container
+        as="section"
+        width={{ mobile: '100%', tablet: '83.333%', desktop: '91.667%' }}
+        className={styles.projects}
+      >
+        <Typography
+          as="h1"
+          variant={{ mobile: 'h3', tablet: 'h2', desktop: 'h1' }}
+          weight="600"
+          className={styles['projects-title']}
+        >
+          {scopedT('titleAll')}
+        </Typography>
+        <Grid
+          gap="8"
+          rowGap={{ mobile: '8', desktop: '10' }}
+          columns={{ mobile: '1', tablet: '2', desktop: '3' }}
+          paddingBlock={{ mobile: '10', tablet: '14', desktop: '16' }}
+          className={styles['projects-grid']}
+        >
           {mappedProjects.map((proj, index) => (
             <ProjectCard.Root
               key={index}
@@ -47,8 +64,8 @@ export default async function Page({
               </ProjectCard.Content>
             </ProjectCard.Root>
           ))}
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </>
   );
 }

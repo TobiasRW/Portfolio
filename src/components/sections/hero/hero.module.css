@@ -1,6 +1,5 @@
 .root {
   background-color: var(--whitebg);
-  width: 100vw;
 
   @media (--dark) {
     background-color: #1a1a1a;

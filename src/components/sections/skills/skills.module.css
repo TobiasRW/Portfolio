@@ -1,25 +1,11 @@
 .root {
   background-color: var(--whitebg);
-  width: 100%;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  padding-top: 2.5rem;
-  padding-bottom: 5rem;
-
-  @media (--md) {
-    padding-top: 3.5rem;
-    padding-bottom: 6rem;
-  }
 
   @media (--lg) {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    padding-bottom: 7rem;
-  }
-
-  @media (--xl) {
-    padding-top: 5rem;
-    padding-bottom: 8rem;
   }
 
   @media (--2xl) {
@@ -33,7 +19,6 @@
 }
 
 .container {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
   max-width: 1920px;

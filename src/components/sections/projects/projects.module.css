@@ -11,22 +11,13 @@
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  width: 91.666667%;
 }
 
 .grid {
-  display: grid;
-  gap: 2rem;
-
   @media (--md) {
-    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       'project project project'
       '. . btn';
-  }
-
-  @media (--lg) {
-    gap: 3rem;
   }
 
   @media (--3xl) {
@@ -35,7 +26,6 @@
       'project project project project'
       '. . . btn';
 
-    gap: 2rem;
     justify-content: space-between;
     align-items: center;
   }
