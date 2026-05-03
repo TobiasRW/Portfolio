@@ -8,6 +8,7 @@ import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getProject } from '@/components/utils/get-project';
 
 export default async function Page({
   params,
@@ -56,11 +57,8 @@ export default async function Page({
           <Dots />
           <ProjectBanner
             variant="phone"
-            imageSrc="/images/livescore-banner2.webp"
-            title="Live Scores"
-            website="https://livescore.tobiaswolmar.dk/"
-            github="https://github.com/TobiasRW/livescore"
-            bgColor="#26437E"
+            project={getProject('livescore', scopedT)}
+            color="#26437E"
           />
         </div>
       </div>

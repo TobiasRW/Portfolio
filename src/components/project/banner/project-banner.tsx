@@ -1,116 +1,62 @@
 import Image from 'next/image';
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
-import { ProjectBannerVariant } from '@/types/types';
-import clsx from 'clsx';
-import styles from './project-banner.module.css';
+import {
+  ProjectBanner as Banner,
+  Button,
+  Flex,
+  ProjectBannerVariant,
+  type Project,
+} from 'wolmar-ui';
 
 type ProjectBannerProps = {
-  variant?: ProjectBannerVariant;
-  imageSrc: string;
-  title: string;
-  website: string;
-  github?: string;
-  bgColor?: string;
+  project: Project;
+  variant: ProjectBannerVariant;
+  color?: string;
 };
 
-export function ProjectBanner({
-  variant = 'default',
-  imageSrc,
-  title,
-  website,
-  github,
-  bgColor = '#2C2C2C',
-}: ProjectBannerProps) {
-  const isPc = variant === 'pc';
-  const isPhone = variant === 'phone';
-  const isDefault = variant === 'default';
+export function ProjectBanner(props: ProjectBannerProps) {
+  const { project, variant, color } = props;
 
   return (
-    <div className={styles.root}>
-      <div className={styles['image-container']}>
-        <div
-          className={styles['image-wrapper']}
-          style={{
-            backgroundColor: bgColor,
-          }}
-        >
+    <Banner.Root project={project} variant={variant} color={color}>
+      <Banner.Content
+        height={{ mobile: '208px', tablet: '256px', desktop: '420px' }}
+        width={{ mobile: '83.333%', tablet: '66.666%', desktop: '60%' }}
+      >
+        <Banner.Image asChild>
           <Image
-            src={imageSrc}
-            alt={`${title} Banner`}
+            src={project.image}
+            alt=""
             fill
-            priority={true}
-            className={clsx({
-              [styles['image-default']]: isDefault,
-              [styles['image-pc']]: isPc,
-              [styles['image-phone']]: isPhone,
-            })}
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
-          {/* Name and button - Laptop */}
-          <div className={styles['desktop-overlay']}>
-            <h3 className={styles.title}>{title}</h3>
-            <div className={styles['button-group']}>
-              {github && (
-                <a
-                  href={github}
-                  target="_blank"
-                  aria-label="GitHub link"
-                  rel="noopener noreferrer"
-                  className={styles['button']}
-                >
-                  <Image
-                    src="/icons/github.svg"
-                    alt="GitHub logo"
-                    width={16}
-                    height={16}
-                    className={styles['button-icon']}
-                  />
-                </a>
-              )}
-              <a
-                href={website}
-                target="_blank"
-                aria-label="Website link"
-                rel="noopener noreferrer"
-                className={styles['button']}
-              >
-                <ArrowUpRightIcon className={styles['button-icon']} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Name and buttons - Mobile */}
-      <div className={styles['mobile-overlay']}>
-        <h3 className={styles.title}>{title}</h3>
-        <div className={styles['button-group']}>
-          {github && (
-            <a
-              href={github}
-              aria-label="GitHub link"
-              rel="noopener noreferrer"
-              target="_blank"
-              className={styles['button']}
-            >
-              <Image
-                src="/icons/github.svg"
-                alt="Github logo"
-                width={16}
-                height={16}
-                className={styles['button-icon']}
-              />
-            </a>
-          )}
-          <a
-            href={website}
-            aria-label="Website link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles['button']}
-          >
-            <ArrowUpRightIcon className={styles['button-icon']} />
-          </a>
-        </div>
-      </div>
-    </div>
+        </Banner.Image>
+        <Banner.Info>
+          <Banner.Title
+            variant={{ mobile: 'h3', tablet: 'h2', desktop: 'h1' }}
+            weight="500"
+            as="h1"
+          />
+          <Flex gap="4" justify={variant === 'phone' ? 'start' : 'end'}>
+            {project.github && (
+              <Button as="a" href={project.github} target="_blank" icon>
+                <Image
+                  src="/icons/github.svg"
+                  alt="GitHub logo"
+                  width={16}
+                  height={16}
+                />
+              </Button>
+            )}
+            {project.website && (
+              <Button as="a" href={project.website} target="_blank" icon>
+                <ArrowUpRightIcon size={16} />
+              </Button>
+            )}
+          </Flex>
+        </Banner.Info>
+      </Banner.Content>
+    </Banner.Root>
   );
 }

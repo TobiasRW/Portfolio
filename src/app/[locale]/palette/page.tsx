@@ -8,6 +8,7 @@ import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getProject } from '@/components/utils/get-project';
 
 export default async function Page({
   params,
@@ -61,12 +62,9 @@ export default async function Page({
         <div className={styles.hero}>
           <Dots />
           <ProjectBanner
-            variant="pc"
-            imageSrc="/images/palette-banner.webp"
-            title="Palette"
-            website="https://palette.tobiaswolmar.dk/"
-            github="https://github.com/TobiasRW/Color-Palette"
-            bgColor="#FC7753"
+            variant="computer"
+            project={getProject('palette', scopedT)}
+            color="#FC7753"
           />
         </div>
       </div>

@@ -10,6 +10,7 @@ import { setStaticParamsLocale } from 'next-international/server';
 import { Scene } from '@/components/renders';
 import styles from '../page.module.css';
 import { Typography } from 'wolmar-ui';
+import { getProject } from '@/components/utils/get-project';
 
 export default async function Page({
   params,
@@ -59,10 +60,7 @@ export default async function Page({
           <Dots />
           <ProjectBanner
             variant="default"
-            imageSrc="/images/coelm-banner.webp"
-            title={scopedT('title')}
-            website="https://coelm.tobiaswolmar.dk/"
-            github="https://github.com/TobiasRW/hovedopgave"
+            project={getProject('coelm', scopedT)}
           />
         </div>
       </div>

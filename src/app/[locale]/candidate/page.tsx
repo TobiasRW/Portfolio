@@ -8,6 +8,7 @@ import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getProject } from '@/components/utils/get-project';
 
 export default async function Page({
   params,
@@ -61,12 +62,9 @@ export default async function Page({
         <div className={styles.hero}>
           <Dots />
           <ProjectBanner
-            variant="pc"
-            imageSrc="/images/candidate-banner.webp"
-            title="Candidate"
-            website="https://candidate-dk-staging-phqud.ondigitalocean.app/"
-            github=""
-            bgColor="#1E2171"
+            project={getProject('candidate', scopedT)}
+            variant="computer"
+            color="#1E2171"
           />
         </div>
       </div>

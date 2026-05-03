@@ -8,6 +8,7 @@ import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getProject } from '@/components/utils/get-project';
 
 export default async function Page({
   params,
@@ -56,11 +57,9 @@ export default async function Page({
         <div className={styles.hero}>
           <Dots />
           <ProjectBanner
+            project={getProject('book-space', scopedT)}
             variant="phone"
-            imageSrc="/images/bookspace-banner2.webp"
-            title="Book Space"
-            website="https://book-space-pd5o.onrender.com/"
-            bgColor="#b8b8b8"
+            color="#b8b8b8"
           />
         </div>
       </div>

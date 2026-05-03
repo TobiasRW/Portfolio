@@ -8,6 +8,7 @@ import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getProject } from '@/components/utils/get-project';
 
 export default async function Page({
   params,
@@ -52,11 +53,8 @@ export default async function Page({
           <Dots />
           <ProjectBanner
             variant="phone"
-            imageSrc="/images/fit-app-banner.webp"
-            title="Fit App"
-            bgColor="#1db954"
-            website="https://fit-app-lilac.vercel.app/"
-            github="https://github.com/TobiasRW/fit-app"
+            project={getProject('fit-app', scopedT)}
+            color="#1db954"
           />
         </div>
       </div>

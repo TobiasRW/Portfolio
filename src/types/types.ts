@@ -28,6 +28,7 @@ export type ProjectTexts =
 
 // Define the structure of a project
 export type Project = {
+  name: string;
   variant: ProjectVariant;
   imageSrc: string;
   titleKey: ProjectTitles;

@@ -2,6 +2,7 @@ import { Project } from '../types/types';
 
 export const projects: Project[] = [
   {
+    name: 'candidate',
     variant: 'computer',
     imageSrc: '/images/candidate-banner.webp',
     titleKey: 'project.candidate.name',
@@ -12,6 +13,7 @@ export const projects: Project[] = [
     website: 'https://candidate-dk-staging-phqud.ondigitalocean.app/',
   },
   {
+    name: 'fit-app',
     variant: 'phone',
     imageSrc: '/images/fit-app-banner.webp',
     titleKey: 'project.fitApp.name',
@@ -23,6 +25,7 @@ export const projects: Project[] = [
     github: 'https://github.com/TobiasRW/fit-app',
   },
   {
+    name: 'coelm',
     variant: 'default',
     imageSrc: '/images/coelm-banner.webp',
     titleKey: 'project.coelm.name',
@@ -33,6 +36,7 @@ export const projects: Project[] = [
     github: 'https://github.com/TobiasRW/hovedopgave',
   },
   {
+    name: 'book-space',
     variant: 'phone',
     imageSrc: '/images/bookspace-banner2.webp',
     titleKey: 'project.bookSpace.name',
@@ -43,6 +47,7 @@ export const projects: Project[] = [
     website: 'https://book-space-pd5o.onrender.com/',
   },
   {
+    name: 'palette',
     variant: 'computer',
     imageSrc: '/images/palette-banner.webp',
     titleKey: 'project.palette.name',
@@ -54,6 +59,7 @@ export const projects: Project[] = [
     github: 'https://github.com/TobiasRW/Color-Palette',
   },
   {
+    name: 'livescore',
     variant: 'phone',
     imageSrc: '/images/livescore-banner2.webp',
     titleKey: 'project.liveScores.name',
