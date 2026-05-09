@@ -2,11 +2,6 @@ import { Logo } from '../types/types';
 
 export const logos: Logo[] = [
   {
-    icon: '/icons/html.svg',
-    label: 'HTML',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-  },
-  {
     icon: '/icons/css.svg',
     label: 'CSS',
     url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
@@ -86,14 +81,6 @@ export const logos: Logo[] = [
     dark: '/icons/mysql-dark.svg',
     label: 'MySQL',
     url: 'https://dev.mysql.com/doc/',
-  },
-  {
-    icon: '/icons/php.svg',
-    label: 'PHP',
-    url: 'https://www.php.net/docs.php',
-    bgLight: 'rgba(121, 134, 185, .25)',
-    bgDark: 'rgba(79, 93, 149, .25)',
-    tag: 'Backend language',
   },
   {
     icon: '/icons/supabase.svg',

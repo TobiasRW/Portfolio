@@ -7,6 +7,7 @@ import useDarkMode from '@/hooks/useDarkMode';
 import { AccordionEntry } from '@/types/types';
 import { Collapsible } from '../collapsible/collapsible';
 import styles from './accordion.module.css';
+import { Typography } from 'wolmar-ui';
 
 type AccordionTechProps = {
   title: string;
@@ -18,7 +19,9 @@ export function Accordion({ title, items }: AccordionTechProps) {
 
   return (
     <div className={styles.root}>
-      <h2 className={styles.title}>{title}</h2>
+      <Typography variant="h2" weight="600">
+        {title}
+      </Typography>
 
       {items.map((item, index) => (
         <Collapsible key={`collapsible-item-${index}`} trigger={item.iconLabel}>
