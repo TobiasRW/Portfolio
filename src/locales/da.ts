@@ -26,14 +26,6 @@ export default {
           name: 'Cølm',
           brief: 'Hovedopgave som multimediedesigner',
         },
-        bookBuddy: {
-          name: 'Book Buddy',
-          brief: 'En bog app til læsere til at organisere deres bøger',
-        },
-        lendr: {
-          name: 'Lendr',
-          brief: 'En app til udlejning af kufferter og rejsetasker',
-        },
         liveScores: {
           name: 'Live Scores',
           brief: 'En fodbold livescore app',
@@ -121,120 +113,6 @@ export default {
         item6: {
           content:
             "GSAP har været et kraftfuldt værktøj til at skabe mere komplekse animationer. Jeg har brugt det til at skabe engagerende effekter på blandt andet 'Om os'-siden og i webshoppen, hvor animationerne hjælper med at guide brugeren gennem indholdet.",
-        },
-      },
-    },
-  },
-  projectBookBuddy: {
-    title: 'Book Buddy',
-    about: {
-      heading: 'Om Projektet',
-      badges: {
-        badge1: 'Frontend',
-        badge2: 'Backend',
-        badge3: 'API',
-      },
-      text: {
-        paragraph1:
-          "Dette projekt er en web app kaldet 'Book Buddy', som er udviklet som et fritidsprojekt. Da jeg selv nyder at læse og fordybe mig i bøger, var det oplagt for mig at udvikle en app hvor jeg kan gemme og holde styr på mine bøger.",
-        paragraph2:
-          'Appen er bygget med React med Next.js som framework, og bruger MySQL til at gemme data om brugerne og de bøger, de har gemt. Appen gør det muligt at oprette en profil som man kan bruge til at individuelt at gemme bøger og oprette hylder/lister til at organisere dem.',
-        paragraph3:
-          'For at kunne søge efter bøger og hente information om dem, bruger appen Google Books API, som har et kæmpe bibliotek af bøger, til at finde bøger og information om dem.',
-        paragraph4:
-          'Jeg har brugt Tailwind CSS til at style appen, og Motion til at tilføje animationer til knapper og modal vinduer, hvilket har gjort appen mere levende og interaktiv.',
-        testUser: {
-          user: 'sylto',
-          password: 'hello',
-        },
-      },
-    },
-    accordion: {
-      heading: 'Teknologier',
-      items: {
-        item1: {
-          content:
-            'Jeg har brugt React til at bygge en struktureret og modulær frontend, hvor komponenter genbruges for at skabe en skalerbar kodebase. Det har gjort det lettere at udvikle og udvide projektet efter behov.',
-        },
-        item2: {
-          content:
-            'I dette projekt har jeg brugt Next.js til at bygge en hurtig og brugervenlig webapplikation, hvor brugere kan søge efter bøger og gemme dem til senere brug. Next.js har gjort det muligt at implementere server-side rendering (SSR).',
-        },
-        item3: {
-          content:
-            'Jeg har brugt mySQL til at oprette en database, der indeholder information omkring brugerne og de bøger, de har gemt. Databasen er designet til effektivt at håndtere dataen på en sikker og skalerbar måde, så der ikke opstår fejl eller tab af data.',
-        },
-        item4: {
-          content:
-            'Motion har gjort det muligt at tilføje flydende animationer og interaktioner, der forbedrer brugeroplevelsen. Jeg har blandt andet brugt det til animerede knapper og sektioner, der giver websitet et mere dynamisk og engagerende udtryk.',
-        },
-        item5: {
-          content:
-            'Til styling har jeg anvendt Tailwind CSS, hvilket har givet mig mulighed for hurtigt at opbygge et responsivt og moderne design. Det har gjort det nemt at holde en ensartet stil og sikre, at sitet fungerer godt på alle enheder.',
-        },
-        item6: {
-          content:
-            'JavaScript er brugt gennem React til at tilføje interaktivitet og dynamik til websitet. Jeg har anvendt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende og intuitiv.',
-        },
-      },
-    },
-  },
-  projectLendr: {
-    title: 'Lendr',
-    about: {
-      heading: 'Om Projektet',
-      badges: {
-        badge1: 'Frontend',
-        badge2: 'Backend',
-        badge3: 'API',
-      },
-      text: {
-        paragraph1:
-          'Lendr er udviklet i forbindelse med et skoleprojekt på webudvikling. Projektet skulle bestå af to forskellige frontends som begge skulle tilgå den samme backend. Vi har skabt en web app som har til formål at forbinde lejere og udlejere af kufferter og tasker. Brugere kan altså enten leje en kuffert eller tjene penge på at udleje en kuffert.',
-        paragraph2:
-          "Vi har brugt Next.js til at bygge brugerappen og Remix til at bygge et admin dashboard til Lendr's medarbejdere.",
-        paragraph3:
-          'Vi har brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning. Vi har yderligere udviklet en API i php, som begge frontends kan tilgå for at hente og opdatere data.',
-        testUser: {
-          email: 'sylto@gmail.com',
-          password: 'hello',
-        },
-      },
-    },
-    accordion: {
-      heading: 'Teknologier',
-      items: {
-        item1: {
-          content:
-            'Vi har brugt React til at skabe en dynamisk og interaktiv brugeroplevelse. Ved at opbygge vores website med genanvendelige komponenter, har vi optimeret udviklingsprocessen og sikret en ensartet brugergrænseflade.',
-        },
-        item2: {
-          content:
-            'For at levere en hurtig og effektiv brugerapp til Lendr, valgte vi Next.js. Dette framework har gjort det muligt for os at optimere ydeevnen og samtidig skabe en problemfri oplevelse for vores brugere.',
-        },
-        item3: {
-          content:
-            'I denne opgave har vi brugt Remix til at bygge et admin dashboard til Lendr, som skal fungere som et kontrolpanel for supportmedarbejdere og administratorer.',
-        },
-        item4: {
-          content:
-            'I denne opgave har vi brugt MySQL til at oprette en database, der indeholder information om brugerne og de kufferter og tasker, der er tilgængelige for udlejning.',
-        },
-        item5: {
-          content:
-            'Vores PHP-baserede API fungerer som bindeled mellem frontend og database. Dette har muliggjort en fleksibel og sikker dataudveksling, så brugere og administratorer kan interagere med platformen.',
-        },
-        item6: {
-          content:
-            "For at opnå et moderne og brugervenligt design, har vi integreret Shadcn komponenter. Dette har accelereret vores UI-udvikling og givet os mulighed for at tilpasse udseendet, så det passer perfekt til Lendr's visuelle identitet.",
-        },
-        item7: {
-          content:
-            'Med Tailwind CSS har vi skabt et responsivt og stilfuldt design. Dette framework har givet os mulighed for hurtigt at style vores website og sikre en ensartet visuel oplevelse på tværs af forskellige enheder.',
-        },
-        item8: {
-          content:
-            'JavaScript er brugt gennem React til at tilføje interaktivitet og dynamik til websitet. Vi har anvendt det til at implementere funktioner og interaktioner, der gør brugeroplevelsen mere engagerende og intuitiv.',
         },
       },
     },
