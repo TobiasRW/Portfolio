@@ -9,18 +9,6 @@
 }
 
 .link {
-  font-size: 0.875rem;
-  text-decoration-line: underline;
-  color: #2a4b9a;
-
-  @media (--lg) {
-    font-size: 1rem;
-  }
-
-  @media (--2xl) {
-    font-size: 1.125rem;
-  }
-
   @media (--dark) {
     color: #ffffff;
   }

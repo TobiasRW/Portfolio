@@ -1,9 +1,6 @@
 .footer {
   background-color: var(--whitebg);
-  margin-top: 5rem;
-  display: flex;
   height: 8rem;
-  align-items: flex-end;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
 
@@ -27,46 +24,6 @@
 
 .container {
   font-family: var(--font-heading);
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
   width: 91.666667%;
   max-width: 1920px;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-
-  @media (--md) {
-    font-size: 1.5rem;
-  }
-
-  @media (--lg) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    font-size: 1.875rem;
-  }
-
-  @media (--2xl) {
-    font-size: 2.25rem;
-  }
-}
-
-.links {
-  display: flex;
-  gap: 1rem;
-
-  @media (--md) {
-    gap: 2rem;
-  }
-
-  @media (--lg) {
-    gap: 2.5rem;
-  }
-}
-
-.name {
-  font-family: var(--font-heading);
 }

@@ -68,7 +68,6 @@ export function ProjectImageSlider({
             iconSize={12}
             iconFill="currentColor"
             size={{ mobile: 'sm', tablet: 'md' }}
-            color="muted"
             className={styles.prev}
           />
 
@@ -76,7 +75,6 @@ export function ProjectImageSlider({
             iconSize={12}
             iconFill="currentColor"
             size={{ mobile: 'sm', tablet: 'md' }}
-            color="muted"
             className={styles.next}
           />
 

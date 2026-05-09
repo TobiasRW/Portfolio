@@ -26,24 +26,40 @@ export async function About() {
           direction={{ mobile: 'column', desktop: 'row' }}
           gap={{ mobile: '4', desktop: '8' }}
         >
-          <a
+          <Typography
+            as="a"
             href="mailto:tobiasrw98@gmail.com"
+            underline
+            weight="300"
+            color="link"
             target="_blank"
             className={styles.link}
           >
             tobiasrw98@gmail.com
-          </a>
-          <a href="tel:30305154" target="_blank" className={styles.link}>
+          </Typography>
+          <Typography
+            as="a"
+            href="tel:30305154"
+            underline
+            weight="300"
+            color="link"
+            target="_blank"
+            className={styles.link}
+          >
             Tlf: 30 30 51 54
-          </a>
-          <a
+          </Typography>
+          <Typography
+            as="a"
+            color="link"
+            underline
+            weight="300"
             href="https://www.linkedin.com/in/tobias-wolmar-87991224a/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
           >
             LinkedIn
-          </a>
+          </Typography>
         </Flex>
       </Flex>
     </Container>

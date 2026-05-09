@@ -4,11 +4,11 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
 import { getMappedProject } from '@/components/utils/mapped-projects';
+import { DotBackground } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -55,7 +55,7 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
             project={getMappedProject('book-space')}
             variant="phone"

@@ -30,15 +30,12 @@
   gap: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  overflow: hidden;
 
   @media (--sm) {
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-.carousel-root {
-  position: relative;
 }
 
 .carousel-content {
