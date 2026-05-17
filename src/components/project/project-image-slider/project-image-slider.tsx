@@ -1,11 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  MagnifyingGlassPlusIcon,
-} from '@phosphor-icons/react';
+import { MagnifyingGlassPlusIcon } from '@phosphor-icons/react';
 import Image from 'next/image';
 import { SliderVariant } from '@/types/types';
 import clsx from 'clsx';
@@ -66,14 +62,14 @@ export function ProjectImageSlider({
           </Carousel.Content>
           <Carousel.PrevButton
             iconSize={12}
-            iconFill="currentColor"
+            iconColor="currentColor"
             size={{ mobile: 'sm', tablet: 'md' }}
             className={styles.prev}
           />
 
           <Carousel.NextButton
             iconSize={12}
-            iconFill="currentColor"
+            iconColor="currentColor"
             size={{ mobile: 'sm', tablet: 'md' }}
             className={styles.next}
           />
