@@ -5,9 +5,8 @@ import Image from 'next/image';
 import { getLogoByLabel } from '@/data/logos';
 import useDarkMode from '@/hooks/useDarkMode';
 import { AccordionEntry } from '@/types/types';
-import { Collapsible } from '../collapsible/collapsible';
+import { Collapsible, Flex, Typography } from 'wolmar-ui';
 import styles from './accordion.module.css';
-import { Typography } from 'wolmar-ui';
 
 type AccordionTechProps = {
   title: string;
@@ -18,15 +17,18 @@ export function Accordion({ title, items }: AccordionTechProps) {
   const isDarkMode = useDarkMode();
 
   return (
-    <div className={styles.root}>
+    <Flex direction="column" gap="4" className={styles.root}>
       <Typography variant="h2" weight="600">
         {title}
       </Typography>
 
       {items.map((item, index) => (
-        <Collapsible key={`collapsible-item-${index}`} trigger={item.iconLabel}>
-          <div className={styles.content}>
-            <p className={styles.text}>{item.content}</p>
+        <Collapsible.Root key={`collapsible-item-${index}`}>
+          <Collapsible.Trigger>
+            <Typography italic>{item.iconLabel}</Typography>
+          </Collapsible.Trigger>
+          <Collapsible.Content>
+            <Typography weight="300">{item.content}</Typography>
             <div className={styles.icon}>
               <Image
                 src={getLogoByLabel(item.iconLabel, isDarkMode).icon}
@@ -47,9 +49,9 @@ export function Accordion({ title, items }: AccordionTechProps) {
                 </a>
               )}
             </div>
-          </div>
-        </Collapsible>
+          </Collapsible.Content>
+        </Collapsible.Root>
       ))}
-    </div>
+    </Flex>
   );
 }

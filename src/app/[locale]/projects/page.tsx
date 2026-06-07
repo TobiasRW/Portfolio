@@ -17,6 +17,8 @@ export default async function Page({
 
   const mappedProjects = mapProjects(scopedT);
 
+  const darkTextProjects = ['Book Space'];
+
   return (
     <>
       <Container
@@ -57,8 +59,14 @@ export default async function Page({
                   />
                 </ProjectCard.Image>
                 <ProjectCard.TextContent>
-                  <ProjectCard.Title variant="h2" weight="500" />
-                  <ProjectCard.Description />
+                  <ProjectCard.Title
+                    variant="h2"
+                    weight="500"
+                    color={darkTextProjects.includes(proj.title) ? 'dark' : 'light'}
+                  />
+                  <ProjectCard.Description
+                    color={darkTextProjects.includes(proj.title) ? 'dark' : 'light'}
+                  />
                 </ProjectCard.TextContent>
                 <ProjectCard.Tags />
               </ProjectCard.Content>
