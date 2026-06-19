@@ -12,7 +12,12 @@ export async function About() {
       className={styles.root}
     >
       <Flex direction="column" gap="8">
-        <Typography variant="h2" as="h3" weight="600" className={styles.title}>
+        <Typography
+          variant={{ mobile: 'h3', tablet: 'h2' }}
+          as="h2"
+          weight="600"
+          className={styles.title}
+        >
           {scopedT('title')}
         </Typography>
         <Flex direction="column" gap="4">

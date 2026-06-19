@@ -26,7 +26,7 @@ export function ProjectBanner(props: ProjectBannerProps) {
         <Banner.Image asChild>
           <Image
             src={project.image}
-            alt=""
+            alt={`${project.title} banner`}
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -50,7 +50,13 @@ export function ProjectBanner(props: ProjectBannerProps) {
               </Button>
             )}
             {project.website && (
-              <Button as="a" href={project.website} target="_blank" icon>
+              <Button
+                as="a"
+                href={project.website}
+                target="_blank"
+                aria-label="Visit website"
+                icon
+              >
                 <ArrowUpRightIcon size={16} />
               </Button>
             )}

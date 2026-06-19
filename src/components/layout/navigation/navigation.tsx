@@ -107,6 +107,7 @@ export function Nav() {
           <Button
             variant="ghost"
             size="sm"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
             className={styles.hamburger}
             onClick={() => setIsOpen(!isOpen)}

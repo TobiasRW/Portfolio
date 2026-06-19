@@ -54,7 +54,7 @@ export default async function Page({
                     src={proj.image}
                     alt={proj.title}
                     fill
-                    priority
+                    priority={index < 3}
                     sizes="(max-width: 460px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                 </ProjectCard.Image>
@@ -62,10 +62,14 @@ export default async function Page({
                   <ProjectCard.Title
                     variant="h2"
                     weight="500"
-                    color={darkTextProjects.includes(proj.title) ? 'dark' : 'light'}
+                    color={
+                      darkTextProjects.includes(proj.title) ? 'dark' : 'light'
+                    }
                   />
                   <ProjectCard.Description
-                    color={darkTextProjects.includes(proj.title) ? 'dark' : 'light'}
+                    color={
+                      darkTextProjects.includes(proj.title) ? 'dark' : 'light'
+                    }
                   />
                 </ProjectCard.TextContent>
                 <ProjectCard.Tags />
