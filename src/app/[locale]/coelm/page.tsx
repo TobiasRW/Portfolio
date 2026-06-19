@@ -4,11 +4,12 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import { Scene } from '@/components/renders';
 import styles from '../page.module.css';
+import { DotBackground, Typography } from 'wolmar-ui';
+import { getMappedProject } from '@/components/utils/mapped-projects';
 
 export default async function Page({
   params,
@@ -55,13 +56,10 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
             variant="default"
-            imageSrc="/images/coelm-banner.webp"
-            title={scopedT('title')}
-            website="https://coelm.tobiaswolmar.dk/"
-            github="https://github.com/TobiasRW/hovedopgave"
+            project={getMappedProject('coelm')}
           />
         </div>
       </div>
@@ -69,18 +67,9 @@ export default async function Page({
         title={scopedT('about.heading')}
         badges={[scopedT('about.badges.badge1')]}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-            highlightWords: ['React', 'Vite'],
-          },
-          {
-            content: scopedT('about.text.paragraph2'),
-            highlightWords: ['GSAP', 'Motion'],
-          },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['Tailwind', 'CSS'],
-          },
+          { content: scopedT('about.text.paragraph1') },
+          { content: scopedT('about.text.paragraph2') },
+          { content: scopedT('about.text.paragraph3') },
           { content: scopedT('about.text.paragraph4') },
         ]}
         techStack={[
@@ -107,7 +96,9 @@ export default async function Page({
         />
       </div>
       <div className={styles.model}>
-        <h2 className={styles['model-title']}>3D Model</h2>
+        <Typography variant="h2" as="h4" weight="600">
+          3D Model
+        </Typography>
         <div className={styles.scene}>
           <Scene />
         </div>

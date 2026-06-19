@@ -4,10 +4,11 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getMappedProject } from '@/components/utils/mapped-projects';
+import { DotBackground } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -59,14 +60,11 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
-            variant="pc"
-            imageSrc="/images/palette-banner.webp"
-            title="Palette"
-            website="https://palette.tobiaswolmar.dk/"
-            github="https://github.com/TobiasRW/Color-Palette"
-            bgColor="#FC7753"
+            variant="computer"
+            project={getMappedProject('palette')}
+            color="#FC7753"
           />
         </div>
       </div>
@@ -78,17 +76,9 @@ export default async function Page({
           scopedT('about.badges.badge3'),
         ]}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-          },
-          {
-            content: scopedT('about.text.paragraph2'),
-            highlightWords: ['Next.js', 'MongoDB', 'Mistral', 'TypeScript'],
-          },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['MongoDB'],
-          },
+          { content: scopedT('about.text.paragraph1') },
+          { content: scopedT('about.text.paragraph2') },
+          { content: scopedT('about.text.paragraph3') },
         ]}
         techStack={[
           'React',

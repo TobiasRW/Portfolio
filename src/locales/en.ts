@@ -26,14 +26,6 @@ export default {
           name: 'Coelm',
           brief: 'Final project as a multimedia design student',
         },
-        bookBuddy: {
-          name: 'Book Buddy',
-          brief: 'A book app for readers to organize their books',
-        },
-        lendr: {
-          name: 'Lendr',
-          brief: 'An app for renting suitcases and travel bags',
-        },
         liveScores: {
           name: 'Live Scores',
           brief: 'A football live score app',
@@ -121,120 +113,6 @@ export default {
         item6: {
           content:
             "GSAP has been a powerful tool for creating more complex animations. I used it to develop engaging effects on the 'About Us' page and in the webshop, where the animations help guide users through the content.",
-        },
-      },
-    },
-  },
-  projectBookBuddy: {
-    title: 'Book Buddy',
-    about: {
-      heading: 'About the Project',
-      badges: {
-        badge1: 'Frontend',
-        badge2: 'Backend',
-        badge3: 'API',
-      },
-      text: {
-        paragraph1:
-          "This project is a web app called 'Book Buddy,' developed as a personal side project. Since I enjoy reading and immersing myself in books, it was a natural choice for me to develop an app where I can store and keep track of my books.",
-        paragraph2:
-          'The app is built with React using Next.js as the framework and utilizes MySQL to store data about users and their saved books. The app allows users to create a profile, which they can use to individually save books and create shelves/lists to organize them.',
-        paragraph3:
-          'To search for books and retrieve information about them, the app uses the Google Books API, which has a vast library of books, enabling users to find books and detailed information about them.',
-        paragraph4:
-          'I have used Tailwind CSS to style the app and Motion to add animations to buttons and modal windows, making the app feel more dynamic and interactive.',
-        testUser: {
-          user: 'sylto',
-          password: 'hello',
-        },
-      },
-    },
-    accordion: {
-      heading: 'Technologies',
-      items: {
-        item1: {
-          content:
-            'I used React to build a structured and modular frontend, where components are reused to create a scalable codebase. This has made it easier to develop and expand the project as needed.',
-        },
-        item2: {
-          content:
-            'In this project, I used Next.js to build a fast and user-friendly web application where users can search for books and save them for later. Next.js made it possible to implement server-side rendering (SSR).',
-        },
-        item3: {
-          content:
-            'I used MySQL to create a database that stores information about users and the books they have saved. The database is designed to efficiently handle data in a secure and scalable manner, preventing errors or data loss.',
-        },
-        item4: {
-          content:
-            'Motion enabled me to add smooth animations and interactions that enhance the user experience. I used it for animated buttons and sections, giving the website a more dynamic and engaging feel.',
-        },
-        item5: {
-          content:
-            'For styling, I used Tailwind CSS, which allowed me to quickly build a responsive and modern design. This made it easy to maintain a consistent style and ensure that the site works well on all devices.',
-        },
-        item6: {
-          content:
-            'JavaScript was used through React to add interactivity and dynamics to the website. I implemented functions and interactions that make the user experience more engaging and intuitive.',
-        },
-      },
-    },
-  },
-  projectLendr: {
-    title: 'Lendr',
-    about: {
-      heading: 'About the Project',
-      badges: {
-        badge1: 'Frontend',
-        badge2: 'Backend',
-        badge3: 'API',
-      },
-      text: {
-        paragraph1:
-          'Lendr was developed as part of a school project in web development. The project was to consist of two different frontends, both of which should access the same backend. We created a web app designed to connect renters and lenders of suitcases and travel bags. Users can either rent a suitcase cheaply or earn money by renting out their own.',
-        paragraph2:
-          "We used Next.js to build the user app and Remix to develop an admin dashboard for Lendr's employees.",
-        paragraph3:
-          'We used MySQL to create a database that stores information about users and the products available for rent. Additionally, we developed an API in PHP, which both frontends can access to retrieve and update data.',
-        testUser: {
-          email: 'sylto@gmail.com',
-          password: 'hello',
-        },
-      },
-    },
-    accordion: {
-      heading: 'Technologies',
-      items: {
-        item1: {
-          content:
-            'We used React to create a dynamic and interactive user experience. By building our website with reusable components, we optimized the development process and ensured a consistent user interface.',
-        },
-        item2: {
-          content:
-            'To deliver a fast and efficient user app for Lendr, we chose Next.js. This framework has enabled us to optimize performance while creating a seamless experience for our users.',
-        },
-        item3: {
-          content:
-            'Remix is a modern React-based framework that, like Next.js, simplifies the development of fast and efficient web applications. In this project, we used Remix to build an admin dashboard for Lendr, serving as a control panel for support staff.',
-        },
-        item4: {
-          content:
-            'In this project, we used MySQL to create a database that stores information about users and the suitcases and bags available for rent.',
-        },
-        item5: {
-          content:
-            'Our PHP-based API serves as the link between the frontend and database. This has enabled flexible and secure data exchange, allowing users and administrators to interact with the Lendr platform.',
-        },
-        item6: {
-          content:
-            "To achieve a modern and user-friendly design, we integrated Shadcn components. This has accelerated our UI development and allowed us to customize the look to perfectly match Lendr's visual identity.",
-        },
-        item7: {
-          content:
-            'With Tailwind CSS, we created a responsive and stylish design. This framework has allowed us to quickly style our website and ensure a consistent visual experience across different devices.',
-        },
-        item8: {
-          content:
-            'JavaScript is used through React to add interactivity to the website. We implemented it to create functions and interactions that enhance the user experience, making it more engaging and intuitive.',
         },
       },
     },

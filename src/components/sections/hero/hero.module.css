@@ -1,6 +1,5 @@
 .root {
   background-color: var(--whitebg);
-  width: 100vw;
 
   @media (--dark) {
     background-color: #1a1a1a;
@@ -10,10 +9,7 @@
 .hero {
   position: relative;
   background-color: var(--background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
+
   height: 420px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -42,36 +38,8 @@
   }
 }
 
-.content {
-  z-index: 10;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  width: 83.333333%;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-top: 2.5rem;
-
-  @media (--lg) {
-    gap: 2rem;
-    padding-top: 4rem;
-  }
-}
-
 .profile {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  width: 18rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  @media (--sm) {
-    width: 22rem;
-  }
 }
 
 .image {
@@ -104,29 +72,12 @@
   }
 }
 
-.location {
-  display: flex;
-  align-items: center;
-}
-
 .icon {
   color: var(--foreground);
 }
 
 .workplace {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   font-family: var(--font-heading);
-}
-
-.title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 }
 
 .title {
@@ -139,40 +90,6 @@
   background-clip: text;
   color: transparent;
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  @media (--sm) {
-    font-size: 1.875rem;
-  }
-
-  @media (--md) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-  }
-
-  @media (--lg) {
-    font-size: 2.25rem;
-  }
-
-  @media (--xl) {
-    width: 66.666667%;
-    font-size: 3rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-
-  @media (--lg) {
-    gap: 1.5rem;
-  }
-  @media (--xl) {
-    gap: 2rem;
-  }
 }
 
 .button:hover .arrow {

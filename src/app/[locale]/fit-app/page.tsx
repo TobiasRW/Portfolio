@@ -4,10 +4,11 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getMappedProject } from '@/components/utils/mapped-projects';
+import { DotBackground } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -49,14 +50,11 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
             variant="phone"
-            imageSrc="/images/fit-app-banner.webp"
-            title="Fit App"
-            bgColor="#1db954"
-            website="https://fit-app-lilac.vercel.app/"
-            github="https://github.com/TobiasRW/fit-app"
+            project={getMappedProject('fit-app')}
+            color="#1db954"
           />
         </div>
       </div>
@@ -67,13 +65,8 @@ export default async function Page({
           scopedT('about.badges.badge2'),
         ]}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-          },
-          {
-            content: scopedT('about.text.paragraph2'),
-            highlightWords: ['TypeScript', 'Supabase', 'Next.js'],
-          },
+          { content: scopedT('about.text.paragraph1') },
+          { content: scopedT('about.text.paragraph2') },
           { content: scopedT('about.text.paragraph3') },
         ]}
         techStack={[

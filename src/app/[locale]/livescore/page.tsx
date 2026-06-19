@@ -4,10 +4,11 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getMappedProject } from '@/components/utils/mapped-projects';
+import { DotBackground } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -53,14 +54,11 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
             variant="phone"
-            imageSrc="/images/livescore-banner2.webp"
-            title="Live Scores"
-            website="https://livescore.tobiaswolmar.dk/"
-            github="https://github.com/TobiasRW/livescore"
-            bgColor="#26437E"
+            project={getMappedProject('livescore')}
+            color="#26437E"
           />
         </div>
       </div>
@@ -71,16 +69,9 @@ export default async function Page({
           scopedT('about.badges.badge2'),
         ]}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-            highlightWords: ['Next.js', 'TypeScript'],
-          },
-          {
-            content: scopedT('about.text.paragraph2'),
-          },
-          {
-            content: scopedT('about.text.paragraph3'),
-          },
+          { content: scopedT('about.text.paragraph1') },
+          { content: scopedT('about.text.paragraph2') },
+          { content: scopedT('about.text.paragraph3') },
         ]}
         techStack={[
           'React',

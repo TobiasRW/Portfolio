@@ -4,10 +4,11 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getMappedProject } from '@/components/utils/mapped-projects';
+import { DotBackground } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -59,14 +60,11 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
-            variant="pc"
-            imageSrc="/images/candidate-banner.webp"
-            title="Candidate"
-            website="https://candidate-dk-staging-phqud.ondigitalocean.app/"
-            github=""
-            bgColor="#1E2171"
+            project={getMappedProject('candidate')}
+            variant="computer"
+            color="#1E2171"
           />
         </div>
       </div>
@@ -79,15 +77,9 @@ export default async function Page({
         ]}
         disclaimer={scopedT('about.text.disclaimer')}
         text={[
-          {
-            content: scopedT('about.text.paragraph1'),
-            highlightWords: ['React', 'Router', '7', 'TypeScript.'],
-          },
+          { content: scopedT('about.text.paragraph1') },
           { content: scopedT('about.text.paragraph2') },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['MongoDB', "Mistral's", 'LLM', 'API'],
-          },
+          { content: scopedT('about.text.paragraph3') },
         ]}
         techStack={[
           'React',

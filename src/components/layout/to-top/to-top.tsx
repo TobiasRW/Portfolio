@@ -1,8 +1,10 @@
 'use client';
+
 import { ArrowUpIcon } from '@phosphor-icons/react';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import styles from './to-top.module.css';
+import { Button } from 'wolmar-ui';
 
 export function ToTop() {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -10,7 +12,6 @@ export function ToTop() {
   useEffect(() => {
     let lastScrollY = 0;
 
-    // Function to handle scroll events
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const isHidden = currentScrollY > lastScrollY && currentScrollY > 400;
@@ -18,10 +19,8 @@ export function ToTop() {
       lastScrollY = currentScrollY;
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -33,7 +32,9 @@ export function ToTop() {
 
   return (
     <>
-      <button
+      <Button
+        icon
+        size={{ mobile: 'md', desktop: 'lg' }}
         onClick={scrollToTop}
         className={clsx(styles.root, {
           [styles.hidden]: !hidden,
@@ -42,7 +43,7 @@ export function ToTop() {
         aria-label="Scroll to top"
       >
         <ArrowUpIcon className={styles.icon} />
-      </button>
+      </Button>
     </>
   );
 }

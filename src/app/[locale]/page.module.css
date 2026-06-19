@@ -77,28 +77,6 @@
   }
 }
 
-.model-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  @media (--sm) {
-    font-size: 1.875rem;
-  }
-
-  @media (--md) {
-    font-size: 2.25rem;
-  }
-
-  @media (--lg) {
-    text-align: start;
-  }
-
-  @media (--xl) {
-    font-size: 3rem;
-  }
-}
-
 .scene {
   background-color: var(--whitebg);
   margin-top: 2.5rem;
@@ -115,60 +93,21 @@
 */
 
 .projects {
-  padding-top: 5rem;
+  padding-top: 6rem;
 
   @media (--md) {
+    padding-top: 8rem;
     margin-inline: auto;
-    width: 83.333%;
-  }
-
-  @media (--lg) {
-    width: 91.667%;
   }
 }
 
 .projects-title {
-  font-family: var(--font-heading);
-  padding-bottom: 2.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
   text-align: center;
-
-  @media (--sm) {
-    font-size: 1.875rem;
-  }
-
-  @media (--md) {
-    font-size: 2.25rem;
-  }
-
-  @media (--lg) {
-    padding-bottom: 5rem;
-  }
-
-  @media (--xl) {
-    padding-top: 5rem;
-    font-size: 3rem;
-  }
 }
 
 .projects-grid {
-  display: grid;
   margin-inline: auto;
   max-width: 1920px;
-  gap: 2rem;
-
-  @media (--md) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (--lg) {
-    row-gap: 5rem;
-  }
-
-  @media (--xl) {
-    row-gap: 3.5rem;
-  }
 
   @media (--3xl) {
     grid-template-columns: repeat(4, 1fr);

@@ -5,18 +5,23 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TransitionLink } from '../../utils/transition-link';
 import { ArrowUpRightIcon, ArrowLeftIcon } from '@phosphor-icons/react';
-import { useScopedI18n } from '@/locales/client';
-import { Toggle } from '@/components/ui';
+import {
+  useChangeLocale,
+  useCurrentLocale,
+  useScopedI18n,
+} from '@/locales/client';
 import clsx from 'clsx';
+import { Button, Flex, LanguageToggle, Typography } from 'wolmar-ui';
 
-// stored links
 const links = {
   github: 'https://github.com/TobiasRW',
   linkedin: 'https://www.linkedin.com/in/tobias-wolmar-87991224a/',
 };
 
-// Navigation component
 export function Nav() {
+  const locale = useCurrentLocale();
+  const changeLocale = useChangeLocale();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -28,85 +33,105 @@ export function Nav() {
   useEffect(() => {
     let lastScrollY = 0;
 
-    // Function to handle scroll events
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Determine if the navbar should be hidden or shown
       const isHidden = currentScrollY > lastScrollY && currentScrollY > 100;
       const isScrolled = currentScrollY > 400;
 
       setHidden(isHidden);
       setScrolled(isScrolled);
 
-      // Update lastScrollY to the current position
       lastScrollY = currentScrollY;
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <header
+    <Flex
+      as="header"
+      align="center"
+      justify="between"
+      paddingInline={{ mobile: '4', tablet: '8', desktop: '16' }}
       className={clsx(
         styles.root,
         scrolled ? styles.scrolled : styles.top,
         hidden ? styles.hidden : styles.visible,
       )}
     >
-      <div className={styles.container}>
-        <nav className={styles.nav}>
+      <Flex align="center" justify="between" className={styles.container}>
+        <Flex as="nav" align="center" gap={{ mobile: '4', desktop: '6' }}>
           {pathname === '/' || pathname === '/da' || pathname === '/en' ? (
-            <a href="mailto:tobiasrw98@gmail.com" className={styles.email}>
+            <Typography
+              as="a"
+              href="mailto:tobiasrw98@gmail.com"
+              className={styles.email}
+            >
               tobiasrw98@gmail.com
-            </a>
+            </Typography>
           ) : (
             <TransitionLink href="/" className={styles['return-link']}>
               <ArrowLeftIcon size={18} className={styles['return-icon']} />
               {scopedT('back')}
             </TransitionLink>
           )}
-          <div className={styles.controls}>
-            <Toggle />
-          </div>
-          <a
+
+          <LanguageToggle
+            gap="1"
+            languages={['da', 'en']}
+            activeLanguage={locale}
+            onLanguageChange={changeLocale}
+            uppercase
+          />
+          <Button
+            as="a"
+            size="sm"
+            className={styles.cv}
             href={
               pathname === '/' || pathname === '/da'
                 ? '/pdfs/cv-danish.pdf'
                 : '/pdfs/cv-english.pdf'
             }
-            download
-            className={styles.cv}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             CV
-          </a>
-        </nav>
+          </Button>
+        </Flex>
         <div>
-          <button
-            type="button"
+          <Button
+            variant="ghost"
+            size="sm"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
             className={styles.hamburger}
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span
-              className={clsx(styles.line1, isOpen ? styles.open : undefined)}
-            />
-            <span
-              className={clsx(styles.line2, isOpen ? styles.open : undefined)}
-            />
-            <span
-              className={clsx(styles.line3, isOpen ? styles.open : undefined)}
-            />
-          </button>
+            <Flex direction="column" align="end" gap="1">
+              <span
+                className={clsx(styles.line1, isOpen ? styles.open : undefined)}
+              />
+              <span
+                className={clsx(styles.line2, isOpen ? styles.open : undefined)}
+              />
+              <span
+                className={clsx(styles.line3, isOpen ? styles.open : undefined)}
+              />
+            </Flex>
+          </Button>
 
           <div className={clsx(styles.menu, isOpen ? styles.open : undefined)}>
-            <ul className={styles.list}>
+            <Flex
+              as="ul"
+              direction={{ mobile: 'column', desktop: 'row' }}
+              gap={{ mobile: '8', desktop: '10' }}
+              className={styles.list}
+            >
               <li>
                 <a
                   href={links.github}
@@ -114,7 +139,7 @@ export function Nav() {
                   rel="noopener noreferrer"
                   className={styles.social}
                 >
-                  <p className={styles.text}>GitHub</p>
+                  <span className={styles.text}>GitHub</span>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>
@@ -125,14 +150,14 @@ export function Nav() {
                   rel="noopener noreferrer"
                   className={styles.social}
                 >
-                  <p className={styles.text}>LinkedIn</p>
+                  <span className={styles.text}>LinkedIn</span>
                   <ArrowUpRightIcon className={styles.arrow} />
                 </a>
               </li>
-            </ul>
+            </Flex>
           </div>
         </div>
-      </div>
-    </header>
+      </Flex>
+    </Flex>
   );
 }

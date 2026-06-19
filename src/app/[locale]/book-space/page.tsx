@@ -4,10 +4,11 @@ import {
   ProjectImageSlider,
 } from '@/components/project';
 import { Accordion } from '@/components/ui';
-import { Dots } from '@/components/visuals';
 import { getScopedI18n } from '@/locales/server';
 import { setStaticParamsLocale } from 'next-international/server';
 import styles from '../page.module.css';
+import { getMappedProject } from '@/components/utils/mapped-projects';
+import { DotBackground } from 'wolmar-ui';
 
 export default async function Page({
   params,
@@ -54,13 +55,11 @@ export default async function Page({
     <>
       <div className={styles.root}>
         <div className={styles.hero}>
-          <Dots />
+          <DotBackground size="sm" />
           <ProjectBanner
+            project={getMappedProject('book-space')}
             variant="phone"
-            imageSrc="/images/bookspace-banner2.webp"
-            title="Book Space"
-            website="https://book-space-pd5o.onrender.com/"
-            bgColor="#b8b8b8"
+            color="#b8b8b8"
           />
         </div>
       </div>
@@ -74,14 +73,8 @@ export default async function Page({
         text={[
           { content: scopedT('about.text.paragraph1') },
           { content: scopedT('about.text.paragraph2') },
-          {
-            content: scopedT('about.text.paragraph3'),
-            highlightWords: ['React', 'Router', 'v7', 'MongoDB', 'TypeScript'],
-          },
-          {
-            content: scopedT('about.text.paragraph4'),
-            highlightWords: ['Tailwind', 'CSS', 'Motion'],
-          },
+          { content: scopedT('about.text.paragraph3') },
+          { content: scopedT('about.text.paragraph4') },
         ]}
         techStack={[
           'React',

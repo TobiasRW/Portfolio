@@ -1,10 +1,10 @@
 'use client';
 
-import highlightText from '@/helpers/highlightText';
 import type { TestUser, DescriptionText } from '@/types/types';
-import { Badge, Icon } from '../../ui';
+import { Icon } from '../../ui';
 import { useScopedI18n } from '@/locales/client';
 import styles from './project-description.module.css';
+import { Badge, Container, Flex, Tooltip, Typography } from 'wolmar-ui';
 
 type ProjectDescriptionProps = {
   title: string;
@@ -26,77 +26,93 @@ export function ProjectDescription({
   const scopedT = useScopedI18n('testUser');
 
   return (
-    <div className={styles.root}>
+    <Container
+      as="section"
+      paddingBlock={{ mobile: '10', tablet: '14', desktop: '16' }}
+      className={styles.root}
+    >
       {/* Project Description Section */}
-      <div className={styles['content-wrapper']}>
-        <div className={styles.header}>
-          <h3 className={styles.title}>{title}</h3>
+      <Flex direction="column" gap="6" className={styles['content-wrapper']}>
+        <Flex direction="column" gap="2">
+          <Typography variant="h2" weight="600">
+            {title}
+          </Typography>
           {badges.length > 0 && (
-            <div className={styles.badges}>
+            <Flex wrap="wrap" gap="2">
               {badges.map((badge, index) => (
-                <Badge key={index} title={badge} />
+                <Badge key={index} asChild>
+                  <Typography variant="caption">{badge}</Typography>
+                </Badge>
               ))}
-            </div>
+            </Flex>
           )}
-        </div>
+        </Flex>
 
-        <div className={styles['main-content']}>
-          <div>
+        <Flex
+          direction={{ mobile: 'column', desktop: 'row' }}
+          gap={{ mobile: '6', desktop: '16' }}
+          align="center"
+        >
+          <Flex direction="column" gap="4">
             {disclaimer && (
-              <p className={styles.disclaimer}>
-                <span className={styles['disclaimer-label']}>Disclaimer:</span>{' '}
+              <Typography weight="300">
+                <Typography as="span" weight="400">
+                  Disclaimer:
+                </Typography>{' '}
                 {disclaimer}
-              </p>
+              </Typography>
             )}
 
             {text.map((text, index) => (
-              <p key={index} className={styles.paragraph}>
-                {highlightText(text.content, text.highlightWords ?? [])}
-              </p>
+              <Typography weight="300" key={index}>
+                {text.content}
+              </Typography>
             ))}
 
             {testUser && (
-              <div className={styles['test-user-section']}>
-                <p className={styles['test-user-heading']}>
-                  {scopedT('heading')}
-                </p>
+              <div>
+                <Typography weight="400">{scopedT('heading')}</Typography>
                 {testUser.email && (
-                  <p className={styles['test-user-item']}>
-                    <span className={styles['test-user-label']}>
+                  <Typography weight="300">
+                    <Typography weight="400" as="span">
                       {scopedT('email')}
-                    </span>{' '}
+                    </Typography>{' '}
                     {testUser.email}
-                  </p>
+                  </Typography>
                 )}
                 {testUser.username && (
-                  <p className={styles['test-user-item']}>
-                    <span className={styles['test-user-label']}>
+                  <Typography weight="300">
+                    <Typography weight="400" as="span">
                       {scopedT('user')}
-                    </span>{' '}
+                    </Typography>{' '}
                     {testUser.username}
-                  </p>
+                  </Typography>
                 )}
-                <p className={styles['test-user-item']}>
-                  <span className={styles['test-user-label']}>
+                <Typography weight="300">
+                  <Typography weight="400" as="span">
                     {scopedT('password')}
-                  </span>{' '}
+                  </Typography>{' '}
                   {testUser.password}
-                </p>
+                </Typography>
               </div>
             )}
-          </div>
+          </Flex>
 
           {/* Icons Section */}
-          <div className={styles['tech-section']}>
-            <p className={styles['tech-title']}>Techstack</p>
-            <div className={styles['tech-icons']}>
-              {techStack.map((item, index) => {
-                return <Icon key={index} label={item} hasTooltip />;
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <Flex direction="column" gap="4" className={styles['tech-section']}>
+            <Typography variant="h4" as="h3">
+              Techstack
+            </Typography>
+            <Flex gap="4" wrap="wrap">
+              {techStack.map((item) => (
+                <Tooltip key={item} content={item}>
+                  <Icon label={item} />
+                </Tooltip>
+              ))}
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Container>
   );
 }

@@ -7,3 +7,4 @@
 @custom-media --3xl (min-width: 1792px);
 
 @custom-media --dark (prefers-color-scheme: dark);
+@custom-media --light (prefers-color-scheme: light);
