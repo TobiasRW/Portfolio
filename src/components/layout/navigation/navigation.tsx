@@ -8,8 +8,9 @@ import { ArrowUpRightIcon, ArrowLeftIcon } from '@phosphor-icons/react';
 import {
   useChangeLocale,
   useCurrentLocale,
-  useScopedI18n,
-} from '@/locales/client';
+  useDictionary,
+} from '@/i18n/client';
+import { locales } from '@/i18n/config';
 import clsx from 'clsx';
 import { Button, Flex, LanguageToggle, Typography } from 'wolmar-ui';
 
@@ -26,9 +27,12 @@ export function Nav() {
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const scopedT = useScopedI18n('navigation');
+  const t = useDictionary().navigation;
 
   const pathname = usePathname();
+
+  // Home is "/" for the default locale and "/<locale>" for the others.
+  const isHome = pathname === '/' || locales.some((l) => pathname === `/${l}`);
 
   useEffect(() => {
     let lastScrollY = 0;
@@ -66,7 +70,7 @@ export function Nav() {
     >
       <Flex align="center" justify="between" className={styles.container}>
         <Flex as="nav" align="center" gap={{ mobile: '4', desktop: '6' }}>
-          {pathname === '/' || pathname === '/da' || pathname === '/en' ? (
+          {isHome ? (
             <Typography
               as="a"
               href="mailto:tobiasrw98@gmail.com"
@@ -77,7 +81,7 @@ export function Nav() {
           ) : (
             <TransitionLink href="/" className={styles['return-link']}>
               <ArrowLeftIcon size={18} className={styles['return-icon']} />
-              {scopedT('back')}
+              {t.back}
             </TransitionLink>
           )}
 
@@ -93,9 +97,7 @@ export function Nav() {
             size="sm"
             className={styles.cv}
             href={
-              pathname === '/' || pathname === '/da'
-                ? '/pdfs/cv-danish.pdf'
-                : '/pdfs/cv-english.pdf'
+              locale === 'da' ? '/pdfs/cv-danish.pdf' : '/pdfs/cv-english.pdf'
             }
             target="_blank"
             rel="noopener noreferrer"

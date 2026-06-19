@@ -1,48 +1,38 @@
+import type { Dictionary } from '@/i18n/config';
+
 // Define the valid project variants
 export type ProjectVariant = 'default' | 'phone' | 'computer';
 
 // Define valid project banner variants
 export type ProjectBannerVariant = 'default' | 'phone' | 'pc';
 
-// Define valid project title keys
-export type ProjectTitles =
-  | 'project.coelm.name'
-  | 'project.bookBuddy.name'
-  | 'project.lendr.name'
-  | 'project.liveScores.name'
-  | 'project.palette.name'
-  | 'project.bookSpace.name'
-  | 'project.candidate.name'
-  | 'project.fitApp.name';
+// A project's key in the dictionary (e.g. "candidate", "fit-app").
+export type ProjectName = keyof Dictionary['projects'];
 
-// Define valid project text keys
-export type ProjectTexts =
-  | 'project.coelm.brief'
-  | 'project.bookBuddy.brief'
-  | 'project.lendr.brief'
-  | 'project.liveScores.brief'
-  | 'project.palette.brief'
-  | 'project.bookSpace.brief'
-  | 'project.candidate.brief'
-  | 'project.fitApp.brief';
+// A technology shown on a project page. The localized explanation is pulled
+// from the dictionary (`projects.<name>.accordion.items`) by position, so the
+// order here must match the order of those items.
+export type ProjectTech = {
+  iconLabel: string;
+  website?: string;
+};
 
 // Define the structure of a project
 export type Project = {
-  name: string;
+  name: ProjectName;
   variant: ProjectVariant;
   imageSrc: string;
   title: string;
-  textKey: ProjectTexts;
   link: string;
   bgColor?: string;
   tags?: string[];
   website?: string;
   github?: string;
-};
-
-// Define the structure types for the project description component
-export type DescriptionText = {
-  content: string;
+  // Project-page content (non-translated):
+  gallery: string[]; // image-slider images
+  tech: ProjectTech[]; // accordion technologies (content comes from the dictionary)
+  techStack: string[]; // tech-stack tooltip row (icon labels, own order)
+  has3dModel?: boolean; // renders the 3D model section
 };
 
 export type TestUser = {

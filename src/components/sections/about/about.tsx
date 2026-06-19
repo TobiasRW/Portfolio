@@ -1,9 +1,9 @@
-import { getScopedI18n } from '@/locales/server';
+import type { Dictionary } from '@/i18n/config';
 import styles from './about.module.css';
 import { Container, Flex, Typography } from 'wolmar-ui';
 
-export async function About() {
-  const scopedT = await getScopedI18n('frontPage.about');
+export async function About({ dict }: { dict: Dictionary }) {
+  const about = dict.frontPage.about;
   return (
     <Container
       as="section"
@@ -18,14 +18,15 @@ export async function About() {
           weight="600"
           className={styles.title}
         >
-          {scopedT('title')}
+          {about.title}
         </Typography>
         <Flex direction="column" gap="4">
-          <Typography weight="300">{scopedT('text.intro')}</Typography>
-          <Typography weight="300">{scopedT('text.paragraph1')}</Typography>
-          <Typography weight="300">{scopedT('text.paragraph2')}</Typography>
-          <Typography weight="300">{scopedT('text.paragraph3')}</Typography>
-          <Typography weight="300">{scopedT('text.paragraph4')}</Typography>
+          <Typography weight="300">{about.intro}</Typography>
+          {about.paragraphs.map((paragraph, index) => (
+            <Typography weight="300" key={index}>
+              {paragraph}
+            </Typography>
+          ))}
         </Flex>
         <Flex
           direction={{ mobile: 'column', desktop: 'row' }}

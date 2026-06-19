@@ -4,14 +4,14 @@ import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import useDarkMode from '@/hooks/useDarkMode';
 import { skillLogos, getLogo } from '@/data/logos';
 import Image from 'next/image';
-import { useScopedI18n } from '@/locales/client';
+import { useDictionary } from '@/i18n/client';
 import styles from './skills.module.css';
 import { Button, Card, Carousel, Container, Flex, Typography } from 'wolmar-ui';
 
 export function Skills() {
   const isDarkMode = useDarkMode();
   const skills = skillLogos;
-  const scopedT = useScopedI18n('frontPage.skills');
+  const t = useDictionary().frontPage.skills;
 
   return (
     <Container
@@ -84,7 +84,7 @@ export function Skills() {
                           as="span"
                           weight="500"
                         >
-                          {scopedT('link')}
+                          {t.link}
                         </Typography>
                         <ArrowUpRightIcon className={styles.icon} />
                       </Button>

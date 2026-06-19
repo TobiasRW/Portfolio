@@ -1,16 +1,21 @@
 import { projects as originalProjects } from '@/data/project-data';
+import type { Dictionary } from '@/i18n/config';
+import type { ProjectName } from '@/types/types';
 import { Project, ProjectCardVariant } from 'wolmar-ui';
+
+type ProjectsDict = Dictionary['projects'];
 
 export type MappedProject = Project & {
   variant?: ProjectCardVariant;
   color?: string;
 };
 
-export function mapProjects(scopedT?: Function): MappedProject[] {
+// Combines static project metadata with the localized card description.
+export function mapProjects(projectsDict: ProjectsDict): MappedProject[] {
   return originalProjects.map((proj) => ({
     image: proj.imageSrc,
     title: proj.title,
-    description: scopedT ? scopedT(proj.textKey) : proj.textKey,
+    description: projectsDict[proj.name].brief,
     route: proj.link,
     tags: proj.tags,
     variant: proj.variant,
@@ -20,16 +25,15 @@ export function mapProjects(scopedT?: Function): MappedProject[] {
   }));
 }
 
-export function getMappedProject(
-  name: string,
-  scopedT?: Function,
-): MappedProject {
+// Builds a single project for the banner, which renders the title, image
+// and links but no description.
+export function getMappedProject(name: ProjectName): MappedProject {
   const proj = originalProjects.find((p) => p.name === name);
   if (!proj) throw new Error(`Project not found: ${name}`);
   return {
     image: proj.imageSrc,
     title: proj.title,
-    description: scopedT ? scopedT(proj.textKey) : proj.textKey,
+    description: '',
     route: proj.link,
     tags: proj.tags,
     variant: proj.variant,

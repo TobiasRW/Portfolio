@@ -4,12 +4,12 @@ import {
   ArrowDownIcon,
   MapPinSimpleIcon,
 } from '@phosphor-icons/react/dist/ssr';
-import { useScopedI18n } from '@/locales/client';
+import { useDictionary } from '@/i18n/client';
 import { Button, Container, DotBackground, Flex, Typography } from 'wolmar-ui';
 import styles from './hero.module.css';
 
 export function Hero() {
-  const scopedT = useScopedI18n('frontPage.hero');
+  const t = useDictionary().frontPage.hero;
 
   // Utility function to scroll to a given element ID
   const scrollToSection = (id: string) => {
@@ -51,7 +51,7 @@ export function Hero() {
 
             <Flex align="center" gap="1">
               <MapPinSimpleIcon weight="fill" className={styles.icon} />
-              <Typography as="span">{scopedT('location')}</Typography>
+              <Typography as="span">{t.location}</Typography>
             </Flex>
           </Flex>
 
@@ -62,12 +62,10 @@ export function Hero() {
               weight="600"
               className={styles.title}
             >
-              {scopedT('title')}
+              {t.title}
             </Typography>
 
-            <Typography className={styles.workplace}>
-              {scopedT('workplace')}
-            </Typography>
+            <Typography className={styles.workplace}>{t.workplace}</Typography>
           </Flex>
 
           <Flex justify="center" gap={{ mobile: '4', desktop: '6' }}>
@@ -76,7 +74,7 @@ export function Hero() {
               onClick={() => scrollToSection('projects')}
             >
               <Typography variant="body" as="span" color="dark" weight="500">
-                {scopedT('button.projects')}
+                {t.button.projects}
               </Typography>
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>
@@ -85,7 +83,7 @@ export function Hero() {
               onClick={() => scrollToSection('about')}
             >
               <Typography variant="body" as="span" color="dark" weight="500">
-                {scopedT('button.about')}
+                {t.button.about}
               </Typography>
               <ArrowDownIcon weight="bold" className={styles.arrow} />
             </Button>

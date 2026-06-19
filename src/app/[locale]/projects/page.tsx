@@ -1,5 +1,6 @@
-import { getScopedI18n } from '@/locales/server';
-import { setStaticParamsLocale } from 'next-international/server';
+import { hasLocale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
+import { notFound } from 'next/navigation';
 import styles from '../page.module.css';
 import { Container, Grid, ProjectCard, Typography } from 'wolmar-ui';
 import Image from 'next/image';
@@ -12,10 +13,10 @@ export default async function Page({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setStaticParamsLocale(locale);
-  const scopedT = await getScopedI18n('frontPage.projects');
+  if (!hasLocale(locale)) notFound();
+  const dict = await getDictionary(locale);
 
-  const mappedProjects = mapProjects(scopedT);
+  const mappedProjects = mapProjects(dict.projects);
 
   const darkTextProjects = ['Book Space'];
 
@@ -32,7 +33,7 @@ export default async function Page({
           weight="600"
           className={styles['projects-title']}
         >
-          {scopedT('titleAll')}
+          {dict.frontPage.projects.titleAll}
         </Typography>
         <Grid
           gap="8"

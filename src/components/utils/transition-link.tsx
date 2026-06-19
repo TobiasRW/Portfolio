@@ -2,6 +2,8 @@
 import React from 'react';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useCurrentLocale } from '@/i18n/client';
+import { localizePath } from '@/i18n/config';
 
 // TransitionLink component props
 interface TransitionLinkProps extends LinkProps {
@@ -22,6 +24,11 @@ export const TransitionLink = ({
   ...props
 }: TransitionLinkProps) => {
   const router = useRouter();
+  const locale = useCurrentLocale();
+
+  // Keep internal links within the active locale (default locale stays
+  // prefix-less, e.g. "/projects"; others are prefixed, e.g. "/en/projects").
+  const localizedHref = localizePath(href, locale);
 
   // Function to handle the transition
   const handleTransition = async (
@@ -34,7 +41,7 @@ export const TransitionLink = ({
 
     await sleep(300); // Wait for 300ms so the exit animation can play
 
-    router.push(href); // Navigate to the new page
+    router.push(localizedHref); // Navigate to the new page
     body?.classList.remove('page-exit'); // Remove the page-exit class from the body
     body?.classList.add('page-enter'); // Add the page-enter class to the body
 
@@ -46,7 +53,7 @@ export const TransitionLink = ({
     <Link
       className={className}
       onClick={handleTransition}
-      href={href}
+      href={localizedHref}
       {...props}
     >
       {children}

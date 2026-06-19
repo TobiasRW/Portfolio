@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import './globals.css';
 
-import { I18nProviderClient } from '@/locales/client';
-import { getStaticParams } from '@/locales/server';
+import { hasLocale, locales, pickClientDictionary } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
+import { I18nProvider } from '@/i18n/client';
 import { Footer, Nav } from '@/components/layout';
 import { ToTop } from '@/components/layout';
 
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return getStaticParams();
+  return locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
@@ -23,15 +25,18 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!hasLocale(locale)) notFound();
+  const clientDictionary = pickClientDictionary(await getDictionary(locale));
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
-        <I18nProviderClient locale={locale}>
+        <I18nProvider locale={locale} dictionary={clientDictionary}>
           <Nav />
           <ToTop />
           {children}
           <Footer />
-        </I18nProviderClient>
+        </I18nProvider>
       </body>
     </html>
   );

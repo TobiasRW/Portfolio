@@ -1,5 +1,7 @@
 import { About, Hero, Projects, Skills } from '@/components/sections';
-import { setStaticParamsLocale } from 'next-international/server';
+import { hasLocale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
+import { notFound } from 'next/navigation';
 
 export default async function Home({
   params,
@@ -7,14 +9,15 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setStaticParamsLocale(locale);
+  if (!hasLocale(locale)) notFound();
+  const dict = await getDictionary(locale);
 
   return (
     <>
       <Hero />
       <Skills />
-      <Projects />
-      <About />
+      <Projects dict={dict} />
+      <About dict={dict} />
     </>
   );
 }
