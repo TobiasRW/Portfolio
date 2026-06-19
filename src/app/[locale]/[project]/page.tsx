@@ -9,7 +9,6 @@ import { hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
 import { notFound } from 'next/navigation';
 import styles from '../page.module.css';
-import { getMappedProject } from '@/components/utils/mapped-projects';
 import { projects } from '@/data/project-data';
 import { DotBackground, Typography } from 'wolmar-ui';
 
@@ -42,9 +41,9 @@ export default async function Page({
         <div className={styles.hero}>
           <DotBackground size="sm" />
           <ProjectBanner
-            project={getMappedProject(project.name)}
+            project={project}
             variant={project.variant}
-            color={project.bgColor}
+            color={project.color}
           />
         </div>
       </div>
@@ -58,8 +57,8 @@ export default async function Page({
       />
       <div className={styles.content}>
         <ProjectImageSlider
-          variant={project.bgColor ? 'background' : 'default'}
-          bgColor={project.bgColor}
+          variant={project.color ? 'background' : 'default'}
+          bgColor={project.color}
           images={project.gallery}
         />
         <Accordion items={accordionItems} title={t.accordion.heading} />

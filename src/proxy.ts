@@ -7,8 +7,12 @@ import {
   type Locale,
 } from '@/i18n/config';
 
-// Determines the visitor's preferred locale: cookie first, then the
-// browser's Accept-Language header, falling back to the default locale.
+/**
+ * Determines the visitor's preferred locale: cookie first, then the browser's
+ * Accept-Language header, falling back to the default locale.
+ * @param request The incoming request.
+ * @returns The resolved locale.
+ */
 function resolveLocale(request: NextRequest): Locale {
   const cookie = request.cookies.get(LOCALE_COOKIE)?.value;
   if (hasLocale(cookie)) return cookie;
@@ -25,6 +29,14 @@ function resolveLocale(request: NextRequest): Locale {
   return defaultLocale;
 }
 
+/**
+ * Routing middleware that implements the "rewrite-default" locale strategy:
+ * Danish is served at the prefix-less URL while other locales are prefixed
+ * (e.g. /en). Honors the locale cookie / Accept-Language for redirects and
+ * exposes the active locale to server components via the `x-locale` header.
+ * @param request The incoming request.
+ * @returns The redirect, rewrite, or pass-through response.
+ */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 

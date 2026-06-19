@@ -3,7 +3,9 @@ import { useGLTF } from '@react-three/drei';
 
 useGLTF.preload('/models/coelm.glb');
 
-// Define model props
+/**
+ * Props for the {@link Model} component.
+ */
 type ModelProps = {
   position?: [number, number, number];
   rotation?: [number, number, number];

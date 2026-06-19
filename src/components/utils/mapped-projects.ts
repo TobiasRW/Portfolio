@@ -1,44 +1,22 @@
-import { projects as originalProjects } from '@/data/project-data';
+import { projects } from '@/data/project-data';
 import type { Dictionary } from '@/i18n/config';
-import type { ProjectName } from '@/types/types';
-import { Project, ProjectCardVariant } from 'wolmar-ui';
+import type { Project } from '@/types/types';
 
 type ProjectsDict = Dictionary['projects'];
 
-export type MappedProject = Project & {
-  variant?: ProjectCardVariant;
-  color?: string;
-};
+/**
+ * The shape of the project data needed for the project cards.
+ */
+export type ProjectCardData = Project & { description: string };
 
-// Combines static project metadata with the localized card description.
-export function mapProjects(projectsDict: ProjectsDict): MappedProject[] {
-  return originalProjects.map((proj) => ({
-    image: proj.imageSrc,
-    title: proj.title,
-    description: projectsDict[proj.name].brief,
-    route: proj.link,
-    tags: proj.tags,
-    variant: proj.variant,
-    website: proj.website,
-    github: proj.github,
-    color: proj.bgColor,
+/**
+ * Maps the non-localized project data to the shape needed for the project cards.
+ * @param projectsDict - The "projects" section of the locale dictionary.
+ * @returns An array of projects with localized descriptions, ready to be rendered in the project cards.
+ */
+export function mapProjects(projectsDict: ProjectsDict): ProjectCardData[] {
+  return projects.map((project) => ({
+    ...project,
+    description: projectsDict[project.name].brief,
   }));
-}
-
-// Builds a single project for the banner, which renders the title, image
-// and links but no description.
-export function getMappedProject(name: ProjectName): MappedProject {
-  const proj = originalProjects.find((p) => p.name === name);
-  if (!proj) throw new Error(`Project not found: ${name}`);
-  return {
-    image: proj.imageSrc,
-    title: proj.title,
-    description: '',
-    route: proj.link,
-    tags: proj.tags,
-    variant: proj.variant,
-    website: proj.website,
-    github: proj.github,
-    color: proj.bgColor,
-  };
 }

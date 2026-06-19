@@ -8,6 +8,11 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   en: () => import('@/locales/en').then((m) => m.default),
 };
 
+/**
+ * Loads the full dictionary for a locale, falling back to the default locale.
+ * @param locale The locale to load.
+ * @returns The dictionary for the locale.
+ */
 export async function getDictionary(locale: Locale): Promise<Dictionary> {
   const load = dictionaries[locale] ?? dictionaries[defaultLocale];
   return load();

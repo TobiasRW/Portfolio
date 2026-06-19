@@ -17,9 +17,15 @@ type I18nContextValue = {
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
-// Seeds client components with the active locale and the client subset of the
-// dictionary. Only this slice (built by `pickClientDictionary`) is serialized
-// to the browser, keeping server-only page content out of the client bundle.
+/**
+ * Seeds client components with the active locale and the client subset of the
+ * dictionary. Only this slice (built by `pickClientDictionary`) is serialized
+ * to the browser, keeping server-only page content out of the client bundle.
+ * @param locale The active locale.
+ * @param dictionary The client subset of the dictionary for the active locale.
+ * @param children The subtree that can read the i18n context.
+ * @returns The provider wrapping its children.
+ */
 export function I18nProvider({
   locale,
   dictionary,
@@ -41,19 +47,29 @@ function useI18nContext(): I18nContextValue {
   return ctx;
 }
 
+/**
+ * Reads the active locale from the i18n context.
+ * @returns The active locale.
+ */
 export function useCurrentLocale(): Locale {
   return useI18nContext().locale;
 }
 
-// Returns the typed client dictionary for the active locale, so client
-// components access translations with the same `dict.x.y` shape as the
-// server (typos and missing keys are caught at compile time).
+/**
+ * Reads the typed client dictionary for the active locale, so client components
+ * access translations with the same `dict.x.y` shape as the server (typos and
+ * missing keys are caught at compile time).
+ * @returns The client dictionary for the active locale.
+ */
 export function useDictionary(): ClientDictionary {
   return useI18nContext().dictionary;
 }
 
-// Persists the chosen locale in a cookie and navigates to the same page
-// in the new locale (default locale has no URL prefix).
+/**
+ * Provides a callback that persists the chosen locale in a cookie and navigates
+ * to the same page in the new locale (default locale has no URL prefix).
+ * @returns A function that switches to the given locale.
+ */
 export function useChangeLocale() {
   const router = useRouter();
   const pathname = usePathname();

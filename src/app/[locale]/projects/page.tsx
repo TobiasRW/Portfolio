@@ -49,7 +49,7 @@ export default async function Page({
               variant={proj.variant}
               color={proj.color}
             >
-              <ProjectCard.Content as={TransitionLink} href={proj.route!}>
+              <ProjectCard.Content as={TransitionLink} href={proj.route}>
                 <ProjectCard.Image asChild>
                   <Image
                     src={proj.image}

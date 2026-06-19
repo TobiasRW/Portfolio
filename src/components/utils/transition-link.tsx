@@ -5,18 +5,29 @@ import { useRouter } from 'next/navigation';
 import { useCurrentLocale } from '@/i18n/client';
 import { localizePath } from '@/i18n/config';
 
-// TransitionLink component props
+/**
+ * Props for the {@link TransitionLink} component.
+ */
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
   className?: string;
   href: string;
 }
 
-// Sleep function
+/**
+ * Resolves after the given delay.
+ * @param ms The delay in milliseconds.
+ * @returns A promise that resolves once the delay has elapsed.
+ */
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/**
+ * A locale-aware link that plays a page exit/enter animation before navigating.
+ * @param props The link props (href is localized to the active locale).
+ * @returns The rendered link.
+ */
 export const TransitionLink = ({
   children,
   href,

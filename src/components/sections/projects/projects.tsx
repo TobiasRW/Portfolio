@@ -48,7 +48,7 @@ export async function Projects({ dict }: { dict: Dictionary }) {
               >
                 <ProjectCard.Content
                   as={TransitionLink}
-                  href={proj.route!}
+                  href={proj.route}
                   className={index > 2 ? styles.hide : undefined}
                 >
                   <ProjectCard.Image asChild>
