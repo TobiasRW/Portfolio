@@ -30,62 +30,27 @@ function resolveLocale(request: NextRequest): Locale {
 }
 
 /**
- * Routing middleware that implements the "rewrite-default" locale strategy:
- * Danish is served at the prefix-less URL while other locales are prefixed
- * (e.g. /en). Honors the locale cookie / Accept-Language for redirects and
- * exposes the active locale to server components via the `x-locale` header.
+ * Routing middleware that implements prefix-all locale routing: every locale
+ * lives under its own segment (/da, /en). Paths that already carry a supported
+ * locale are served as-is; prefix-less paths are redirected to the visitor's
+ * preferred locale (cookie / Accept-Language / default).
  * @param request The incoming request.
- * @returns The redirect, rewrite, or pass-through response.
+ * @returns The redirect or pass-through response.
  */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // The default locale is canonical at the prefix-less URL, so redirect any
-  // explicit /da or /da/... request to its clean equivalent.
-  if (
-    pathname === `/${defaultLocale}` ||
-    pathname.startsWith(`/${defaultLocale}/`)
-  ) {
-    const url = request.nextUrl.clone();
-    url.pathname = pathname.slice(`/${defaultLocale}`.length) || '/';
-    return NextResponse.redirect(url);
-  }
-
-  // Is a non-default locale already present in the URL (e.g. /en or /en/...)?
-  const urlLocale = locales.find(
-    (locale) =>
-      locale !== defaultLocale &&
-      (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)),
+  // Path already carries a supported locale — serve it as-is.
+  const hasPrefix = locales.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
+  if (hasPrefix) return NextResponse.next();
 
-  if (urlLocale) {
-    // Path already carries its locale — serve it and expose the locale
-    // to server components via a request header.
-    const headers = new Headers(request.headers);
-    headers.set('x-locale', urlLocale);
-    return NextResponse.next({ request: { headers } });
-  }
-
-  // No locale prefix: this is a default-locale (Danish) URL.
-  const preferred = resolveLocale(request);
-
-  if (preferred !== defaultLocale) {
-    // Visitor prefers a prefixed locale — redirect to its URL.
-    const url = request.nextUrl.clone();
-    url.pathname =
-      pathname === '/' ? `/${preferred}` : `/${preferred}${pathname}`;
-    return NextResponse.redirect(url);
-  }
-
-  // Serve the default locale by internally rewriting to /da/... while
-  // keeping the clean, prefix-less URL in the browser.
+  // No locale prefix — redirect to the visitor's preferred locale.
+  const locale = resolveLocale(request);
   const url = request.nextUrl.clone();
-  url.pathname =
-    pathname === '/' ? `/${defaultLocale}` : `/${defaultLocale}${pathname}`;
-
-  const headers = new Headers(request.headers);
-  headers.set('x-locale', defaultLocale);
-  return NextResponse.rewrite(url, { request: { headers } });
+  url.pathname = pathname === '/' ? `/${locale}` : `/${locale}${pathname}`;
+  return NextResponse.redirect(url);
 }
 
 export const config = {

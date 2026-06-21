@@ -31,8 +31,8 @@ export function Nav() {
 
   const pathname = usePathname();
 
-  // Home is "/" for the default locale and "/<locale>" for the others.
-  const isHome = pathname === '/' || locales.some((l) => pathname === `/${l}`);
+  // Home is "/<locale>" for every locale (every path is locale-prefixed).
+  const isHome = locales.some((l) => pathname === `/${l}`);
 
   useEffect(() => {
     let lastScrollY = 0;

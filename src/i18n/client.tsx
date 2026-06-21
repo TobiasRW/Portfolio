@@ -4,7 +4,6 @@ import { createContext, useCallback, useContext, useMemo } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   localizePath,
-  stripLocale,
   LOCALE_COOKIE,
   type ClientDictionary,
   type Locale,
@@ -67,7 +66,7 @@ export function useDictionary(): ClientDictionary {
 
 /**
  * Provides a callback that persists the chosen locale in a cookie and navigates
- * to the same page in the new locale (default locale has no URL prefix).
+ * to the same page in the new locale (swapping the leading locale segment).
  * @returns A function that switches to the given locale.
  */
 export function useChangeLocale() {
@@ -77,7 +76,8 @@ export function useChangeLocale() {
   return useCallback(
     (locale: Locale) => {
       document.cookie = `${LOCALE_COOKIE}=${locale};path=/;max-age=31536000;samesite=lax`;
-      const target = localizePath(stripLocale(pathname), locale);
+      const barePath = pathname.replace(/^\/[^/]+/, '') || '/';
+      const target = localizePath(barePath, locale);
       router.push(target);
       router.refresh();
     },

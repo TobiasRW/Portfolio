@@ -53,29 +53,12 @@ export function hasLocale(value: unknown): value is Locale {
 }
 
 /**
- * Removes a leading locale segment from a pathname.
- * e.g. "/en/projects" -> "/projects", "/en" -> "/", "/projects" -> "/projects"
- * @param pathname The pathname to strip the locale from.
- * @returns The "bare" pathname (as it looks for the default locale).
- */
-export function stripLocale(pathname: string): string {
-  for (const locale of locales) {
-    if (pathname === `/${locale}`) return '/';
-    if (pathname.startsWith(`/${locale}/`))
-      return pathname.slice(locale.length + 1);
-  }
-  return pathname;
-}
-
-/**
- * Builds the public URL for a bare path in a given locale. The default locale
- * gets no prefix; other locales are prefixed.
- * e.g. localizePath("/projects", "en") -> "/en/projects", ("/projects", "da") -> "/projects"
+ * Builds the public URL for a bare path in a given locale. Every locale is
+ * prefixed, e.g. localizePath("/projects", "en") -> "/en/projects".
  * @param barePath The path without a locale prefix.
  * @param locale The locale to build the URL for.
  * @returns The locale-aware public URL.
  */
 export function localizePath(barePath: string, locale: Locale): string {
-  if (locale === defaultLocale) return barePath;
   return barePath === '/' ? `/${locale}` : `/${locale}${barePath}`;
 }
