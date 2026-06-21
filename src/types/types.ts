@@ -1,10 +1,5 @@
 import type { Dictionary } from '@/i18n/config';
-import type { Project as CardProject } from 'wolmar-ui';
-
-/**
- * The valid project variants.
- */
-export type ProjectVariant = 'default' | 'phone' | 'computer';
+import type { Project as CardProject, ProjectCardVariant } from 'wolmar-ui';
 
 /**
  * A project's key in the dictionary (e.g. "candidate", "fit-app").
@@ -29,7 +24,7 @@ export type ProjectTech = {
  */
 export type Project = CardProject & {
   name: ProjectName;
-  variant: ProjectVariant;
+  variant: ProjectCardVariant;
   route: string;
   color?: string;
   gallery: string[];

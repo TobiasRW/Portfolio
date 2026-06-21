@@ -8,8 +8,7 @@ import {
 } from '@/i18n/config';
 
 /**
- * Determines the visitor's preferred locale: cookie first, then the browser's
- * Accept-Language header, falling back to the default locale.
+ * Determines the visitor's preferred locale.
  * @param request The incoming request.
  * @returns The resolved locale.
  */
@@ -29,24 +28,15 @@ function resolveLocale(request: NextRequest): Locale {
   return defaultLocale;
 }
 
-/**
- * Routing middleware that implements prefix-all locale routing: every locale
- * lives under its own segment (/da, /en). Paths that already carry a supported
- * locale are served as-is; prefix-less paths are redirected to the visitor's
- * preferred locale (cookie / Accept-Language / default).
- * @param request The incoming request.
- * @returns The redirect or pass-through response.
- */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Path already carries a supported locale — serve it as-is.
   const hasPrefix = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
+
   if (hasPrefix) return NextResponse.next();
 
-  // No locale prefix — redirect to the visitor's preferred locale.
   const locale = resolveLocale(request);
   const url = request.nextUrl.clone();
   url.pathname = pathname === '/' ? `/${locale}` : `/${locale}${pathname}`;

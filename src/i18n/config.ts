@@ -2,16 +2,12 @@ export const locales = ['da', 'en'] as const;
 
 export type Locale = (typeof locales)[number];
 
-// Default locale is danish.
 export const defaultLocale: Locale = 'da';
 
-// The cookie used to remember the visitor's preferred locale.
 export const LOCALE_COOKIE = 'NEXT_LOCALE';
 
 /**
- * The type of a dictionary for a specific locale.
- * This is inferred by the shape of the danish dictionary as the source of truth.
- * Other locales are checked against this shape via `satisfies Dictionary.
+ * The full dictionary type, inferred from the shape of the default danish dictionary.
  */
 export type Dictionary = (typeof import('@/locales/da'))['default'];
 
@@ -53,8 +49,7 @@ export function hasLocale(value: unknown): value is Locale {
 }
 
 /**
- * Builds the public URL for a bare path in a given locale. Every locale is
- * prefixed, e.g. localizePath("/projects", "en") -> "/en/projects".
+ * Builds the public URL for a bare path in a given locale.
  * @param barePath The path without a locale prefix.
  * @param locale The locale to build the URL for.
  * @returns The locale-aware public URL.

@@ -1,8 +1,6 @@
 import 'server-only';
 import { type Dictionary, type Locale } from './config';
 
-// Each locale is loaded lazily so only the requested dictionary is bundled
-// into the request that needs it.
 const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   da: () => import('@/locales/da').then((module) => module.default),
   en: () => import('@/locales/en').then((module) => module.default),
