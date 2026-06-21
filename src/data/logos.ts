@@ -129,20 +129,8 @@ export const logos: Logo[] = [
   },
 ];
 
-export const getLogo = (logo: Logo, isDarkMode: boolean): string => {
-  return isDarkMode && logo.dark ? logo.dark : logo.icon;
-};
-
-export const getLogoByLabel = (
-  label: string,
-  isDarkMode: boolean,
-): { icon: string; url?: string } => {
-  const logo = logos.find((logo) => logo.label === label);
-  return {
-    icon: logo ? getLogo(logo, isDarkMode) : '',
-    url: logo?.url,
-  };
-};
+export const getLogoByLabel = (label: string): Logo | undefined =>
+  logos.find((logo) => logo.label === label);
 
 export const skillLogos = logos.filter((logo) =>
   [

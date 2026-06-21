@@ -4,11 +4,8 @@ import { notFound } from 'next/navigation';
 import styles from '../page.module.css';
 import { Container, Grid, ProjectCard, Typography } from 'wolmar-ui';
 import Image from 'next/image';
-import {
-  mapProjects,
-  ProjectCardData,
-} from '@/components/utils/mapped-projects';
-import { TransitionLink } from '@/components/utils/transition-link';
+import { mapProjects, ProjectCardData } from '@/lib/mapped-projects';
+import { TransitionLink } from '@/components/ui';
 
 export default async function Page({
   params,

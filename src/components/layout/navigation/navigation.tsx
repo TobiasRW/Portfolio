@@ -3,7 +3,7 @@
 import styles from './navigation.module.css';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { TransitionLink } from '../../utils/transition-link';
+import { TransitionLink } from '@/components/ui';
 import { ArrowUpRightIcon, ArrowLeftIcon } from '@phosphor-icons/react';
 import {
   useChangeLocale,

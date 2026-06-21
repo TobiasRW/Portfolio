@@ -8,10 +8,10 @@ import {
 } from 'wolmar-ui';
 import type { Dictionary } from '@/i18n/config';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
-import { TransitionLink } from '../../utils/transition-link';
+import { TransitionLink } from '@/components/ui';
 import styles from './projects.module.css';
 import Image from 'next/image';
-import { mapProjects } from '@/components/utils/mapped-projects';
+import { mapProjects } from '@/lib/mapped-projects';
 
 export async function Projects({ dict }: { dict: Dictionary }) {
   const t = dict.frontPage.projects;
