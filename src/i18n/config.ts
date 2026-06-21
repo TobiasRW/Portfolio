@@ -12,24 +12,6 @@ export const LOCALE_COOKIE = 'NEXT_LOCALE';
 export type Dictionary = (typeof import('@/locales/da'))['default'];
 
 /**
- * The subset of the dictionary that client components actually use.
- */
-export type ClientDictionary = {
-  navigation: Dictionary['navigation'];
-};
-
-/**
- * Gets the client dictionary from the full dictionary, picking only the parts that are needed on the client.
- * @param dict The full dictionary for a locale.
- * @returns The client dictionary.
- */
-export function pickClientDictionary(dict: Dictionary): ClientDictionary {
-  return {
-    navigation: dict.navigation,
-  };
-}
-
-/**
  * Checks if the locale is a valid locale.
  * @param value The locale to check
  * @returns true if the locale is valid, false otherwise.

@@ -5,12 +5,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TransitionLink } from '@/components/ui';
 import { ArrowUpRightIcon, ArrowLeftIcon } from '@phosphor-icons/react';
-import {
-  useChangeLocale,
-  useCurrentLocale,
-  useDictionary,
-} from '@/i18n/client';
-import { locales } from '@/i18n/config';
+import { useChangeLocale, useCurrentLocale } from '@/i18n/client';
+import { locales, type Dictionary } from '@/i18n/config';
 import clsx from 'clsx';
 import { Button, Flex, LanguageToggle, Typography } from 'wolmar-ui';
 
@@ -19,7 +15,7 @@ const links = {
   linkedin: 'https://www.linkedin.com/in/tobias-wolmar-87991224a/',
 };
 
-export function Nav() {
+export function Nav({ labels }: { labels: Dictionary['navigation'] }) {
   const locale = useCurrentLocale();
   const changeLocale = useChangeLocale();
 
@@ -27,7 +23,7 @@ export function Nav() {
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const t = useDictionary().navigation;
+  const t = labels;
 
   const pathname = usePathname();
 
