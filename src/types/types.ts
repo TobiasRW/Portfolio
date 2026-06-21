@@ -1,59 +1,50 @@
-// Define the valid project variants
-export type ProjectVariant = 'default' | 'phone' | 'computer';
+import type { Dictionary } from '@/i18n/config';
+import type { Project as CardProject, ProjectCardVariant } from 'wolmar-ui';
 
-// Define valid project banner variants
-export type ProjectBannerVariant = 'default' | 'phone' | 'pc';
+/**
+ * A project's key in the dictionary (e.g. "candidate", "fit-app").
+ */
+export type ProjectName = keyof Dictionary['projects'];
 
-// Define valid project title keys
-export type ProjectTitles =
-  | 'project.coelm.name'
-  | 'project.bookBuddy.name'
-  | 'project.lendr.name'
-  | 'project.liveScores.name'
-  | 'project.palette.name'
-  | 'project.bookSpace.name'
-  | 'project.candidate.name'
-  | 'project.fitApp.name';
-
-// Define valid project text keys
-export type ProjectTexts =
-  | 'project.coelm.brief'
-  | 'project.bookBuddy.brief'
-  | 'project.lendr.brief'
-  | 'project.liveScores.brief'
-  | 'project.palette.brief'
-  | 'project.bookSpace.brief'
-  | 'project.candidate.brief'
-  | 'project.fitApp.brief';
-
-// Define the structure of a project
-export type Project = {
-  name: string;
-  variant: ProjectVariant;
-  imageSrc: string;
-  title: string;
-  textKey: ProjectTexts;
-  link: string;
-  bgColor?: string;
-  tags?: string[];
+/**
+ * A technology shown on a project page. The localized explanation is pulled
+ * from the dictionary (`projects.<name>.accordion.items`) by position, so the
+ * order here must match the order of those items.
+ */
+export type ProjectTech = {
+  iconLabel: string;
   website?: string;
-  github?: string;
 };
 
-// Define the structure types for the project description component
-export type DescriptionText = {
-  content: string;
+/**
+ * A project extends the library's card view-model (image/title/route/...) so
+ * the shapes stay in sync, and adds this app's own metadata and page content.
+ * `description` (from CardProject) is intentionally left unset here — it is the
+ * only localized card field and is injected per-locale at render time.
+ */
+export type Project = CardProject & {
+  name: ProjectName;
+  variant: ProjectCardVariant;
+  route: string;
+  color?: string;
+  gallery: string[];
+  tech: ProjectTech[];
+  techStack: string[];
+  has3dModel?: boolean;
 };
 
+/**
+ * Demo login credentials shown on a project page.
+ */
 export type TestUser = {
   email?: string;
   username?: string;
   password: string;
 };
 
-//_____________ LOGO TYPES _______________//
-
-// Define logo types
+/**
+ * A technology/skill logo.
+ */
 export type Logo = {
   icon: string;
   dark?: string;
@@ -64,14 +55,14 @@ export type Logo = {
   tag?: string;
 };
 
-//______________ SLIDER TYPES _______________//
-
-// Define slider variant types
+/**
+ * The valid image-slider variants.
+ */
 export type SliderVariant = 'default' | 'background';
 
-//______________ ACCORDION TYPES _______________//
-
-// Define accordion entry type
+/**
+ * A single accordion entry on a project page.
+ */
 export type AccordionEntry = {
   content: string;
   website?: string;

@@ -1,18 +1,17 @@
-'use client';
-
-import type { TestUser, DescriptionText } from '@/types/types';
+import type { TestUser } from '@/types/types';
+import type { Dictionary } from '@/i18n/config';
 import { Icon } from '../../ui';
-import { useScopedI18n } from '@/locales/client';
 import styles from './project-description.module.css';
 import { Badge, Container, Flex, Tooltip, Typography } from 'wolmar-ui';
 
 type ProjectDescriptionProps = {
   title: string;
   disclaimer?: string;
-  text: DescriptionText[];
+  text: string[];
   techStack: string[];
   badges?: string[];
   testUser?: TestUser;
+  labels: Dictionary['testUser'];
 };
 
 export function ProjectDescription({
@@ -22,8 +21,10 @@ export function ProjectDescription({
   techStack,
   badges = [],
   testUser,
+  labels,
 }: ProjectDescriptionProps) {
-  const scopedT = useScopedI18n('testUser');
+  const t = labels;
+  const { heading, email, user, password } = t;
 
   return (
     <Container
@@ -63,19 +64,19 @@ export function ProjectDescription({
               </Typography>
             )}
 
-            {text.map((text, index) => (
+            {text.map((paragraph, index) => (
               <Typography weight="300" key={index}>
-                {text.content}
+                {paragraph}
               </Typography>
             ))}
 
             {testUser && (
               <div>
-                <Typography weight="400">{scopedT('heading')}</Typography>
+                <Typography weight="400">{heading}</Typography>
                 {testUser.email && (
                   <Typography weight="300">
                     <Typography weight="400" as="span">
-                      {scopedT('email')}
+                      {email}
                     </Typography>{' '}
                     {testUser.email}
                   </Typography>
@@ -83,14 +84,14 @@ export function ProjectDescription({
                 {testUser.username && (
                   <Typography weight="300">
                     <Typography weight="400" as="span">
-                      {scopedT('user')}
+                      {user}
                     </Typography>{' '}
                     {testUser.username}
                   </Typography>
                 )}
                 <Typography weight="300">
                   <Typography weight="400" as="span">
-                    {scopedT('password')}
+                    {password}
                   </Typography>{' '}
                   {testUser.password}
                 </Typography>

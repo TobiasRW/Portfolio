@@ -6,17 +6,16 @@ import {
   Container,
   Grid,
 } from 'wolmar-ui';
-import { getScopedI18n } from '@/locales/server';
+import type { Dictionary } from '@/i18n/config';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
-import { TransitionLink } from '../../utils/transition-link';
+import { TransitionLink } from '@/components/ui';
 import styles from './projects.module.css';
 import Image from 'next/image';
-import { mapProjects } from '@/components/utils/mapped-projects';
+import { mapProjects } from '@/lib/mapped-projects';
 
-export async function Projects() {
-  const scopedT = await getScopedI18n('frontPage.projects');
-
-  const mappedProjects = mapProjects(scopedT);
+export async function Projects({ dict }: { dict: Dictionary }) {
+  const t = dict.frontPage.projects;
+  const mappedProjects = mapProjects(dict.projects);
 
   return (
     <Container as="section" id="projects" className={styles.root}>
@@ -32,7 +31,7 @@ export async function Projects() {
           weight="600"
           className={styles.title}
         >
-          {scopedT('title')}
+          {t.title}
         </Typography>
         <Container width="91.6667%" className={styles.wrapper}>
           <Grid
@@ -49,7 +48,7 @@ export async function Projects() {
               >
                 <ProjectCard.Content
                   as={TransitionLink}
-                  href={proj.route!}
+                  href={proj.route}
                   className={index > 2 ? styles.hide : undefined}
                 >
                   <ProjectCard.Image asChild>
@@ -78,7 +77,7 @@ export async function Projects() {
                     color="dark"
                     weight="500"
                   >
-                    {scopedT('viewAll')}
+                    {t.viewAll}
                   </Typography>
                   <ArrowRightIcon weight="bold" className={styles.arrow} />
                 </Button>

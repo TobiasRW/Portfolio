@@ -3,13 +3,10 @@
 import styles from './navigation.module.css';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { TransitionLink } from '../../utils/transition-link';
+import { TransitionLink } from '@/components/ui';
 import { ArrowUpRightIcon, ArrowLeftIcon } from '@phosphor-icons/react';
-import {
-  useChangeLocale,
-  useCurrentLocale,
-  useScopedI18n,
-} from '@/locales/client';
+import { useChangeLocale, useCurrentLocale } from '@/i18n/client';
+import { locales, type Dictionary } from '@/i18n/config';
 import clsx from 'clsx';
 import { Button, Flex, LanguageToggle, Typography } from 'wolmar-ui';
 
@@ -18,7 +15,7 @@ const links = {
   linkedin: 'https://www.linkedin.com/in/tobias-wolmar-87991224a/',
 };
 
-export function Nav() {
+export function Nav({ labels }: { labels: Dictionary['navigation'] }) {
   const locale = useCurrentLocale();
   const changeLocale = useChangeLocale();
 
@@ -26,9 +23,12 @@ export function Nav() {
   const [hidden, setHidden] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const scopedT = useScopedI18n('navigation');
+  const t = labels;
 
   const pathname = usePathname();
+
+  // Home is "/<locale>" for every locale (every path is locale-prefixed).
+  const isHome = locales.some((l) => pathname === `/${l}`);
 
   useEffect(() => {
     let lastScrollY = 0;
@@ -66,7 +66,7 @@ export function Nav() {
     >
       <Flex align="center" justify="between" className={styles.container}>
         <Flex as="nav" align="center" gap={{ mobile: '4', desktop: '6' }}>
-          {pathname === '/' || pathname === '/da' || pathname === '/en' ? (
+          {isHome ? (
             <Typography
               as="a"
               href="mailto:tobiasrw98@gmail.com"
@@ -77,7 +77,7 @@ export function Nav() {
           ) : (
             <TransitionLink href="/" className={styles['return-link']}>
               <ArrowLeftIcon size={18} className={styles['return-icon']} />
-              {scopedT('back')}
+              {t.back}
             </TransitionLink>
           )}
 
@@ -93,9 +93,7 @@ export function Nav() {
             size="sm"
             className={styles.cv}
             href={
-              pathname === '/' || pathname === '/da'
-                ? '/pdfs/cv-danish.pdf'
-                : '/pdfs/cv-english.pdf'
+              locale === 'da' ? '/pdfs/cv-danish.pdf' : '/pdfs/cv-english.pdf'
             }
             target="_blank"
             rel="noopener noreferrer"

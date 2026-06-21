@@ -1,23 +1,22 @@
-import { getScopedI18n } from '@/locales/server';
-import { setStaticParamsLocale } from 'next-international/server';
+import { hasLocale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
+import { notFound } from 'next/navigation';
 import styles from '../page.module.css';
 import { Container, Grid, ProjectCard, Typography } from 'wolmar-ui';
 import Image from 'next/image';
-import { mapProjects } from '@/components/utils/mapped-projects';
-import { TransitionLink } from '@/components/utils/transition-link';
+import { mapProjects, ProjectCardData } from '@/lib/mapped-projects';
+import { TransitionLink } from '@/components/ui';
 
 export default async function Page({
   params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+}: PageProps<'/[locale]/projects'>) {
   const { locale } = await params;
-  setStaticParamsLocale(locale);
-  const scopedT = await getScopedI18n('frontPage.projects');
+  if (!hasLocale(locale)) notFound();
+  const dict = await getDictionary(locale);
 
-  const mappedProjects = mapProjects(scopedT);
+  const mappedProjects = mapProjects(dict.projects);
 
-  const darkTextProjects = ['Book Space'];
+  const darkTextProjects: ProjectCardData['name'][] = ['book-space'];
 
   return (
     <>
@@ -32,7 +31,7 @@ export default async function Page({
           weight="600"
           className={styles['projects-title']}
         >
-          {scopedT('titleAll')}
+          {dict.frontPage.projects.titleAll}
         </Typography>
         <Grid
           gap="8"
@@ -48,7 +47,7 @@ export default async function Page({
               variant={proj.variant}
               color={proj.color}
             >
-              <ProjectCard.Content as={TransitionLink} href={proj.route!}>
+              <ProjectCard.Content as={TransitionLink} href={proj.route}>
                 <ProjectCard.Image asChild>
                   <Image
                     src={proj.image}
@@ -63,12 +62,12 @@ export default async function Page({
                     variant="h2"
                     weight="500"
                     color={
-                      darkTextProjects.includes(proj.title) ? 'dark' : 'light'
+                      darkTextProjects.includes(proj.name) ? 'dark' : 'light'
                     }
                   />
                   <ProjectCard.Description
                     color={
-                      darkTextProjects.includes(proj.title) ? 'dark' : 'light'
+                      darkTextProjects.includes(proj.name) ? 'dark' : 'light'
                     }
                   />
                 </ProjectCard.TextContent>

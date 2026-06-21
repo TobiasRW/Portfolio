@@ -1,8 +1,5 @@
-'use client';
-
 import { getLogoByLabel } from '@/data/logos';
-import useDarkMode from '@/hooks/useDarkMode';
-import Image from 'next/image';
+import { LogoImage } from '../logo-image/logo-image';
 import styles from './icon.module.css';
 
 type Props = {
@@ -10,29 +7,27 @@ type Props = {
 };
 
 export function Icon({ label }: Props) {
-  const isDarkMode = useDarkMode();
-  const logoData = getLogoByLabel(label, isDarkMode);
+  const logo = getLogoByLabel(label);
+  if (!logo) return null;
+
+  const image = (
+    <LogoImage
+      logo={logo}
+      alt={`icon-${label}`}
+      width={24}
+      height={24}
+      className={styles.image}
+    />
+  );
 
   return (
     <div className={styles.root}>
-      {logoData.url ? (
-        <a href={logoData.url} target="_blank" rel="noopener noreferrer">
-          <Image
-            src={logoData.icon}
-            alt={`icon-${label}`}
-            width={24}
-            height={24}
-            className={styles.image}
-          />
+      {logo.url ? (
+        <a href={logo.url} target="_blank" rel="noopener noreferrer">
+          {image}
         </a>
       ) : (
-        <Image
-          src={logoData.icon}
-          alt={`icon-${label}`}
-          width={24}
-          height={24}
-          className={styles.image}
-        />
+        image
       )}
     </div>
   );

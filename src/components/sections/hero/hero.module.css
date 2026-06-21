@@ -91,13 +91,3 @@
   color: transparent;
   text-align: center;
 }
-
-.button:hover .arrow {
-  transform: translateY(3px);
-}
-
-.arrow {
-  transition-property: transform;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
-}

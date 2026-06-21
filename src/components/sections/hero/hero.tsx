@@ -1,23 +1,12 @@
-'use client';
 import Image from 'next/image';
-import {
-  ArrowDownIcon,
-  MapPinSimpleIcon,
-} from '@phosphor-icons/react/dist/ssr';
-import { useScopedI18n } from '@/locales/client';
-import { Button, Container, DotBackground, Flex, Typography } from 'wolmar-ui';
+import { MapPinSimpleIcon } from '@phosphor-icons/react/dist/ssr';
+import type { Dictionary } from '@/i18n/config';
+import { Container, DotBackground, Flex, Typography } from 'wolmar-ui';
+import { HeroButtons } from './hero-buttons';
 import styles from './hero.module.css';
 
-export function Hero() {
-  const scopedT = useScopedI18n('frontPage.hero');
-
-  // Utility function to scroll to a given element ID
-  const scrollToSection = (id: string) => {
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+export function Hero({ dict }: { dict: Dictionary }) {
+  const t = dict.frontPage.hero;
 
   return (
     <Container as="section" width="100vw" className={styles.root}>
@@ -51,7 +40,7 @@ export function Hero() {
 
             <Flex align="center" gap="1">
               <MapPinSimpleIcon weight="fill" className={styles.icon} />
-              <Typography as="span">{scopedT('location')}</Typography>
+              <Typography as="span">{t.location}</Typography>
             </Flex>
           </Flex>
 
@@ -62,34 +51,13 @@ export function Hero() {
               weight="600"
               className={styles.title}
             >
-              {scopedT('title')}
+              {t.title}
             </Typography>
 
-            <Typography className={styles.workplace}>
-              {scopedT('workplace')}
-            </Typography>
+            <Typography className={styles.workplace}>{t.workplace}</Typography>
           </Flex>
 
-          <Flex justify="center" gap={{ mobile: '4', desktop: '6' }}>
-            <Button
-              className={styles.button}
-              onClick={() => scrollToSection('projects')}
-            >
-              <Typography variant="body" as="span" color="dark" weight="500">
-                {scopedT('button.projects')}
-              </Typography>
-              <ArrowDownIcon weight="bold" className={styles.arrow} />
-            </Button>
-            <Button
-              className={styles.button}
-              onClick={() => scrollToSection('about')}
-            >
-              <Typography variant="body" as="span" color="dark" weight="500">
-                {scopedT('button.about')}
-              </Typography>
-              <ArrowDownIcon weight="bold" className={styles.arrow} />
-            </Button>
-          </Flex>
+          <HeroButtons labels={t.button} />
         </Flex>
       </Flex>
     </Container>

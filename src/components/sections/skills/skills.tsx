@@ -1,17 +1,13 @@
-'use client';
-
-import { ArrowUpRightIcon } from '@phosphor-icons/react';
-import useDarkMode from '@/hooks/useDarkMode';
-import { skillLogos, getLogo } from '@/data/logos';
-import Image from 'next/image';
-import { useScopedI18n } from '@/locales/client';
+import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
+import { skillLogos } from '@/data/logos';
+import { LogoImage } from '@/components/ui';
+import type { Dictionary } from '@/i18n/config';
 import styles from './skills.module.css';
 import { Button, Card, Carousel, Container, Flex, Typography } from 'wolmar-ui';
 
-export function Skills() {
-  const isDarkMode = useDarkMode();
+export function Skills({ dict }: { dict: Dictionary }) {
   const skills = skillLogos;
-  const scopedT = useScopedI18n('frontPage.skills');
+  const t = dict.frontPage.skills;
 
   return (
     <Container
@@ -60,8 +56,8 @@ export function Skills() {
                       padding="7"
                       className={styles.card}
                     >
-                      <Image
-                        src={getLogo(logo, isDarkMode)}
+                      <LogoImage
+                        logo={logo}
                         alt={logo.label}
                         width={64}
                         height={64}
@@ -84,7 +80,7 @@ export function Skills() {
                           as="span"
                           weight="500"
                         >
-                          {scopedT('link')}
+                          {t.link}
                         </Typography>
                         <ArrowUpRightIcon className={styles.icon} />
                       </Button>
