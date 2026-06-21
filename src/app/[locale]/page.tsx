@@ -12,7 +12,7 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
   return (
     <>
       <Hero />
-      <Skills />
+      <Skills dict={dict} />
       <Projects dict={dict} />
       <About dict={dict} />
     </>

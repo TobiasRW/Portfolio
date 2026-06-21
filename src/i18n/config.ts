@@ -18,9 +18,7 @@ export type ClientDictionary = {
   navigation: Dictionary['navigation'];
   frontPage: {
     hero: Dictionary['frontPage']['hero'];
-    skills: Dictionary['frontPage']['skills'];
   };
-  testUser: Dictionary['testUser'];
 };
 
 /**
@@ -33,9 +31,7 @@ export function pickClientDictionary(dict: Dictionary): ClientDictionary {
     navigation: dict.navigation,
     frontPage: {
       hero: dict.frontPage.hero,
-      skills: dict.frontPage.skills,
     },
-    testUser: dict.testUser,
   };
 }
 

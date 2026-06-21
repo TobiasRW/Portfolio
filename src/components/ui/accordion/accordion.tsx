@@ -1,5 +1,3 @@
-'use client';
-
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { getLogoByLabel } from '@/data/logos';
 import { LogoImage } from '../logo-image/logo-image';

@@ -25,7 +25,8 @@ export default async function Page({
   const project = projects.find((p) => p.name === slug);
   if (!project) notFound();
 
-  const t = (await getDictionary(locale)).projects[project.name];
+  const dict = await getDictionary(locale);
+  const t = dict.projects[project.name];
 
   const { heading, badges, paragraphs } = t.about;
   const disclaimer = 'disclaimer' in t.about ? t.about.disclaimer : undefined;
@@ -56,6 +57,7 @@ export default async function Page({
         text={paragraphs}
         techStack={project.techStack}
         testUser={testUser}
+        labels={dict.testUser}
       />
       <div className={styles.content}>
         <ProjectImageSlider

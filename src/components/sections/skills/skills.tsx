@@ -1,15 +1,13 @@
-'use client';
-
-import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { skillLogos } from '@/data/logos';
 import { LogoImage } from '@/components/ui';
-import { useDictionary } from '@/i18n/client';
+import type { Dictionary } from '@/i18n/config';
 import styles from './skills.module.css';
 import { Button, Card, Carousel, Container, Flex, Typography } from 'wolmar-ui';
 
-export function Skills() {
+export function Skills({ dict }: { dict: Dictionary }) {
   const skills = skillLogos;
-  const t = useDictionary().frontPage.skills;
+  const t = dict.frontPage.skills;
 
   return (
     <Container

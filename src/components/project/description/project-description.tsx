@@ -1,8 +1,6 @@
-'use client';
-
 import type { TestUser } from '@/types/types';
+import type { Dictionary } from '@/i18n/config';
 import { Icon } from '../../ui';
-import { useDictionary } from '@/i18n/client';
 import styles from './project-description.module.css';
 import { Badge, Container, Flex, Tooltip, Typography } from 'wolmar-ui';
 
@@ -13,6 +11,7 @@ type ProjectDescriptionProps = {
   techStack: string[];
   badges?: string[];
   testUser?: TestUser;
+  labels: Dictionary['testUser'];
 };
 
 export function ProjectDescription({
@@ -22,8 +21,10 @@ export function ProjectDescription({
   techStack,
   badges = [],
   testUser,
+  labels,
 }: ProjectDescriptionProps) {
-  const t = useDictionary().testUser;
+  const t = labels;
+  const { heading, email, user, password } = t;
 
   return (
     <Container
@@ -71,11 +72,11 @@ export function ProjectDescription({
 
             {testUser && (
               <div>
-                <Typography weight="400">{t.heading}</Typography>
+                <Typography weight="400">{heading}</Typography>
                 {testUser.email && (
                   <Typography weight="300">
                     <Typography weight="400" as="span">
-                      {t.email}
+                      {email}
                     </Typography>{' '}
                     {testUser.email}
                   </Typography>
@@ -83,14 +84,14 @@ export function ProjectDescription({
                 {testUser.username && (
                   <Typography weight="300">
                     <Typography weight="400" as="span">
-                      {t.user}
+                      {user}
                     </Typography>{' '}
                     {testUser.username}
                   </Typography>
                 )}
                 <Typography weight="300">
                   <Typography weight="400" as="span">
-                    {t.password}
+                    {password}
                   </Typography>{' '}
                   {testUser.password}
                 </Typography>
