@@ -16,9 +16,6 @@ export type Dictionary = (typeof import('@/locales/da'))['default'];
  */
 export type ClientDictionary = {
   navigation: Dictionary['navigation'];
-  frontPage: {
-    hero: Dictionary['frontPage']['hero'];
-  };
 };
 
 /**
@@ -29,9 +26,6 @@ export type ClientDictionary = {
 export function pickClientDictionary(dict: Dictionary): ClientDictionary {
   return {
     navigation: dict.navigation,
-    frontPage: {
-      hero: dict.frontPage.hero,
-    },
   };
 }
 

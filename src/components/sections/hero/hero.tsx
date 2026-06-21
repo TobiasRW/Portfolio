@@ -1,23 +1,12 @@
-'use client';
 import Image from 'next/image';
-import {
-  ArrowDownIcon,
-  MapPinSimpleIcon,
-} from '@phosphor-icons/react/dist/ssr';
-import { useDictionary } from '@/i18n/client';
-import { Button, Container, DotBackground, Flex, Typography } from 'wolmar-ui';
+import { MapPinSimpleIcon } from '@phosphor-icons/react/dist/ssr';
+import type { Dictionary } from '@/i18n/config';
+import { Container, DotBackground, Flex, Typography } from 'wolmar-ui';
+import { HeroButtons } from './hero-buttons';
 import styles from './hero.module.css';
 
-export function Hero() {
-  const t = useDictionary().frontPage.hero;
-
-  // Utility function to scroll to a given element ID
-  const scrollToSection = (id: string) => {
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+export function Hero({ dict }: { dict: Dictionary }) {
+  const t = dict.frontPage.hero;
 
   return (
     <Container as="section" width="100vw" className={styles.root}>
@@ -68,26 +57,7 @@ export function Hero() {
             <Typography className={styles.workplace}>{t.workplace}</Typography>
           </Flex>
 
-          <Flex justify="center" gap={{ mobile: '4', desktop: '6' }}>
-            <Button
-              className={styles.button}
-              onClick={() => scrollToSection('projects')}
-            >
-              <Typography variant="body" as="span" color="dark" weight="500">
-                {t.button.projects}
-              </Typography>
-              <ArrowDownIcon weight="bold" className={styles.arrow} />
-            </Button>
-            <Button
-              className={styles.button}
-              onClick={() => scrollToSection('about')}
-            >
-              <Typography variant="body" as="span" color="dark" weight="500">
-                {t.button.about}
-              </Typography>
-              <ArrowDownIcon weight="bold" className={styles.arrow} />
-            </Button>
-          </Flex>
+          <HeroButtons labels={t.button} />
         </Flex>
       </Flex>
     </Container>
