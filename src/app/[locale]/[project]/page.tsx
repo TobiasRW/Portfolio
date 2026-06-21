@@ -26,8 +26,12 @@ export default async function Page({
   if (!project) notFound();
 
   const t = (await getDictionary(locale)).projects[project.name];
-  const about = t.about;
 
+  const { heading, badges, paragraphs } = t.about;
+  const disclaimer = 'disclaimer' in t.about ? t.about.disclaimer : undefined;
+  const testUser = 'testUser' in t.about ? t.about.testUser : undefined;
+
+  const { heading: accordionHeading } = t.accordion;
   const accordionItems = project.tech.map((item, index) => ({
     ...item,
     content: t.accordion.items[index],
@@ -46,12 +50,12 @@ export default async function Page({
         </div>
       </div>
       <ProjectDescription
-        title={about.heading}
-        badges={about.badges}
-        disclaimer={'disclaimer' in about ? about.disclaimer : undefined}
-        text={about.paragraphs}
+        title={heading}
+        badges={badges}
+        disclaimer={disclaimer}
+        text={paragraphs}
         techStack={project.techStack}
-        testUser={'testUser' in about ? about.testUser : undefined}
+        testUser={testUser}
       />
       <div className={styles.content}>
         <ProjectImageSlider
@@ -59,7 +63,7 @@ export default async function Page({
           bgColor={project.color}
           images={project.gallery}
         />
-        <Accordion items={accordionItems} title={t.accordion.heading} />
+        <Accordion items={accordionItems} title={accordionHeading} />
       </div>
       {project.has3dModel && (
         <div className={styles.model}>

@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
+
 import {
   ProjectBanner as Banner,
   Button,
   Flex,
   ProjectBannerVariant,
-  type Project,
 } from 'wolmar-ui';
+import { Project } from '@/types/types';
 
 type ProjectBannerProps = {
   project: Project;
@@ -16,6 +17,8 @@ type ProjectBannerProps = {
 
 export function ProjectBanner(props: ProjectBannerProps) {
   const { project, variant, color } = props;
+
+  const darkTextProjects: Project['name'][] = ['book-space'];
 
   return (
     <Banner.Root project={project} variant={variant} color={color}>
@@ -37,6 +40,7 @@ export function ProjectBanner(props: ProjectBannerProps) {
             variant={{ mobile: 'h3', tablet: 'h2', desktop: 'h1' }}
             weight="500"
             as="h1"
+            color={darkTextProjects.includes(project.name) ? 'dark' : 'light'}
           />
           <Flex gap="4" justify={variant === 'phone' ? 'start' : 'end'}>
             {project.github && (

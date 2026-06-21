@@ -4,7 +4,10 @@ import { notFound } from 'next/navigation';
 import styles from '../page.module.css';
 import { Container, Grid, ProjectCard, Typography } from 'wolmar-ui';
 import Image from 'next/image';
-import { mapProjects } from '@/components/utils/mapped-projects';
+import {
+  mapProjects,
+  ProjectCardData,
+} from '@/components/utils/mapped-projects';
 import { TransitionLink } from '@/components/utils/transition-link';
 
 export default async function Page({
@@ -16,7 +19,7 @@ export default async function Page({
 
   const mappedProjects = mapProjects(dict.projects);
 
-  const darkTextProjects = ['Book Space'];
+  const darkTextProjects: ProjectCardData['name'][] = ['book-space'];
 
   return (
     <>
@@ -62,12 +65,12 @@ export default async function Page({
                     variant="h2"
                     weight="500"
                     color={
-                      darkTextProjects.includes(proj.title) ? 'dark' : 'light'
+                      darkTextProjects.includes(proj.name) ? 'dark' : 'light'
                     }
                   />
                   <ProjectCard.Description
                     color={
-                      darkTextProjects.includes(proj.title) ? 'dark' : 'light'
+                      darkTextProjects.includes(proj.name) ? 'dark' : 'light'
                     }
                   />
                 </ProjectCard.TextContent>
