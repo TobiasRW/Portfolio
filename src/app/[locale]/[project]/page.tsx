@@ -18,9 +18,7 @@ export function generateStaticParams() {
 
 export default async function Page({
   params,
-}: {
-  params: Promise<{ locale: string; project: string }>;
-}) {
+}: PageProps<'/[locale]/[project]'>) {
   const { locale, project: slug } = await params;
   if (!hasLocale(locale)) notFound();
 

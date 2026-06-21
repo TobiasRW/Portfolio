@@ -20,10 +20,7 @@ export function generateStaticParams() {
 export default async function RootLayout({
   children,
   params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+}: LayoutProps<'/[locale]'>) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
   const clientDictionary = pickClientDictionary(await getDictionary(locale));

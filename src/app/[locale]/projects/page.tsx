@@ -9,9 +9,7 @@ import { TransitionLink } from '@/components/utils/transition-link';
 
 export default async function Page({
   params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+}: PageProps<'/[locale]/projects'>) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
   const dict = await getDictionary(locale);
