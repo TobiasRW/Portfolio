@@ -6,7 +6,7 @@ import { useCurrentLocale } from '@/i18n/client';
 import { localizePath } from '@/i18n/config';
 
 /**
- * Props for the {@link TransitionLink} component.
+ * Props for the TransitionLink component.
  */
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
@@ -15,18 +15,7 @@ interface TransitionLinkProps extends LinkProps {
 }
 
 /**
- * Resolves after the given delay.
- * @param ms The delay in milliseconds.
- * @returns A promise that resolves once the delay has elapsed.
- */
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-/**
- * A locale-aware link that plays a page exit/enter animation before navigating.
- * @param props The link props (href is localized to the active locale).
- * @returns The rendered link.
+ * A wrapper around Next.js's Link that adds a view transition on navigation.
  */
 export const TransitionLink = ({
   children,
@@ -37,27 +26,22 @@ export const TransitionLink = ({
   const router = useRouter();
   const locale = useCurrentLocale();
 
-  // Keep internal links within the active locale (default locale stays
-  // prefix-less, e.g. "/projects"; others are prefixed, e.g. "/en/projects").
+  // Keep internal links within the active locale (e.g. "/en/projects").
   const localizedHref = localizePath(href, locale);
 
-  // Function to handle the transition
-  const handleTransition = async (
+  const handleTransition = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
-    e.preventDefault(); // Prevent the default behavior (normal link click)
+    // Let modified clicks (open in new tab, etc.) keep their native behavior.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
 
-    const body = document.querySelector('body'); // Get the body element
-    body?.classList.add('page-exit'); // Add the page-exit class to the body
-
-    await sleep(300); // Wait for 300ms so the exit animation can play
-
-    router.push(localizedHref); // Navigate to the new page
-    body?.classList.remove('page-exit'); // Remove the page-exit class from the body
-    body?.classList.add('page-enter'); // Add the page-enter class to the body
-
-    await sleep(300); // Wait for 300ms so the enter animation can play
-    body?.classList.remove('page-enter'); // Remove the page-enter class from the body
+    // Fall back to a plain navigation where the API is unavailable.
+    if (!document.startViewTransition) {
+      router.push(localizedHref);
+      return;
+    }
+    document.startViewTransition(() => router.push(localizedHref));
   };
 
   return (
