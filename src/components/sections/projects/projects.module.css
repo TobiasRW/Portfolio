@@ -41,14 +41,6 @@
   }
 }
 
-.hide {
-  display: none;
-
-  @media (--3xl) {
-    display: block;
-  }
-}
-
 .button:hover .arrow {
   transform: translateX(3px);
 }

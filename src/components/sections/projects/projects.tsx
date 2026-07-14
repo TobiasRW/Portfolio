@@ -1,17 +1,10 @@
-import {
-  ProjectCard,
-  Button,
-  Typography,
-  Flex,
-  Container,
-  Grid,
-} from 'wolmar-ui';
+import { Button, Typography, Flex, Container, Grid } from 'wolmar-ui';
 import type { Dictionary } from '@/i18n/config';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { TransitionLink } from '@/components/ui';
 import styles from './projects.module.css';
-import Image from 'next/image';
 import { mapProjects } from '@/lib/mapped-projects';
+import { ProjectsCards } from './projects-cards';
 
 export async function Projects({ dict }: { dict: Dictionary }) {
   const t = dict.frontPage.projects;
@@ -39,35 +32,8 @@ export async function Projects({ dict }: { dict: Dictionary }) {
             columns={{ mobile: '1', tablet: '3' }}
             className={styles.grid}
           >
-            {mappedProjects.slice(0, 4).map((proj, index) => (
-              <ProjectCard.Root
-                key={index}
-                project={proj}
-                variant={proj.variant}
-                color={proj.color}
-              >
-                <ProjectCard.Content
-                  as={TransitionLink}
-                  href={proj.route}
-                  className={index > 2 ? styles.hide : undefined}
-                >
-                  <ProjectCard.Image asChild>
-                    <Image
-                      src={proj.image}
-                      alt={proj.title}
-                      fill
-                      priority
-                      sizes="(max-width: 460px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    />
-                  </ProjectCard.Image>
-                  <ProjectCard.TextContent>
-                    <ProjectCard.Title variant="h2" weight="500" />
-                    <ProjectCard.Description />
-                  </ProjectCard.TextContent>
-                  <ProjectCard.Tags />
-                </ProjectCard.Content>
-              </ProjectCard.Root>
-            ))}
+            <ProjectsCards projects={mappedProjects} />
+
             <div className={styles.more}>
               <TransitionLink href="/projects">
                 <Button variant="default" size="md" className={styles.button}>
