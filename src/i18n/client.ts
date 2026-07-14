@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useTransition } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   localizePath,
@@ -8,6 +8,7 @@ import {
   defaultLocale,
   hasLocale,
   type Locale,
+  locales,
 } from './config';
 
 /**
@@ -33,7 +34,6 @@ export function useChangeLocale() {
       const barePath = pathname.replace(/^\/[^/]+/, '') || '/';
       const target = localizePath(barePath, locale);
       router.push(target);
-      router.refresh();
     },
     [pathname, router],
   );
