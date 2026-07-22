@@ -1,9 +1,9 @@
 import {
+  ProjectAccordion,
   ProjectBanner,
   ProjectDescription,
   ProjectImageSlider,
 } from '@/components/project';
-import { Accordion } from '@/components/ui';
 import { Scene } from '@/components/renders';
 import { hasLocale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/dictionaries';
@@ -28,16 +28,6 @@ export default async function Page({
   const dict = await getDictionary(locale);
   const t = dict.projects[project.name];
 
-  const { heading, badges, paragraphs } = t.about;
-  const disclaimer = 'disclaimer' in t.about ? t.about.disclaimer : undefined;
-  const testUser = 'testUser' in t.about ? t.about.testUser : undefined;
-
-  const { heading: accordionHeading } = t.accordion;
-  const accordionItems = project.tech.map((item, index) => ({
-    ...item,
-    content: t.accordion.items[index],
-  }));
-
   return (
     <>
       <div className={styles.root}>
@@ -51,12 +41,8 @@ export default async function Page({
         </div>
       </div>
       <ProjectDescription
-        title={heading}
-        badges={badges}
-        disclaimer={disclaimer}
-        text={paragraphs}
+        content={t.about}
         techStack={project.techStack}
-        testUser={testUser}
         labels={dict.testUser}
       />
       <div className={styles.content}>
@@ -65,7 +51,7 @@ export default async function Page({
           bgColor={project.color}
           images={project.gallery}
         />
-        <Accordion items={accordionItems} title={accordionHeading} />
+        <ProjectAccordion tech={project.tech} content={t.accordion} />
       </div>
       {project.has3dModel && (
         <div className={styles.model}>

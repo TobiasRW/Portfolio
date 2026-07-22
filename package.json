@@ -19,7 +19,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "three": "^0.185.1",
-    "wolmar-ui": "^1.2.2"
+    "wolmar-ui": "^2.1.0"
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^4.0.0",

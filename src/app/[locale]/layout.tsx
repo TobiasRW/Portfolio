@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import 'wolmar-ui/wolmar-ui.css';
 import './globals.css';
 
 import { hasLocale, locales } from '@/i18n/config';

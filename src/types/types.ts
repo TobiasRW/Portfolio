@@ -7,9 +7,12 @@ import type { Project as CardProject, ProjectCardVariant } from 'wolmar-ui';
 export type ProjectName = keyof Dictionary['projects'];
 
 /**
- * A technology shown on a project page. The localized explanation is pulled
- * from the dictionary (`projects.<name>.accordion.items`) by position, so the
- * order here must match the order of those items.
+ * A single project's localized content (about + accordion). A union across all projects.
+ */
+export type ProjectContent = Dictionary['projects'][ProjectName];
+
+/**
+ * A technology shown on a project page.
  */
 export type ProjectTech = {
   iconLabel: string;
@@ -17,10 +20,8 @@ export type ProjectTech = {
 };
 
 /**
- * A project extends the library's card view-model (image/title/route/...) so
- * the shapes stay in sync, and adds this app's own metadata and page content.
- * `description` (from CardProject) is intentionally left unset here — it is the
- * only localized card field and is injected per-locale at render time.
+ * The Project shape.
+ * Extends the CardProject type from wolmar-ui with additional properties.
  */
 export type Project = CardProject & {
   name: ProjectName;
@@ -34,7 +35,7 @@ export type Project = CardProject & {
 };
 
 /**
- * Demo login credentials shown on a project page.
+ * The test user credentials.
  */
 export type TestUser = {
   email?: string;
@@ -59,12 +60,3 @@ export type Logo = {
  * The valid image-slider variants.
  */
 export type SliderVariant = 'default' | 'background';
-
-/**
- * A single accordion entry on a project page.
- */
-export type AccordionEntry = {
-  content: string;
-  website?: string;
-  iconLabel: string;
-};

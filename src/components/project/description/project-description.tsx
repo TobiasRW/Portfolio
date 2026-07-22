@@ -1,30 +1,27 @@
-import type { TestUser } from '@/types/types';
+import type { ProjectContent, TestUser } from '@/types/types';
 import type { Dictionary } from '@/i18n/config';
 import { Icon } from '../../ui';
 import styles from './project-description.module.css';
 import { Badge, Container, Flex, Tooltip, Typography } from 'wolmar-ui';
 
 type ProjectDescriptionProps = {
-  title: string;
-  disclaimer?: string;
-  text: string[];
+  content: ProjectContent['about'];
   techStack: string[];
-  badges?: string[];
-  testUser?: TestUser;
   labels: Dictionary['testUser'];
 };
 
 export function ProjectDescription({
-  title,
-  disclaimer,
-  text,
+  content,
   techStack,
-  badges = [],
-  testUser,
   labels,
 }: ProjectDescriptionProps) {
-  const t = labels;
-  const { heading, email, user, password } = t;
+  const { heading: title, badges, paragraphs: text } = content;
+
+  const disclaimer = 'disclaimer' in content ? content.disclaimer : undefined;
+  const testUser: TestUser | undefined =
+    'testUser' in content ? content.testUser : undefined;
+
+  const { heading, email, user, password } = labels;
 
   return (
     <Container

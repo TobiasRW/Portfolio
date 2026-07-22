@@ -1,20 +1,25 @@
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { getLogoByLabel } from '@/data/logos';
-import { LogoImage } from '../logo-image/logo-image';
-import { AccordionEntry } from '@/types/types';
+import { LogoImage } from '../../ui';
+import type { Project, ProjectContent } from '@/types/types';
 import { Collapsible, Flex, Typography } from 'wolmar-ui';
-import styles from './accordion.module.css';
+import styles from './project-accordion.module.css';
 
-type AccordionTechProps = {
-  title: string;
-  items: AccordionEntry[];
+type ProjectAccordionProps = {
+  tech: Project['tech'];
+  content: ProjectContent['accordion'];
 };
 
-export function Accordion({ title, items }: AccordionTechProps) {
+export function ProjectAccordion({ tech, content }: ProjectAccordionProps) {
+  const items = tech.map((item, index) => ({
+    ...item,
+    content: content.items[index],
+  }));
+
   return (
     <Flex direction="column" gap="4" className={styles.root}>
       <Typography variant="h2" weight="600">
-        {title}
+        {content.heading}
       </Typography>
 
       {items.map((item, index) => {
